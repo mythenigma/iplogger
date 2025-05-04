@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easiest IP Tracker – One‑Click Invisible Link | IPLogger.icu</title>
+    <meta name="description" content="Generate an invisible link that logs visitor IPs, country, device, and time in 3 seconds. The easiest IP tracker online—no signup, no ads.">
+    <meta name="keywords" content="easiest IP tracker, invisible IP tracker link, free IP logger, IP tracking, IP address tracker">
+    <meta name="author" content="IPLogger.icu">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Easiest IP Tracker – One‑Click Invisible Link">
+    <meta property="og:description" content="Generate an invisible link that logs visitor IPs, country, device, and time in 3 seconds. The easiest IP tracker online—no signup, no ads.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iplogger.icu">
+    <meta property="og:image" content="https://iplogger.icu/images/og-image.jpg">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Easiest IP Tracker – One‑Click Invisible Link">
+    <meta name="twitter:description" content="Generate an invisible link that logs visitor IPs, country, device, and time in 3 seconds. The easiest IP tracker online.">
+    <meta name="twitter:image" content="https://iplogger.icu/images/twitter-card.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://iplogger.icu/ip-tracker">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://iplogger.icu/favicon.png">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #f72585;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 100px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3QgaWQ9InBhdHRlcm4tYmFja2dyb3VuZCIgd2lkdGg9IjQwMCUiIGhlaWdodD0iNDAwJSIgZmlsbD0idHJhbnNwYXJlbnQiPjwvcmVjdD48Y2lyY2xlIGZpbGw9IiNmZmZmZmYiIGN4PSIyMCIgY3k9IjIwIiByPSIxIj48L2NpcmNsZT48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjwvcmVjdD48L3N2Zz4=');
+            opacity: 0.1;
+        }
+        
+        .hero h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .step-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            border-radius: 0 10px 0 10px;
+        }
+        
+        .use-case-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+        }
+        
+        .use-case-icon {
+            background-color: rgba(67, 97, 238, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary-color);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: white;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 20px 20px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3QgaWQ9InBhdHRlcm4tYmFja2dyb3VuZCIgd2lkdGg9IjQwMCUiIGhlaWdodD0iNDAwJSIgZmlsbD0idHJhbnNwYXJlbnQiPjwvcmVjdD48Y2lyY2xlIGZpbGw9IiNmZmZmZmYiIGN4PSIyMCIgY3k9IjIwIiByPSIxIj48L2NpcmNsZT48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjwvcmVjdD48L3N2Zz4=');
+            opacity: 0.1;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e91e63;
+            border-color: #e91e63;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(247, 37, 133, 0.4);
+        }
+        
+        .btn-light {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-light:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .features-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .features-table th {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: left;
+            padding: 15px 20px;
+            font-weight: 600;
+        }
+        
+        .features-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .features-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .security-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .security-icon {
+            background-color: rgba(67, 97, 238, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary-color);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-links h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "IPLogger.icu - Easiest IP Tracker",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Generate an invisible link that logs visitor IPs, country, device, and time in 3 seconds. The easiest IP tracker online—no signup, no ads.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "524"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-globe me-2"></i>IPLogger.icu
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#use-cases">Use Cases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="https://iplogger.icu">Start Tracking</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center position-relative">
+            <h1>Easiest IP Tracker – One‑Click Invisible Link</h1>
+            <p>Generate an invisible link that logs visitor IPs, country, device, and time in 3 seconds. The easiest IP tracker online—no signup, no ads.</p>
+            <a href="https://iplogger.icu" class="btn btn-light btn-lg">
+                Start Tracking Now <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- Why You Need Section -->
+        <section class="mb-5">
+            <h2 class="section-title">Why You Need the Easiest IP Tracker</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="lead">Tired of bloated link‑tracking dashboards or shady "IP grabber" scripts?</p>
+                    <p>IPLogger.icu strips the process down to a single click: paste any URL, get a stealth link, watch real‑time logs—no log‑in, no pop‑ups, zero coding.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Simplicity is Power</h3>
+                        <p>Our streamlined approach means you get exactly what you need—reliable IP tracking without the complexity. Perfect for businesses, freelancers, and everyday users who value efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="mb-5" id="features">
+            <h2 class="section-title">Core Features at a Glance</h2>
+            <div class="table-responsive">
+                <table class="features-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>What Makes It "Easiest"</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>One‑Click Generator</strong></td>
+                            <td>Hit Generate, done. No forms, no captchas.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Invisible 1 × 1 Pixel</strong></td>
+                            <td>Perfect for emails, forums, or social DMs—users never see it.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Real‑Time Dashboard</strong></td>
+                            <td>Auto‑refresh IP, geo, OS, browser, timestamp.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>No Ads & No Signup</strong></td>
+                            <td>Opens instantly on any device, even mobile data.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Free API Access</strong></td>
+                            <td>Pull JSON logs to Slack, Telegram, Google Sheets with a single endpoint.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="mb-5" id="how-it-works">
+            <h2 class="section-title">3‑Step Quick‑Start</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="step-box">
+                        <div class="step-number">1</div>
+                        <h3>Paste Your Destination URL</h3>
+                        <p>Head to iplogger.icu, paste a link (e.g., your portfolio).</p>
+                        <img src="https://via.placeholder.com/350x200?text=Paste+URL" alt="Paste URL Screenshot" class="img-fluid rounded mt-3">
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="step-box">
+                        <div class="step-number">2</div>
+                        <h3>Click "Generate Invisible Link"</h3>
+                        <p>Get a short URL and an &lt;img&gt; pixel tag—copy either.</p>
+                        <img src="https://via.placeholder.com/350x200?text=Generate+Link" alt="Generate Link Screenshot" class="img-fluid rounded mt-3">
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="step-box">
+                        <div class="step-number">3</div>
+                        <h3>Share & Track</h3>
+                        <p>Drop the link in a message or embed the pixel in an email. Open your dashboard to watch IPs roll in live.</p>
+                        <img src="https://via.placeholder.com/350x200?text=Track+Results" alt="Track Results Screenshot" class="img-fluid rounded mt-3">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-info mt-4">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="fas fa-info-circle fa-2x"></i>
+                    </div>
+                    <div>
+                        <strong>Setup time:</strong> ≈ 10 seconds. <strong>Skills required:</strong> Copy‑and‑paste.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section class="mb-5" id="use-cases">
+            <h2 class="section-title">Use‑Case Highlights</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="use-case-item">
+                        <div class="use-case-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <h4>Recruiters</h4>
+                            <p>Verify candidate locations before scheduling interviews.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case-item">
+                        <div class="use-case-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div>
+                            <h4>eCommerce Sellers</h4>
+                            <p>Track suspicious returns or charge‑backs.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="use-case-item">
+                        <div class="use-case-icon">
+                            <i class="fas fa-photo-video"></i>
+                        </div>
+                        <div>
+                            <h4>Content Creators</h4>
+                            <p>See where fans click from without intrusive analytics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case-item">
+                        <div class="use-case-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h4>Educators</h4>
+                            <p>Confirm students actually opened course PDFs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-5" id="faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Is IP tracking legal?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Public IPs aren't classified as personal data in most regions; disclose logging in your ToS for full compliance.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Will ad‑blockers break the pixel?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Less than 2% of visitors block 1 × 1 remote images; a fallback short link is provided.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Can I delete logs?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Yes—click Clear on any link. Your data is gone instantly.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    How many links can I create?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Unlimited. There's no rate limit for casual use.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Section -->
+        <section class="mb-5">
+            <h2 class="section-title">Security & Privacy Notes</h2>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div>
+                            <h4>Minimal Data Collection</h4>
+                            <p>Only public IP, user‑agent, and referer are stored—no cookies or fingerprinting.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div>
+                            <h4>Secure Connections</h4>
+                            <p>HTTPS enforced end‑to‑end; logs visible only to the unique management code you keep.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="security-card">
+                        <div class="security-icon">
+                            <i class="fas fa-trash-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Easy Data Control</h4>
+                            <p>1‑click "Kill Link" immediately disables future tracking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center position-relative">
+            <h2>Ready in One Click</h2>
+            <p class="mb-4">Generate Your Invisible IP‑Tracking Link Now</p>
+            <a href="https://iplogger.icu" class="btn btn-light btn-lg">
+                <i class="fas fa-hand-point-right me-2"></i> Start Tracking for Free
+            </a>
+            <p class="mt-4">Forget complicated dashboards and shady scripts—the easiest IP tracker is now one click away.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>About IPLogger.icu</h5>
+                    <p>IPLogger.icu provides the easiest and most reliable IP tracking solution online, without the hassle of signups, ads, or complex interfaces.</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-2 mb-4 footer-links">
+                    <h5>Features</h5>
+                    <ul>
+                        <li><a href="#">IP Tracking</a></li>
+                        <li><a href="#">Invisible Pixel</a></li>
+                        <li><a href="#">Geolocation</a></li>
+                        <li><a href="#">Device Analytics</a></li>
+                        <li><a href="#">API Access</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-2 mb-4 footer-links">
+                    <h5>Resources</h5>
+                    <ul>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Usage Guide</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Privacy Tips</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-2 mb-4 footer-links">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-2 mb-4 footer-links">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom text-center">
+                <p>© 2023 IPLogger.icu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (answer.style.display === 'none' || !answer.style.display) {
+                answer.style.display = 'block';
+                icon.className = 'fas fa-chevron-up';
+            } else {
+                answer.style.display = 'none';
+                icon.className = 'fas fa-chevron-down';
+            }
+        }
+    </script>
+</body>
+</html>

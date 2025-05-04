@@ -13,99 +13,707 @@
     <title>IPLogger.icu - Advanced IP Tracking Tool</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #f8f9fa;
             color: #333;
-            padding-top: 20px;
+            padding-top: 0;
         }
+        
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: #007bff !important;
+        }
+        
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
         }
-        .header {
-            text-align: center;
+        
+        .hero-section {
+            background: linear-gradient(135deg, #0062E6, #33AEFF);
+            color: #fff;
+            padding: 80px 0;
+            border-radius: 0 0 10px 10px;
             margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
         }
-        .header h1 {
-            font-size: 2.5rem;
-            color: #007bff;
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.pixabay.com/photo/2018/09/17/23/21/technology-3685938_1280.jpg');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
         }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 10px 25px;
+            font-weight: 600;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0069d9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+        }
+        
         .content {
-            line-height: 1.6;
-            font-size: 1rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            color: #555;
         }
+        
         .content h2 {
             color: #007bff;
-            margin-top: 30px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
         }
+        
+        .content h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: #007bff;
+        }
+        
         .content p {
             margin-bottom: 20px;
         }
-        .footer {
-            background-color: #343a40;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
+        
+        .feature-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .footer a {
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            background: #f1f8ff;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
             color: #007bff;
+            font-size: 26px;
+        }
+        
+        .steps-section {
+            background-color: #fff;
+            padding: 50px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 40px 0;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background: #007bff;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        .step-content h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.3rem;
+        }
+        
+        .testimonial-section {
+            padding: 40px 0;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 50px;
+            color: #e1e1e1;
+            position: absolute;
+        }
+        
+        .testimonial-text::before {
+            top: -20px;
+            left: -15px;
+        }
+        
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin: 0;
+            color: #333;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            padding: 60px 0;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            margin: 40px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn-light {
+            background-color: white;
+            color: #007bff;
+            font-weight: 600;
+            padding: 10px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-light:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .footer {
+            background-color: #212529;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 50px 0 20px;
+            border-radius: 10px 10px 0 0;
+            margin-top: 60px;
+        }
+        
+        .footer h4 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: #007bff;
+        }
+        
+        .footer ul {
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 15px 0;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 35px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: #007bff;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 50px 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+            
+            .step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-globe"></i> IPLogger.icu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-to-use">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary btn-sm ms-3" href="https://iplogger.icu">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center hero-content">
+            <h1>Track and Analyze IP Information with Ease</h1>
+            <p>IPLogger.icu is a comprehensive tool for tracking IP addresses, gathering visitor information, and monitoring website traffic for businesses and individuals.</p>
+            <a href="https://iplogger.icu" class="btn btn-light btn-lg">Start Tracking Now <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+    </section>
 
     <div class="container">
-        <div class="header">
-            <h1>What is IPLogger.icu? A Comprehensive Introduction</h1>
-            <p>Tracking IP addresses, understanding user behavior, and monitoring website traffic just became easier. Learn how IPLogger.icu helps businesses and individuals alike gather valuable insights.</p>
-        </div>
-
         <div class="content">
-            <h2>Introduction to IPLogger.icu</h2>
-            <p>In today’s digital world, tracking user activity and understanding where your traffic is coming from is critical for success. **IPLogger.icu** is an advanced tool designed to track IP addresses, user information, and device details in a secure and private environment. Whether you are a marketer, business owner, or security enthusiast, IPLogger.icu offers an array of features to help you gain valuable insights into your web traffic.</p>
+            <h2 id="introduction">Introduction to IPLogger.icu</h2>
+            <p>In today's digital world, tracking user activity and understanding where your traffic is coming from is critical for success. <strong>IPLogger.icu</strong> is an advanced tool designed to track IP addresses, user information, and device details in a secure and private environment. Whether you are a marketer, business owner, or security enthusiast, IPLogger.icu offers an array of features to help you gain valuable insights into your web traffic.</p>
+            
+            <p>With the increasing importance of digital analytics and security, having a reliable IP tracking solution is essential for any online presence. IPLogger.icu provides a comprehensive set of tools that allow you to monitor visitor interactions, understand geographic distributions, and make data-driven decisions for your website or digital campaigns.</p>
 
-            <h2>Features of IPLogger.icu</h2>
-            <p>IPLogger.icu offers a range of powerful features that make it a competitive alternative to other IP tracking services, including:</p>
-            <ul>
-                <li><strong>IP Address Tracking:</strong> Track real-time IP addresses of visitors to your website or shared links.</li>
-                <li><strong>Location Insights:</strong> Get a glimpse into the geographical location of your visitors based on their IP address.</li>
-                <li><strong>Device Information:</strong> Discover which devices (desktop, tablet, mobile) are being used to access your site.</li>
-                <li><strong>Referrer and Browser Data:</strong> Understand which websites or platforms are driving traffic to your page, and which browsers are being used to access your site.</li>
-                <li><strong>Detailed Logs:</strong> Access a detailed history of all logged IP addresses, along with timestamps and other relevant data.</li>
-                <li><strong>Privacy and Security:</strong> IPLogger.icu ensures that all data is stored securely and your visitors’ privacy is respected at all times.</li>
-            </ul>
+            <h2 id="features">Key Features of IPLogger.icu</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>IP Address Tracking</h3>
+                        <p>Track real-time IP addresses of visitors to your website or shared links with precise geolocation data that shows country, region, and city information.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Location Insights</h3>
+                        <p>Get detailed geographical information about your visitors based on their IP address, including country, region, city, and even approximate coordinates.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Device Information</h3>
+                        <p>Discover which devices (desktop, tablet, mobile) are being used to access your site, along with operating system details and screen resolution.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Referrer and Browser Data</h3>
+                        <p>Understand which websites or platforms are driving traffic to your page, and which browsers and versions are being used to access your content.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3>Detailed Logs</h3>
+                        <p>Access a comprehensive history of all logged IP addresses, along with timestamps and other relevant data for in-depth analysis.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Privacy and Security</h3>
+                        <p>IPLogger.icu ensures that all data is stored securely and your visitors' privacy is respected at all times with robust encryption.</p>
+                    </div>
+                </div>
+            </div>
 
             <h2>Why Choose IPLogger.icu?</h2>
-            <p>IPLogger.icu offers several advantages over other IP logging services, such as **iplogger.com**:</p>
-            <ul>
-                <li><strong>Enhanced Data Security:</strong> We value your privacy and the security of your data. IPLogger.icu offers robust encryption protocols and does not share your data with third parties.</li>
-                <li><strong>Free Usage:</strong> Get started with IP tracking without any upfront cost. IPLogger.icu offers a generous free tier with essential features for beginners.</li>
-                <li><strong>Easy to Use Interface:</strong> With a clean and intuitive user interface, IPLogger.icu makes IP tracking a breeze for users of all technical levels.</li>
-                <li><strong>Advanced Analytics:</strong> Go beyond basic IP tracking and get detailed insights into your website’s visitors, including session durations, device types, and user locations.</li>
-            </ul>
-
-            <h2>How to Use IPLogger.icu</h2>
-            <p>Getting started with **IPLogger.icu** is simple and straightforward. Follow these steps:</p>
-            <ol>
-                <li><strong>Sign Up:</strong> Create an account on IPLogger.icu to access all features.</li>
-                <li><strong>Create a Link:</strong> Generate a unique URL to track visitors or integrate tracking with your website.</li>
-                <li><strong>Monitor Activity:</strong> View real-time tracking logs, including IP addresses, user locations, and devices.</li>
-                <li><strong>Analyze Data:</strong> Use the analytics dashboard to dig deeper into your traffic patterns and make informed decisions.</li>
-            </ol>
-
-            <h2>Get Started with IPLogger.icu Today</h2>
-            <p>Ready to gain deeper insights into your website’s visitors? Start tracking IP addresses and user information with **IPLogger.icu** today. Visit our website to create an account and start monitoring.</p>
-
-            <h2>Contact Us</h2>
-            <p>If you have any questions or need assistance, feel free to reach out to us. You can contact us via email at <a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a>.</p>
-        </div>
-
-        <div class="footer">
-            <p>&copy; 2025 IPLogger.icu | <a href="mailto:joe@pdfhost.online">Contact Us</a></p>
+            <p>IPLogger.icu offers several advantages over other IP logging services, such as <strong>iplogger.com</strong>:</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <ul>
+                        <li><strong>Enhanced Data Security:</strong> We value your privacy and the security of your data. IPLogger.icu offers robust encryption protocols and does not share your data with third parties.</li>
+                        <li><strong>Free Usage:</strong> Get started with IP tracking without any upfront cost. IPLogger.icu offers a generous free tier with essential features for beginners.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li><strong>Easy to Use Interface:</strong> With a clean and intuitive user interface, IPLogger.icu makes IP tracking a breeze for users of all technical levels.</li>
+                        <li><strong>Advanced Analytics:</strong> Go beyond basic IP tracking and get detailed insights into your website's visitors, including session durations, device types, and user locations.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="steps-section" id="how-to-use">
+                <h2 class="text-center mb-5">How to Use IPLogger.icu</h2>
+                <p class="text-center mb-4">Getting started with <strong>IPLogger.icu</strong> is simple and straightforward. Follow these steps:</p>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Sign Up for an Account</h3>
+                        <p>Create a free account on IPLogger.icu by providing your email and setting up a secure password. No credit card required to access the basic features.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Create a Tracking Link</h3>
+                        <p>Generate a unique URL that you can share via email, social media, or embed on your website. Each time someone clicks this link, their IP information will be logged.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Monitor Activity in Real-Time</h3>
+                        <p>Access your dashboard to view real-time logs of all visitor activity, including IP addresses, geographic locations, and device information.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Analyze the Data</h3>
+                        <p>Use the comprehensive analytics tools to understand visitor patterns, geographic distributions, and device preferences to make data-driven decisions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Use Cases Section -->
+            <h2>Common Use Cases</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-bullseye text-primary me-2"></i>Marketing Campaigns</h5>
+                            <p class="card-text">Track the effectiveness of your marketing efforts by monitoring which regions are responding best to your campaigns. Understand which platforms drive the most engagement and optimize your strategy accordingly.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-lock text-primary me-2"></i>Security Monitoring</h5>
+                            <p class="card-text">Identify suspicious activity by tracking unusual patterns of IP access. Set up alerts for potential security threats and monitor log-in attempts from unfamiliar locations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-globe-americas text-primary me-2"></i>Content Localization</h5>
+                            <p class="card-text">Use geographic data to tailor your content to specific regions. Understand where your audience is located and create region-specific offers or information to increase engagement.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-chart-line text-primary me-2"></i>Traffic Analysis</h5>
+                            <p class="card-text">Gain deeper insights into your website traffic patterns. Understand which pages are most popular in different regions and optimize your site structure based on user behavior.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonials Section -->
+            <section class="testimonial-section" id="testimonials">
+                <h2 class="text-center mb-5">What Our Users Say</h2>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                IPLogger.icu has completely transformed how we track our marketing campaigns. The detailed geographic data has helped us focus our efforts on the most responsive regions, increasing our ROI significantly.
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah J.">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Marketing Director</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                As a security consultant, I recommend IPLogger.icu to all my clients. The real-time tracking and detailed logs make it an invaluable tool for monitoring suspicious activity and protecting digital assets.
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T.">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Michael Thompson</h4>
+                                    <p>Cybersecurity Specialist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2>Ready to Start Tracking?</h2>
+                <p>Join thousands of businesses and individuals who trust IPLogger.icu for their IP tracking needs. Our easy-to-use platform provides valuable insights with just a few clicks.</p>
+                <a href="https://iplogger.icu" class="btn btn-light btn-lg">Get Started for Free <i class="fas fa-arrow-right ms-2"></i></a>
+            </section>
+            
+            <h2 id="contact">Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us. You can contact us via email at <a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a> or use the contact form on our website.</p>
+            
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-4">Contact Form</h5>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email">
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4>About IPLogger.icu</h4>
+                    <p>IPLogger.icu is a leading provider of IP tracking and visitor analytics services, helping businesses and individuals gain valuable insights into their web traffic.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-to-use">How It Works</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="https://iplogger.icu">Sign Up</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <h4>Related Services</h4>
+                    <ul>
+                        <li><a href="https://grabify.icu">Grabify.icu - IP Tracking</a></li>
+                        <li><a href="https://pdfhost.online">PDFHost.online - Document Sharing</a></li>
+                        <li><a href="https://maipdf.com/qr.php">MaiPDF QR Generator</a></li>
+                        <li><a href="https://maipdf.com/maipdf.php">MaiPDF Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 IPLogger.icu | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

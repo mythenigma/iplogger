@@ -5,82 +5,841 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
 	
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPLogger Introduction</title>
+    <title>IPLogger - Track Visitor IP Addresses Easily</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
         }
-        header {
-            background-color: #333;
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
             color: white;
-            padding: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
             text-align: center;
         }
+        
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            margin-top: 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background-color: #c0392b;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #777;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
         article {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        article h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        article p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            background-color: var(--light-color);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 30px;
+            color: var(--secondary-color);
+        }
+        
+        .feature-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+        
+        .steps-container {
+            margin-top: 40px;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+        
+        .step-number {
+            background-color: var(--secondary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        .step-content h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .testimonials {
+            background-color: var(--light-color);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .author-info h4 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+        
+        .author-info p {
+            margin: 0;
+            color: #777;
+            font-size: 14px;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
-        h1, h2 {
-            color: #333;
+        
+        .faq-question:hover {
+            background-color: #f9f9f9;
         }
-        p {
-            line-height: 1.6;
+        
+        .faq-answer {
+            background-color: white;
+            padding: 20px;
+            border-radius: 0 0 8px 8px;
+            margin-top: 2px;
             color: #555;
         }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
+        
         footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: var(--light-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .footer-social {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-social i {
+            color: white;
+            font-size: 18px;
+        }
+        
+        .footer-bottom {
             text-align: center;
-            margin-top: 40px;
-            color: #888;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .screenshot {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            
+            header {
+                padding: 60px 0;
+            }
+            
+            header h1 {
+                font-size: 32px;
+            }
+            
+            nav .container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            .nav-links li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo"><i class="fas fa-globe"></i> IPLogger.icu</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-to-use">How to Use</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
-        <h1>IPLogger Introduction</h1>
+        <div class="container">
+            <h1>Track IP Addresses with Ease</h1>
+            <p>IPLogger is a powerful yet simple tool that allows you to track and log visitor IP addresses when they click on your links. Perfect for marketers, developers, and anyone who needs insight into their audience.</p>
+            <a href="https://iplogger.icu" class="cta-button">Try IPLogger Now</a>
+        </div>
     </header>
     
-    <article>
-        <h2>What is IPLogger?</h2>
-        <p>
-            <strong>IPLogger</strong> is an online tool designed to help users track and log the IP addresses of visitors. Its primary use is to track who visits your content when you share links or other online material.
-        </p>
-        
-        <h2>Features of IPLogger</h2>
-        <ul>
-            <li>Easily generate links that can track IP addresses.</li>
-            <li>View who clicked on your link and capture their IP address in real-time.</li>
-            <li>Simple and user-friendly interface that doesn't require technical expertise to use.</li>
-            <li>Supports multiple protocols and platforms, making it suitable for individuals, marketers, and developers.</li>
-        </ul>
-        
-        <h2>How to Use IPLogger</h2>
-        <p>
-            Using IPLogger is very simple. Just visit <a href="https://iplogger.icu" target="_blank">IPLogger.icu</a>, create a new tracking link, and share the generated link with others. Each time someone clicks the link, you will be able to view their IP address and other relevant information.
-        </p>
-        
-        <h2>Privacy and Security</h2>
-        <p>
-            While IPLogger provides the feature to track the IP addresses of visitors, users should be mindful to use this tool in a legal and ethical manner. Make sure to use it only in compliance with local laws and regulations.
-        </p>
-        
-        <h2>Conclusion</h2>
-        <p>
-            Overall, <strong>IPLogger</strong> is a powerful tool that can help users collect basic information about their visitors, especially in scenarios where tracking link clicks is necessary. For businesses and developers, IPLogger offers a convenient way to analyze visitor behavior.
-        </p>
-    </article>
+    <section>
+        <div class="container">
+            <article>
+                <h2>What is IPLogger?</h2>
+                <p>
+                    <strong>IPLogger</strong> is a comprehensive online tool designed to help users track and log the IP addresses of visitors. Unlike complicated analytics platforms, IPLogger focuses on simplicity and effectiveness, providing you with the exact information you need without the complexity.
+                </p>
+                <p>
+                    Whether you're a content creator wanting to know where your audience is coming from, a marketer tracking campaign effectiveness, or a developer needing to debug geographic-specific issues, IPLogger provides a streamlined solution to capture visitor information in real-time.
+                </p>
+                <p>
+                    The tool works by generating custom tracking links that, when clicked, record information about the visitor including their IP address, geographic location, device type, operating system, and browser details.
+                </p>
+                <div style="text-align: center;">
+                    <img src="https://via.placeholder.com/800x400?text=IPLogger+Dashboard" alt="IPLogger Dashboard" class="screenshot">
+                    <p><em>The IPLogger dashboard provides an intuitive interface for tracking and analyzing visitor data.</em></p>
+                </div>
+            </article>
+            
+            <section id="features">
+                <div class="section-title">
+                    <h2>Powerful Features</h2>
+                    <p>Discover what makes IPLogger the preferred choice for IP tracking and visitor analytics</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>Custom Tracking Links</h3>
+                        <p>Generate unique tracking links that can be shared across any platform while maintaining a professional appearance.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Geolocation Tracking</h3>
+                        <p>See exactly where your visitors are located with accurate geographic information including country, city, and region.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Device Information</h3>
+                        <p>Get detailed insights about the devices and browsers your visitors are using to better optimize your content.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Real-time Analytics</h3>
+                        <p>Watch visits happen in real-time and receive instant notifications when someone clicks your tracking link.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure & Private</h3>
+                        <p>Your data is securely stored and only accessible to you. We prioritize the privacy and security of all our users.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>API Access</h3>
+                        <p>Integrate IPLogger data directly into your applications with our developer-friendly API.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="how-to-use">
+                <div class="section-title">
+                    <h2>How to Use IPLogger</h2>
+                    <p>Getting started with IPLogger is simple and takes just a few minutes</p>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Create an Account</h3>
+                            <p>Visit <a href="https://iplogger.icu" target="_blank">IPLogger.icu</a> and sign up for a free account. No credit card required to get started.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Generate a Tracking Link</h3>
+                            <p>From your dashboard, create a new tracking link. You can customize the destination URL where visitors will be redirected after their information is logged.</p>
+                            <img src="https://via.placeholder.com/700x350?text=Create+Tracking+Link" alt="Creating a tracking link" class="screenshot">
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Share Your Link</h3>
+                            <p>Share the generated tracking link through email, social media, messaging apps, or embed it on your website.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Monitor Results</h3>
+                            <p>Return to your IPLogger dashboard to view detailed information about everyone who clicked your link, including their IP address, location, and device details.</p>
+                            <img src="https://via.placeholder.com/700x350?text=Results+Dashboard" alt="Results dashboard" class="screenshot">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="use-cases">
+                <div class="section-title">
+                    <h2>Use Cases</h2>
+                    <p>Discover how different professionals are using IPLogger to achieve their goals</p>
+                </div>
+                
+                <article>
+                    <h3>For Content Creators</h3>
+                    <p>Track where your audience is coming from and which platforms drive the most engagement to your content. Use this data to focus your efforts on the most effective channels.</p>
+                    
+                    <h3>For Marketers</h3>
+                    <p>Monitor campaign effectiveness by seeing exactly who clicks on your promotional links. Get insights into geographic distributions to better target your marketing efforts.</p>
+                    
+                    <h3>For Developers</h3>
+                    <p>Debug region-specific issues by understanding where users are experiencing problems. Test geo-restricted content and verify that your localization efforts are working correctly.</p>
+                    
+                    <h3>For Small Business Owners</h3>
+                    <p>Understand where your potential customers are located to better focus your local marketing efforts and service offerings.</p>
+                </article>
+            </section>
+            
+            <section class="testimonials">
+                <div class="section-title">
+                    <h2>What Our Users Say</h2>
+                    <p>Join thousands of satisfied IPLogger users worldwide</p>
+                </div>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "IPLogger has been essential for tracking my marketing campaigns. The real-time notifications help me respond quickly to interested prospects."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T.">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael T.</h4>
+                                <p>Digital Marketing Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "As a content creator, knowing where my audience comes from helps me create more targeted content. IPLogger provides exactly what I need without overwhelming me with data."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K.">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah K.</h4>
+                                <p>YouTube Content Creator</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "The API access allows me to integrate visitor tracking directly into our company's analytics dashboard. The simplicity of implementation was impressive."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Robert J.">
+                            </div>
+                            <div class="author-info">
+                                <h4>Robert J.</h4>
+                                <p>Software Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="faq">
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Get answers to common questions about IPLogger</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is using IPLogger legal?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, using IPLogger is legal in most jurisdictions. However, it's important to use it ethically and in compliance with local privacy laws. In some regions, you may need to disclose to users that you're collecting their IP address information. Always check your local regulations regarding data collection and privacy.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How accurate is the geolocation data?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            IPLogger's geolocation data is highly accurate at the country level (99%+) and generally accurate at the city level (80-90%). Various factors can affect accuracy including the use of VPNs, proxy servers, or mobile networks. For most standard use cases, the accuracy is more than sufficient.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Does IPLogger work with all types of links?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, IPLogger works with virtually any destination URL. You can track links to websites, social media profiles, documents, images, videos, and more. The tracking occurs before the user is redirected to the final destination.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How long is the visitor data stored?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            With the free plan, visitor data is stored for 30 days. Premium plans offer extended storage options up to unlimited retention, depending on the subscription level. You can always export your data at any time for permanent storage.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can visitors detect that they're being tracked?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            The tracking process is designed to be seamless and undetectable to the average user. The redirect happens very quickly, and there are no visible indicators that tracking is taking place. However, technically savvy users might notice the redirect process.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="privacy-security">
+                <div class="section-title">
+                    <h2>Privacy and Security</h2>
+                    <p>Our commitment to responsible data handling</p>
+                </div>
+                
+                <article>
+                    <p>
+                        While IPLogger provides the feature to track the IP addresses of visitors, we believe in ethical use of this technology. Here are some important guidelines:
+                    </p>
+                    
+                    <ul>
+                        <li><strong>Legal Compliance:</strong> Always use IPLogger in compliance with local laws and regulations regarding data collection and privacy.</li>
+                        <li><strong>Transparency:</strong> Consider informing users that you're collecting their information, especially in regions where this disclosure is required by law.</li>
+                        <li><strong>Data Protection:</strong> We employ industry-standard security measures to protect all data collected through our platform.</li>
+                        <li><strong>User Control:</strong> As an IPLogger user, you have full control over your data, including the ability to delete visitor logs at any time.</li>
+                    </ul>
+                    
+                    <p>
+                        For more information about our data handling practices, please refer to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.
+                    </p>
+                </article>
+            </section>
+        </div>
+    </section>
+    
+    <section id="contact" style="background-color: var(--light-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ready to Get Started?</h2>
+                <p>Join thousands of users who trust IPLogger for their tracking needs</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://iplogger.icu" class="cta-button">Create Your Free Account</a>
+                <p style="margin-top: 20px; color: #777;">No credit card required • Free plan available • Upgrade anytime</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2025 IPLogger.icu - All rights reserved.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>IPLogger</h3>
+                    <p>Simple, powerful IP tracking for everyone. Get insights into who's clicking your links with our easy-to-use platform.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">IP Tracking</a></li>
+                        <li><a href="#">Geolocation</a></li>
+                        <li><a href="#">Device Analytics</a></li>
+                        <li><a href="#">Custom Links</a></li>
+                        <li><a href="#">API Access</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 IPLogger.icu - All rights reserved. IP tracking made simple.</p>
+            </div>
+        </div>
     </footer>
+    
+    <script>
+        // Simple toggle functionality for FAQ items
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isVisible = answer.style.display === 'block';
+                    
+                    // Hide all answers
+                    document.querySelectorAll('.faq-answer').forEach(a => {
+                        a.style.display = 'none';
+                    });
+                    
+                    // Reset all icons
+                    document.querySelectorAll('.faq-question i').forEach(icon => {
+                        icon.className = 'fas fa-chevron-down';
+                    });
+                    
+                    // Show this answer if it was not visible
+                    if (!isVisible) {
+                        answer.style.display = 'block';
+                        question.querySelector('i').className = 'fas fa-chevron-up';
+                    }
+                });
+            });
+            
+            // Hide all answers initially
+            document.querySelectorAll('.faq-answer').forEach(answer => {
+                answer.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
