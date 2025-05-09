@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IPLogger.icu - IP Tracking Tool Updates</title>
+    <link>https://iplogger.icu</link>
+    <description>Latest updates, features and news about IPLogger.icu IP tracking tool</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Sep 2023 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://iplogger.icu/rss.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://iplogger.icu/logo.png</url>
+      <title>IPLogger.icu</title>
+      <link>https://iplogger.icu</link>
+    </image>
+    
+    <item>
+      <title>New Feature: Enhanced Geolocation Tracking</title>
+      <link>https://iplogger.icu/blog/enhanced-geolocation</link>
+      <pubDate>Fri, 01 Sep 2023 10:00:00 GMT</pubDate>
+      <guid>https://iplogger.icu/blog/enhanced-geolocation</guid>
+      <description><![CDATA[
+        <p>We're excited to announce our new enhanced geolocation tracking feature that provides more accurate location data for your visitors.</p>
+        <p>This update includes improved city-level detection and more precise coordinate mapping for better analytics.</p>
+      ]]></description>
+      <category>Features</category>
+    </item>
+    
+    <item>
+      <title>How to Use IPLogger for Marketing Campaigns</title>
+      <link>https://iplogger.icu/blog/iplogger-for-marketing</link>
+      <pubDate>Mon, 15 Aug 2023 14:30:00 GMT</pubDate>
+      <guid>https://iplogger.icu/blog/iplogger-for-marketing</guid>
+      <description><![CDATA[
+        <p>Learn how to effectively utilize IPLogger.icu for your marketing campaigns to track engagement and optimize your strategies.</p>
+        <p>This guide covers best practices for link creation, data analysis, and conversion optimization.</p>
+      ]]></description>
+      <category>Tutorials</category>
+    </item>
+    
+    <item>
+      <title>Privacy Compliance Update for European Users</title>
+      <link>https://iplogger.icu/blog/privacy-compliance-update</link>
+      <pubDate>Wed, 01 Aug 2023 09:15:00 GMT</pubDate>
+      <guid>https://iplogger.icu/blog/privacy-compliance-update</guid>
+      <description><![CDATA[
+        <p>We've updated our privacy policy and data handling practices to ensure full compliance with European regulations.</p>
+        <p>These changes include enhanced user consent options and more transparent data retention policies.</p>
+      ]]></description>
+      <category>Privacy</category>
+      <category>Updates</category>
+    </item>
+    
+    <item>
+      <title>Introducing the New IPLogger Dashboard</title>
+      <link>https://iplogger.icu/blog/new-dashboard</link>
+      <pubDate>Mon, 15 Jul 2023 11:45:00 GMT</pubDate>
+      <guid>https://iplogger.icu/blog/new-dashboard</guid>
+      <description><![CDATA[
+        <p>We're proud to announce our completely redesigned dashboard interface, making it easier than ever to track and analyze visitor data.</p>
+        <p>The new design features improved visualizations, faster load times, and more customization options.</p>
+      ]]></description>
+      <category>Features</category>
+      <category>UI Updates</category>
+    </item>
+  </channel>
+</rss>

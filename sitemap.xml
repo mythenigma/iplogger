@@ -3,8 +3,8 @@
   <!-- Root directory pages -->
   <url>
     <loc>https://iplogger.icu/</loc>
-    <lastmod>2025-05-04</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2023-09-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
@@ -59,7 +59,7 @@
   </url>
   <url>
     <loc>https://iplogger.icu/file/grabber.html</loc>
-    <lastmod>2025-05-04</lastmod>
+    <lastmod>2023-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -77,7 +77,7 @@
   </url>
   <url>
     <loc>https://iplogger.icu/file/ipgrabbertool.html</loc>
-    <lastmod>2025-05-04</lastmod>
+    <lastmod>2023-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -89,13 +89,13 @@
   </url>
   <url>
     <loc>https://iplogger.icu/file/ipintrod.html</loc>
-    <lastmod>2025-05-04</lastmod>
+    <lastmod>2023-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iplogger.icu/file/iplogger_intro.html</loc>
-    <lastmod>2025-05-04</lastmod>
+    <lastmod>2023-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -107,7 +107,7 @@
   </url>
   <url>
     <loc>https://iplogger.icu/file/iploggerEn.html</loc>
-    <lastmod>2025-05-04</lastmod>
+    <lastmod>2023-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -140,5 +140,53 @@
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iplogger.icu/about</loc>
+    <lastmod>2023-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iplogger.icu/privacy</loc>
+    <lastmod>2023-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iplogger.icu/terms</loc>
+    <lastmod>2023-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iplogger.icu/contact</loc>
+    <lastmod>2023-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iplogger.icu/faq</loc>
+    <lastmod>2023-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iplogger.icu/blog</loc>
+    <lastmod>2023-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iplogger.icu/resources</loc>
+    <lastmod>2023-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iplogger.icu/api</loc>
+    <lastmod>2023-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
