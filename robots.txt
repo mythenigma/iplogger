@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+Allow: /file/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/keys/
+Disallow: /user/
+
+# Prevent crawling of specific user data or sensitive pages
+Disallow: /dashboard/
+Disallow: /logs/
+Disallow: /tracking-data/
+Disallow: /user-sessions/
+Disallow: /analytics/raw/
+
+# Allow major search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl delay to prevent server overload
+Crawl-delay: 5
+
+# Sitemaps
+Sitemap: https://iplogger.icu/sitemap.xml
+Sitemap: https://iplogger.icu/sitemap.txt
+Sitemap: https://iplogger.icu/rss.xml
