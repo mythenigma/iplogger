@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>مقدمة إلى IPLogger - تتبع عناوين IP عبر الإنترنت</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="description" content="تعرف على IPLogger، أداة عبر الإنترنت تتيح لك تتبع عناوين IP للزوار على الروابط التي تشاركها، مما يوفر رؤى قيمة للمسوقين والشركات.">
+  <meta name="keywords" content="مسجل IP، تتبع IP، عنوان IP، تتبع الزوار، أداة عبر الإنترنت، مسجل عنوان IP">
+  <meta name="author" content="IPLogger">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ipLogger.icu/file/ipintro-ar.html">
+  <meta property="og:title" content="مقدمة إلى IPLogger - تتبع عناوين IP عبر الإنترنت">
+  <meta property="og:description" content="تتبع عناوين IP للزوار على الروابط الخاصة بك باستخدام IPLogger. افهم جمهورك بشكل أفضل واحصل على رؤى مفيدة للتسويق والأمان.">
+  <meta property="og:image" content="https://grabify.icu/ok/result.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ipLogger.icu/file/ipintro-ar.html">
+  <meta property="twitter:title" content="مقدمة إلى IPLogger - تتبع عناوين IP عبر الإنترنت">
+  <meta property="twitter:description" content="تتبع عناوين IP للزوار على الروابط الخاصة بك باستخدام IPLogger. افهم جمهورك بشكل أفضل واحصل على رؤى مفيدة للتسويق والأمان.">
+  <meta property="twitter:image" content="https://grabify.icu/ok/result.png">
+  
+  <!-- Bootstrap CSS RTL -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts - Arabic Support -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-color: #4a6ee0;
+      --secondary-color: #6c757d;
+      --accent-color: #ff5722;
+      --dark-color: #212529;
+      --light-color: #f8f9fa;
+      --success-color: #28a745;
+    }
+    
+    body {
+      font-family: 'Tajawal', sans-serif;
+      color: #444;
+      line-height: 1.7;
+      background-color: #f9f9fc;
+      text-align: right;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, var(--primary-color) 0%, #3a5dbc 100%);
+    }
+    
+    .navbar-brand {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    
+    .page-header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #3a5dbc 100%);
+      color: white;
+      padding: 3rem 0;
+      margin-bottom: 2rem;
+    }
+    
+    .content-section {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .content-section h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 2px solid #f1f1f1;
+    }
+    
+    .feature-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+    
+    .feature-card {
+      border: none;
+      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-title {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .faq-question {
+      font-weight: 600;
+      color: var(--dark-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 2rem 0;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+    
+    .footer a:hover {
+      color: white;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding-right: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    
+    .btn-primary:hover {
+      background-color: #3f5ec5;
+      border-color: #3f5ec5;
+    }
+    
+    .text-primary {
+      color: var(--primary-color) !important;
+    }
+    
+    .bg-primary {
+      background-color: var(--primary-color) !important;
+    }
+    
+    .highlight-box {
+      background-color: rgba(74, 110, 224, 0.05);
+      border-right: 3px solid var(--primary-color);
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+    
+    @media (max-width: 768px) {
+      .page-header {
+        padding: 2rem 0;
+      }
+      
+      .content-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://iplogger.icu">
+        <i class="fas fa-network-wired"></i> IPLogger
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://iplogger.icu">الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="ipintro-ar.html">مقدمة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ipgrabber.html">أداة IP Grabber</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="usecase.html">حالات الاستخدام</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">الأسئلة المتكررة</a>
+          </li>
+        </ul>
+        <a href="https://iplogger.icu" class="btn btn-light">إنشاء رابط تتبع</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="page-header text-center">
+    <div class="container">
+      <h1 class="display-4">ما هو IPLogger؟</h1>
+      <p class="lead">أداة بسيطة وفعالة لتتبع وتسجيل عناوين IP للزوار</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container my-5">
+    <!-- Introduction Section -->
+    <section class="content-section">
+      <h2>مقدمة إلى IPLogger</h2>
+      <p>
+        IPLogger هو خدمة مجانية عبر الإنترنت تتيح لك إنشاء روابط مخصصة تتتبع معلومات زوارك عند نقرهم عليها. تم تصميم هذه الأداة لتوفير تحليلات قيمة للمسوقين، مسؤولي المواقع، الباحثين، وأي شخص يحتاج إلى فهم أفضل لجمهوره على الإنترنت.
+      </p>
+      
+      <div class="highlight-box">
+        <p class="mb-0">
+          <strong>أهم المزايا:</strong> بمجرد إنشاء رابط IPLogger، ستحصل على معلومات مفصلة عن كل زائر بما في ذلك عنوان IP، الموقع الجغرافي، نوع المتصفح، نظام التشغيل، وقت الزيارة، وأكثر من ذلك بكثير - كل ذلك في لوحة تحكم سهلة الاستخدام.
+        </p>
+      </div>
+      
+      <p>
+        على عكس أدوات تحليلات الويب التقليدية، يعمل IPLogger بشكل فعال عبر أي منصة، حتى خارج موقع الويب الخاص بك - سواء كنت تشارك رابطًا عبر البريد الإلكتروني، أو منصات التواصل الاجتماعي، أو تطبيقات المراسلة، أو أي منصة رقمية أخرى.
+      </p>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="content-section">
+      <h2>كيف يعمل IPLogger</h2>
+      <p>
+        استخدام IPLogger بسيط وفعال، حتى إذا لم تكن خبيرًا تقنيًا. إليك كيفية عمل العملية:
+      </p>
+      
+      <div class="row mt-4">
+        <div class="col-lg-4 mb-4">
+          <div class="card feature-card">
+            <div class="card-body text-center">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-link"></i>
+              </div>
+              <h5 class="feature-title">1. إنشاء رابط</h5>
+              <p class="card-text">قم بزيارة الصفحة الرئيسية لـ IPLogger، واختر نوع الرابط الذي تريده (رابط مباشر، رابط مختصر، رابط صورة، إلخ)، وأدخل عنوان URL الوجهة الخاص بك.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+          <div class="card feature-card">
+            <div class="card-body text-center">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-share-alt"></i>
+              </div>
+              <h5 class="feature-title">2. مشاركة مع الآخرين</h5>
+              <p class="card-text">شارك الرابط الذي تم إنشاؤه عبر وسائل التواصل الاجتماعي أو البريد الإلكتروني أو المراسلة الفورية أو أي منصة أخرى تختارها.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+          <div class="card feature-card">
+            <div class="card-body text-center">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <h5 class="feature-title">3. تتبع وتحليل</h5>
+              <p class="card-text">عندما ينقر شخص ما على الرابط، سيتم تسجيل معلوماتهم وإضافتها إلى لوحة تحكم IPLogger الخاصة بك، حيث يمكنك عرض وتحليل البيانات.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <p class="mt-4">
+        عند النقر على الرابط، سيتم نقل الزائر تلقائيًا إلى وجهتهم المقصودة، ولن يعرفوا أن زيارتهم تم تتبعها (ما لم تختار استخدام صفحة تحويل مخصصة).
+      </p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="content-section">
+      <h2>ميزات IPLogger</h2>
+      <p>تقدم خدمة IPLogger مجموعة واسعة من الميزات المصممة لتزويدك بأكبر قدر ممكن من المعلومات حول زوارك:</p>
+      
+      <div class="row mt-4">
+        <div class="col-md-6 mb-4">
+          <h5><i class="fas fa-globe text-primary"></i> معلومات جغرافية دقيقة</h5>
+          <p>تحديد البلد، المدينة، المنطقة، وفي بعض الحالات حتى المنظمة أو مزود خدمة الإنترنت للزائر.</p>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <h5><i class="fas fa-clock text-primary"></i> طوابع زمنية دقيقة</h5>
+          <p>معرفة متى بالضبط قام شخص ما بزيارة رابطك، مع التعديل حسب المنطقة الزمنية.</p>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <h5><i class="fas fa-desktop text-primary"></i> معلومات الجهاز والمتصفح</h5>
+          <p>تحديد نوع الجهاز، نظام التشغيل، المتصفح، ودقة الشاشة التي استخدمها الزائر.</p>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <h5><i class="fas fa-link text-primary"></i> أنواع روابط متعددة</h5>
+          <p>اختر من بين روابط مباشرة، روابط مختصرة، روابط صور، روابط مموهة، وأكثر من ذلك لتناسب احتياجاتك.</p>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <h5><i class="fas fa-bell text-primary"></i> إشعارات فورية</h5>
+          <p>احصل على تنبيهات في الوقت الفعلي عندما ينقر شخص ما على رابطك، مما يتيح لك الاستجابة بسرعة.</p>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <h5><i class="fas fa-chart-line text-primary"></i> تقارير وتحليلات شاملة</h5>
+          <p>عرض البيانات المجمعة وتحليلها، بما في ذلك الرسوم البيانية للزيارات عبر الزمن، والمواقع الأكثر شيوعًا، وأنواع الأجهزة.</p>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <h5><i class="fas fa-shield-alt text-primary"></i> حماية البيانات</h5>
+          <p>تبقى معلوماتك وبيانات الزائر خاصة ومشفرة، مع ضوابط إضافية للخصوصية والأمان.</p>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <h5><i class="fas fa-code text-primary"></i> واجهة برمجة التطبيقات (API)</h5>
+          <p>دمج وظائف IPLogger مع مواقع الويب والتطبيقات الخاصة بك من خلال واجهة برمجة التطبيقات الشاملة.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="content-section">
+      <h2>حالات استخدام IPLogger</h2>
+      <p>يمكن استخدام IPLogger في مجموعة متنوعة من السيناريوهات للأعمال والاستخدام الشخصي:</p>
+      
+      <div class="row mt-4">
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-bullhorn text-primary"></i> التسويق وتحليلات الأداء</h5>
+              <p class="card-text">تتبع فعالية حملاتك التسويقية بمعرفة من ينقر على روابطك، ومتى، ومن أين. استخدم هذه البيانات لتحسين استراتيجيات التسويق وزيادة عائد الاستثمار.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-shield-alt text-primary"></i> الأمان والرصد</h5>
+              <p class="card-text">تحديد من يصل إلى معلوماتك الحساسة أو المقيدة، ورصد أي محاولات وصول غير مصرح بها، والتحقق من مشاركة المعلومات والملفات بأمان.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-users text-primary"></i> أبحاث السوق والجمهور</h5>
+              <p class="card-text">فهم التركيبة السكانية الجغرافية لجمهورك، واكتشاف الأجهزة التي يستخدمونها، وقياس مشاركتهم مع المحتوى الخاص بك.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-link text-primary"></i> تتبع الروابط المشتركة</h5>
+              <p class="card-text">معرفة عدد الأشخاص الذين يفتحون رسائل البريد الإلكتروني الخاصة بك أو ينقرون على الروابط التي تشاركها عبر منصات التواصل الاجتماعي، المراسلة، أو أي منصة أخرى.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <p class="mt-4">
+        <a href="usecase.html" class="btn btn-primary">تعرف على المزيد من حالات الاستخدام <i class="fas fa-arrow-left me-2"></i></a>
+      </p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="content-section">
+      <h2>الأسئلة المتكررة</h2>
+      
+      <div class="faq-item">
+        <h5 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل استخدام IPLogger قانوني؟</h5>
+        <p>نعم، استخدام IPLogger قانوني للأغراض المشروعة مثل تحليلات الويب، والتسويق، والأبحاث. ومع ذلك، يجب استخدام الأداة بشكل أخلاقي ومسؤول، مع احترام خصوصية الأفراد والامتثال للوائح حماية البيانات المحلية مثل GDPR (في الاتحاد الأوروبي) أو CCPA (في كاليفورنيا).</p>
+      </div>
+      
+      <div class="faq-item">
+        <h5 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل IPLogger مجاني للاستخدام؟</h5>
+        <p>يقدم IPLogger خططًا مجانية ومتميزة. يمكنك استخدام الخدمات الأساسية مجانًا، بينما توفر الخطط المتميزة ميزات إضافية مثل تتبع البيانات لفترة أطول، وإمكانات تخصيص أكثر، وعدم وجود إعلانات.</p>
+      </div>
+      
+      <div class="faq-item">
+        <h5 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل سيعرف الزوار أنه يتم تتبعهم؟</h5>
+        <p>افتراضيًا، لن يعرف الزوار أنهم يتم تتبعهم، حيث يتم إعادة توجيههم مباشرة إلى الوجهة المقصودة. ومع ذلك، لأغراض الشفافية وللامتثال لقوانين الخصوصية، يمكنك اختيار استخدام صفحة تحويل تُعلم المستخدمين بأنهم سيتم إعادة توجيههم.</p>
+      </div>
+      
+      <div class="faq-item">
+        <h5 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل تتم مشاركة البيانات التي يجمعها IPLogger؟</h5>
+        <p>لا تتم مشاركة بيانات الزوار التي يجمعها IPLogger مع أطراف ثالثة. تظل المعلومات التي تجمعها خاصة بك، وتظل آمنة على خوادمنا وفقًا لسياسات خصوصية صارمة.</p>
+      </div>
+      
+      <p class="mt-4">
+        <a href="faq.html" class="btn btn-primary">مشاهدة المزيد من الأسئلة الشائعة <i class="fas fa-arrow-left me-2"></i></a>
+      </p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="content-section text-center">
+      <h2>ابدأ باستخدام IPLogger اليوم</h2>
+      <p class="lead">احصل على رؤى قيمة حول زوارك واكتشف من ينقر على روابطك</p>
+      <a href="https://iplogger.icu" class="btn btn-primary btn-lg mt-3">إنشاء رابط تتبع مجانًا <i class="fas fa-arrow-left me-2"></i></a>
+      <p class="mt-3">أو <a href="ipgrabber.html">تعرف على المزيد عن أداة IP Grabber</a></p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5>عن IPLogger</h5>
+          <p>IPLogger هي أداة عبر الإنترنت توفر خدمات تتبع IP وتحليلات للمسوقين والشركات والأفراد الذين يرغبون في فهم جمهورهم بشكل أفضل.</p>
+        </div>
+        
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5>روابط سريعة</h5>
+          <ul class="footer-links">
+            <li><a href="https://iplogger.icu">الصفحة الرئيسية</a></li>
+            <li><a href="ipintro.html">مقدمة</a></li>
+            <li><a href="ipgrabber.html">أداة IP Grabber</a></li>
+            <li><a href="usecase.html">حالات الاستخدام</a></li>
+            <li><a href="faq.html">الأسئلة المتكررة</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-4">
+          <h5>معلومات قانونية</h5>
+          <ul class="footer-links">
+            <li><a href="#">سياسة الخصوصية</a></li>
+            <li><a href="#">شروط الاستخدام</a></li>
+            <li><a href="#">سياسة ملفات تعريف الارتباط</a></li>
+            <li><a href="#">إخلاء المسؤولية</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+      
+      <div class="row">
+        <div class="col-md-6 text-center text-md-end">
+          <p class="mb-0">&copy; 2025 IPLogger. جميع الحقوق محفوظة.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-start">
+          <div class="social-icons">
+            <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
