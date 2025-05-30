@@ -42,9 +42,15 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script type="text/javascript" src="https://www.maipdf.com/pdf/qrcode.min.js" defer></script>
+  
+  <!-- Translation system -->
+  <script src="translations.js" defer></script>
   
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
@@ -65,403 +71,6 @@
       "description": "IPLogger is a free tool that allows users to track the location and device information of anyone who clicks on a specially crafted link."
     }
   </script>
-  
-  <style>
-    :root {
-      --primary-color: #4a6ee0;
-      --secondary-color: #6c757d;
-      --success-color: #28a745;
-      --danger-color: #dc3545;
-      --dark-color: #212529;
-      --light-color: #f8f9fa;
-      --tab-bg: #fff;
-      --tab-shadow: 0 4px 24px rgba(74,110,224,0.08);
-      --tab-active: #4a6ee0;
-      --tab-hover: #eaf0ff;
-    }
-    
-    body {
-      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f9f9f9;
-    }
-    
-    /* Animated SVG wave divider for hero section */
-    .svg-divider {
-      display: block;
-      width: 100%;
-      height: 80px;
-      margin-bottom: -2rem;
-      position: relative;
-      z-index: 3;
-    }
-    /* Animated gradient background for hero */
-    .hero-section {
-      background: linear-gradient(120deg, #4a6ee0 0%, #6350b5 100%, #4a6ee0 100%);
-      background-size: 200% 200%;
-      animation: gradientMove 6s ease-in-out infinite alternate;
-      padding: 2.5rem 0 2rem 0;
-      color: white;
-      border-radius: 0 0 1rem 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-    
-    /* Card hover pop and shadow */
-    .feature-card {
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
-      cursor: pointer;
-      background: white;
-      height: 100%;
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-5px);
-      border: 2px solid #4a6ee0;
-    }
-    
-    .feature-icon {
-      width: 60px;
-      height: 60px;
-      background-color: var(--primary-color);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-    }
-    
-    .btn-primary {
-      background-color: var(--primary-color);
-      border-color: var(--primary-color);
-    }
-    
-    .btn-primary:hover {
-      background-color: #3a5dbc;
-      border-color: #3a5dbc;
-    }
-    
-    .btn-danger {
-      background-color: var(--danger-color);
-    }
-    
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-      
-    .b-example-divider {
-      height: 3rem;
-      background-color: rgba(0, 0, 0, .1);
-      border: solid rgba(0, 0, 0, .15);
-      border-width: 1px 0;
-      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-    }
-
-    @media (min-width: 992px) {
-      .rounded-lg-3 { border-radius: .3rem; }
-    }
-    
-    #urlresult {
-      transition: opacity 0.5s ease-in-out;
-    }
-    
-    .tracker-form {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      margin-bottom: 1.5rem;
-    }
-    
-    footer {
-      background-color: var(--dark-color);
-      color: var(--light-color);
-      padding: 2rem 0;
-    }
-    
-    .code-block {
-      background: #f1f1f1;
-      padding: 1rem;
-      border-radius: 5px;
-      border-left: 4px solid var(--primary-color);
-    }
-    
-    /* Translation support */
-    .language-selector {
-      position: relative;
-      margin-left: 15px;
-    }
-    
-    /* Language badge */
-    .language-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      background-color: rgba(255, 255, 255, 0.2);
-      color: white;
-      border-radius: 50%;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-right: 8px;
-      transition: transform 0.2s ease;
-    }
-    
-    .language-badge:hover {
-      transform: scale(1.1);
-    }
-    
-    /* Language dropdown styling */
-    .language-dropdown .dropdown-item {
-      padding: 0.5rem 1rem;
-      display: flex;
-      align-items: center;
-    }
-    
-    .language-dropdown .dropdown-item.active {
-      background-color: rgba(74, 110, 224, 0.1);
-      color: var(--primary-color);
-    }
-    
-    /* RTL support for Arabic */
-    [dir="rtl"] .ms-auto {
-      margin-right: auto !important;
-      margin-left: 0 !important;
-    }
-    
-    [dir="rtl"] .me-1,
-    [dir="rtl"] .me-2,
-    [dir="rtl"] .me-3,
-    [dir="rtl"] .me-4 {
-      margin-right: 0 !important;
-      margin-left: 0.25rem !important;
-    }
-    
-    [dir="rtl"] .me-2 {
-      margin-left: 0.5rem !important;
-    }
-    
-    [dir="rtl"] .me-3 {
-      margin-left: 1rem !important;
-    }
-    
-    [dir="rtl"] .me-4 {
-      margin-left: 1.5rem !important;
-    }
-    
-    [dir="rtl"] .text-start {
-      text-align: right !important;
-    }
-    
-    [dir="rtl"] .text-end {
-      text-align: left !important;
-    }
-    
-    /* Language transition effect */
-    .translating {
-      opacity: 0.7;
-      transition: opacity 0.2s ease;
-    }
-    
-    .dropdown-item-flag {
-      width: 20px;
-      height: 15px;
-      margin-right: 10px;
-      border-radius: 2px;
-    }
-    
-    [dir="rtl"] .dropdown-item-flag {
-      margin-right: 0;
-      margin-left: 10px;
-    }
-    
-    /* Active language indicator */
-    .dropdown-item .check-icon {
-      opacity: 0;
-      margin-left: auto;
-      color: var(--primary-color);
-      transition: opacity 0.2s ease;
-    }
-    
-    .dropdown-item.active .check-icon {
-      opacity: 1;
-    }
-    
-    [dir="rtl"] .dropdown-item .check-icon {
-      margin-left: 0;
-      margin-right: auto;
-    }
-    
-    @media (max-width: 992px) {
-      .language-selector {
-        margin-top: 10px;
-      }
-    }
-    /* Responsive improvements */
-    @media (max-width: 576px) {
-      .hero-section { padding: 1.2rem 0 0.5rem 0; }
-      .tracker-form { padding: 0.7rem 0.2rem; }
-      .feature-card { margin-bottom: 1.2rem; }
-      .display-4, .display-5 { font-size: 2rem; }
-    }
-    /* Onboarding tooltip styles */
-    .onboard-tooltip {
-      position: absolute;
-      z-index: 9999;
-      background: #fff;
-      color: #222;
-      border-radius: 8px;
-      box-shadow: 0 4px 24px rgba(74,110,224,0.18);
-      padding: 1rem 1.2rem;
-      font-size: 1rem;
-      max-width: 260px;
-      border: 2px solid #4a6ee0;
-      animation: tooltipPop 0.4s cubic-bezier(.4,0,.2,1);
-    }
-    .onboard-tooltip-arrow {
-      position: absolute;
-      width: 0; height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid #4a6ee0;
-      left: 30px;
-      top: 100%;
-    }
-    @keyframes tooltipPop {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    /* Interactive entrance animations */
-    .fade-in-up { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(.4,0,.2,1); }
-    .fade-in-up.visible { opacity: 1; transform: translateY(0); }
-    .fade-in-left { opacity: 0; transform: translateX(-40px); transition: all 0.7s cubic-bezier(.4,0,.2,1); }
-    .fade-in-left.visible { opacity: 1; transform: translateX(0); }
-    .fade-in-right { opacity: 0; transform: translateX(40px); transition: all 0.7s cubic-bezier(.4,0,.2,1); }
-    .fade-in-right.visible { opacity: 1; transform: translateX(0); }
-
-    /* --- Modern Rounded Tabs Styling (Fit Local Page Color) --- */
-    .nav-tabs {
-      background: var(--light-color);
-      border-radius: 2.2rem 2.2rem 0 0;
-      box-shadow: 0 6px 24px rgba(74,110,224,0.08);
-      padding: 0.5rem 0.5rem 0 0.5rem;
-      margin-bottom: 2.5rem;
-      border: none;
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      position: relative;
-    }
-    .nav-tabs .nav-link {
-      border: none;
-      border-radius: 2rem 2rem 0 0;
-      color: var(--primary-color);
-      background: transparent;
-      font-weight: 700;
-      font-size: 1.35rem;
-      padding: 1.1rem 2.8rem 1.1rem 2.8rem;
-      margin: 0 0.2rem;
-      transition: all 0.3s cubic-bezier(.4,0,.2,1);
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 0.7em;
-      letter-spacing: 0.01em;
-      z-index: 1;
-    }
-    .nav-tabs .nav-link .fas {
-      font-size: 1.3em;
-      margin-right: 0.5em;
-      transition: transform 0.3s ease;
-    }
-    .nav-tabs .nav-link.active, .nav-tabs .nav-link:focus {
-      background: linear-gradient(135deg, #4a6ee0 0%, #6350b5 100%);
-      color: #fff;
-      box-shadow: 0 8px 24px rgba(74,110,224,0.15);
-      z-index: 2;
-      transform: translateY(-6px) scale(1.05);
-    }
-    .nav-tabs .nav-link.active .fas, .nav-tabs .nav-link:focus .fas {
-      transform: scale(1.2);
-    }
-    .nav-tabs .nav-link.active::after {
-      content: "";
-      display: block;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -7px;
-      height: 5px;
-      border-radius: 0 0 8px 8px;
-      background: linear-gradient(90deg, #4a6ee0 0%, #6350b5 100%);
-      box-shadow: 0 2px 8px rgba(74,110,224,0.15);
-    }
-    .nav-tabs .nav-link:hover:not(.active) {
-      background: var(--tab-hover);
-      color: var(--primary-color);
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 4px 16px rgba(74,110,224,0.08);
-    }
-    .nav-tabs::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(74,110,224,0.2) 50%, transparent 100%);
-    }
-    .tab-content {
-      position: relative;
-      z-index: 1;
-    }
-    .tab-pane {
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-    .tab-pane.fade {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    .tab-pane.fade.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    @media (max-width: 768px) {
-      .nav-tabs .nav-link {
-        font-size: 0.95rem;
-        padding: 0.7rem 1rem;
-        border-radius: 1.2rem 1.2rem 0 0;
-      }
-      .nav-tabs {
-        gap: 0.2rem;
-        padding: 0.2rem 0.1rem 0 0.1rem;
-      }
-      .nav-tabs .nav-link .fas {
-        font-size: 1.1em;
-        margin-right: 0.3em;
-      }
-    }
-    /* --- End Modern Rounded Tabs Styling --- */
-  </style>
 </head>
 
 <body>
@@ -597,8 +206,8 @@
             
             <div class="tracker-form col-lg-8 mx-auto fade-in-up">
               <div class="input-group">
-                <input type="text" id="shorturl" value="https://" class="form-control form-control-lg" placeholder="Enter the URL to track" aria-label="URL to track">		
-                <button id="urlbutton" class="btn btn-danger px-4 text-white" type="button" onclick="new2025()">Create Tracking Link</button>	
+                <input type="text" id="shorturl" value="https://" class="form-control form-control-lg" placeholder="Enter the URL to track" aria-label="URL to track" data-i18n-placeholder="hero.form.input">		
+                <button id="urlbutton" class="btn btn-danger px-4 text-white" type="button" onclick="new2025()" data-i18n="hero.form.button">Create Tracking Link</button>	
               </div>
               
               <div id="loadingdot" style="display:none;" class="mt-3" aria-label="Loading">
@@ -611,7 +220,7 @@
             <div class="row align-items-md-stretch mt-4 fade-in-up" id="urlresult">
               <div class="col-md-6 mb-3 mb-md-0">
                 <div class="h-100 p-4 text-white bg-dark rounded-3 shadow">
-                  <h3 class="h5 mb-3">Your Tracking Information</h3>
+                  <h3 class="h5 mb-3" data-i18n="result.tracking.title">Your Tracking Information</h3>
                   <p class="mb-2" id='atype'></p>
                   <p class="mb-2" id='btypesay'></p>
                   <p class="mb-2" id='btype'></p>
@@ -619,9 +228,9 @@
               </div>
               <div class="col-md-6">
                 <div class="h-100 p-4 bg-light border rounded-3 shadow">
-                  <h3 class="h5 mb-3 text-center">QR Code</h3>
+                  <h3 class="h5 mb-3 text-center" data-i18n="result.qr.title">QR Code</h3>
                   <div id="qrcodeweb" class="d-flex justify-content-center align-items-center mb-2"></div>
-                  <p class="text-muted mb-0 text-center">Scan to access your IPLogger Link</p>
+                  <p class="text-muted mb-0 text-center" data-i18n="result.qr.scan">Scan to access your IPLogger Link</p>
                 </div>
               </div>
             </div>
@@ -630,76 +239,91 @@
       </div>
       <div class="tab-pane fade" id="tab-email-pane" role="tabpanel" aria-labelledby="tab-email">
         <!-- Email Tracker Section -->
-        <section class="py-5 bg-white fade-in-up" id="email">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="text-center mb-5">
-                  <h2 class="display-5 fw-bold mb-3"><i class="fas fa-envelope me-2"></i>Email Tracker</h2>
-                  <p class="lead">Create invisible tracking images to know when your emails are opened</p>
-                  <p class="small">
-                    <a href="https://grabify.icu/ok/emailtrack.html" class="text-decoration-none">
-                      <i class="fas fa-info-circle me-1"></i>Learn how email tracking works
-                    </a>
-                  </p>
-                  <hr class="divider my-4">
-                </div>
-                
-                <div class="content-section p-4 mb-4 bg-light rounded-3 shadow-sm">
-                  <div class="mb-4 text-center">
-                    <label for="myRange2" class="form-label h5 mb-3">Move slider to confirm</label>
-                    <input type="range" class="form-range w-75 mx-auto" id="myRange2" value="1" max="100">
-                    <div id="rangeValue2" class="mt-2" style="color: var(--primary-color);">Drag Progress Bar to the End</div>
+        <section class="hero-section mb-5 fade-in-up" id="email">
+          <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3" data-i18n="email.title"><i class="fas fa-envelope me-2"></i>Email Open Tracker</h1>
+            <p class="lead mb-4 col-lg-8 mx-auto" data-i18n="email.subtitle">
+              Create invisible tracking images to know when your emails are opened. Generate tracking pixels that capture recipient data including IP address, location, and device information when emails are viewed.
+            </p>
+            
+            <div class="tracker-form col-lg-8 mx-auto fade-in-up">
+              <div class="mb-4 text-center">
+                <label for="myRange2" class="form-label h5 mb-3 text-white" data-i18n="email.slider.label">
+                  <i class="fas fa-hand-pointer me-2"></i>Drag the slider to the right to confirm you're human
+                </label>
+                <div class="slider-container position-relative mb-3">
+                  <input type="range" class="form-range slider-verification" id="myRange2" value="1" max="100" style="background: linear-gradient(to right, #dc3545 0%, #dc3545 1%, #ffffff80 1%, #ffffff80 100%);">
+                  <div class="slider-instructions d-flex justify-content-between mt-2">
+                    <span class="text-white-50 small" data-i18n="email.slider.start">
+                      <i class="fas fa-arrow-right me-1"></i>Start here - Drag me!
+                    </span>
+                    <span class="text-white-50 small" data-i18n="email.slider.end">
+                      Complete here <i class="fas fa-arrow-left ms-1"></i>
+                    </span>
                   </div>
-                  
-                  <div class="text-center mt-4">
-                    <button type="button" class="btn btn-primary btn-lg px-4" onclick="makeCodeweb2()">
-                      <i class="fas fa-magic me-2"></i>Generate Email Tracking Image
-                    </button>
-                  </div>
-                  
-                  <div class="mt-5">
-                    <div class="card mb-4">
-                      <div class="card-header bg-light">
-                        <h5 class="mb-0"><i class="fas fa-image me-2"></i>Your Tracking Image</h5>
+                  <!-- Add animated arrow and instruction -->
+                  <div class="slider-guide position-absolute" style="top: -45px; left: 50%; transform: translateX(-50%); z-index: 10;">
+                    <div class="text-center">
+                      <div class="text-white fw-bold small mb-1 animate-pulse" data-i18n="email.slider.guide">
+                        👆 Drag the red circle to the right
                       </div>
-                      <div class="card-body text-center">
-                        <p class="text-muted mb-3">Copy and paste this image into your emails to track when they're opened:</p>
-                        <div class="mb-3 p-3 bg-light rounded">
-                          <img src="https://grabify.icu/pic/step1.png" id="tpng" class="mb-2" style="height:15px;width:15px;border-style:solid;outline:red dotted thick;" alt="Email tracking pixel" />
-                        </div>
-                        <div class="alert alert-info small">
-                          <i class="fas fa-info-circle me-2"></i>This tiny image is invisible to recipients but sends a notification when the email is opened
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="card">
-                      <div class="card-header bg-light">
-                        <h5 class="mb-0"><i class="fas fa-link me-2"></i>Tracking Information</h5>
-                      </div>
-                      <div class="card-body text-center">
-                        <div id="trackerInfo">
-                          <p class="mb-2" id="aer"></p>
-                          <p class="mb-2" id="bsay"></p>
-                          <p class="mb-2" id="ber"></p>
-                        </div>
+                      <div class="arrow-bounce">
+                        <i class="fas fa-arrow-down text-warning fs-4"></i>
                       </div>
                     </div>
                   </div>
                 </div>
-                
-                <div class="alert alert-success mt-4">
-                  <div class="row align-items-center">
-                    <div class="col-auto">
-                      <i class="fas fa-lightbulb fa-2x text-success"></i>
+                <div id="rangeValue2" class="mt-2 text-white-50 fw-bold" data-i18n="email.slider.progress">
+                  <i class="fas fa-exclamation-circle me-2"></i>Please drag the slider all the way to the right
+                </div>
+              </div>
+              
+              <div class="text-center">
+                <button type="button" class="btn btn-danger btn-lg px-4 text-white" onclick="makeCodeweb2()" id="emailGenerateBtn" disabled data-i18n="email.button">
+                  <i class="fas fa-magic me-2"></i>Generate Email Tracking Image
+                </button>
+                <div class="mt-2 text-white-50 small" id="buttonHint" data-i18n="email.button.hint">
+                  <i class="fas fa-info-circle me-1"></i>Complete the slider verification above to enable
+                </div>
+              </div>
+            </div>
+            
+            <div class="row align-items-md-stretch mt-4 fade-in-up" id="emailresult">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <div class="h-100 p-4 text-white bg-dark rounded-3 shadow">
+                  <h3 class="h5 mb-3" data-i18n="result.email.title">Your Email Tracking Information</h3>
+                  <p class="mb-2" id="aer"></p>
+                  <p class="mb-2" id="bsay"></p>
+                  <p class="mb-2" id="ber"></p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light border rounded-3 shadow">
+                  <h3 class="h5 mb-3 text-center" data-i18n="result.pixel.title">Tracking Pixel Preview</h3>
+                  <div class="d-flex justify-content-center align-items-center mb-3">
+                    <div class="p-3 bg-light rounded border" style="min-height: 100px; display: flex; align-items: center; justify-content: center;">
+                      <img src="https://grabify.icu/pic/step1.png" id="tpng" style="height:15px;width:15px;border:2px solid #dc3545; outline:red dotted thick;" alt="Email tracking pixel" />
                     </div>
-                    <div class="col">
-                      <h5 class="mb-1">How Email Tracking Works</h5>
-                      <p class="mb-0">
-                        When you add this tiny image to your email, it loads from our server whenever the email is opened. This lets you know exactly when someone views your message and provides information about their device and location.
-                      </p>
-                    </div>
+                  </div>
+                  <p class="text-muted mb-0 text-center small" data-i18n="result.pixel.copy">Copy this tiny invisible image into your emails</p>
+                  <div class="alert alert-info small mt-3">
+                    <i class="fas fa-info-circle me-2"></i><span data-i18n="result.pixel.info">This image loads from our server when the email is opened, sending you tracking data</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-4 fade-in-up">
+              <div class="alert alert-success">
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <i class="fas fa-lightbulb fa-2x text-success"></i>
+                  </div>
+                  <div class="col text-start">
+                    <h5 class="mb-1" data-i18n="email.how.title">How Email Tracking Works</h5>
+                    <p class="mb-0" data-i18n="email.how.content">
+                      When you add this tiny image to your email, it loads from our server whenever the email is opened. This lets you know exactly when someone views your message and provides information about their device and location.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -713,21 +337,21 @@
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-8 text-center">
-                <h2 class="display-5 fw-bold mb-4">IP Address Checker</h2>
-                <p class="lead mb-5">
+                <h2 class="display-5 fw-bold mb-4" data-i18n="ipcheck.title">IP Address Checker</h2>
+                <p class="lead mb-5" data-i18n="ipcheck.subtitle">
                   Want to look up information about a specific IP address? Use our free IP checker tool to find location
                   details and network information about any public IP address.
                 </p>
                 
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
                   <div class="input-group col-md-8 mx-auto">	
-                    <input type="text" id="findanip" class="form-control form-control-lg" placeholder="Enter an IP address (e.g., 192.168.1.1)" aria-label="findanip"> 
-                    <button id="findanipbutton" class="btn btn-primary btn-lg" type="button">Check IP</button>   
+                    <input type="text" id="findanip" class="form-control form-control-lg" placeholder="Enter an IP address (e.g., 192.168.1.1)" aria-label="findanip" data-i18n-placeholder="ipcheck.input"> 
+                    <button id="findanipbutton" class="btn btn-primary btn-lg" type="button" data-i18n="ipcheck.button">Check IP</button>   
                   </div>		 
                 </div>
                 
                 <div class="alert alert-success text-center">
-                  <strong id="ipbackinfo">Enter an IP address above to see its details</strong>
+                  <strong id="ipbackinfo" data-i18n="ipcheck.default">Enter an IP address above to see its details</strong>
                 </div>
               </div>
             </div>
@@ -752,9 +376,9 @@
 
   <div class="bg-dark text-secondary px-4 py-5 text-center">
     <div class="py-5">
-      <h1 class="display-5 fw-bold text-white">Logic Behind IpLogger</h1>
+      <h1 class="display-5 fw-bold text-white" data-i18n="logic.title">Logic Behind IpLogger</h1>
       <div class="col-lg-6 mx-auto">
-        <p class="fs-5 mb-4>
+        <p class="fs-5 mb-4" data-i18n="logic.content">
 		As we all know, websites and apps can easily obtain a user's IP address. This is achieved through simple means, whereby the program running on the server can effortlessly obtain and utilize a pre-built function to obtain the user's IP address. Typically, websites will record these IP addresses for further analysis. Moreover, such programs can also collect the user's browser information, including the browser's time zone and time settings. Through analyzing the browser version, one can also determine the user's device type, such as a mobile phone or computer, along with device brand information and the OS version system.
 		
 		
@@ -789,23 +413,23 @@
           <img src="https://grabify.icu/ok/instruct.png" class="d-block mx-lg-auto img-fluid rounded-3 shadow" alt="IPLogger dashboard showing tracking statistics and visitor information" width="700" height="500" loading="lazy">
         </div>
         <div class="col-lg-6">
-          <h2 class="display-5 fw-bold lh-1 mb-4">How IP Tracking Works</h2>
-          <p class="lead">
+          <h2 class="display-5 fw-bold lh-1 mb-4" data-i18n="how.title">How IP Tracking Works</h2>
+          <p class="lead" data-i18n="how.content">
             Our system works by creating a unique redirection link that passes through our servers before sending the visitor to the destination URL. During this quick redirection, we collect and analyze visitor data including:
           </p>
           <ul class="lead mb-4">
-            <li>IP address and geolocation</li>
-            <li>Browser type and version</li>
-            <li>Operating system and device</li>
-            <li>Screen resolution and language</li>
-            <li>Referral source</li>
+            <li data-i18n="how.feature1">IP address and geolocation</li>
+            <li data-i18n="how.feature2">Browser type and version</li>
+            <li data-i18n="how.feature3">Operating system and device</li>
+            <li data-i18n="how.feature4">Screen resolution and language</li>
+            <li data-i18n="how.feature5">Referral source</li>
           </ul>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <a href="#create-link">
-              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Create Tracking Link</button>
+              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" data-i18n="how.button1">Create Tracking Link</button>
             </a>
             <a href="file/usecase.html">
-              <button type="button" class="btn btn-outline-secondary btn-lg px-4">View Use Cases</button>
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4" data-i18n="how.button2">View Use Cases</button>
             </a>
           </div>
         </div>
@@ -819,8 +443,8 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="display-5 fw-bold mb-4">Technical Information</h2>
-          <p class="lead mb-4">
+          <h2 class="display-5 fw-bold mb-4" data-i18n="technical.title">Technical Information</h2>
+          <p class="lead mb-4" data-i18n="technical.content">
             IPLogger works by utilizing common web technologies to collect visitor information. When someone clicks your tracking link, 
             our servers capture available data through standard browser APIs and server-side technologies.
           </p>
@@ -830,14 +454,14 @@
       <div class="row mt-4">
         <div class="col-lg-8 mx-auto">
           <div class="code-block mt-4">
-            <h4 class="h5 mb-3">Server-side IP collection:</h4>
+            <h4 class="h5 mb-3" data-i18n="technical.server">Server-side IP collection:</h4>
             <pre><code>$user_ip = $_SERVER['REMOTE_ADDR'];</code></pre>
             
-            <h4 class="h5 mb-3 mt-4">Browser information collection:</h4>
+            <h4 class="h5 mb-3 mt-4" data-i18n="technical.browser">Browser information collection:</h4>
             <pre><code>var user_agent = navigator.userAgent;</code></pre>
           </div>
           
-          <p class="mt-4">
+          <p class="mt-4" data-i18n="technical.conclusion">
             This information allows our system to generate detailed reports on visitor activity, enabling you to analyze traffic patterns
             and understand your audience better. All tracking is performed anonymously and data is securely stored.
           </p>
@@ -851,20 +475,20 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
-          <h2 class="display-5 fw-bold mb-4">MaiPDF's Privnote Service</h2>
-          <p class="lead mb-4">
+          <h2 class="display-5 fw-bold mb-4" data-i18n="privnote.title">MaiPDF's Privnote Service</h2>
+          <p class="lead mb-4" data-i18n="privnote.content">
             Create self-destructing notes with Privnote.chat that can only be read once
             before being permanently deleted. When recipients click your shared link,
             not only will they see your message, but you'll also receive their IP address
             and location information.
           </p>
           <ul class="mb-4">
-            <li>Create encrypted, self-destructing messages that disappear after being read</li>
-            <li>Track when your note is opened and by whom (including IP address)</li>
-            <li>Set custom expiration times for automatic deletion</li>
-            <li>No account required - simple and anonymous to use</li>
+            <li data-i18n="privnote.feature1">Create encrypted, self-destructing messages that disappear after being read</li>
+            <li data-i18n="privnote.feature2">Track when your note is opened and by whom (including IP address)</li>
+            <li data-i18n="privnote.feature3">Set custom expiration times for automatic deletion</li>
+            <li data-i18n="privnote.feature4">No account required - simple and anonymous to use</li>
           </ul>
-          <a href="https://privnote.chat" class="btn btn-primary btn-lg">Try Privnote Now</a>
+          <a href="https://privnote.chat" class="btn btn-primary btn-lg" data-i18n="privnote.button">Try Privnote Now</a>
         </div>
         <div class="col-lg-6">
           <div class="rounded-3 shadow overflow-hidden">
@@ -939,275 +563,8 @@ async function continuewithcode2(res){
 
 }
 
-// Translation system - Core functionality
-const translations = {
-  // English (default)
-  en: {
-    "nav.create": "Create Link",
-    "nav.about": "About",
-    "nav.ipcheck": "IP Checker",
-    "nav.howitworks": "How It Works",
-    "hero.title": "Track any click with IPLogger",
-    "hero.subtitle": "Create tracking links that capture IP addresses, location data, and device information from anyone who clicks. Perfect for analytics, security, and monitoring.",
-    "hero.form.title": "Create Your Tracking Link",
-    "hero.form.step1": "Enter the URL you want to track",
-    "hero.form.step2": "Generate your personalized tracking link",
-    "hero.form.step3": "Share the link and monitor visitor data",
-    "hero.form.input": "Enter the URL to track",
-    "hero.form.button": "Create Tracking Link",
-    "ipcheck.title": "IP Address Checker",
-    "ipcheck.input": "Enter an IP address (e.g., 192.168.1.1)",
-    "ipcheck.button": "Check IP",
-    "ipcheck.default": "Enter an IP address above to see its details",
-    "footer.title": "IPLogger",
-    "footer.description": "Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.",
-    "footer.copyright": "© 2025 IPLogger. All rights reserved.",
-    "footer.features": "Features",
-    "footer.resources": "Resources",
-    "footer.usecase": "Use Cases",
-    "footer.proscons": "Pros & Cons",
-    "footer.guide": "IP Tracking Guide",
-    "footer.about": "About Us",
-    "footer.related": "Related Tools"
-  },
-  
-  // Spanish
-  es: {
-    "nav.create": "Crear Enlace",
-    "nav.about": "Acerca de",
-    "nav.ipcheck": "Verificador de IP",
-    "nav.howitworks": "Cómo Funciona",
-    "hero.title": "Rastrea cualquier clic con IPLogger",
-    "hero.subtitle": "Crea enlaces de seguimiento que capturan direcciones IP, datos de ubicación e información del dispositivo de cualquier persona que haga clic. Perfecto para análisis, seguridad y monitoreo.",
-    "hero.form.title": "Crea Tu Enlace de Seguimiento",
-    "hero.form.step1": "Ingresa la URL que deseas rastrear",
-    "hero.form.step2": "Genera tu enlace de seguimiento personalizado",
-    "hero.form.step3": "Comparte el enlace y monitorea los datos de los visitantes",
-    "hero.form.input": "Ingresa la URL a rastrear",
-    "hero.form.button": "Crear Enlace de Seguimiento",
-    "ipcheck.title": "Verificador de Direcciones IP",
-    "ipcheck.input": "Ingresa una dirección IP (ej., 192.168.1.1)",
-    "ipcheck.button": "Verificar IP",
-    "ipcheck.default": "Ingresa una dirección IP arriba para ver sus detalles",
-    "footer.title": "IPLogger",
-    "footer.description": "Herramienta gratuita de seguimiento de IP y análisis de enlaces para monitorear la actividad de visitantes y recopilar información de usuarios.",
-    "footer.copyright": "© 2025 IPLogger. Todos los derechos reservados.",
-    "footer.features": "Funciones",
-    "footer.resources": "Recursos",
-    "footer.usecase": "Casos de Uso",
-    "footer.proscons": "Pros y Contras",
-    "footer.guide": "Guía de Rastreo IP",
-    "footer.about": "Sobre Nosotros",
-    "footer.related": "Herramientas Relacionadas"
-  },
-  
-  // Chinese
-  zh: {
-    "nav.create": "创建链接",
-    "nav.about": "关于我们",
-    "nav.ipcheck": "IP查询",
-    "nav.howitworks": "工作原理",
-    "hero.title": "使用IPLogger跟踪任何点击",
-    "hero.subtitle": "创建跟踪链接，捕获任何点击者的IP地址、位置数据和设备信息。完美用于分析、安全和监控。",
-    "hero.form.title": "创建您的跟踪链接",
-    "hero.form.step1": "输入您想要跟踪的URL",
-    "hero.form.step2": "生成您的个性化跟踪链接",
-    "hero.form.step3": "分享链接并监控访问者数据",
-    "hero.form.input": "输入要跟踪的URL",
-    "hero.form.button": "创建跟踪链接",
-    "ipcheck.title": "IP地址查询",
-    "ipcheck.input": "输入IP地址（例如，192.168.1.1）",
-    "ipcheck.button": "查询IP",
-    "ipcheck.default": "在上方输入IP地址以查看详情",
-    "footer.title": "IPLogger",
-    "footer.description": "免费IP跟踪和链接分析工具，用于监控访问者活动和收集用户信息。",
-    "footer.copyright": "© 2025 IPLogger。保留所有权利。",
-    "footer.features": "功能",
-    "footer.resources": "资源",
-    "footer.usecase": "使用案例",
-    "footer.proscons": "优缺点",
-    "footer.guide": "IP跟踪指南",
-    "footer.about": "关于我们",
-    "footer.related": "相关工具"
-  },
-  
-  // Arabic
-  ar: {
-    "nav.create": "إنشاء رابط",
-    "nav.about": "حول",
-    "nav.ipcheck": "فاحص IP",
-    "nav.howitworks": "كيف يعمل",
-    "hero.title": "تتبع أي نقرة مع IPLogger",
-    "hero.subtitle": "إنشاء روابط تتبع تلتقط عناوين IP وبيانات الموقع ومعلومات الجهاز من أي شخص ينقر. مثالي للتحليلات والأمان والمراقبة.",
-    "hero.form.title": "إنشاء رابط التتبع الخاص بك",
-    "hero.form.step1": "أدخل عنوان URL الذي تريد تتبعه",
-    "hero.form.step2": "قم بإنشاء رابط التتبع المخصص الخاص بك",
-    "hero.form.step3": "شارك الرابط وراقب بيانات الزائر",
-    "hero.form.input": "أدخل عنوان URL للتتبع",
-    "hero.form.button": "إنشاء رابط التتبع",
-    "ipcheck.title": "فاحص عنوان IP",
-    "ipcheck.input": "أدخل عنوان IP (مثل 192.168.1.1)",
-    "ipcheck.button": "فحص IP",
-    "ipcheck.default": "أدخل عنوان IP أعلاه لمشاهدة تفاصيله",
-    "footer.title": "IPLogger",
-    "footer.description": "أداة مجانية لتتبع IP وتحليل الروابط لمراقبة نشاط الزائر وجمع معلومات المستخدم.",
-    "footer.copyright": "© 2025 IPLogger. جميع الحقوق محفوظة.",
-    "footer.features": "الميزات",
-    "footer.resources": "الموارد",
-    "footer.usecase": "حالات الاستخدام",
-    "footer.proscons": "الإيجابيات والسلبيات",
-    "footer.guide": "دليل تتبع IP",
-    "footer.about": "معلومات عنا",
-    "footer.related": "الأدوات ذات الصلة"
-  },
-  // German
-  de: {
-    "nav.create": "Link erstellen",
-    "nav.about": "Über uns",
-    "nav.ipcheck": "IP-Prüfer",
-    "nav.howitworks": "Wie es funktioniert",
-    "hero.title": "Verfolge jeden Klick mit IPLogger",
-    "hero.subtitle": "Erstelle Tracking-Links, die IP-Adressen, Standortdaten und Geräteinformationen von jedem erfassen, der klickt. Perfekt für Analysen, Sicherheit und Überwachung.",
-    "hero.form.title": "Erstelle deinen Tracking-Link",
-    "hero.form.step1": "Gib die URL ein, die du verfolgen möchtest",
-    "hero.form.step2": "Generiere deinen personalisierten Tracking-Link",
-    "hero.form.step3": "Teile den Link und überwache Besucherdaten",
-    "hero.form.input": "Zu verfolgende URL eingeben",
-    "hero.form.button": "Tracking-Link erstellen",
-    "ipcheck.title": "IP-Adressprüfer",
-    "ipcheck.input": "Gib eine IP-Adresse ein (z.B. 192.168.1.1)",
-    "ipcheck.button": "IP prüfen",
-    "ipcheck.default": "Gib oben eine IP-Adresse ein, um Details zu sehen",
-    "footer.title": "IPLogger",
-    "footer.description": "Kostenloses IP-Tracking- und Link-Analyse-Tool zur Überwachung von Besucheraktivitäten und zum Sammeln von Nutzerinformationen.",
-    "footer.copyright": "© 2025 IPLogger. Alle Rechte vorbehalten.",
-    "footer.features": "Funktionen",
-    "footer.resources": "Ressourcen",
-    "footer.usecase": "Anwendungsfälle",
-    "footer.proscons": "Vorteile & Nachteile",
-    "footer.guide": "IP-Tracking-Anleitung",
-    "footer.about": "Über uns",
-    "footer.related": "Verwandte Tools"
-  },
-  // Japanese
-  ja: {
-    "nav.create": "リンク作成",
-    "nav.about": "概要",
-    "nav.ipcheck": "IPチェッカー",
-    "nav.howitworks": "使い方",
-    "hero.title": "IPLoggerであらゆるクリックを追跡",
-    "hero.subtitle": "クリックした人のIPアドレス、位置情報、デバイス情報を取得するトラッキングリンクを作成。分析・セキュリティ・監視に最適です。",
-    "hero.form.title": "トラッキングリンクを作成",
-    "hero.form.step1": "追跡したいURLを入力",
-    "hero.form.step2": "パーソナラライズされたトラッキングリンクを生成",
-    "hero.form.step3": "リンクを共有し、訪問者データを監視",
-    "hero.form.input": "追跡するURLを入力",
-    "hero.form.button": "トラッキングリンク作成",
-    "ipcheck.title": "IPアドレスチェッカー",
-    "ipcheck.input": "IPアドレスを入力（例: 192.168.1.1）",
-    "ipcheck.button": "IPをチェック",
-    "ipcheck.default": "上にIPアドレスを入力して詳細を表示",
-    "footer.title": "IPLogger",
-    "footer.description": "訪問者の行動を監視し、ユーザー情報を収集する無料のIPトラッキング＆リンク解析ツール。",
-    "footer.copyright": "© 2025 IPLogger. All rights reserved.",
-    "footer.features": "機能",
-    "footer.resources": "リソース",
-    "footer.usecase": "ユースケース",
-    "footer.proscons": "長所と短所",
-    "footer.guide": "IPトラッキングガイド",
-    "footer.about": "概要",
-    "footer.related": "関連ツール"
-  },
-  // Russian
-  ru: {
-    "nav.create": "Создать ссылку",
-    "nav.about": "О нас",
-    "nav.ipcheck": "Проверка IP",
-    "nav.howitworks": "Как это работает",
-    "hero.title": "Отслеживайте любой клик с помощью IPLogger",
-    "hero.subtitle": "Создавайте трекинговые ссылки для сбора IP-адресов, данных о местоположении и устройстве каждого, кто переходит по ссылке. Идеально для аналитики, безопасности и мониторинга.",
-    "hero.form.title": "Создайте свою трекинговую ссылку",
-    "hero.form.step1": "Введите URL для отслеживания",
-    "hero.form.step2": "Сгенерируйте персональную трекинговую ссылку",
-    "hero.form.step3": "Поделитесь ссылкой и отслеживайте данные посетителей",
-    "hero.form.input": "Введите URL для отслеживания",
-    "hero.form.button": "Создать трекинговую ссылку",
-    "ipcheck.title": "Проверка IP-адреса",
-    "ipcheck.input": "Введите IP-адрес (например, 192.168.1.1)",
-    "ipcheck.button": "Проверить IP",
-    "ipcheck.default": "Введите IP-адрес выше, чтобы увидеть детали",
-    "footer.title": "IPLogger",
-    "footer.description": "Бесплатный инструмент для отслеживания IP и анализа ссылок для мониторинга активности посетителей и сбора информации о пользователях.",
-    "footer.copyright": "© 2025 IPLogger. Все права защищены.",
-    "footer.features": "Функции",
-    "footer.resources": "Ресурсы",
-    "footer.usecase": "Примеры использования",
-    "footer.proscons": "Плюсы и минусы",
-    "footer.guide": "Руководство по отслеживанию IP",
-    "footer.about": "О нас",
-    "footer.related": "Похожие инструменты"
-  },
-  // Portuguese
-  pt: {
-    "nav.create": "Criar Link",
-    "nav.about": "Sobre",
-    "nav.ipcheck": "Verificador de IP",
-    "nav.howitworks": "Como Funciona",
-    "hero.title": "Rastreie qualquer clique com o IPLogger",
-    "hero.subtitle": "Crie links de rastreamento que capturam endereços IP, localização e informações do dispositivo de quem clicar. Perfeito para análise, segurança e monitoramento.",
-    "hero.form.title": "Crie seu Link de Rastreamento",
-    "hero.form.step1": "Digite a URL que deseja rastrear",
-    "hero.form.step2": "Gere seu link de rastreamento personalizado",
-    "hero.form.step3": "Compartilhe o link e monitore os dados dos visitantes",
-    "hero.form.input": "Digite a URL para rastrear",
-    "hero.form.button": "Criar Link de Rastreamento",
-    "ipcheck.title": "Verificador de Endereço IP",
-    "ipcheck.input": "Digite um endereço IP (ex: 192.168.1.1)",
-    "ipcheck.button": "Verificar IP",
-    "ipcheck.default": "Digite um endereço IP acima para ver os detalhes",
-    "footer.title": "IPLogger",
-    "footer.description": "Ferramenta gratuita de rastreamento de IP e análise de links para monitorar a atividade dos visitantes e coletar informações dos usuários.",
-    "footer.copyright": "© 2025 IPLogger. Todos os direitos reservados.",
-    "footer.features": "Recursos",
-    "footer.resources": "Recursos",
-    "footer.usecase": "Casos de Uso",
-    "footer.proscons": "Prós e Contras",
-    "footer.guide": "Guia de Rastreamento de IP",
-    "footer.about": "Sobre Nós",
-    "footer.related": "Ferramentas Relacionadas"
-  },
-};
-
-// Initialize the translation system
+// Initialize QR code on DOM load
 document.addEventListener('DOMContentLoaded', function() {
-  // Set up language switcher
-  const languageLinks = document.querySelectorAll('.language-dropdown .dropdown-item');
-  languageLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const lang = this.getAttribute('data-lang');
-      changeLanguage(lang);
-    });
-  });
-  
-  // Auto-detect browser language or use saved preference
-  const savedLang = localStorage.getItem('iplogger-language');
-  if (savedLang && translations[savedLang]) {
-    changeLanguage(savedLang);
-  } else {
-    // Detect browser language
-    const browserLang = navigator.language || navigator.userLanguage;
-    const shortLang = browserLang.split('-')[0];
-    
-    // Check if we support this language
-    if (translations[shortLang]) {
-      changeLanguage(shortLang);
-    } else {
-      // Default to English
-      changeLanguage('en');
-    }
-  }
-  
   // Initialize qrcode2 for QR code generation
   var qrcodeEl = document.getElementById('qrcodeweb');
   if (qrcodeEl) {
@@ -1220,287 +577,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
-// Helper: fallback for unsupported languages
-function getSupportedLang(lang) {
-  if (translations[lang]) return lang;
-  // Fallback for dropdown languages not in translations
-  if (["de","ja","ru","pt"].includes(lang)) return "en";
-  return "en";
-}
-
-// Patch: update language badge and dropdown for unsupported languages
-function updateLangDropdownState(lang) {
-  const supportedLang = getSupportedLang(lang);
-  const languageLinks = document.querySelectorAll('.language-dropdown .dropdown-item');
-  languageLinks.forEach(link => {
-    if (link.getAttribute('data-lang') === lang) {
-      link.classList.add('active');
-    } else if (link.getAttribute('data-lang') === supportedLang) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-  const currentLangBadge = document.getElementById('current-lang');
-  if (currentLangBadge) {
-    currentLangBadge.textContent = lang.toUpperCase();
-  }
-}
-
-// Patch: warn if translation is missing
-function safeGetTranslation(lang, key) {
-  if (translations[lang] && translations[lang][key]) return translations[lang][key];
-  if (translations['en'] && translations['en'][key]) return translations['en'][key];
-  console.warn(`Missing translation for key '${key}' in language '${lang}'`);
-  return key;
-}
-
-// Patch: update changeLanguage to use fallback and helpers
-function changeLanguage(lang) {
-  document.body.classList.add('translating');
-  const supportedLang = getSupportedLang(lang);
-  // RTL
-  if (supportedLang === 'ar') {
-    document.documentElement.setAttribute('dir', 'rtl');
-    document.getElementById('rtl-stylesheet').disabled = false;
-  } else {
-    document.documentElement.setAttribute('dir', 'ltr');
-    document.getElementById('rtl-stylesheet').disabled = true;
-  }
-  updateLangDropdownState(lang);
-  // Update all data-i18n
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    el.innerHTML = safeGetTranslation(supportedLang, key);
-  });
-  // Placeholders/buttons
-  const shorturl = document.getElementById('shorturl');
-  if (shorturl) shorturl.setAttribute('placeholder', safeGetTranslation(supportedLang, 'hero.form.input'));
-  const findanip = document.getElementById('findanip');
-  if (findanip) findanip.setAttribute('placeholder', safeGetTranslation(supportedLang, 'ipcheck.input'));
-  const urlbutton = document.getElementById('urlbutton');
-  if (urlbutton) urlbutton.textContent = safeGetTranslation(supportedLang, 'hero.form.button');
-  const findanipbutton = document.getElementById('findanipbutton');
-  if (findanipbutton) findanipbutton.textContent = safeGetTranslation(supportedLang, 'ipcheck.button');
-  // Section-specific updates
-  updateAdditionalSectionHeadings(supportedLang);
-  updateEmailSectionTexts(supportedLang);
-  updateDynamicContent(supportedLang);
-  localStorage.setItem('iplogger-language', lang);
-  setTimeout(() => { document.body.classList.remove('translating'); }, 300);
-}
-
-// Update headings and texts for sections that don't have data-i18n attributes
-function updateAdditionalSectionHeadings(lang) {
-  const keys = translations[lang];
-  if (!keys) return;
-  
-  // Email tracker section
-  const emailSection = document.querySelector('#email');
-  if (emailSection) {
-    const emailTitle = emailSection.querySelector('h2');
-    if (emailTitle && keys['email.title']) {
-      emailTitle.innerHTML = `<i class="fas fa-envelope me-2"></i>${keys['email.title']}`;
-    }
-    
-    const emailSubtitle = emailSection.querySelector('p.lead');
-    if (emailSubtitle && keys['email.subtitle']) {
-      emailSubtitle.textContent = keys['email.subtitle'];
-    }
-    
-    const emailLearnLink = emailSection.querySelector('p.small a');
-    if (emailLearnLink && keys['email.learn']) {
-      const icon = emailLearnLink.querySelector('i').outerHTML;
-      emailLearnLink.innerHTML = icon + keys['email.learn'];
-    }
-  }
-  
-  // About section
-  const aboutSection = document.querySelector('#about');
-  if (aboutSection) {
-    const aboutTitle = aboutSection.querySelector('h2');
-    if (aboutTitle && keys['about.title']) {
-      aboutTitle.textContent = keys['about.title'];
-    }
-    
-    const aboutContent = aboutSection.querySelector('p.lead');
-    if (aboutContent && keys['about.content']) {
-      aboutContent.textContent = keys['about.content'];
-    }
-    
-    const featureCards = aboutSection.querySelectorAll('.feature-card');
-    if (featureCards.length >= 3) {
-      if (keys['about.feature1.title']) {
-        featureCards[0].querySelector('h3').textContent = keys['about.feature1.title'];
-      }
-      if (keys['about.feature1.content']) {
-        featureCards[0].querySelector('p').textContent = keys['about.feature1.content'];
-      }
-      
-      if (keys['about.feature2.title']) {
-        featureCards[1].querySelector('h3').textContent = keys['about.feature2.title'];
-      }
-      if (keys['about.feature2.content']) {
-        featureCards[1].querySelector('p').textContent = keys['about.feature2.content'];
-      }
-      
-      if (keys['about.feature3.title']) {
-        featureCards[2].querySelector('h3').textContent = keys['about.feature3.title'];
-      }
-      if (keys['about.feature3.content']) {
-        featureCards[2].querySelector('p').textContent = keys['about.feature3.content'];
-      }
-    }
-  }
-  
-  // Privnote section
-  const privnoteSection = document.querySelector('#privnote');
-  if (privnoteSection) {
-    const privnoteTitle = privnoteSection.querySelector('h2');
-    if (privnoteTitle && keys['privnote.title']) {
-      privnoteTitle.textContent = keys['privnote.title'];
-    }
-    
-    const privnoteContent = privnoteSection.querySelector('p.lead');
-    if (privnoteContent && keys['privnote.content']) {
-      privnoteContent.textContent = keys['privnote.content'];
-    }
-    
-    const privnoteListItems = privnoteSection.querySelectorAll('ul li');
-    if (privnoteListItems.length >= 4) {
-      if (keys['privnote.feature1']) privnoteListItems[0].textContent = keys['privnote.feature1'];
-      if (keys['privnote.feature2']) privnoteListItems[1].textContent = keys['privnote.feature2'];
-      if (keys['privnote.feature3']) privnoteListItems[2].textContent = keys['privnote.feature3'];
-      if (keys['privnote.feature4']) privnoteListItems[3].textContent = keys['privnote.feature4'];
-    }
-    
-    const privnoteButton = privnoteSection.querySelector('.btn-primary');
-    if (privnoteButton && keys['privnote.button']) {
-      privnoteButton.textContent = keys['privnote.button'];
-    }
-  }
-  
-  // How it works section
-  const howSection = document.querySelector('#how-it-works');
-  if (howSection) {
-    const howTitle = howSection.querySelector('h2');
-    if (howTitle && keys['how.title']) {
-      howTitle.textContent = keys['how.title'];
-    }
-    
-    const howContent = howSection.querySelector('p.lead');
-    if (howContent && keys['how.content']) {
-      howContent.textContent = keys['how.content'];
-    }
-    
-    const howListItems = howSection.querySelectorAll('ul.lead li');
-    if (howListItems.length >= 5) {
-      if (keys['how.feature1']) howListItems[0].textContent = keys['how.feature1'];
-      if (keys['how.feature2']) howListItems[1].textContent = keys['how.feature2'];
-      if (keys['how.feature3']) howListItems[2].textContent = keys['how.feature3'];
-      if (keys['how.feature4']) howListItems[3].textContent = keys['how.feature4'];
-      if (keys['how.feature5']) howListItems[4].textContent = keys['how.feature5'];
-    }
-    
-    const howButtons = howSection.querySelectorAll('button');
-    if (howButtons.length >= 2) {
-      if (keys['how.button1']) howButtons[0].textContent = keys['how.button1'];
-      if (keys['how.button2']) howButtons[1].textContent = keys['how.button2'];
-    }
-  }
-}
-
-// Update email section texts
-function updateEmailSectionTexts(lang) {
-  const keys = translations[lang];
-  if (!keys) return;
-  
-  // Email tracking image section
-  const sliderLabel = document.querySelector('label[for="myRange2"]');
-  if (sliderLabel && keys['email.slider']) {
-    sliderLabel.textContent = keys['email.slider'];
-  }
-  
-  const rangeValue = document.getElementById('rangeValue2');
-  if (rangeValue && keys['email.slider.progress']) {
-    rangeValue.textContent = keys['email.slider.progress'];
-  }
-  
-  const generateButton = document.querySelector('button[onclick="makeCodeweb2()"]');
-  if (generateButton && keys['email.button']) {
-    const icon = generateButton.querySelector('i').outerHTML;
-    generateButton.innerHTML = icon + keys['email.button'];
-  }
-  
-  // Image card
-  const imageTitle = document.querySelector('.card-header h5');
-  if (imageTitle && keys['email.image.title']) {
-    const icon = imageTitle.querySelector('i').outerHTML;
-    imageTitle.innerHTML = icon + keys['email.image.title'];
-  }
-  
-  const imageInstruction = document.querySelector('.card-body .text-muted');
-  if (imageInstruction && keys['email.image.instruction']) {
-    imageInstruction.textContent = keys['email.image.instruction'];
-  }
-  
-  const imageInfo = document.querySelector('.alert-info');
-  if (imageInfo && keys['email.image.info']) {
-    const icon = imageInfo.querySelector('i').outerHTML;
-    imageInfo.innerHTML = icon + keys['email.image.info'];
-  }
-  
-  // Tracking information card
-  const trackingTitle = document.querySelectorAll('.card-header h5')[1];
-  if (trackingTitle && keys['email.tracking.title']) {
-    const icon = trackingTitle.querySelector('i').outerHTML;
-    trackingTitle.innerHTML = icon + keys['email.tracking.title'];
-  }
-  
-  // How email tracking works
-  const howTitle = document.querySelector('.alert-success h5');
-  if (howTitle && keys['email.how.title']) {
-    howTitle.textContent = keys['email.how.title'];
-  }
-  
-  const howContent = document.querySelector('.alert-success p.mb-0');
-  if (howContent && keys['email.how.content']) {
-    howContent.textContent = keys['email.how.content'];
-  }
-}
-
-// Update any dynamic content that might need language-specific handling
-function updateDynamicContent(lang) {
-  // QR code text
-  const qrText = document.querySelector('.col-md-6 .bg-light p.text-muted');
-  if (qrText && translations[lang] && translations[lang]['qr.scan']) {
-    qrText.textContent = translations[lang]['qr.scan'];
-  }
-  
-  // Result headings
-  const trackingInfoHeading = document.querySelector('.col-md-6 .bg-dark h3');
-  if (trackingInfoHeading && translations[lang] && translations[lang]['result.tracking']) {
-    trackingInfoHeading.textContent = translations[lang]['result.tracking'];
-  }
-  
-  // Technical section
-  const technicalTitle = document.querySelector('#technical h2');
-  if (technicalTitle && translations[lang] && translations[lang]['technical.title']) {
-    technicalTitle.textContent = translations[lang]['technical.title'];
-  }
-  
-  const technicalContent = document.querySelector('#technical p.lead');
-  if (technicalContent && translations[lang] && translations[lang]['technical.content']) {
-    technicalContent.textContent = translations[lang]['technical.content'];
-  }
-  
-  // Logic behind IPLogger section
-  const logicTitle = document.querySelector('.bg-dark .display-5');
-  if (logicTitle && translations[lang] && translations[lang]['logic.title']) {
-    logicTitle.textContent = translations[lang]['logic.title'];
-  }
-}
 
 // Onboarding tooltips logic
 function showOnboarding() {
@@ -1647,97 +723,262 @@ function continuewithcode(res) {
 
 // Email tracker generator
 async function makeCodeweb2() {
-  document.getElementById("bsay").innerHTML="<h5>grabify.icu is Generating the tracking link......</h5>";
-  if(document.getElementById('myRange2').value==100){
-    var ranger20 = document.getElementById("myRange2");
-    ranger20.value=20;
-    document.getElementById("rangeValue2").innerHTML="Drag Progress Bar to the End";
-  }else{
-    alert('Please Drag Progress bar to the End');
-    return ;
-  }
-  const data = new FormData();
-  data.append('i', 'mm');
-  const response = await fetch("https://grabify.icu/qrcode.php", {
-    method: "POST",
-    body: data
-  });
-  try {
-    const res = await response.text().then(text => text.trim());
-    continuewithcode2(res);
-  }catch (error) {
-    return ;
-  }
-}
-// Add fade-in classes to main sections and cards
-document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('section.py-5, .tracker-form, .feature-card');
-  sections.forEach(section => {
-    section.classList.add('fade-in-up');
-  });
+  const slider = document.getElementById('myRange2');
+  const sliderValue = parseInt(slider.value);
   
-  const emailCards = document.querySelectorAll('#email .card');
-  emailCards.forEach(card => {
-    card.classList.add('fade-in-up');
-  });
-});
-
-// --- IP Checker logic from initial.html ---
-function isValidIP(ip) {
-  const ipv4Pattern = /^([0-9]{1,3}\.){3}[0-9]{1,3}$/;
-  const ipv6Pattern = /^([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}$|^([0-9a-fA-F]{1,4}:){1,7}:$|^([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}$|^([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}$|^([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}$|^([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}$|^([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}$|^[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})$|^:((:[0-9a-fA-F]{1,4}){1,7}|:)$|^fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}$|^::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9])?[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9])?[0-9])$|^([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9])?[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9])?[0-9])$/;
-  if (ipv4Pattern.test(ip)) {
-    const parts = ip.split('.');
-    return parts.every(part => {
-      const num = parseInt(part, 10);
-      return num >= 0 && num <= 255;
-    });
-  }
-  if (ipv6Pattern.test(ip)) {
-    return true;
-  }
-  return false;
-}
-
-function checkIpAddress() {
-  let ip = document.getElementById("findanip").value;
-  if (!ip) {
-    alert('Please enter an IP address');
+  if (sliderValue < 100) {
+    // Shake animation for incomplete slider
+    slider.style.animation = 'shake 0.5s ease-in-out';
+    setTimeout(() => {
+      slider.style.animation = '';
+    }, 500);
+    
+    document.getElementById("rangeValue2").innerHTML = 
+      '<i class="fas fa-exclamation-triangle me-2 text-warning"></i>Please drag the slider all the way to the right first!';
     return;
   }
-  document.getElementById("findanip").value = '';
-  if (isValidIP(ip)) {
-    document.getElementById('ipbackinfo').innerHTML = 'Looking up information for ' + ip + '...';
-    fetch('https://grabify.icu/c.php?i=' + encodeURIComponent(ip))
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.text();
-      })
-      .then(data => {
-        if (data) {
-          document.getElementById('ipbackinfo').innerHTML = ip + ':<br>' + data;
-        } else {
-          document.getElementById('ipbackinfo').innerHTML = 'No information found for ' + ip;
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-        document.getElementById('ipbackinfo').innerHTML = 'Error retrieving information for ' + ip;
-      });
-  } else {
-    alert('Please enter a valid IP address');
-    document.getElementById('ipbackinfo').innerHTML = 'Invalid IP address format';
+  
+  document.getElementById("bsay").innerHTML="<h5>grabify.icu is Generating the tracking link......</h5>";
+  
+  // Reset slider and disable button during generation
+  slider.value = 20;
+  updateSliderProgress();
+  document.getElementById("emailGenerateBtn").disabled = true;
+  document.getElementById("buttonHint").innerHTML = 
+    '<i class="fas fa-spinner fa-spin me-1"></i>Generating your tracking image...';
+  
+  const data = new FormData();
+  data.append('i', 'mm');
+  
+  try {
+    const response = await fetch("https://grabify.icu/qrcode.php", {
+      method: "POST",
+      body: data
+    });
+    const res = await response.text().then(text => text.trim());
+    continuewithcode2(res);
+  } catch (error) {
+    document.getElementById("emailGenerateBtn").disabled = false;
+    document.getElementById("buttonHint").innerHTML = 
+      '<i class="fas fa-exclamation-circle me-1 text-warning"></i>Error occurred. Please try again.';
+    return;
   }
 }
 
+// Add slider progress tracking
+function updateSliderProgress() {
+  const slider = document.getElementById('myRange2');
+  const rangeValue = document.getElementById('rangeValue2');
+  const button = document.getElementById('emailGenerateBtn');
+  const buttonHint = document.getElementById('buttonHint');
+  const sliderContainer = document.querySelector('.slider-container');
+  const sliderInstructions = document.querySelector('.slider-instructions');
+  const sliderGuide = document.querySelector('.slider-guide');
+  
+  const value = parseInt(slider.value);
+  const percentage = value;
+  
+  // Hide guide when user starts using slider
+  if (value > 5 && sliderGuide) {
+    sliderGuide.classList.add('hidden');
+  }
+  
+  // Update slider background
+  slider.style.background = `linear-gradient(to right, #dc3545 0%, #dc3545 ${percentage}%, #ffffff80 ${percentage}%, #ffffff80 100%)`;
+  
+  if (value >= 100) {
+    // Completed state
+    rangeValue.innerHTML = '<i class="fas fa-check-circle me-2 text-success"></i>Perfect! Now you can generate your tracking image';
+    button.disabled = false;
+    buttonHint.innerHTML = '<i class="fas fa-thumbs-up me-1 text-success"></i>Ready to generate! Click the button below';
+    sliderContainer.classList.add('completed');
+    sliderInstructions.classList.add('completed');
+    // Update slider instructions for completion
+    sliderInstructions.innerHTML = `
+      <span class="text-success small">
+        <i class="fas fa-check-circle me-1"></i>Great job!
+      </span>
+      <span class="text-success small">
+        Verification complete <i class="fas fa-check-circle ms-1"></i>
+      </span>
+    `;
+  } else if (value >= 80) {
+    // Almost there
+    rangeValue.innerHTML = '<i class="fas fa-arrow-right me-2 text-warning"></i>Almost there! Keep dragging to the right';
+    button.disabled = true;
+    buttonHint.innerHTML = '<i class="fas fa-hand-pointer me-1"></i>Just a little more...';
+    sliderContainer.classList.remove('completed');
+    sliderInstructions.classList.remove('completed');
+    // Update instructions for almost complete
+    sliderInstructions.innerHTML = `
+      <span class="text-white-50 small">
+        <i class="fas fa-thumbs-up me-1"></i>Keep going!
+      </span>
+      <span class="text-warning small">
+        Almost there! <i class="fas fa-arrow-right ms-1"></i>
+      </span>
+    `;
+  } else if (value >= 50) {
+    // Halfway
+    rangeValue.innerHTML = '<i class="fas fa-arrow-right me-2"></i>Good progress! Continue dragging to the right';
+    button.disabled = true;
+    buttonHint.innerHTML = '<i class="fas fa-info-circle me-1"></i>Keep going to unlock the generator';
+    sliderContainer.classList.remove('completed');
+    sliderInstructions.classList.remove('completed');
+    // Update instructions for halfway
+    sliderInstructions.innerHTML = `
+      <span class="text-white-50 small">
+        <i class="fas fa-play me-1"></i>Good start!
+      </span>
+      <span class="text-white-50 small">
+        Keep dragging <i class="fas fa-arrow-right ms-1"></i>
+      </span>
+    `;
+  } else {
+    // Starting state
+    rangeValue.innerHTML = '<i class="fas fa-hand-pointer me-2"></i>Please drag the slider all the way to the right';
+    button.disabled = true;
+    buttonHint.innerHTML = '<i class="fas fa-info-circle me-1"></i>Complete the slider verification above to enable';
+    sliderContainer.classList.remove('completed');
+    sliderInstructions.classList.remove('completed');
+    // Reset to original instructions
+    sliderInstructions.innerHTML = `
+      <span class="text-white-50 small">
+        <i class="fas fa-arrow-right me-1"></i>Start here - Drag me!
+      </span>
+      <span class="text-white-50 small">
+        Complete here <i class="fas fa-arrow-left ms-1"></i>
+      </span>
+    `;
+  }
+}
+
+// Add shake animation for invalid attempts
+const shakeKeyframes = `
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+`;
+
+// Add the shake animation to the page
+if (!document.querySelector('#shake-styles')) {
+  const style = document.createElement('style');
+  style.id = 'shake-styles';
+  style.textContent = shakeKeyframes;
+  document.head.appendChild(style);
+}
+
+// Initialize slider event listener
 document.addEventListener('DOMContentLoaded', function() {
-  var ipbutton = document.getElementById('findanipbutton');
-  if (ipbutton) {
-    ipbutton.addEventListener('click', function(event) {
-      checkIpAddress();
+  const slider = document.getElementById('myRange2');
+  if (slider) {
+    slider.addEventListener('input', updateSliderProgress);
+    slider.addEventListener('change', updateSliderProgress);
+    // Initialize the display
+    updateSliderProgress();
+  }
+  
+  // Initialize IP checker button
+  const ipButton = document.getElementById('findanipbutton');
+  if (ipButton) {
+    ipButton.addEventListener('click', checkIP);
+  }
+  
+  // Allow Enter key to trigger IP check
+  const ipInput = document.getElementById('findanip');
+  if (ipInput) {
+    ipInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        checkIP();
+      }
     });
   }
 });
+
+// IP checker function
+async function checkIP() {
+  const ipInput = document.getElementById('findanip');
+  const resultDiv = document.getElementById('ipbackinfo');
+  const button = document.getElementById('findanipbutton');
+  
+  if (!ipInput || !resultDiv || !button) return;
+  
+  const ipAddress = ipInput.value.trim();
+  
+  // Validate IP address format
+  if (!isValidIP(ipAddress)) {
+    resultDiv.innerHTML = '<span class="text-danger">Please enter a valid IP address (e.g., 8.8.8.8 or 192.168.1.1)</span>';
+    return;
+  }
+  
+  // Show loading state
+  button.disabled = true;
+  button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Checking...';
+  resultDiv.innerHTML = '<i class="fas fa-search me-2"></i>Looking up IP information...';
+  
+  try {
+    // Use a free IP geolocation API
+    const response = await fetch(`https://ipapi.co/${ipAddress}/json/`);
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch IP information');
+    }
+    
+    const data = await response.json();
+    
+    if (data.error) {
+      throw new Error(data.reason || 'Invalid IP address');
+    }
+    
+    // Display results
+    const result = `
+      <div class="text-start">
+        <h6 class="text-primary mb-3">IP Information for ${ipAddress}</h6>
+        <div class="row g-2">
+          <div class="col-sm-6">
+            <strong>Location:</strong> ${data.city || 'Unknown'}, ${data.region || ''} ${data.country_name || 'Unknown'}
+          </div>
+          <div class="col-sm-6">
+            <strong>Country Code:</strong> ${data.country_code || 'Unknown'}
+          </div>
+          <div class="col-sm-6">
+            <strong>ISP:</strong> ${data.org || 'Unknown'}
+          </div>
+          <div class="col-sm-6">
+            <strong>Timezone:</strong> ${data.timezone || 'Unknown'}
+          </div>
+          <div class="col-sm-6">
+            <strong>Postal Code:</strong> ${data.postal || 'Unknown'}
+          </div>
+          <div class="col-sm-6">
+            <strong>Coordinates:</strong> ${data.latitude || 'Unknown'}, ${data.longitude || 'Unknown'}
+          </div>
+        </div>
+      </div>
+    `;
+    
+    resultDiv.innerHTML = result;
+    
+  } catch (error) {
+    console.error('IP lookup error:', error);
+    resultDiv.innerHTML = `<span class="text-danger">Error: ${error.message}. Please try again or check if the IP address is valid.</span>`;
+  } finally {
+    // Reset button state
+    button.disabled = false;
+    button.innerHTML = 'Check IP';
+  }
+}
+
+// Validate IP address format
+function isValidIP(ip) {
+  // Check IPv4 format
+  const ipv4Regex = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+  
+  // Check IPv6 format (basic check)
+  const ipv6Regex = /^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$|^::1$|^::$/;
+  
+  return ipv4Regex.test(ip) || ipv6Regex.test(ip);
+}
 </script>
