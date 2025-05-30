@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translation Test</title>
+</head>
+<body>
+    <h1>Language Translation Test</h1>
+    <div id="results"></div>
+
+    <script src="translations.js"></script>
+    <script>
+        const results = document.getElementById('results');
+        const languages = Object.keys(translations);
+        
+        results.innerHTML += '<h2>Supported languages: ' + languages.join(', ') + '</h2>';
+        
+        // Check if each language has all required keys
+        const requiredKeys = Object.keys(translations.en);
+        results.innerHTML += '<p>Total required keys: ' + requiredKeys.length + '</p>';
+        
+        languages.forEach(lang => {
+            const missing = requiredKeys.filter(key => !translations[lang][key]);
+            if (missing.length > 0) {
+                results.innerHTML += '<p>❌ ' + lang.toUpperCase() + ': Missing ' + missing.length + ' keys: ' + missing.slice(0, 10).join(', ') + '</p>';
+            } else {
+                results.innerHTML += '<p>✅ ' + lang.toUpperCase() + ': Complete (' + Object.keys(translations[lang]).length + ' keys)</p>';
+            }
+        });
+
+        // Test specific language switches
+        results.innerHTML += '<hr><h2>Language Switch Test</h2>';
+        
+        // Simulate language changes
+        languages.forEach(lang => {
+            const testKey = 'nav.create';
+            const translation = safeGetTranslation(lang, testKey);
+            results.innerHTML += '<p>' + lang.toUpperCase() + ' - ' + testKey + ': "' + translation + '"</p>';
+        });
+    </script>
+</body>
+</html>
