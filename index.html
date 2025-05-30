@@ -174,23 +174,23 @@
 
   <!-- Add Bootstrap Tabs for the three main features -->
   <div class="container mt-5">
-    <ul class="nav nav-tabs" id="mainTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="tab-generate" data-bs-toggle="tab" data-bs-target="#tab-generate-pane" type="button" role="tab" aria-controls="tab-generate-pane" aria-selected="true">
-          <i class="fas fa-link"></i>
-          <span>Generate Link</span>
+    <ul class="nav nav-tabs nav-tabs-mobile" id="mainTab" role="tablist">
+      <li class="nav-item flex-fill" role="presentation">
+        <button class="nav-link active w-100 text-center mobile-tab" id="tab-generate" data-bs-toggle="tab" data-bs-target="#tab-generate-pane" type="button" role="tab" aria-controls="tab-generate-pane" aria-selected="true">
+          <i class="fas fa-link d-block d-sm-inline"></i>
+          <span class="d-block d-sm-inline small-text">Generate Link</span>
         </button>
       </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="tab-email" data-bs-toggle="tab" data-bs-target="#tab-email-pane" type="button" role="tab" aria-controls="tab-email-pane" aria-selected="false">
-          <i class="fas fa-envelope-open-text"></i>
-          <span>Email Open Tracker</span>
+      <li class="nav-item flex-fill" role="presentation">
+        <button class="nav-link w-100 text-center mobile-tab" id="tab-email" data-bs-toggle="tab" data-bs-target="#tab-email-pane" type="button" role="tab" aria-controls="tab-email-pane" aria-selected="false">
+          <i class="fas fa-envelope-open-text d-block d-sm-inline"></i>
+          <span class="d-block d-sm-inline small-text">Email Tracker</span>
         </button>
       </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="tab-ip" data-bs-toggle="tab" data-bs-target="#tab-ip-pane" type="button" role="tab" aria-controls="tab-ip-pane" aria-selected="false">
-          <i class="fas fa-search-location"></i>
-          <span>IP Address Lookup</span>
+      <li class="nav-item flex-fill" role="presentation">
+        <button class="nav-link w-100 text-center mobile-tab" id="tab-ip" data-bs-toggle="tab" data-bs-target="#tab-ip-pane" type="button" role="tab" aria-controls="tab-ip-pane" aria-selected="false">
+          <i class="fas fa-search-location d-block d-sm-inline"></i>
+          <span class="d-block d-sm-inline small-text">IP Lookup</span>
         </button>
       </li>
     </ul>
@@ -777,6 +777,9 @@ function updateSliderProgress() {
   
   const value = parseInt(slider.value);
   const percentage = value;
+  
+  // Get current language for translations
+  const currentLang = localStorage.getItem('iplogger-language') || 'en';
   
   // Hide guide when user starts using slider
   if (value > 5 && sliderGuide) {
