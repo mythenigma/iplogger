@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>IP Tracking Troubleshooting Guide - Common Issues & Solutions | IPLogger</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="description" content="Complete troubleshooting guide for IP tracking issues. Learn to diagnose and fix common problems with IP tracking, geolocation accuracy, and tracking failures.">
+  <meta name="keywords" content="IP tracking troubleshooting, IP tracking problems, geolocation issues, tracking failures, IP tracking debugging, fix tracking errors">
+  <meta name="author" content="IPLogger">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://iplogger.icu/file/ip-tracking-troubleshooting.html">
+  <meta property="og:title" content="IP Tracking Troubleshooting Guide - Common Issues & Solutions">
+  <meta property="og:description" content="Comprehensive guide to solving IP tracking problems. Fix common issues and improve tracking accuracy.">
+  <meta property="og:image" content="https://grabify.icu/ok/result.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://iplogger.icu/file/ip-tracking-troubleshooting.html">
+  <meta property="twitter:title" content="IP Tracking Troubleshooting Guide - Common Issues & Solutions">
+  <meta property="twitter:description" content="Comprehensive guide to solving IP tracking problems. Fix common issues and improve tracking accuracy.">
+  <meta property="twitter:image" content="https://grabify.icu/ok/result.png">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://iplogger.icu/file/ip-tracking-troubleshooting.html">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-color: #4a6ee0;
+      --secondary-color: #6c757d;
+      --accent-color: #ff5722;
+      --dark-color: #212529;
+      --light-color: #f8f9fa;
+      --success-color: #28a745;
+      --danger-color: #dc3545;
+      --warning-color: #ffc107;
+      --info-color: #17a2b8;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #444;
+      line-height: 1.7;
+      background-color: #f9f9fc;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, var(--primary-color) 0%, #3a5dbc 100%);
+    }
+    
+    .navbar-brand {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    
+    .page-header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #3a5dbc 100%);
+      color: white;
+      padding: 3rem 0;
+      margin-bottom: 2rem;
+    }
+    
+    .content-section {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .content-section h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 3px solid #f1f1f1;
+    }
+    
+    .issue-card {
+      border-left: 5px solid;
+      background: #f8f9fa;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .issue-card:hover {
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    
+    .issue-critical { border-left-color: var(--danger-color); }
+    .issue-high { border-left-color: var(--warning-color); }
+    .issue-medium { border-left-color: var(--info-color); }
+    .issue-low { border-left-color: var(--success-color); }
+    
+    .severity-badge {
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+    
+    .severity-critical { background: #f8d7da; color: #721c24; }
+    .severity-high { background: #fff3cd; color: #856404; }
+    .severity-medium { background: #d1ecf1; color: #0c5460; }
+    .severity-low { background: #d4edda; color: #155724; }
+    
+    .diagnostic-step {
+      background: #e3f2fd;
+      border: 1px solid #bbdefb;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    
+    .diagnostic-step::before {
+      content: counter(diagnostic-counter);
+      counter-increment: diagnostic-counter;
+      position: absolute;
+      left: -10px;
+      top: -10px;
+      background: var(--primary-color);
+      color: white;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+    
+    .diagnostic-steps {
+      counter-reset: diagnostic-counter;
+    }
+    
+    .solution-box {
+      background: #e8f5e8;
+      border: 1px solid #c3e6c3;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    
+    .code-example {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 5px;
+      padding: 1rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+      position: relative;
+    }
+    
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 3px;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.7rem;
+      cursor: pointer;
+    }
+    
+    .troubleshooting-tree {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .tree-node {
+      background: white;
+      border: 2px solid #dee2e6;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    .tree-node.decision {
+      background: #fff3cd;
+      border-color: var(--warning-color);
+    }
+    
+    .tree-node.solution {
+      background: #d4edda;
+      border-color: var(--success-color);
+    }
+    
+    .performance-meter {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .meter-bar {
+      height: 20px;
+      background: #e9ecef;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .meter-fill {
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.3s ease;
+    }
+    
+    .meter-excellent { background: linear-gradient(90deg, #28a745, #20c997); }
+    .meter-good { background: linear-gradient(90deg, #17a2b8, #6f42c1); }
+    .meter-fair { background: linear-gradient(90deg, #ffc107, #fd7e14); }
+    .meter-poor { background: linear-gradient(90deg, #dc3545, #e83e8c); }
+    
+    footer {
+      background-color: var(--dark-color);
+      color: var(--light-color);
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://iplogger.icu">
+        <i class="fas fa-globe-americas me-2"></i>IPLogger
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://iplogger.icu"><i class="fas fa-home me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ip-tracker-guide.html"><i class="fas fa-search-location me-1"></i> IP Tracker Guide</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mobile-ip-tracking.html"><i class="fas fa-mobile-alt me-1"></i> Mobile Tracking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="api-integration-guide.html"><i class="fas fa-code me-1"></i> API Guide</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="ip-tracking-troubleshooting.html"><i class="fas fa-tools me-1"></i> Troubleshooting</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header text-center">
+    <div class="container">
+      <h1><i class="fas fa-tools me-2"></i>IP Tracking Troubleshooting Guide</h1>
+      <p class="lead">Diagnose and fix common IP tracking issues with our comprehensive troubleshooting guide</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <!-- Quick Diagnostics -->
+        <div class="content-section">
+          <h2><i class="fas fa-stethoscope me-2"></i>Quick Diagnostic Checklist</h2>
+          <p class="lead">
+            Start with these basic checks to identify the root cause of your IP tracking issues.
+          </p>
+          
+          <div class="diagnostic-steps">
+            <div class="diagnostic-step">
+              <h5>Verify Network Connectivity</h5>
+              <p class="mb-0">Ensure your tracking system can reach external IP geolocation services and that firewall rules allow outbound connections.</p>
+            </div>
+            
+            <div class="diagnostic-step">
+              <h5>Check API Keys and Authentication</h5>
+              <p class="mb-0">Verify that your API keys are valid, not expired, and have sufficient quota remaining for geolocation requests.</p>
+            </div>
+            
+            <div class="diagnostic-step">
+              <h5>Test with Known IP Addresses</h5>
+              <p class="mb-0">Use well-known public IP addresses (like Google's 8.8.8.8) to test if basic IP tracking functionality works.</p>
+            </div>
+            
+            <div class="diagnostic-step">
+              <h5>Review Browser Console for Errors</h5>
+              <p class="mb-0">Open browser developer tools and check for JavaScript errors, failed network requests, or CORS issues.</p>
+            </div>
+            
+            <div class="diagnostic-step">
+              <h5>Validate Input Data Format</h5>
+              <p class="mb-0">Ensure IP addresses are in the correct format (IPv4 or IPv6) and not containing invalid characters or spaces.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Common Issues -->
+        <div class="content-section">
+          <h2><i class="fas fa-exclamation-triangle me-2"></i>Most Common Issues</h2>
+          
+          <!-- Issue 1: Inaccurate Geolocation -->
+          <div class="issue-card issue-high">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h4><i class="fas fa-map-marker-alt me-2"></i>Inaccurate Geolocation Data</h4>
+              <span class="severity-badge severity-high">High Impact</span>
+            </div>
+            
+            <h6>Symptoms:</h6>
+            <ul>
+              <li>Location shows wrong city or country</li>
+              <li>Coordinates point to incorrect geographic area</li>
+              <li>ISP information is outdated or incorrect</li>
+            </ul>
+            
+            <div class="solution-box">
+              <h6><i class="fas fa-lightbulb me-2"></i>Solutions:</h6>
+              <ol>
+                <li><strong>Use Multiple Data Sources:</strong> Combine results from different geolocation providers</li>
+                <li><strong>Implement Fallback Logic:</strong> Have backup providers when primary source fails</li>
+                <li><strong>Cache and Compare:</strong> Store results and flag significant location changes</li>
+                <li><strong>User Verification:</strong> Allow users to confirm or correct their location</li>
+              </ol>
+            </div>
+            
+            <div class="code-example">
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+              <pre><code>// Example: Multiple provider fallback
+async function getAccurateLocation(ip) {
+  const providers = [
+    { name: 'primary', url: `https://api.primary.com/v1/ip/${ip}` },
+    { name: 'backup', url: `https://api.backup.com/lookup/${ip}` },
+    { name: 'tertiary', url: `https://api.tertiary.com/geo/${ip}` }
+  ];
+  
+  for (const provider of providers) {
+    try {
+      const response = await fetch(provider.url);
+      const data = await response.json();
+      if (data.accuracy > 0.8) return data;
+    } catch (error) {
+      console.warn(`Provider ${provider.name} failed:`, error);
+    }
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Issue 2: Failed Tracking Requests -->
+          <div class="issue-card issue-critical">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h4><i class="fas fa-times-circle me-2"></i>Failed Tracking Requests</h4>
+              <span class="severity-badge severity-critical">Critical</span>
+            </div>
+            
+            <h6>Symptoms:</h6>
+            <ul>
+              <li>HTTP 404, 500, or timeout errors</li>
+              <li>No data returned from tracking APIs</li>
+              <li>Intermittent connection failures</li>
+            </ul>
+            
+            <div class="solution-box">
+              <h6><i class="fas fa-lightbulb me-2"></i>Solutions:</h6>
+              <ol>
+                <li><strong>Implement Retry Logic:</strong> Retry failed requests with exponential backoff</li>
+                <li><strong>Check Rate Limits:</strong> Monitor API usage and implement request queuing</li>
+                <li><strong>Validate Endpoints:</strong> Ensure API URLs are correct and services are operational</li>
+                <li><strong>Error Handling:</strong> Implement comprehensive error catching and logging</li>
+              </ol>
+            </div>
+            
+            <div class="code-example">
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+              <pre><code>// Retry logic with exponential backoff
+async function trackWithRetry(ip, maxRetries = 3) {
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const response = await fetch(`/api/track/${ip}`, {
+        timeout: 5000
+      });
+      
+      if (response.ok) {
+        return await response.json();
+      }
+      
+      if (response.status === 429) {
+        // Rate limited - wait longer
+        await sleep(Math.pow(2, attempt) * 1000);
+        continue;
+      }
+      
+      throw new Error(`HTTP ${response.status}`);
+      
+    } catch (error) {
+      if (attempt === maxRetries) throw error;
+      await sleep(Math.pow(2, attempt) * 500);
+    }
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Issue 3: VPN/Proxy Detection Issues -->
+          <div class="issue-card issue-medium">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h4><i class="fas fa-user-secret me-2"></i>VPN/Proxy Detection Problems</h4>
+              <span class="severity-badge severity-medium">Medium Impact</span>
+            </div>
+            
+            <h6>Symptoms:</h6>
+            <ul>
+              <li>False positives - legitimate users flagged as VPN</li>
+              <li>False negatives - VPN users not detected</li>
+              <li>Inconsistent detection across different services</li>
+            </ul>
+            
+            <div class="solution-box">
+              <h6><i class="fas fa-lightbulb me-2"></i>Solutions:</h6>
+              <ol>
+                <li><strong>Multi-layered Detection:</strong> Combine IP databases with behavioral analysis</li>
+                <li><strong>Machine Learning:</strong> Use ML models to improve detection accuracy</li>
+                <li><strong>Whitelist Known IPs:</strong> Maintain lists of legitimate corporate/institutional IPs</li>
+                <li><strong>Confidence Scoring:</strong> Provide probability scores rather than binary results</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- Issue 4: Mobile Tracking Inconsistencies -->
+          <div class="issue-card issue-high">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h4><i class="fas fa-mobile-alt me-2"></i>Mobile Tracking Inconsistencies</h4>
+              <span class="severity-badge severity-high">High Impact</span>
+            </div>
+            
+            <h6>Symptoms:</h6>
+            <ul>
+              <li>Different locations when switching between WiFi and cellular</li>
+              <li>Carrier-grade NAT causing IP conflicts</li>
+              <li>Mobile browsers blocking tracking scripts</li>
+            </ul>
+            
+            <div class="solution-box">
+              <h6><i class="fas fa-lightbulb me-2"></i>Solutions:</h6>
+              <ol>
+                <li><strong>Mobile-Specific Logic:</strong> Implement different handling for mobile devices</li>
+                <li><strong>Device Fingerprinting:</strong> Use additional device characteristics</li>
+                <li><strong>Progressive Enhancement:</strong> Fall back gracefully when tracking fails</li>
+                <li><strong>User Agent Analysis:</strong> Detect mobile browsers and adjust accordingly</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Performance Issues -->
+        <div class="content-section">
+          <h2><i class="fas fa-tachometer-alt me-2"></i>Performance Optimization</h2>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Common Performance Problems</h4>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <i class="fas fa-clock text-warning me-2"></i>
+                  <strong>Slow API Responses:</strong> Long wait times for geolocation data
+                </li>
+                <li class="list-group-item">
+                  <i class="fas fa-database text-danger me-2"></i>
+                  <strong>Database Bottlenecks:</strong> Slow queries when storing tracking data
+                </li>
+                <li class="list-group-item">
+                  <i class="fas fa-memory text-info me-2"></i>
+                  <strong>Memory Leaks:</strong> Browser memory usage increases over time
+                </li>
+                <li class="list-group-item">
+                  <i class="fas fa-sync text-primary me-2"></i>
+                  <strong>Synchronous Operations:</strong> Blocking the main thread
+                </li>
+              </ul>
+            </div>
+            
+            <div class="col-md-6">
+              <h4>Performance Metrics</h4>
+              
+              <div class="performance-meter">
+                <label>API Response Time</label>
+                <div class="meter-bar">
+                  <div class="meter-fill meter-excellent" style="width: 85%"></div>
+                </div>
+                <small class="text-muted">Target: < 500ms</small>
+              </div>
+              
+              <div class="performance-meter">
+                <label>Database Query Time</label>
+                <div class="meter-bar">
+                  <div class="meter-fill meter-good" style="width: 70%"></div>
+                </div>
+                <small class="text-muted">Target: < 100ms</small>
+              </div>
+              
+              <div class="performance-meter">
+                <label>JavaScript Load Time</label>
+                <div class="meter-bar">
+                  <div class="meter-fill meter-fair" style="width: 60%"></div>
+                </div>
+                <small class="text-muted">Target: < 200ms</small>
+              </div>
+              
+              <div class="performance-meter">
+                <label>Overall Tracking Success Rate</label>
+                <div class="meter-bar">
+                  <div class="meter-fill meter-excellent" style="width: 92%"></div>
+                </div>
+                <small class="text-muted">Target: > 95%</small>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="mt-4">Optimization Strategies</h4>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card h-100">
+                <div class="card-header bg-primary text-white">
+                  <h5 class="mb-0"><i class="fas fa-rocket me-2"></i>Frontend Optimization</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled">
+                    <li class="mb-2">⚡ Async/await for non-blocking operations</li>
+                    <li class="mb-2">🗂️ Local caching of geolocation data</li>
+                    <li class="mb-2">📦 Minify and compress JavaScript</li>
+                    <li class="mb-2">🔄 Implement request deduplication</li>
+                    <li class="mb-2">⏱️ Use Web Workers for heavy processing</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="card h-100">
+                <div class="card-header bg-success text-white">
+                  <h5 class="mb-0"><i class="fas fa-server me-2"></i>Backend Optimization</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled">
+                    <li class="mb-2">🗄️ Redis caching for frequent lookups</li>
+                    <li class="mb-2">📊 Database indexing on IP columns</li>
+                    <li class="mb-2">⚖️ Load balancing across multiple APIs</li>
+                    <li class="mb-2">🔄 Connection pooling and keep-alive</li>
+                    <li class="mb-2">📈 Implement rate limiting and throttling</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Troubleshooting Decision Tree -->
+        <div class="content-section">
+          <h2><i class="fas fa-sitemap me-2"></i>Troubleshooting Decision Tree</h2>
+          
+          <div class="troubleshooting-tree">
+            <div class="text-center">
+              <div class="tree-node decision">
+                <h6>Is tracking working at all?</h6>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="tree-node decision">
+                    <h6>NO - Check Basic Setup</h6>
+                    <ul class="list-unstyled text-start mt-2">
+                      <li>✓ API keys configured</li>
+                      <li>✓ Network connectivity</li>
+                      <li>✓ JavaScript errors</li>
+                      <li>✓ CORS settings</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="tree-node decision">
+                    <h6>YES - Check Data Quality</h6>
+                  </div>
+                  
+                  <div class="row mt-3">
+                    <div class="col-6">
+                      <div class="tree-node solution">
+                        <h6>Inaccurate Location</h6>
+                        <p class="mb-0 small">Use multiple providers, implement validation</p>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="tree-node solution">
+                        <h6>Slow Performance</h6>
+                        <p class="mb-0 small">Add caching, optimize queries</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advanced Debugging -->
+        <div class="content-section">
+          <h2><i class="fas fa-bug me-2"></i>Advanced Debugging Techniques</h2>
+          
+          <div class="row g-4">
+            <div class="col-md-4">
+              <h5><i class="fas fa-search me-2"></i>Network Analysis</h5>
+              <div class="code-example">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <pre><code># Check DNS resolution
+nslookup api.ipgeolocation.io
+
+# Test connectivity
+curl -I https://api.ipgeolocation.io
+
+# Check response time
+curl -w "@curl-format.txt" \
+  https://api.ipgeolocation.io/ipgeo</code></pre>
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+              <h5><i class="fas fa-code me-2"></i>JavaScript Debugging</h5>
+              <div class="code-example">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <pre><code>// Enhanced error logging
+window.onerror = function(msg, url, line, col, error) {
+  console.error('JS Error:', {
+    message: msg,
+    source: url,
+    line: line,
+    column: col,
+    error: error
+  });
+};
+
+// Track performance
+console.time('IP_Tracking');
+// ... tracking code ...
+console.timeEnd('IP_Tracking');</code></pre>
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+              <h5><i class="fas fa-chart-line me-2"></i>Performance Monitoring</h5>
+              <div class="code-example">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <pre><code>// Monitor API performance
+const startTime = performance.now();
+fetch('/api/track/ip')
+  .then(response => {
+    const endTime = performance.now();
+    console.log(`API call took ${endTime - startTime} ms`);
+    
+    // Log to analytics
+    analytics.track('api_performance', {
+      duration: endTime - startTime,
+      status: response.status
+    });
+  });</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prevention Best Practices -->
+        <div class="content-section">
+          <h2><i class="fas fa-shield-alt me-2"></i>Prevention Best Practices</h2>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Proactive Measures</h4>
+              <div class="list-group">
+                <div class="list-group-item">
+                  <h6><i class="fas fa-heartbeat text-success me-2"></i>Health Monitoring</h6>
+                  <p class="mb-0">Implement continuous health checks for all tracking components</p>
+                </div>
+                <div class="list-group-item">
+                  <h6><i class="fas fa-bell text-warning me-2"></i>Alerting System</h6>
+                  <p class="mb-0">Set up alerts for high error rates, slow response times, or service outages</p>
+                </div>
+                <div class="list-group-item">
+                  <h6><i class="fas fa-sync text-info me-2"></i>Regular Updates</h6>
+                  <p class="mb-0">Keep geolocation databases and APIs updated for accuracy</p>
+                </div>
+                <div class="list-group-item">
+                  <h6><i class="fas fa-vial text-primary me-2"></i>Testing Strategy</h6>
+                  <p class="mb-0">Automated testing across different networks, devices, and locations</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <h4>Quality Assurance</h4>
+              <div class="code-example">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <pre><code>// Automated testing example
+describe('IP Tracking', () => {
+  test('should track valid IP addresses', async () => {
+    const result = await trackIP('8.8.8.8');
+    expect(result.country).toBe('US');
+    expect(result.accuracy).toBeGreaterThan(0.8);
+  });
+  
+  test('should handle invalid IPs gracefully', async () => {
+    const result = await trackIP('invalid-ip');
+    expect(result.error).toBeDefined();
+    expect(result.fallback).toBeDefined();
+  });
+  
+  test('should respond within SLA', async () => {
+    const start = Date.now();
+    await trackIP('1.1.1.1');
+    const duration = Date.now() - start;
+    expect(duration).toBeLessThan(1000);
+  });
+});</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Resources -->
+        <div class="content-section">
+          <h2><i class="fas fa-link me-2"></i>Related Troubleshooting Resources</h2>
+          
+          <div class="row g-4">
+            <div class="col-md-6">
+              <h5>Technical Guides</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="api-integration-guide.html" class="text-decoration-none">
+                    <i class="fas fa-code me-2"></i>API Integration Guide
+                  </a>
+                  <span class="badge bg-primary rounded-pill">Debug APIs</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="mobile-ip-tracking.html" class="text-decoration-none">
+                    <i class="fas fa-mobile-alt me-2"></i>Mobile IP Tracking
+                  </a>
+                  <span class="badge bg-primary rounded-pill">Mobile Issues</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="vpn-detection-tracking.html" class="text-decoration-none">
+                    <i class="fas fa-user-secret me-2"></i>VPN Detection Guide
+                  </a>
+                  <span class="badge bg-primary rounded-pill">VPN Problems</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="col-md-6">
+              <h5>Security & Performance</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="privacy-security-ip-tracking.html" class="text-decoration-none">
+                    <i class="fas fa-shield-alt me-2"></i>Privacy & Security
+                  </a>
+                  <span class="badge bg-success rounded-pill">Security Issues</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="advanced-ip-analytics.html" class="text-decoration-none">
+                    <i class="fas fa-chart-bar me-2"></i>Advanced Analytics
+                  </a>
+                  <span class="badge bg-success rounded-pill">Data Quality</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="ip-tracker-guide.html" class="text-decoration-none">
+                    <i class="fas fa-search-location me-2"></i>Basic IP Tracking
+                  </a>
+                  <span class="badge bg-success rounded-pill">Setup Issues</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Support -->
+        <div class="content-section text-center">
+          <h2><i class="fas fa-life-ring me-2"></i>Need Immediate Help?</h2>
+          <p class="lead mb-4">
+            If you're experiencing critical issues that can't wait, check our status page or reach out to our technical team for immediate assistance.
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a href="https://iplogger.icu" class="btn btn-primary btn-lg">
+              <i class="fas fa-tools me-2"></i>Start Troubleshooting
+            </a>
+            <a href="api-integration-guide.html" class="btn btn-outline-primary btn-lg">
+              <i class="fas fa-book me-2"></i>View Documentation
+            </a>
+          </div>
+          
+          <div class="mt-4">
+            <small class="text-muted">
+              <i class="fas fa-clock me-1"></i>Average resolution time: 2-4 hours for critical issues
+            </small>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5><i class="fas fa-globe-americas me-2"></i>IPLogger</h5>
+          <p class="text-white-50">
+            Professional IP tracking solutions with comprehensive troubleshooting support.
+          </p>
+          <p class="text-white-50">© 2025 IPLogger. All rights reserved.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0 footer-links">
+          <h5>Tools</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://iplogger.icu">IP Logger</a></li>
+            <li class="mb-2"><a href="https://grabify.icu">IP Tracker</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 footer-links">
+          <h5>Support</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="ip-tracking-troubleshooting.html">Troubleshooting</a></li>
+            <li class="mb-2"><a href="api-integration-guide.html">API Documentation</a></li>
+            <li class="mb-2"><a href="privacy-security-ip-tracking.html">Security Guide</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h5>Guides</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="mobile-ip-tracking.html">Mobile Tracking</a></li>
+            <li class="mb-2"><a href="vpn-detection-tracking.html">VPN Detection</a></li>
+            <li class="mb-2"><a href="advanced-ip-analytics.html">Analytics</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    function copyCode(button) {
+      const codeBlock = button.nextElementSibling.querySelector('code');
+      navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+        button.textContent = 'Copied!';
+        setTimeout(() => {
+          button.textContent = 'Copy';
+        }, 2000);
+      });
+    }
+    
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+  </script>
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+</body>
+</html>
