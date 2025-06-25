@@ -546,6 +546,122 @@
 
 </html>
 <script>
+// Auto-detect browser language and set appropriate language
+function detectAndSetBrowserLanguage() {
+  // Get user's browser language
+  const browserLang = navigator.language || navigator.userLanguage;
+  const langCode = browserLang.split('-')[0].toLowerCase();
+  
+  // Check if user has already manually selected a language
+  const savedLang = localStorage.getItem('iplogger-language');
+  if (savedLang) {
+    return; // Don't override user's manual selection
+  }
+  
+  // Map of supported languages
+  const supportedLanguages = {
+    'en': 'en',
+    'es': 'es', 
+    'fr': 'fr',
+    'de': 'de',
+    'zh': 'zh',
+    'ja': 'ja',
+    'ar': 'ar',
+    'ru': 'ru',
+    'pt': 'pt'
+  };
+  
+  // Set language based on browser detection
+  const detectedLang = supportedLanguages[langCode] || 'en'; // Default to English
+  
+  // Save detected language
+  localStorage.setItem('iplogger-language', detectedLang);
+  
+  // Update the language badge in navigation
+  updateLanguageBadge(detectedLang);
+  
+  // Update active language in dropdown
+  updateActiveLanguageInDropdown(detectedLang);
+  
+  // Apply RTL for Arabic
+  if (detectedLang === 'ar') {
+    document.documentElement.setAttribute('dir', 'rtl');
+    document.getElementById('rtl-stylesheet').disabled = false;
+  }
+  
+  console.log(`Browser language detected: ${browserLang}, Set to: ${detectedLang}`);
+}
+
+// Update language badge in navigation
+function updateLanguageBadge(langCode) {
+  const badge = document.getElementById('current-lang');
+  if (badge) {
+    const langMap = {
+      'en': 'EN',
+      'es': 'ES',
+      'fr': 'FR', 
+      'de': 'DE',
+      'zh': 'ZH',
+      'ja': 'JA',
+      'ar': 'AR',
+      'ru': 'RU',
+      'pt': 'PT'
+    };
+    badge.textContent = langMap[langCode] || 'EN';
+  }
+}
+
+// Update active language in dropdown
+function updateActiveLanguageInDropdown(langCode) {
+  const dropdownItems = document.querySelectorAll('.language-dropdown .dropdown-item');
+  dropdownItems.forEach(item => {
+    const itemLang = item.getAttribute('data-lang');
+    if (itemLang === langCode) {
+      item.classList.add('active');
+      item.querySelector('.check-icon').style.display = 'inline';
+    } else {
+      item.classList.remove('active');
+      item.querySelector('.check-icon').style.display = 'none';
+    }
+  });
+}
+
+// Enhanced language selector functionality
+function initializeLanguageSelector() {
+  const dropdownItems = document.querySelectorAll('.language-dropdown .dropdown-item');
+  
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const selectedLang = this.getAttribute('data-lang');
+      
+      // Save user's manual selection
+      localStorage.setItem('iplogger-language', selectedLang);
+      
+      // Update UI
+      updateLanguageBadge(selectedLang);
+      updateActiveLanguageInDropdown(selectedLang);
+      
+      // Handle RTL for Arabic
+      if (selectedLang === 'ar') {
+        document.documentElement.setAttribute('dir', 'rtl');
+        document.getElementById('rtl-stylesheet').disabled = false;
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+        document.getElementById('rtl-stylesheet').disabled = true;
+      }
+      
+      // If translations.js is loaded, apply translations
+      if (typeof applyTranslations === 'function') {
+        applyTranslations(selectedLang);
+      }
+      
+      console.log(`Language manually set to: ${selectedLang}`);
+    });
+  });
+}
+
 // Declare qrcode2 globally
 var qrcode2;
 
@@ -565,6 +681,18 @@ async function continuewithcode2(res){
 
 // Initialize QR code on DOM load
 document.addEventListener('DOMContentLoaded', function() {
+  // First detect and set browser language
+  detectAndSetBrowserLanguage();
+  
+  // Then initialize language selector
+  initializeLanguageSelector();
+  
+  // Apply initial translations if translations.js is loaded
+  const currentLang = localStorage.getItem('iplogger-language') || 'en';
+  if (typeof applyTranslations === 'function') {
+    applyTranslations(currentLang);
+  }
+
   // Initialize qrcode2 for QR code generation
   var qrcodeEl = document.getElementById('qrcodeweb');
   if (qrcodeEl) {

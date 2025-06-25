@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Complete Email IP Tracking Guide - Track Email Opens & Clicks | IPLogger</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="description" content="Complete guide to email IP tracking. Learn how to track email opens, clicks, and recipient behavior with invisible tracking pixels and advanced analytics.">
+  <meta name="keywords" content="email IP tracking, email tracking pixel, email open tracking, email analytics, email click tracking, email marketing">
+  <meta name="author" content="IPLogger">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://iplogger.icu/file/email-ip-tracking-complete.html">
+  <meta property="og:title" content="Complete Email IP Tracking Guide - Track Email Opens & Clicks">
+  <meta property="og:description" content="Master email IP tracking with invisible pixels, link tracking, and advanced analytics. Professional email marketing insights.">
+  <meta property="og:image" content="https://grabify.icu/ok/result.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://iplogger.icu/file/email-ip-tracking-complete.html">
+  <meta property="twitter:title" content="Complete Email IP Tracking Guide - Track Email Opens & Clicks">
+  <meta property="twitter:description" content="Master email IP tracking with invisible pixels, link tracking, and advanced analytics. Professional email marketing insights.">
+  <meta property="twitter:image" content="https://grabify.icu/ok/result.png">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://iplogger.icu/file/email-ip-tracking-complete.html">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-color: #4a6ee0;
+      --secondary-color: #6c757d;
+      --accent-color: #ff5722;
+      --success-color: #28a745;
+      --danger-color: #dc3545;
+      --warning-color: #ffc107;
+      --info-color: #17a2b8;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #444;
+      line-height: 1.7;
+      background-color: #f8fafc;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .navbar {
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, var(--primary-color) 0%, #3a5dbc 100%);
+    }
+    
+    .page-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 4rem 0;
+      margin-bottom: 2rem;
+    }
+    
+    .content-section {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .content-section:hover {
+      transform: translateY(-2px);
+    }
+    
+    .feature-badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .email-demo {
+      background: #f8f9fa;
+      border: 2px dashed #dee2e6;
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    
+    .tracking-pixel {
+      width: 1px;
+      height: 1px;
+      background: red;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    
+    .code-example {
+      background: #2d3748;
+      color: #e2e8f0;
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    
+    .stats-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    
+    .stats-card h3 {
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    
+    .provider-card {
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .provider-card:hover {
+      border-color: var(--primary-color);
+      box-shadow: 0 5px 15px rgba(74, 110, 224, 0.15);
+    }
+    
+    .step-indicator {
+      background: var(--primary-color);
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .alert-custom {
+      border-left: 4px solid var(--warning-color);
+      background: #fff3cd;
+      border: none;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://iplogger.icu">
+        <i class="fas fa-envelope me-2"></i>IPLogger
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="ip-tracker-guide.html"><i class="fas fa-search-location me-1"></i> IP Tracker Guide</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mobile-ip-tracking.html"><i class="fas fa-mobile-alt me-1"></i> Mobile Tracking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="api-integration-guide.html"><i class="fas fa-code me-1"></i> API Guide</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="email-ip-tracking-complete.html"><i class="fas fa-envelope me-1"></i> Email Tracking</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header text-center">
+    <div class="container">
+      <h1><i class="fas fa-envelope-open-text me-3"></i>Complete Email IP Tracking Guide</h1>
+      <p class="lead">Master email tracking with invisible pixels, link tracking, and advanced analytics</p>
+      <div class="mt-4">
+        <span class="feature-badge">Tracking Pixels</span>
+        <span class="feature-badge">Link Tracking</span>
+        <span class="feature-badge">Open Rates</span>
+        <span class="feature-badge">Click Analytics</span>
+        <span class="feature-badge">Real-time Data</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <!-- Email Tracking Statistics -->
+        <div class="content-section">
+          <h2><i class="fas fa-chart-bar me-2"></i>Email Tracking Statistics & Benefits</h2>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="stats-card">
+                <h3>73%</h3>
+                <p>Average email open rate improvement with tracking</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stats-card">
+                <h3>2.5x</h3>
+                <p>Better campaign ROI with email analytics</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stats-card">
+                <h3>45%</h3>
+                <p>Increase in email engagement rates</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stats-card">
+                <h3>Real-time</h3>
+                <p>Instant notification of email opens</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="alert alert-custom mt-4">
+            <h5><i class="fas fa-lightbulb me-2"></i>Why Email Tracking Matters</h5>
+            <p class="mb-0">Email tracking provides crucial insights into recipient behavior, campaign effectiveness, and helps optimize your email marketing strategy for better engagement and conversion rates.</p>
+          </div>
+        </div>
+
+        <!-- Email Tracking Methods -->
+        <div class="content-section">
+          <h2><i class="fas fa-cogs me-2"></i>Email Tracking Methods</h2>
+          
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="provider-card">
+                <h4><i class="fas fa-dot-circle me-2 text-primary"></i>Tracking Pixels (Invisible Images)</h4>
+                <p><strong>How it works:</strong> A 1x1 pixel transparent image embedded in emails that loads when the email is opened.</p>
+                <ul class="list-unstyled mt-3">
+                  <li><i class="fas fa-check text-success me-2"></i>Tracks email opens</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Completely invisible to recipients</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Works with HTML emails</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Provides timestamp data</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="provider-card">
+                <h4><i class="fas fa-link me-2 text-info"></i>Link Tracking</h4>
+                <p><strong>How it works:</strong> Replace all links in emails with tracking URLs that redirect to the original destination.</p>
+                <ul class="list-unstyled mt-3">
+                  <li><i class="fas fa-check text-success me-2"></i>Tracks link clicks</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Measures engagement levels</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Identifies popular content</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Works with all email types</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="provider-card">
+                <h4><i class="fas fa-code me-2 text-warning"></i>JavaScript Tracking</h4>
+                <p><strong>How it works:</strong> Embed JavaScript code in HTML emails for advanced tracking capabilities.</p>
+                <ul class="list-unstyled mt-3">
+                  <li><i class="fas fa-check text-success me-2"></i>Advanced interaction tracking</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Time spent reading</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Scroll depth analysis</li>
+                  <li><i class="fas fa-exclamation-triangle text-warning me-2"></i>Limited email client support</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="provider-card">
+                <h4><i class="fas fa-server me-2 text-danger"></i>Server-Side Tracking</h4>
+                <p><strong>How it works:</strong> Track email interactions through server logs and API calls.</p>
+                <ul class="list-unstyled mt-3">
+                  <li><i class="fas fa-check text-success me-2"></i>Most reliable method</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Detailed analytics</li>
+                  <li><i class="fas fa-check text-success me-2"></i>No client-side dependencies</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Works with all platforms</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step-by-Step Implementation -->
+        <div class="content-section">
+          <h2><i class="fas fa-list-ol me-2"></i>How to Implement Email IP Tracking</h2>
+          
+          <div class="mb-4">
+            <div class="d-flex align-items-start mb-3">
+              <div class="step-indicator">1</div>
+              <div>
+                <h4>Choose Your Tracking Method</h4>
+                <p>Select the most appropriate tracking method based on your needs and email client compatibility.</p>
+                <p><strong>Recommended:</strong> Combine tracking pixels for opens and link tracking for clicks to get comprehensive data.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="d-flex align-items-start mb-3">
+              <div class="step-indicator">2</div>
+              <div>
+                <h4>Set Up Tracking Infrastructure</h4>
+                <p>Create a tracking server or use a service like IPLogger to handle tracking requests.</p>
+                <div class="code-example">
+// Example tracking pixel URL structure
+https://iplogger.icu/track.php?id=unique_email_id&type=open&campaign=newsletter_2025
+
+// Example tracking link structure  
+https://iplogger.icu/link.php?id=unique_email_id&url=https://example.com
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="d-flex align-items-start mb-3">
+              <div class="step-indicator">3</div>
+              <div>
+                <h4>Create Tracking Pixels</h4>
+                <p>Generate unique tracking pixels for each email recipient.</p>
+                <div class="code-example">
+&lt;!-- Invisible tracking pixel --&gt;
+&lt;img src="https://iplogger.icu/pixel.php?id=recipient_12345&campaign=newsletter" 
+     width="1" height="1" style="display:none;" alt=""&gt;
+
+&lt;!-- Alternative CSS method --&gt;
+&lt;div style="background-image: url('https://iplogger.icu/track.gif?id=12345'); 
+            width: 1px; height: 1px; display: block;"&gt;&lt;/div&gt;
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="d-flex align-items-start mb-3">
+              <div class="step-indicator">4</div>
+              <div>
+                <h4>Implement Link Tracking</h4>
+                <p>Replace all links in your emails with tracking URLs that redirect to the original destination.</p>
+                <div class="code-example">
+&lt;!-- Original link --&gt;
+&lt;a href="https://example.com/product"&gt;View Product&lt;/a&gt;
+
+&lt;!-- Tracking link --&gt;
+&lt;a href="https://iplogger.icu/click?id=12345&url=https://example.com/product"&gt;
+  View Product
+&lt;/a&gt;
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="d-flex align-items-start mb-3">
+              <div class="step-indicator">5</div>
+              <div>
+                <h4>Monitor and Analyze Results</h4>
+                <p>Set up dashboards to monitor email performance and recipient behavior in real-time.</p>
+                <ul>
+                  <li>Track open rates and timing</li>
+                  <li>Monitor click-through rates</li>
+                  <li>Analyze geographic distribution</li>
+                  <li>Identify most engaged recipients</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Demo -->
+        <div class="content-section">
+          <h2><i class="fas fa-envelope me-2"></i>Email Tracking Demo</h2>
+          <p>Here's an example of how a tracked email might look. The tracking pixel is invisible to recipients but logs when the email is opened.</p>
+          
+          <div class="email-demo">
+            <div class="tracking-pixel" title="Invisible 1x1 tracking pixel"></div>
+            <h4>🎉 Special Offer Just for You!</h4>
+            <p>Hi John,</p>
+            <p>We have an exclusive 50% discount on our premium services just for you!</p>
+            <p>
+              <a href="#" class="btn btn-primary" onclick="alert('This would be a tracked link!')">
+                <i class="fas fa-shopping-cart me-2"></i>Claim Your Discount
+              </a>
+            </p>
+            <p>This offer expires in 24 hours, so don't miss out!</p>
+            <p>Best regards,<br>The Marketing Team</p>
+            <small class="text-muted">
+              <i class="fas fa-info-circle me-1"></i>
+              Red dot in top-right corner represents the invisible tracking pixel
+            </small>
+          </div>
+          
+          <div class="alert alert-info">
+            <h5><i class="fas fa-eye me-2"></i>What Gets Tracked</h5>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li><i class="fas fa-check text-success me-2"></i>Email open timestamp</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Recipient IP address</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Geographic location</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Device information</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li><i class="fas fa-check text-success me-2"></i>Email client used</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Number of opens</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Link clicks</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Time spent reading</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Client Compatibility -->
+        <div class="content-section">
+          <h2><i class="fas fa-desktop me-2"></i>Email Client Compatibility</h2>
+          <p>Different email clients handle tracking differently. Here's a comprehensive compatibility guide:</p>
+          
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead class="table-dark">
+                <tr>
+                  <th>Email Client</th>
+                  <th>Tracking Pixels</th>
+                  <th>Link Tracking</th>
+                  <th>JavaScript</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="fab fa-google me-2"></i>Gmail</td>
+                  <td><span class="badge bg-success">Full Support</span></td>
+                  <td><span class="badge bg-success">Full Support</span></td>
+                  <td><span class="badge bg-danger">Blocked</span></td>
+                  <td>Images load by default for trusted senders</td>
+                </tr>
+                <tr>
+                  <td><i class="fab fa-microsoft me-2"></i>Outlook</td>
+                  <td><span class="badge bg-warning">Partial</span></td>
+                  <td><span class="badge bg-success">Full Support</span></td>
+                  <td><span class="badge bg-danger">Blocked</span></td>
+                  <td>Images blocked by default, user can enable</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-mobile-alt me-2"></i>iOS Mail</td>
+                  <td><span class="badge bg-success">Full Support</span></td>
+                  <td><span class="badge bg-success">Full Support</span></td>
+                  <td><span class="badge bg-danger">Blocked</span></td>
+                  <td>Good tracking support on mobile</td>
+                </tr>
+                <tr>
+                  <td><i class="fab fa-android me-2"></i>Android Mail</td>
+                  <td><span class="badge bg-success">Full Support</span></td>
+                  <td><span class="badge bg-success">Full Support</span></td>
+                  <td><span class="badge bg-danger">Blocked</span></td>
+                  <td>Varies by email app used</td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-thunderbird me-2"></i>Thunderbird</td>
+                  <td><span class="badge bg-warning">Partial</span></td>
+                  <td><span class="badge bg-success">Full Support</span></td>
+                  <td><span class="badge bg-danger">Blocked</span></td>
+                  <td>Images can be blocked by user settings</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Advanced Analytics -->
+        <div class="content-section">
+          <h2><i class="fas fa-chart-line me-2"></i>Advanced Email Analytics</h2>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <h4><i class="fas fa-clock me-2"></i>Timing Analytics</h4>
+              <ul>
+                <li><strong>Best Send Times:</strong> Identify optimal sending times</li>
+                <li><strong>Open Patterns:</strong> Track when emails are opened</li>
+                <li><strong>Response Times:</strong> Measure time to click/reply</li>
+                <li><strong>Peak Activity:</strong> Find high-engagement periods</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h4><i class="fas fa-users me-2"></i>Recipient Segmentation</h4>
+              <ul>
+                <li><strong>Engagement Levels:</strong> High, medium, low engagement</li>
+                <li><strong>Geographic Distribution:</strong> Location-based insights</li>
+                <li><strong>Device Preferences:</strong> Mobile vs desktop usage</li>
+                <li><strong>Behavior Patterns:</strong> Reading and clicking habits</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mt-4">
+            <h4><i class="fas fa-trophy me-2"></i>Key Performance Metrics</h4>
+            <div class="row g-3">
+              <div class="col-md-3">
+                <div class="border rounded p-3 text-center">
+                  <h5 class="text-primary">Open Rate</h5>
+                  <p class="mb-0 text-muted">Percentage of emails opened</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="border rounded p-3 text-center">
+                  <h5 class="text-success">Click Rate</h5>
+                  <p class="mb-0 text-muted">Percentage of links clicked</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="border rounded p-3 text-center">
+                  <h5 class="text-info">Engagement Time</h5>
+                  <p class="mb-0 text-muted">Time spent reading emails</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="border rounded p-3 text-center">
+                  <h5 class="text-warning">Conversion Rate</h5>
+                  <p class="mb-0 text-muted">Actions taken after clicking</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Privacy and Legal Considerations -->
+        <div class="content-section">
+          <h2><i class="fas fa-shield-alt me-2"></i>Privacy & Legal Considerations</h2>
+          
+          <div class="alert alert-warning">
+            <h5><i class="fas fa-exclamation-triangle me-2"></i>Important Legal Requirements</h5>
+            <p>Email tracking must comply with privacy laws and regulations. Always ensure proper consent and transparency.</p>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <h4><i class="fas fa-check-circle me-2 text-success"></i>Best Practices</h4>
+              <ul>
+                <li>Include tracking disclosure in privacy policy</li>
+                <li>Provide opt-out mechanisms</li>
+                <li>Use secure tracking methods</li>
+                <li>Respect user preferences</li>
+                <li>Limit data collection to necessary information</li>
+                <li>Implement data retention policies</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h4><i class="fas fa-gavel me-2 text-primary"></i>Legal Requirements</h4>
+              <ul>
+                <li><strong>GDPR:</strong> Explicit consent for EU recipients</li>
+                <li><strong>CAN-SPAM:</strong> Clear sender identification</li>
+                <li><strong>CCPA:</strong> California privacy rights</li>
+                <li><strong>CASL:</strong> Canadian anti-spam legislation</li>
+                <li><strong>PIPEDA:</strong> Personal information protection</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="content-section text-center">
+          <h2><i class="fas fa-rocket me-2"></i>Start Advanced Email Tracking</h2>
+          <p class="lead mb-4">
+            Ready to take your email marketing to the next level with professional tracking and analytics?
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a href="https://iplogger.icu" class="btn btn-primary btn-lg">
+              <i class="fas fa-envelope me-2"></i>Start Email Tracking
+            </a>
+            <a href="api-integration-guide.html" class="btn btn-outline-primary btn-lg">
+              <i class="fas fa-code me-2"></i>API Integration
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h5><i class="fas fa-envelope me-2"></i>Email Tracking Guides</h5>
+          <p class="text-light opacity-75">
+            Professional email tracking solutions for marketers, businesses, and developers.
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h6>Tracking Guides</h6>
+          <ul class="list-unstyled">
+            <li><a href="ip-tracker-guide.html" class="text-light opacity-75">IP Tracker Guide</a></li>
+            <li><a href="mobile-ip-tracking.html" class="text-light opacity-75">Mobile Tracking</a></li>
+            <li><a href="vpn-detection-tracking.html" class="text-light opacity-75">VPN Detection</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h6>Advanced Features</h6>
+          <ul class="list-unstyled">
+            <li><a href="api-integration-guide.html" class="text-light opacity-75">API Integration</a></li>
+            <li><a href="advanced-ip-analytics.html" class="text-light opacity-75">Analytics</a></li>
+            <li><a href="realtime-ip-tracking-dashboard.html" class="text-light opacity-75">Real-time Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6>Professional Support</h6>
+          <p class="text-light opacity-75">
+            Need help with email tracking implementation? Our team provides professional support and consultation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+</body>
+</html>
