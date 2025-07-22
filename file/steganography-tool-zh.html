@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隐写术工具 - 在图片中隐藏秘密信息</title>
+  <meta name="keywords" content="隐写术工具, 图片隐写, 秘密信息隐藏, LSB隐写, 数据隐蔽, 图像加密, 信息隐藏技术">
+  <meta name="description" content="专业的隐写术工具，在普通图片中隐藏秘密信息，肉眼无法察觉，完美保护你的隐私数据。">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8f9fa; }
+    .container { max-width: 800px; }
+    .emoji { font-size: 1.3em; margin-right: 0.3em; }
+    .highlight { background: #fff3cd; padding: 0.5em 1em; border-radius: 6px; }
+    .section-title { font-weight: bold; font-size: 1.2em; margin-top: 2em; }
+    .feature-card { background: #fff; border-radius: 8px; padding: 1.5em; margin-bottom: 1em; border-left: 4px solid #17a2b8; }
+    .demo-box { background: #f8f9fa; border: 2px dashed #6c757d; border-radius: 8px; padding: 2em; text-align: center; margin: 1em 0; }
+    .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 1em; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-info text-white">
+        <h1 class="h4 mb-0">隐写术工具 - 让秘密无影无踪</h1>
+      </div>
+      <div class="card-body">
+        <!-- 简介 -->
+        <div class="section-title"><span class="emoji">🎨</span>什么是隐写术？</div>
+        <p>
+          想象一下，你有一张看起来完全普通的风景照片，但实际上里面藏着一段重要的密码、个人日记或者商业机密。别人看这张图片时只会觉得是普通照片，完全不知道里面隐藏着秘密信息。这就是隐写术的神奇之处！
+        </p>
+        <p>
+          隐写术是一门古老而神秘的技术，它不是加密信息（让别人看不懂），而是隐藏信息（让别人看不到）。现代数字隐写术可以在图片、音频、视频等文件中隐藏数据，而文件看起来和原来完全一样。
+        </p>
+        <div class="highlight mb-3">
+          <b>举个例子：</b><br>
+          原始图片：一张普通的猫咪照片（500KB）<br>
+          隐藏信息：你的银行密码和重要文档<br>
+          结果图片：看起来还是同一张猫咪照片（501KB）<br>
+          秘密完全隐形，只有知道提取方法的人才能看到！
+        </div>
+
+        <!-- 核心功能 -->
+        <div class="section-title"><span class="emoji">✨</span>隐写术工具的强大功能</div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="feature-card">
+              <h6><span class="emoji">🖼️</span>图片隐写</h6>
+              <p>在JPG、PNG、BMP等图片中隐藏文字、文档、甚至其他图片</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-card">
+              <h6><span class="emoji">👁️</span>完全隐形</h6>
+              <p>隐藏信息后图片看起来完全没有变化，肉眼无法察觉</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-card">
+              <h6><span class="emoji">🔐</span>密码保护</h6>
+              <p>可设置密码保护，只有知道密码的人才能提取信息</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-card">
+              <h6><span class="emoji">📊</span>容量计算</h6>
+              <p>智能计算每张图片可隐藏的最大信息量</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 隐写演示 -->
+        <div class="section-title"><span class="emoji">🔬</span>隐写术原理演示</div>
+        <div class="demo-box">
+          <h6><span class="emoji">🎯</span>LSB隐写技术原理</h6>
+          <div style="font-family: monospace; text-align: left; max-width: 600px; margin: 0 auto;">
+            <p><strong>原始像素值（红色通道）：</strong></p>
+            <div style="background: #f8f9fa; padding: 10px; border-radius: 4px;">
+              像素1: 11010110 (214)<br>
+              像素2: 10010011 (147)<br>
+              像素3: 11100001 (225)
+            </div>
+            <p class="mt-3"><strong>要隐藏的信息："A" (01000001)：</strong></p>
+            <div style="background: #e7f3ff; padding: 10px; border-radius: 4px;">
+              像素1: 1101011<span style="color: red; font-weight: bold;">0</span> → 修改最后一位为0<br>
+              像素2: 1001001<span style="color: red; font-weight: bold;">1</span> → 修改最后一位为1<br>
+              像素3: 1110000<span style="color: red; font-weight: bold;">0</span> → 修改最后一位为0<br>
+              (继续隐藏剩余的5位...)
+            </div>
+          </div>
+          <small class="text-muted">通过修改像素的最低有效位(LSB)来隐藏信息，视觉效果几乎无变化</small>
+        </div>
+
+        <!-- 使用场景 -->
+        <div class="section-title"><span class="emoji">💡</span>隐写术的实用场景</div>
+        <div class="row">
+          <div class="col-md-6">
+            <h6><span class="emoji">🔒</span>私密日记</h6>
+            <p>将个人日记、感想隐藏在普通照片中，即使别人看到图片也不知道里面藏着你的秘密心情。</p>
+          </div>
+          <div class="col-md-6">
+            <h6><span class="emoji">💰</span>财务信息</h6>
+            <p>将银行密码、投资记录、重要账号信息隐藏在家庭照片中，安全备份重要数据。</p>
+          </div>
+          <div class="col-md-6">
+            <h6><span class="emoji">💼</span>商业机密</h6>
+            <p>企业可以将客户名单、报价信息、商业计划隐藏在产品图片中，安全传递机密文件。</p>
+          </div>
+          <div class="col-md-6">
+            <h6><span class="emoji">📚</span>学术研究</h6>
+            <p>研究人员可以将数据、公式、实验结果隐藏在论文插图中，保护知识产权。</p>
+          </div>
+          <div class="col-md-6">
+            <h6><span class="emoji">💕</span>情侣密语</h6>
+            <p>在分享的合影中隐藏甜蜜话语、重要纪念日，只有你们两人知道的小秘密。</p>
+          </div>
+          <div class="col-md-6">
+            <h6><span class="emoji">🎮</span>游戏攻略</h6>
+            <p>游戏玩家可以将攻略、密码、隐藏关卡信息藏在游戏截图中分享。</p>
+          </div>
+        </div>
+
+        <!-- 使用方法 -->
+        <div class="section-title"><span class="emoji">🛠️</span>隐写术工具使用指南</div>
+        <div class="highlight mb-3">
+          <b>隐藏信息（编码）：</b><br>
+          1️⃣ 选择一张高质量的原始图片（推荐PNG格式）<br>
+          2️⃣ 输入要隐藏的秘密信息（文字、数字、符号都可以）<br>
+          3️⃣ 设置提取密码（可选，增强安全性）<br>
+          4️⃣ 点击"隐藏信息"生成含有秘密的图片<br>
+          5️⃣ 下载并保存图片，原始秘密信息已完美隐藏
+        </div>
+        
+        <div class="highlight mb-3">
+          <b>提取信息（解码）：</b><br>
+          1️⃣ 上传含有隐藏信息的图片<br>
+          2️⃣ 输入提取密码（如果设置了密码）<br>
+          3️⃣ 点击"提取信息"按钮<br>
+          4️⃣ 查看成功提取的秘密信息<br>
+          5️⃣ 复制或保存提取出的内容
+        </div>
+
+        <!-- 技术优势 -->
+        <div class="section-title"><span class="emoji">🔧</span>技术特性与优势</div>
+        <div class="warning-box mb-3">
+          <h6><span class="emoji">🎯</span>隐写算法对比</h6>
+          <div class="row">
+            <div class="col-md-6">
+              <b>LSB隐写（推荐）：</b>
+              <ul>
+                <li>修改像素最低位</li>
+                <li>视觉效果几乎无变化</li>
+                <li>容量大，速度快</li>
+                <li>适合大部分场景</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <b>DCT频域隐写：</b>
+              <ul>
+                <li>在频率域隐藏信息</li>
+                <li>抗压缩能力强</li>
+                <li>更难被检测</li>
+                <li>适合高安全需求</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 实际演示 -->
+        <div class="section-title"><span class="emoji">🎭</span>隐写术效果展示</div>
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <div class="demo-box">
+              <h6>原始图片</h6>
+              <div style="width: 200px; height: 150px; background: linear-gradient(45deg, #87CEEB, #98FB98); margin: 0 auto; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 2em;">🏞️</span>
+              </div>
+              <small>文件大小：245 KB</small>
+            </div>
+          </div>
+          <div class="col-md-6 text-center">
+            <div class="demo-box">
+              <h6>隐写后图片</h6>
+              <div style="width: 200px; height: 150px; background: linear-gradient(45deg, #87CEEB, #98FB98); margin: 0 auto; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 2em;">🏞️</span>
+              </div>
+              <small>文件大小：247 KB<br><span style="color: red;">已隐藏1500字符的秘密信息</span></small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 常见问题 -->
+        <div class="section-title"><span class="emoji">❓</span>常见问题解答</div>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                一张图片最多能隐藏多少信息？
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-parent="#faqAccordion">
+              <div class="accordion-body">
+                取决于图片大小和格式。一般来说，1MB的PNG图片大约可以隐藏125KB的文本信息（约12万字符）。我们的工具会自动计算并提示最大容量。
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                隐写后的图片会被检测出来吗？
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-parent="#faqAccordion">
+              <div class="accordion-body">
+                普通情况下很难被发现。我们使用先进的LSB算法，视觉上几乎无差别。但专业的隐写分析工具可能检测出异常，所以建议配合密码保护使用。
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                支持哪些图片格式？推荐使用什么格式？
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-parent="#faqAccordion">
+              <div class="accordion-body">
+                支持PNG、BMP、TIFF等无损格式，以及JPG格式。强烈推荐PNG格式，因为它无损压缩，隐写效果最好且最稳定。
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                如果忘记了提取密码怎么办？
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-parent="#faqAccordion">
+              <div class="accordion-body">
+                很遗憾，忘记密码就无法提取信息了。这是为了保证安全性，我们不会保存任何密码。建议使用好记的密码或做好备份记录。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 安全提醒 -->
+        <div class="section-title"><span class="emoji">⚠️</span>安全使用建议</div>
+        <div class="warning-box">
+          <ul class="mb-0">
+            <li><b>备份重要信息：</b>不要把隐写图片作为重要数据的唯一备份</li>
+            <li><b>选择合适图片：</b>使用高质量、细节丰富的图片隐写效果更好</li>
+            <li><b>设置强密码：</b>使用复杂密码增强安全性，但要确保自己能记住</li>
+            <li><b>避免多次编辑：</b>隐写后的图片不要再进行编辑或格式转换</li>
+            <li><b>合规使用：</b>仅用于合法目的，不要隐藏违法违规内容</li>
+          </ul>
+        </div>
+
+        <!-- 用户评价 -->
+        <div class="section-title"><span class="emoji">🌟</span>用户真实评价</div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="highlight text-center">
+              <div class="emoji" style="font-size: 2em;">🎨</div>
+              <p>"隐写术太神奇了！把重要密码藏在家庭照片里，既安全又不占地方。"</p>
+              <small>—— 设计师小林</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="highlight text-center">
+              <div class="emoji" style="font-size: 2em;">💼</div>
+              <p>"公司用来保护商业机密，客户资料藏在产品图片中，非常实用。"</p>
+              <small>—— 销售总监陈先生</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="highlight text-center">
+              <div class="emoji" style="font-size: 2em;">🔬</div>
+              <p>"研究数据备份的好方法，即使电脑被偷也不怕数据泄露。"</p>
+              <small>—— 博士生小王</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 技术原理详解 -->
+        <div class="section-title"><span class="emoji">🧠</span>隐写术技术原理</div>
+        <p>
+          数字隐写术主要基于人眼视觉系统的特性。人眼对亮度变化敏感，但对微小的颜色变化不敏感。LSB（最低有效位）隐写通过修改图片像素值的最后一位来隐藏信息，这种修改人眼几乎无法察觉。
+        </p>
+        <div class="highlight">
+          <b>隐写过程：</b><br>
+          🔸 将秘密信息转换为二进制数据<br>
+          🔸 选择载体图片的像素点<br>
+          🔸 将二进制数据逐位写入像素的LSB<br>
+          🔸 生成包含隐藏信息的图片<br>
+          🔸 提取时逆向操作，从LSB重建秘密信息
+        </div>
+
+        <!-- 立即体验 -->
+        <div class="text-center mt-5 p-4" style="background: linear-gradient(135deg, #17a2b8 0%, #fd7e14 100%); border-radius: 10px;">
+          <h3 class="text-white mb-3">🚀 立即体验隐写术</h3>
+          <p class="text-white mb-3">让你的秘密完美隐形，只有你知道</p>
+          <a href="#" class="btn btn-light btn-lg">
+            <span class="emoji">🎭</span> 开始隐藏秘密
+          </a>
+        </div>
+        
+        <div class="text-center mt-3">
+          <p class="text-muted small">隐写术：让秘密隐于无形，藏于无声。分享给朋友一起探索这门神奇技术！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
