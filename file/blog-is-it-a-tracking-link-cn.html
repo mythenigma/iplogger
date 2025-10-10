@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何识别收到的链接是不是“追踪链接”？- 小白安全课</title>
+    <meta name="description" content="收到一个奇怪的短链接，担心是病毒或追踪器？教你几招简单的方法，轻松识别并预览任何可疑链接，保护自己的隐私和安全。">
+    <meta name="keywords" content="追踪链接, 识别链接, 链接安全, 预览链接, 短链接, 网络安全, 小白教程, iplogger">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .blog-header {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            color: #333;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .blog-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+        }
+        .blog-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,.1);
+            margin-top: -2rem;
+        }
+        .section h3 {
+            color: #66a6ff;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .tip {
+            background-color: #eaf4ff;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid #66a6ff;
+            margin: 2rem 0;
+        }
+        .tip-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #d63384;
+        }
+        .conclusion {
+            background-color: #e9ecef;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="blog-header">
+        <div class="container">
+            <h1>别人发来的链接，如何知道是不是“追踪链接”？</h1>
+            <p class="lead">一堂给小白看的网络安全基础课</p>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="blog-content">
+                    <p class="lead">朋友发来一个链接，或者在网上看到一个有趣的分享，但链接看起来很短，有点奇怪。你可能会担心：这会不会是病毒？或者，它是不是在追踪我的信息？</p>
+                    <p>这种担心是完全有道理的。今天，我们就来学习如何识别这些“可疑”链接，保护自己的网络安全。</p>
+                    
+                    <hr class="my-4">
+
+                    <div class="section">
+                        <h3>什么是追踪链接（或短链接）？</h3>
+                        <p>你一定见过这样的链接：<code>bit.ly/xxxx</code>, <code>t.cn/xxxx</code>, 或者其他一些很短的网址。它们通常被称为“短链接”。</p>
+                        <p>它们的作用是把一个很长很复杂的网址，变成一个简短、易于分享的网址。比如，一个很长的淘宝商品链接可以被缩短成一个很短的链接，方便在微博或微信里分享。</p>
+                        <p><strong>大部分短链接本身是无害的</strong>，它们的主要目的是方便分享和统计点击次数（比如我们上一篇文章里讲的）。但问题是，我们无法从短链接的表面看出它最终会把我们带到哪里去。这就给了一些不法分子可乘之机。</p>
+                    </div>
+
+                    <div class="section">
+                        <h3>如何识别一个链接是否是短链接？</h3>
+                        <p>这很简单，主要看域名。正常的、完整的链接通常能让你一眼看出它属于哪个网站，比如：</p>
+                        <ul>
+                            <li><code>https://www.taobao.com/product/12345.html</code> (淘宝)</li>
+                            <li><code>https://www.youtube.com/watch?v=abcde</code> (YouTube)</li>
+                        </ul>
+                        <p>而短链接或追踪链接的域名通常是专门提供缩短服务的网站，比如：</p>
+                        <ul>
+                            <li><code>bit.ly/...</code></li>
+                            <li><code>t.co/...</code> (推特专用)</li>
+                            <li><code>goo.gl/...</code> (已停用，但可能还会见到)</li>
+                            <li>以及任何你看起来不熟悉、很简短的域名。</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip">
+                        <h4><span class="tip-icon">💡</span> 关键技巧：在点击前预览链接！</h4>
+                        <p>如果你不确定一个链接的安全性，<strong>千万不要直接点击！</strong> 我们可以使用“链接扩展”或“链接预览”工具来安全地查看它的真实目的地。</p>
+                        <p>这些工具会帮你“访问”这个短链接，然后告诉你它最终会跳转到哪个长链接，而你自己的电脑或手机则完全不用承担任何风险。</p>
+                    </div>
+
+                    <div class="section">
+                        <h3>如何使用链接预览工具？</h3>
+                        <ol>
+                            <li><strong>复制短链接：</strong> 看到可疑的短链接后，长按它（在手机上）或右键点击（在电脑上），然后选择“复制链接地址”。<strong>注意，是复制，不是打开！</strong></li>
+                            <li><strong>打开预览网站：</strong> 在浏览器里打开一个链接预览工具。你可以搜索“链接检查”或“短网址还原”。很多工具都可以免费使用，比如 <a href="https://iplogger.icu/link-checker/" target="_blank">iplogger.icu 的链接检查器</a>。</li>
+                            <li><strong>粘贴并检查：</strong> 把你复制的短链接粘贴到检查工具的输入框里，然后点击“检查”或“预览”按钮。</li>
+                            <li><strong>查看结果：</strong> 工具会显示出这个短链接指向的原始网址。现在你可以判断了：
+                                <ul>
+                                    <li>如果原始网址是你熟悉和信任的网站（如B站、淘宝、新浪新闻等），那么它很可能是安全的。</li>
+                                    <li>如果原始网址看起来很奇怪，是一个你不认识的域名，或者包含一些可疑的词语，那么最好不要访问。</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="conclusion mt-5">
+                        <h4>安全上网小结</h4>
+                        <p>养成“不乱点、先检查”的好习惯是保护自己网络安全的第一步。短链接本身是中性的工具，但我们需要对来源不明的短链接保持警惕。</p>
+                        <p>总结一下：<strong>复制链接 -> 使用工具检查 -> 确认安全再点击。</strong> 这个简单的三步操作，可以帮你避免绝大多数由恶意链接带来的风险。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
