@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>免费邮件追踪 - 查看邮件是否被读 | 邮件已读回执工具</title>
+  
+  <meta name="description" content="免费邮件追踪工具，知道对方是否打开了你的邮件。获取阅读时间、IP地址、设备信息。支持所有邮箱，无需注册。">
+  <meta name="keywords" content="免费邮件追踪,邮件已读,邮件追踪,查看邮件是否被读,邮件回执,邮件追踪工具,邮件已读回执">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Microsoft YaHei', Arial, sans-serif; }
+    .hero { background: linear-gradient(135deg, #ea4335 0%, #fbbc04 100%); color: white; padding: 70px 0; text-align: center; }
+    .hero h1 { font-size: 2.5rem; font-weight: 700; }
+    .cta-btn { background: white; color: #ea4335; padding: 18px 45px; font-size: 1.3rem; font-weight: 600; border-radius: 50px; text-decoration: none; display: inline-block; }
+    .cta-btn:hover { transform: scale(1.05); }
+    .step-box { background: white; padding: 35px; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.08); margin-bottom: 25px; }
+    .step-number { background: #ea4335; color: white; width: 55px; height: 55px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: bold; margin-right: 20px; }
+    .benefit { background: #f8f9fa; padding: 30px; border-radius: 12px; text-align: center; height: 100%; }
+    .benefit i { font-size: 3rem; color: #ea4335; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <h1>免费邮件追踪工具</h1>
+    <p class="lead" style="font-size: 1.3rem;">想知道对方有没有看你的邮件？这个工具能帮你</p>
+    <a href="/" class="cta-btn mt-3">生成追踪</a>
+    <div class="mt-4" style="font-size: 1.1rem;">
+      <span><i class="fas fa-check me-1"></i>隐形追踪</span>
+      <span class="ms-4"><i class="fas fa-check me-1"></i>支持所有邮箱</span>
+      <span class="ms-4"><i class="fas fa-check me-1"></i>即时通知</span>
+    </div>
+  </div>
+</div>
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="alert alert-info text-center" style="padding: 25px;">
+          <h5 class="mb-3" style="font-weight: 600;"><i class="fas fa-lightbulb me-2"></i>这东西怎么工作的？</h5>
+          <p class="mb-0" style="font-size: 1.05rem;">
+            其实原理挺简单的。你在邮件里插入一个超级小的图片（1像素那种，看不见的），对方打开邮件的时候，他们的邮箱客户端会去我们服务器下载这个图片。一下载，我们就知道邮件被打开了，顺便记录下时间、IP这些信息。
+            
+            有点像在邮件里放了个"探测器"，但对方完全看不到。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container my-5">
+  <h2 class="text-center mb-5" style="font-weight: 600; font-size: 2rem;">如何追踪邮件 - 超简单3步</h2>
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="step-box">
+        <span class="step-number">1</span>
+        <div class="d-inline-block" style="vertical-align: middle;">
+          <h4 style="margin: 0; font-weight: 600;">生成追踪像素</h4>
+          <p style="margin: 10px 0 0 0; font-size: 1.05rem;">点击按钮生成你的专属追踪图片，只需5秒钟。</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="step-box">
+        <span class="step-number">2</span>
+        <div class="d-inline-block" style="vertical-align: middle;">
+          <h4 style="margin: 0; font-weight: 600;">插入到邮件</h4>
+          <p style="margin: 10px 0 0 0; font-size: 1.05rem;">将追踪图片复制到你的邮件中，它是隐形的。</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="step-box">
+        <span class="step-number">3</span>
+        <div class="d-inline-block" style="vertical-align: middle;">
+          <h4 style="margin: 0; font-weight: 600;">获取通知</h4>
+          <p style="margin: 10px 0 0 0; font-size: 1.05rem;">对方打开邮件后，你立即收到通知和详细信息。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center mt-5">
+    <a href="/" class="btn btn-danger btn-lg" style="padding: 18px 55px; font-size: 1.2rem;">
+      <i class="fas fa-play me-2"></i>立即免费使用
+    </a>
+  </div>
+</div>
+
+<div class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-5" style="font-weight: 600; font-size: 2rem;">为什么使用我们的邮件追踪？</h2>
+    <div class="row">
+      <div class="col-md-3 mb-3">
+        <div class="benefit">
+          <i class="fas fa-eye-slash"></i>
+          <h5 style="font-weight: 600;">100%隐形</h5>
+          <p>追踪像素完全看不见，收件人察觉不到任何异常</p>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="benefit">
+          <i class="fas fa-envelope"></i>
+          <h5 style="font-weight: 600;">支持所有邮箱</h5>
+          <p>适用于QQ邮箱、163邮箱、Gmail、Outlook等</p>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="benefit">
+          <i class="fas fa-bolt"></i>
+          <h5 style="font-weight: 600;">实时通知</h5>
+          <p>邮件被打开后立即获得通知，无需等待</p>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="benefit">
+          <i class="fas fa-gift"></i>
+          <h5 style="font-weight: 600;">完全免费</h5>
+          <p>无需付费，无需注册，所有功能免费使用</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <h2 class="text-center mb-4" style="font-weight: 600; font-size: 2rem;">能获取哪些信息？</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-3 border-0 shadow-sm">
+        <div class="card-body" style="padding: 25px;">
+          <h5><i class="fas fa-clock text-primary me-2"></i>阅读时间</h5>
+          <p class="mb-0" style="font-size: 1.05rem;">
+            精确的打开时间，包括日期、时间和时区信息。
+          </p>
+        </div>
+      </div>
+      <div class="card mb-3 border-0 shadow-sm">
+        <div class="card-body" style="padding: 25px;">
+          <h5><i class="fas fa-map-marker-alt text-danger me-2"></i>位置信息</h5>
+          <p class="mb-0" style="font-size: 1.05rem;">
+            收件人的IP地址、所在城市、国家和网络运营商。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card mb-3 border-0 shadow-sm">
+        <div class="card-body" style="padding: 25px;">
+          <h5><i class="fas fa-mobile-alt text-success me-2"></i>设备信息</h5>
+          <p class="mb-0" style="font-size: 1.05rem;">
+            使用的设备类型（手机/电脑）、操作系统、屏幕尺寸。
+          </p>
+        </div>
+      </div>
+      <div class="card mb-3 border-0 shadow-sm">
+        <div class="card-body" style="padding: 25px;">
+          <h5><i class="fas fa-envelope-open text-warning me-2"></i>邮件客户端</h5>
+          <p class="mb-0" style="font-size: 1.05rem;">
+            使用的邮箱客户端（QQ邮箱、Gmail App等）。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <h2 class="text-center mb-4" style="font-weight: 600; font-size: 2rem;">适用场景</h2>
+  <div class="row text-center">
+    <div class="col-md-4 mb-4">
+      <i class="fas fa-briefcase fa-3x text-primary mb-3"></i>
+      <h5 style="font-weight: 600;">工作邮件</h5>
+      <p style="font-size: 1.05rem;">确认客户、同事是否阅读了重要邮件</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <i class="fas fa-heart fa-3x text-danger mb-3"></i>
+      <h5 style="font-weight: 600;">个人沟通</h5>
+      <p style="font-size: 1.05rem;">知道对方是否看了你发送的邮件</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <i class="fas fa-user-check fa-3x text-success mb-3"></i>
+      <h5 style="font-weight: 600;">求职应聘</h5>
+      <p style="font-size: 1.05rem;">确认HR是否打开了你的求职邮件</p>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <h2 class="mb-4" style="font-weight: 600; font-size: 2rem;">常见问题</h2>
+  <div class="accordion" id="faqAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="font-size: 1.05rem; font-weight: 600;">
+          对方会发现我在追踪吗？
+        </button>
+      </h2>
+      <div id="faq1" class="accordion-collapse collapse show">
+        <div class="accordion-body" style="font-size: 1.05rem;">
+          不会的。那个追踪图片特别小，1x1像素，肉眼根本看不到。邮件看起来就是正常的邮件。
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="font-size: 1.05rem; font-weight: 600;">
+          支持哪些邮箱？
+        </button>
+      </h2>
+      <div id="faq2" class="accordion-collapse collapse">
+        <div class="accordion-body" style="font-size: 1.05rem;">
+          支持所有主流邮箱服务，包括QQ邮箱、163邮箱、Gmail、Outlook、126邮箱、新浪邮箱等。
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="font-size: 1.05rem; font-weight: 600;">
+          能追踪多少封邮件？
+        </button>
+      </h2>
+      <div id="faq3" class="accordion-collapse collapse">
+        <div class="accordion-body" style="font-size: 1.05rem;">
+          无限制！你可以追踪任意数量的邮件，没有任何限制，完全免费。
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="font-size: 1.05rem; font-weight: 600;">
+          追踪邮件合法吗？
+        </button>
+      </h2>
+      <div id="faq4" class="accordion-collapse collapse">
+        <div class="accordion-body" style="font-size: 1.05rem;">
+          合法的。邮件追踪技术被广泛应用于商业邮件营销和客户关系管理，是合法且常见的技术手段。
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" style="font-size: 1.05rem; font-weight: 600;">
+          如果对方多次打开邮件怎么办？
+        </button>
+      </h2>
+      <div id="faq5" class="accordion-collapse collapse">
+        <div class="accordion-body" style="font-size: 1.05rem;">
+          系统会记录每次打开的时间。你可以看到邮件被打开了多少次，以及每次打开的具体时间。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center py-5 text-white" style="background: linear-gradient(135deg, #ea4335 0%, #fbbc04 100%);">
+  <div class="container">
+    <h2 style="font-size: 2.2rem; font-weight: 600;">立即开始追踪邮件</h2>
+    <p class="lead" style="font-size: 1.2rem;">永久免费 · 无需注册 · 5秒生成追踪像素</p>
+    <a href="/" class="cta-btn mt-3"><i class="fas fa-rocket me-2"></i>免费生成追踪像素</a>
+  </div>
+</div>
+
+<footer class="bg-dark text-white py-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-2">© 2025 IPLogger.icu - 免费邮件追踪工具</p>
+    <a href="/" class="text-white-50 me-3">首页</a>
+    <a href="/file/mianfei-ip-zhuizong-gongju.html" class="text-white-50 me-3">IP追踪</a>
+    <a href="/file/email-tracking-resources.html" class="text-white-50">邮件追踪指南</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
