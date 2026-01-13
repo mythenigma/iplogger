@@ -13,6 +13,11 @@ Disallow: /tracking-data/
 Disallow: /user-sessions/
 Disallow: /analytics/raw/
 
+# Block PHP files (site uses only HTML)
+Disallow: /*.php$
+Disallow: /*.ini$
+Disallow: /*.config$
+
 # Allow major search engine bots
 User-agent: Googlebot
 Allow: /
