@@ -1,12 +1,1 @@
-# Cloudflare Pages Redirects Configuration
-# 强制 HTTPS 和非 www 版本
 
-# Redirect www to non-www (301 permanent redirect)
-https://www.iplogger.icu/* https://iplogger.icu/:splat 301
-
-# Handle URLs without .html extension
-/file/:id /file/:id.html 200
-
-# Block non-existent PHP files (return 404)
-/*.php /404.html 404
-/*.config /404.html 404
