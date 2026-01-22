@@ -5,6 +5,7 @@
 https://www.iplogger.icu/* https://iplogger.icu/:splat 301
 
 # Handle URLs without .html extension
+/file/:id /file/:id.html 200
 
 # Block non-existent PHP files (return 404)
 /*.php /404.html 404
