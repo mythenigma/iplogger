@@ -58,6 +58,43 @@
             padding: 2rem;
             border-radius: 8px;
         }
+        .mini-card {
+            background: #ffffff;
+            border: 1px solid #e0e6ed;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,.06);
+            margin-bottom: 1rem;
+        }
+        .flow-diagram {
+            width: 100%;
+            max-width: 860px;
+            margin: 2rem auto;
+            display: block;
+        }
+        .pill {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: #eaf4ff;
+            color: #1a73e8;
+        }
+        .warning-box {
+            background: #fff4e5;
+            border-left: 5px solid #ffb74d;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+        .safe-box {
+            background: #e9f7ef;
+            border-left: 5px solid #4caf50;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
     </style>
 </head>
 <body>
@@ -65,7 +102,7 @@
     <header class="blog-header">
         <div class="container">
             <h1>How Can You Tell If a Link Is a "Tracking Link"?</h1>
-            <p class="lead">A basic cybersecurity lesson for everyone.</p>
+            <p class="lead">A simple, non-technical guide to staying safe.</p>
         </div>
     </header>
 
@@ -73,59 +110,105 @@
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="blog-content">
-                    <p class="lead">A friend sends you a link, or you see an interesting post online, but the link looks short and unfamiliar. You might wonder: could this be a virus? Or is it tracking my information?</p>
-                    <p>This is a valid concern. Today, let's learn how to identify these "suspicious" links to protect your online safety.</p>
+                    <p class="lead">Short, unfamiliar links can feel risky. The good news: you can check them safely in under a minute.</p>
+                    <p>This guide shows you what a tracking link is, how to spot red flags, and how to preview a link without clicking it.</p>
                     
                     <hr class="my-4">
 
                     <div class="section">
-                        <h3>What Are Tracking Links (or Short URLs)?</h3>
-                        <p>You've definitely seen links like <code>bit.ly/xxxx</code>, <code>t.co/xxxx</code>, or other very short web addresses. These are commonly known as "short URLs."</p>
-                        <p>Their purpose is to turn a long, complicated URL into a short, easy-to-share one. For example, a very long Amazon product URL can be shortened into a tiny link, making it convenient to share on Twitter or in a text message.</p>
-                        <p><strong>Most short links are harmless.</strong> Their main purpose is convenience and tracking click counts (like we discussed in a previous article). The problem is, you can't tell where a short link will take you just by looking at it. This ambiguity can be exploited by malicious actors.</p>
+                        <h3>Quick Answer: What Is a Tracking Link?</h3>
+                        <div class="mini-card">
+                            <span class="pill">Short version</span>
+                            <p class="mt-2 mb-0">A tracking link is just a regular link that records who clicked it, when, and sometimes from where.</p>
+                        </div>
+                        <p>Most short links are normal and used for convenience. The real risk is that you cannot see the destination before clicking.</p>
                     </div>
 
                     <div class="section">
-                        <h3>How to Spot a Short Link?</h3>
-                        <p>This is easy—it's all about the domain name. A normal, full link usually tells you which website it belongs to at a glance, for example:</p>
-                        <ul>
-                            <li><code>https://www.amazon.com/dp/B07VGRJDFY</code> (Amazon)</li>
-                            <li><code>https://www.youtube.com/watch?v=abcde</code> (YouTube)</li>
-                        </ul>
-                        <p>A short link or tracking link, however, will typically use a domain from a URL shortening service, such as:</p>
+                        <h3>How to Recognize a Short Link</h3>
+                        <p>Short links hide the real destination. Common examples:</p>
                         <ul>
                             <li><code>bit.ly/...</code></li>
-                            <li><code>t.co/...</code> (Used by Twitter)</li>
-                            <li><code>goo.gl/...</code> (Discontinued, but you might still see old ones)</li>
-                            <li>And any other short, unfamiliar domain name.</li>
+                            <li><code>t.co/...</code> (Twitter/X)</li>
+                            <li><code>tinyurl.com/...</code></li>
+                            <li>Any very short or unfamiliar domain.</li>
+                        </ul>
+                        <p>A normal link usually shows the brand at a glance:</p>
+                        <ul>
+                            <li><code>https://www.youtube.com/watch?v=...</code></li>
+                            <li><code>https://www.amazon.com/dp/...</code></li>
                         </ul>
                     </div>
 
-                    <div class="tip">
-                        <h4><span class="tip-icon">💡</span> The Key Trick: Preview the Link Before Clicking!</h4>
-                        <p>If you are unsure about a link's safety, <strong>never click it directly!</strong> Instead, use a "link expander" or "link preview" tool to safely see its true destination.</p>
-                        <p>These tools act as a middleman. They will "visit" the short link for you and report back what the final, full-length URL is, all without exposing your own computer or phone to any risk.</p>
+                    <div class="warning-box">
+                        <h4 class="mb-2"><span class="tip-icon">⚠️</span>Red flags to watch for</h4>
+                        <ul class="mb-0">
+                            <li>Random numbers and letters with no context.</li>
+                            <li>A domain you do not recognize.</li>
+                            <li>Urgent language like “click now” or “account locked.”</li>
+                            <li>It came from an unknown sender.</li>
+                        </ul>
+                    </div>
+
+                    <div class="safe-box">
+                        <h4 class="mb-2"><span class="tip-icon">✅</span>Safe habit</h4>
+                        <p class="mb-0">Preview the link first. If the destination looks normal, you can decide whether to proceed.</p>
+                    </div>
+
+                    <svg class="flow-diagram" viewBox="0 0 900 220" role="img" aria-label="Link safety flowchart">
+                        <defs>
+                            <linearGradient id="flowAccent" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#66a6ff"></stop>
+                                <stop offset="100%" stop-color="#89f7fe"></stop>
+                            </linearGradient>
+                            <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+                                <path d="M0,0 L12,6 L0,12 Z" fill="#66a6ff"></path>
+                            </marker>
+                        </defs>
+                        <rect x="30" y="40" rx="14" ry="14" width="190" height="80" fill="#ffffff" stroke="#66a6ff" stroke-width="2"></rect>
+                        <text x="125" y="78" text-anchor="middle" font-size="15" fill="#1f2933" font-weight="600">Receive Link</text>
+                        <text x="125" y="98" text-anchor="middle" font-size="12" fill="#5f6368">Unknown source</text>
+
+                        <rect x="260" y="40" rx="14" ry="14" width="190" height="80" fill="#ffffff" stroke="#66a6ff" stroke-width="2"></rect>
+                        <text x="355" y="78" text-anchor="middle" font-size="15" fill="#1f2933" font-weight="600">Preview Safely</text>
+                        <text x="355" y="98" text-anchor="middle" font-size="12" fill="#5f6368">Use a link checker</text>
+
+                        <rect x="490" y="40" rx="14" ry="14" width="190" height="80" fill="#ffffff" stroke="#66a6ff" stroke-width="2"></rect>
+                        <text x="585" y="78" text-anchor="middle" font-size="15" fill="#1f2933" font-weight="600">Inspect URL</text>
+                        <text x="585" y="98" text-anchor="middle" font-size="12" fill="#5f6368">Brand + domain</text>
+
+                        <rect x="720" y="40" rx="14" ry="14" width="150" height="80" fill="url(#flowAccent)" stroke="#66a6ff" stroke-width="2"></rect>
+                        <text x="795" y="78" text-anchor="middle" font-size="15" fill="#1f2933" font-weight="600">Decide</text>
+                        <text x="795" y="98" text-anchor="middle" font-size="12" fill="#1f2933">Click or skip</text>
+
+                        <line x1="220" y1="80" x2="260" y2="80" stroke="#66a6ff" stroke-width="3" marker-end="url(#arrow)"></line>
+                        <line x1="450" y1="80" x2="490" y2="80" stroke="#66a6ff" stroke-width="3" marker-end="url(#arrow)"></line>
+                        <line x1="680" y1="80" x2="720" y2="80" stroke="#66a6ff" stroke-width="3" marker-end="url(#arrow)"></line>
+                    </svg>
+
+                    <div class="section">
+                        <h3>How to Preview a Link (3 Steps)</h3>
+                        <ol>
+                            <li><strong>Copy the link</strong> (do not open it).</li>
+                            <li><strong>Paste into a checker</strong> like <a href="https://iplogger.icu/link-checker/" target="_blank" rel="noopener">iplogger.icu/link-checker</a>.</li>
+                            <li><strong>Read the full URL</strong> and decide if it is a known, trusted site.</li>
+                        </ol>
                     </div>
 
                     <div class="section">
-                        <h3>How to Use a Link Preview Tool</h3>
-                        <ol>
-                            <li><strong>Copy the Short Link:</strong> When you see a suspicious link, long-press it (on mobile) or right-click it (on a computer) and select "Copy Link Address." <strong>Be careful to copy, not open!</strong></li>
-                            <li><strong>Open a Preview Website:</strong> In your browser, open a link preview tool. You can search for "link checker" or "URL expander." Many free tools are available, such as the <a href="https://iplogger.icu/link-checker/" target="_blank">Link Checker from iplogger.icu</a>.</li>
-                            <li><strong>Paste and Check:</strong> Paste the short link you copied into the input box on the tool's website and click the "Check" or "Preview" button.</li>
-                            <li><strong>Review the Result:</strong> The tool will display the original, full-length URL that the short link points to. Now you can make an informed decision:
-                                <ul>
-                                    <li>If the original URL is from a website you know and trust (like YouTube, Amazon, a major news site, etc.), it's likely safe.</li>
-                                    <li>If the original URL looks strange, is from a domain you don't recognize, or contains suspicious words, it's best to avoid it.</li>
-                                </ul>
-                            </li>
-                        </ol>
+                        <h3>If You Already Clicked</h3>
+                        <ul>
+                            <li>Close the page if it looks wrong.</li>
+                            <li>Do not download files or enter passwords.</li>
+                            <li>Run a security scan if you are unsure.</li>
+                            <li>Change passwords if you entered credentials.</li>
+                        </ul>
                     </div>
 
                     <div class="conclusion mt-5">
                         <h4>Safe Browsing Summary</h4>
-                        <p>Making a habit of "check before you click" is the first step to protecting yourself online. Short links are neutral tools, but we must be cautious of those from unknown sources.</p>
-                        <p>To recap: <strong>Copy the link -> Use a tool to check it -> Click only if it's safe.</strong> This simple three-step process can help you avoid the vast majority of risks from malicious links.</p>
+                        <p>Short links are not automatically dangerous, but unknown destinations are. The habit to remember:</p>
+                        <p><strong>Copy the link -> Preview it -> Click only if it looks safe.</strong></p>
                     </div>
                 </div>
             </div>

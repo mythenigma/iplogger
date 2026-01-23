@@ -8,13 +8,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/index.html</loc>
-    <lastmod>2025-05-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://iplogger.icu/iplogger.html</loc>
+    <loc>https://iplogger.icu/iplogger</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -22,305 +16,305 @@
   
   <!-- Pages in the file directory -->
   <url>
-    <loc>https://iplogger.icu/file/about.html</loc>
+    <loc>https://iplogger.icu/file/about</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/alternative_spypig.html</loc>
+    <loc>https://iplogger.icu/file/alternative_spypig</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/catching.html</loc>
+    <loc>https://iplogger.icu/file/catching</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>  <url>
-    <loc>https://iplogger.icu/file/email-ip-tracking.html</loc>
+    <loc>https://iplogger.icu/file/email-ip-tracking</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/email-tracking-cn.html</loc>
+    <loc>https://iplogger.icu/file/email-tracking-cn</loc>
     <lastmod>2025-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/email-tracking-en.html</loc>
+    <loc>https://iplogger.icu/file/email-tracking-en</loc>
     <lastmod>2025-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/email-tracking-ar.html</loc>
+    <loc>https://iplogger.icu/file/email-tracking-ar</loc>
     <lastmod>2025-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/example.html</loc>
+    <loc>https://iplogger.icu/file/example</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/gmail-ip-tracking.html</loc>
+    <loc>https://iplogger.icu/file/gmail-ip-tracking</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/grabber.html</loc>
+    <loc>https://iplogger.icu/file/grabber</loc>
     <lastmod>2023-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/ini.html</loc>
+    <loc>https://iplogger.icu/file/ini</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/ipgrabber.html</loc>
+    <loc>https://iplogger.icu/file/ipgrabber</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/ipgrabbertool.html</loc>
+    <loc>https://iplogger.icu/file/ipgrabbertool</loc>
     <lastmod>2023-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/ipintro.html</loc>
+    <loc>https://iplogger.icu/file/ipintro</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/ipintrod.html</loc>
+    <loc>https://iplogger.icu/file/ipintrod</loc>
     <lastmod>2023-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iplogger_intro.html</loc>
+    <loc>https://iplogger.icu/file/iplogger_intro</loc>
     <lastmod>2023-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iplogger.html</loc>
+    <loc>https://iplogger.icu/file/iplogger</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iploggerEn.html</loc>
+    <loc>https://iplogger.icu/file/iploggerEn</loc>
     <lastmod>2023-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iploggerintrocn.html</loc>
+    <loc>https://iplogger.icu/file/iploggerintrocn</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iploggerWHAT.html</loc>
+    <loc>https://iplogger.icu/file/iploggerWHAT</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iptracktool.html</loc>
+    <loc>https://iplogger.icu/file/iptracktool</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/procon.html</loc>
+    <loc>https://iplogger.icu/file/procon</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/usecase.html</loc>
+    <loc>https://iplogger.icu/file/usecase</loc>
     <lastmod>2025-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- New Hub Pages - High Priority -->
   <url>
-    <loc>https://iplogger.icu/file/ip-logger-complete-guide.html</loc>
+    <loc>https://iplogger.icu/file/ip-logger-complete-guide</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/ip-tracker-tools-hub.html</loc>
+    <loc>https://iplogger.icu/file/ip-tracker-tools-hub</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/email-tracking-resources.html</loc>
+    <loc>https://iplogger.icu/file/email-tracking-resources</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <!-- Simple Landing Pages for Long-tail Keywords -->
   <url>
-    <loc>https://iplogger.icu/file/free-ip-tracker-no-sign-up.html</loc>
+    <loc>https://iplogger.icu/file/free-ip-tracker-no-sign-up</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/how-to-track-someones-ip.html</loc>
+    <loc>https://iplogger.icu/file/how-to-track-someones-ip</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/ip-grabber-link-free.html</loc>
+    <loc>https://iplogger.icu/file/ip-grabber-link-free</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/online-ip-tracker-instant.html</loc>
+    <loc>https://iplogger.icu/file/online-ip-tracker-instant</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/free-email-tracker-pixel.html</loc>
+    <loc>https://iplogger.icu/file/free-email-tracker-pixel</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Chinese Simple Landing Pages -->
   <url>
-    <loc>https://iplogger.icu/file/mianfei-ip-zhuizong-gongju.html</loc>
+    <loc>https://iplogger.icu/file/mianfei-ip-zhuizong-gongju</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/ruhe-chakan-bieren-ip-dizhi.html</loc>
+    <loc>https://iplogger.icu/file/ruhe-chakan-bieren-ip-dizhi</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/ip-dingwei-zhuizong-qi.html</loc>
+    <loc>https://iplogger.icu/file/ip-dingwei-zhuizong-qi</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/mianfei-youjian-zhuizong.html</loc>
+    <loc>https://iplogger.icu/file/mianfei-youjian-zhuizong</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Practical User-Focused Pages -->
   <url>
-    <loc>https://iplogger.icu/file/ip-tracking-tips-tricks.html</loc>
+    <loc>https://iplogger.icu/file/ip-tracking-tips-tricks</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/real-life-ip-tracking-stories.html</loc>
+    <loc>https://iplogger.icu/file/real-life-ip-tracking-stories</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/shizhong-anli-zhongwen.html</loc>
+    <loc>https://iplogger.icu/file/shizhong-anli-zhongwen</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/simple-ways-catch-someone-lying.html</loc>
+    <loc>https://iplogger.icu/file/simple-ways-catch-someone-lying</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/weishenme-xuyao-zhuizong-ip.html</loc>
+    <loc>https://iplogger.icu/file/weishenme-xuyao-zhuizong-ip</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/catch-cheating-partner-ip-tracking.html</loc>
+    <loc>https://iplogger.icu/file/catch-cheating-partner-ip-tracking</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/easiest-way-get-ip-2025.html</loc>
+    <loc>https://iplogger.icu/file/easiest-way-get-ip-2025</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- IPLogger Specific Articles -->
   <url>
-    <loc>https://iplogger.icu/file/what-is-iplogger.html</loc>
+    <loc>https://iplogger.icu/file/what-is-iplogger</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iplogger-zenme-yong.html</loc>
+    <loc>https://iplogger.icu/file/iplogger-zenme-yong</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iplogger-safe-to-use.html</loc>
+    <loc>https://iplogger.icu/file/iplogger-safe-to-use</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iplogger-mianfei-ma.html</loc>
+    <loc>https://iplogger.icu/file/iplogger-mianfei-ma</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iplogger-or-grabify-which-better.html</loc>
+    <loc>https://iplogger.icu/file/iplogger-or-grabify-which-better</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iplogger-changjian-wenti.html</loc>
+    <loc>https://iplogger.icu/file/iplogger-changjian-wenti</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/why-use-iplogger-instead-others.html</loc>
+    <loc>https://iplogger.icu/file/why-use-iplogger-instead-others</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/iplogger-beginners-guide.html</loc>
+    <loc>https://iplogger.icu/file/iplogger-beginners-guide</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>

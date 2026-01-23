@@ -57,6 +57,13 @@
             border-radius: 8px;
             margin-bottom: 20px;
         }
+
+        .flow-diagram {
+            width: 100%;
+            max-width: 860px;
+            margin: 30px auto 10px;
+            display: block;
+        }
         
         .btn-primary {
             background-color: #1a73e8;
@@ -128,38 +135,83 @@
                 <div class="card mb-5">
                     <div class="card-body">
                         <h5 class="mb-4 section-title">What Is An Invisible Image?</h5>
-                        <p class="text-muted">
-                            Invisible images are often used in emails for tracking purposes. When you receive an email that contains an invisible image, the image is actually embedded in the HTML code of the email and is set to be invisible.
-                        </p>
-                        <p class="text-muted">
-                            SpyPig was a free email tracking service that allowed users to embed a small tracking image into an email message to track when and where the message was opened. However, the website seems to be no longer active as of May 2023. It is unclear whether the service has been permanently discontinued or if it will be available again in the future. There are other similar services available, such as Bananatag, Mailtrack, and Hubspot Sales, that offer email tracking features.
-                        </p>
+                        <p class="text-muted mb-2">Invisible images (tracking pixels) are tiny files embedded in email HTML.</p>
+                        <p class="text-muted mb-3">They load automatically and can signal that an email was opened.</p>
+                        <ul class="text-muted text-left mb-0">
+                            <li>SpyPig offered free email tracking via a small embedded image.</li>
+                            <li>The service appears inactive as of May 2023.</li>
+                            <li>Alternatives include Bananatag, Mailtrack, and Hubspot Sales.</li>
+                        </ul>
                     </div>
                 </div>
                 
                 <div class="highlight-box">
-                    <p class="mb-0">
-                        When you open the email, your email client automatically requests the image from the sender's server. This request includes information about your email address and the time you opened the email, which allows the sender to track when and how you interacted with the email.
-                    </p>
-                    <p class="mb-0 mt-3">
-                        This tracking technique is often used by email marketers to gather information about the effectiveness of their email campaigns. They can track how many people opened the email, how many clicked on a link in the email, and how long they spent reading the email.
-                    </p>
+                    <p class="mb-2">What happens when you open an email:</p>
+                    <ul class="mb-0 text-left">
+                        <li>Your email client requests the image from the sender’s server.</li>
+                        <li>The request includes timing and basic device/network info.</li>
+                        <li>Marketers use it to measure opens, clicks, and engagement time.</li>
+                    </ul>
+                </div>
+
+                <svg class="flow-diagram" viewBox="0 0 900 220" role="img" aria-label="Email tracking flow diagram">
+                    <defs>
+                        <linearGradient id="flowAccent" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#1a73e8"></stop>
+                            <stop offset="100%" stop-color="#4b8ef0"></stop>
+                        </linearGradient>
+                        <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+                            <path d="M0,0 L12,6 L0,12 Z" fill="#1a73e8"></path>
+                        </marker>
+                    </defs>
+                    <rect x="30" y="40" rx="16" ry="16" width="220" height="80" fill="#ffffff" stroke="#1a73e8" stroke-width="2"></rect>
+                    <text x="140" y="78" text-anchor="middle" font-size="16" fill="#1a1c1e" font-weight="600">Email Sent</text>
+                    <text x="140" y="100" text-anchor="middle" font-size="12" fill="#5f6368">Tracking image embedded</text>
+
+                    <rect x="340" y="20" rx="16" ry="16" width="220" height="110" fill="#ffffff" stroke="#1a73e8" stroke-width="2"></rect>
+                    <text x="450" y="60" text-anchor="middle" font-size="16" fill="#1a1c1e" font-weight="600">Recipient Opens</text>
+                    <text x="450" y="82" text-anchor="middle" font-size="12" fill="#5f6368">Email client requests image</text>
+                    <text x="450" y="102" text-anchor="middle" font-size="12" fill="#5f6368">from the server</text>
+
+                    <rect x="650" y="40" rx="16" ry="16" width="220" height="80" fill="url(#flowAccent)" stroke="#1a73e8" stroke-width="2"></rect>
+                    <text x="760" y="78" text-anchor="middle" font-size="16" fill="#ffffff" font-weight="600">Server Logs</text>
+                    <text x="760" y="100" text-anchor="middle" font-size="12" fill="#eaf1ff">Time, IP, device info</text>
+
+                    <line x1="250" y1="80" x2="340" y2="80" stroke="#1a73e8" stroke-width="3" marker-end="url(#arrow)"></line>
+                    <line x1="560" y1="80" x2="650" y2="80" stroke="#1a73e8" stroke-width="3" marker-end="url(#arrow)"></line>
+
+                    <rect x="230" y="150" rx="14" ry="14" width="440" height="50" fill="#f1f3f4" stroke="#d2d5d9" stroke-width="1"></rect>
+                    <text x="450" y="182" text-anchor="middle" font-size="13" fill="#3c4043">Analytics dashboard updates with open and engagement data</text>
+                    <line x1="760" y1="120" x2="560" y2="150" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrow)"></line>
+                </svg>
+
+                <div class="mt-4">
+                    <div class="mermaid">
+flowchart LR
+    A[Email Sent] --> B[Recipient Opens Email]
+    B --> C[Email Client Requests Pixel]
+    C --> D[Tracking Server Logs Request]
+    D --> E[Analytics Dashboard Updates]
+                    </div>
                 </div>
                 
                 <div class="container">
-                    <p class="text-muted mb-4">
-                        While invisible images can be a useful tool for email marketers, some people consider them to be a privacy concern. If you're concerned about being tracked in this way, you can disable automatic image loading in your email client or use an email client that blocks tracking images by default.
-                    </p>
+                    <p class="text-muted mb-2">Privacy note:</p>
+                    <ul class="text-muted text-left mb-4">
+                        <li>Tracking pixels can be a privacy concern for recipients.</li>
+                        <li>Disable automatic image loading to reduce tracking.</li>
+                        <li>Some email clients block tracking images by default.</li>
+                    </ul>
                     
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-12">
                             <div class="img-container">
-                                <img src="../assets/images/grabify-email.png" class="img-thumbnail" alt="Email tracking example">
+                                <img src="1.png" class="img-thumbnail" alt="Email tracking example">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-12">
                             <div class="img-container">
-                                <img src="../assets/images/grabifylog.png" class="img-thumbnail" alt="IP logging data">
+                                <img src="3.png" class="img-thumbnail" alt="IP logging data">
                             </div>
                         </div>
                     </div>
@@ -170,20 +222,23 @@
                 </a>
                 
                 <div class="highlight-box mt-5">
-                    <p class="mb-0">
-                        The logic behind using an invisible image in an email is to track whether the email has been opened or not. When the email is opened, the email client requests the image from a remote server, and the server logs the request as an open event.
-                    </p>
-                    <p class="mb-0 mt-3">
-                        As for the programming language used to write such a program, there is no specific language that is required. It can be implemented using any server-side programming language such as PHP, Python, Java, Node.js, etc. The basic idea is to create a small image and embed it in the email using an HTML img tag with a source that points to a server that logs the request. When the image is loaded, the server logs the request, and the information can be processed later to track open rates and other metrics.
-                    </p>
+                    <p class="mb-2">How it works (simple version):</p>
+                    <ul class="mb-0 text-left">
+                        <li>Email opens trigger a request to the tracking server.</li>
+                        <li>The server logs the request as an “open” event.</li>
+                        <li>Any server-side language can handle the logging.</li>
+                        <li>The pixel is just an HTML <code>img</code> tag pointing to that server.</li>
+                    </ul>
                 </div>
                 
                 <div class="card mt-5">
                     <div class="card-body">
                         <h5 class="card-title"><i class="fas fa-info-circle mr-2"></i>Did You Know?</h5>
-                        <p class="card-text">
-                            Grabify.icu also offers a simple tracking tool that allows you to embed an invisible tracking image in your email, and you will receive an email notification when the recipient opens the email.
-                        </p>
+                        <ul class="card-text text-left mb-0">
+                            <li>Grabify.icu offers a simple tracking tool.</li>
+                            <li>You embed an invisible image in the email.</li>
+                            <li>You get a notification when the email is opened.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -203,12 +258,16 @@
 <!-- Footer -->
 <footer class="py-5">
     <div class="container">
-        <div class="small text-center text-muted">Copyright &copy; 2023 - mythenigma@gmail.com</div>
+        <div class="small text-center text-muted">Copyright &copy; 2026 - mythenigma@gmail.com</div>
     </div>
 </footer>
 
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({ startOnLoad: true, theme: "neutral" });
+</script>
 </body>
 </html>

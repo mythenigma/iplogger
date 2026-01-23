@@ -59,6 +59,26 @@
             border-radius: 8px;
             margin-bottom: 1.5rem;
         }
+        .quick-list {
+            background-color: #fff8f1;
+            border-left: 5px solid #ff9f1c;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+        .safe-box {
+            background-color: #e9f7ef;
+            border-left: 5px solid #2ecc71;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+        .flow-diagram {
+            width: 100%;
+            max-width: 860px;
+            margin: 2rem auto;
+            display: block;
+        }
         .conclusion {
             background-color: #e9ecef;
             padding: 2rem;
@@ -71,7 +91,7 @@
     <header class="blog-header">
         <div class="container">
             <h1>How to Avoid Scams When Selling Online</h1>
-            <p class="lead">A simple trick to identify dishonest buyers and protect your interests.</p>
+            <p class="lead">A practical, low-effort check to reduce risk before you ship.</p>
         </div>
     </header>
 
@@ -79,30 +99,73 @@
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="blog-content">
-                    <p class="lead">Do you enjoy selling your used items on platforms like eBay, Facebook Marketplace, or Craigslist? While most transactions are smooth, the most frustrating experience is dealing with a dishonest buyer.</p>
+                    <p class="lead">Most buyers are honest. The problems start when a buyer’s story does not match their behavior.</p>
                     
                     <div class="scenario">
-                        <h4>What is a "Dishonest Buyer" Scam?</h4>
-                        <p>This is when a buyer receives your item and then makes false claims (e.g., "it's damaged," "it's not as described") to demand a partial refund. They exploit the seller's fear of negative feedback and platform disputes. Even worse, some may swap your item with a broken or fake one and then file for a return.</p>
+                        <h4>Common Dishonest Buyer Tactics</h4>
+                        <ul class="mb-0">
+                            <li>Claiming damage to force a partial refund.</li>
+                            <li>Swapping the item and filing a return.</li>
+                            <li>Using an address that does not match their location.</li>
+                        </ul>
                     </div>
 
-                    <p>Today, I'll teach you a very simple but effective method to identify these potential scammers before you ship your item, significantly reducing your risk of getting cheated.</p>
+                    <p>This guide shows a simple, non-invasive way to spot risky transactions before you ship.</p>
 
                     <hr class="my-4">
 
-                    <h3>The Core Idea: Verify the Shipping Address's Authenticity</h3>
-                    <p>A common tactic used by professional scammers is to have a mismatch between their physical location and the shipping address. They might be in one city but ask you to ship the item to a different city. This address could be fake or belong to an accomplice, making it harder for you to take any action if a dispute arises.</p>
-                    <p>Our method is to use the buyer's IP address to see if their <strong>browsing location (city)</strong> matches the <strong>shipping address city</strong>.</p>
+                    <h3>The Core Idea</h3>
+                    <p>Check whether the buyer’s browsing location roughly matches their shipping city. A mismatch is not proof, but it is a strong signal to slow down.</p>
+
+                    <div class="quick-list">
+                        <h4 class="mb-2">Fast Checklist</h4>
+                        <ul class="mb-0">
+                            <li>Is the shipping city consistent with the buyer’s location?</li>
+                            <li>Does the explanation for any mismatch make sense?</li>
+                            <li>Are they rushing you or avoiding normal questions?</li>
+                        </ul>
+                    </div>
+
+                    <svg class="flow-diagram" viewBox="0 0 900 220" role="img" aria-label="Seller safety flowchart">
+                        <defs>
+                            <linearGradient id="flowAccent" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#FF5F6D"></stop>
+                                <stop offset="100%" stop-color="#FFC371"></stop>
+                            </linearGradient>
+                            <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+                                <path d="M0,0 L12,6 L0,12 Z" fill="#FF5F6D"></path>
+                            </marker>
+                        </defs>
+                        <rect x="30" y="40" rx="14" ry="14" width="200" height="80" fill="#ffffff" stroke="#FF5F6D" stroke-width="2"></rect>
+                        <text x="130" y="78" text-anchor="middle" font-size="15" fill="#1f2933" font-weight="600">Buyer Inquires</text>
+                        <text x="130" y="98" text-anchor="middle" font-size="12" fill="#5f6368">Normal conversation</text>
+
+                        <rect x="260" y="40" rx="14" ry="14" width="200" height="80" fill="#ffffff" stroke="#FF5F6D" stroke-width="2"></rect>
+                        <text x="360" y="78" text-anchor="middle" font-size="15" fill="#1f2933" font-weight="600">Send Context Link</text>
+                        <text x="360" y="98" text-anchor="middle" font-size="12" fill="#5f6368">Photos / manual</text>
+
+                        <rect x="490" y="40" rx="14" ry="14" width="200" height="80" fill="#ffffff" stroke="#FF5F6D" stroke-width="2"></rect>
+                        <text x="590" y="78" text-anchor="middle" font-size="15" fill="#1f2933" font-weight="600">Check Location</text>
+                        <text x="590" y="98" text-anchor="middle" font-size="12" fill="#5f6368">Compare city</text>
+
+                        <rect x="720" y="40" rx="14" ry="14" width="150" height="80" fill="url(#flowAccent)" stroke="#FF5F6D" stroke-width="2"></rect>
+                        <text x="795" y="78" text-anchor="middle" font-size="15" fill="#1f2933" font-weight="600">Decide</text>
+                        <text x="795" y="98" text-anchor="middle" font-size="12" fill="#1f2933">Ship or stop</text>
+
+                        <line x1="230" y1="80" x2="260" y2="80" stroke="#FF5F6D" stroke-width="3" marker-end="url(#arrow)"></line>
+                        <line x1="460" y1="80" x2="490" y2="80" stroke="#FF5F6D" stroke-width="3" marker-end="url(#arrow)"></line>
+                        <line x1="690" y1="80" x2="720" y2="80" stroke="#FF5F6D" stroke-width="3" marker-end="url(#arrow)"></line>
+                    </svg>
 
                     <div class="step">
-                        <h3><span class="step-icon">1</span> Prepare a "Bait" Link</h3>
-                        <p>While communicating with the buyer, you can casually send them a link. This link can be anything, for example:</p>
+                        <h3><span class="step-icon">1</span> Prepare a Normal Context Link</h3>
+                        <p>Send something relevant to the transaction:</p>
                         <ul>
-                            <li>"Here are some more detailed photos of the item." (Upload photos/videos to a cloud service and get a shareable link.)</li>
-                            <li>"Here is the official user manual for this model, you can check it out." (Find a link to the product's official manual.)</li>
-                            <li>"I can offer free shipping. Can you confirm if this courier serves your area?" (A link to a courier's website.)</li>
+                            <li>More photos or a short video of the item.</li>
+                            <li>The official manual or product page.</li>
+                            <li>A shipping carrier page to confirm service.</li>
                         </ul>
-                        <p>The key is to make the link look normal and relevant to the conversation.</p>
+                        <p>Keep it natural and helpful.</p>
                     </div>
 
                     <div class="step">
@@ -116,8 +179,8 @@
                     </div>
 
                     <div class="step">
-                        <h3><span class="step-icon">4</span> Compare the Cities and Make a Judgment</h3>
-                        <p>Now, compare the two pieces of information:</p>
+                        <h3><span class="step-icon">4</span> Compare and Decide</h3>
+                        <p>Compare the two pieces of information:</p>
                         <ul>
                             <li><strong>The city from the IP address:</strong> This is where the buyer is actually located.</li>
                             <li><strong>The city in the shipping address:</strong> This is where they want you to send the item.</li>
@@ -127,6 +190,15 @@
                             <p>The IP address shows the buyer is in <strong>City A</strong> (e.g., Los Angeles), but the shipping address is in a distant <strong>City B</strong> (e.g., Miami), and they can't provide a reasonable explanation (like "I'm buying it for a family member").</p>
                             <p>This is a strong indicator of a "location mismatch," a major red flag for professional scammers.</p>
                         </div>
+                    </div>
+
+                    <div class="safe-box">
+                        <h4 class="mb-2">Important Limitations</h4>
+                        <ul class="mb-0">
+                            <li>IP location is approximate, not exact.</li>
+                            <li>VPNs and mobile networks can show different cities.</li>
+                            <li>Use this as a signal, not proof.</li>
+                        </ul>
                     </div>
 
                     <h3>What to Do If You Find a Mismatch?</h3>
@@ -139,7 +211,7 @@
 
                     <div class="conclusion mt-5">
                         <h4>Conclusion</h4>
-                        <p>The goal of this method is <strong>verification</strong>, not confrontation. It gives you more control by leveraging information the buyer doesn't know you have. While it can't prevent 100% of scams, it can effectively filter out many opportunistic and dishonest buyers, making your online selling experience much safer and more pleasant.</p>
+                        <p>The goal is <strong>verification</strong>, not confrontation. Use this method to slow down risky deals and protect yourself before shipping.</p>
                     </div>
                 </div>
             </div>

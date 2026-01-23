@@ -1,10 +1,10 @@
 https://iplogger.icu/
-https://iplogger.icu/file/iploggerEn.html
-https://iplogger.icu/file/ipgrabbertool.html
-https://iplogger.icu/file/iplogger_intro.html
-https://iplogger.icu/file/ip_tracker.html
-https://iplogger.icu/file/grabber.html
-https://iplogger.icu/file/ipintrod.html
+https://iplogger.icu/file/iploggerEn
+https://iplogger.icu/file/ipgrabbertool
+https://iplogger.icu/file/iplogger_intro
+https://iplogger.icu/file/ip_tracker
+https://iplogger.icu/file/grabber
+https://iplogger.icu/file/ipintrod
 https://iplogger.icu/about
 https://iplogger.icu/privacy
 https://iplogger.icu/terms
