@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPLogger.icu 项目审计报告 — 2026年2月</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root {
+      --red: #e74c3c;
+      --orange: #e67e22;
+      --yellow: #f1c40f;
+      --green: #27ae60;
+      --blue: #2980b9;
+      --dark: #2c3e50;
+      --light: #ecf0f1;
+      --bg: #f5f7fa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: #333; line-height: 1.7; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    header { background: linear-gradient(135deg, var(--dark) 0%, #34495e 100%); color: white; padding: 3rem 0; text-align: center; }
+    header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    header p { opacity: 0.8; font-size: 1.1rem; }
+    header .date { margin-top: 1rem; font-size: 0.9rem; opacity: 0.6; }
+    
+    nav.toc { background: white; border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem auto; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    nav.toc h2 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--dark); }
+    nav.toc ol { padding-left: 1.5rem; }
+    nav.toc li { margin-bottom: 0.4rem; }
+    nav.toc a { color: var(--blue); text-decoration: none; }
+    nav.toc a:hover { text-decoration: underline; }
+    
+    .section { background: white; border-radius: 10px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .section h2 { font-size: 1.5rem; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 3px solid var(--blue); }
+    .section h3 { font-size: 1.2rem; margin: 1.5rem 0 0.8rem; color: var(--dark); }
+    .section h4 { font-size: 1.05rem; margin: 1rem 0 0.5rem; color: #555; }
+    
+    .badge { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; color: white; margin-right: 6px; vertical-align: middle; }
+    .badge.p0 { background: var(--red); }
+    .badge.p1 { background: var(--orange); }
+    .badge.p2 { background: var(--yellow); color: #333; }
+    .badge.p3 { background: var(--green); }
+    .badge.fixed { background: #95a5a6; text-decoration: line-through; }
+    
+    .status { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-left: 8px; }
+    .status.pending { background: #fdecea; color: var(--red); }
+    .status.done { background: #eafaf1; color: var(--green); }
+    .status.partial { background: #fef9e7; color: #b7950b; }
+    
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+    th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+    th { background: var(--dark); color: white; font-weight: 600; }
+    tr:nth-child(even) { background: #f9f9f9; }
+    td code { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-size: 0.85rem; }
+    
+    ul.issue-list { list-style: none; padding: 0; }
+    ul.issue-list > li { padding: 0.8rem 1rem; margin-bottom: 0.5rem; border-left: 4px solid var(--blue); background: #f8f9fb; border-radius: 0 6px 6px 0; }
+    ul.issue-list > li.critical { border-left-color: var(--red); background: #fdf2f2; }
+    ul.issue-list > li.high { border-left-color: var(--orange); background: #fef6ed; }
+    ul.issue-list > li.medium { border-left-color: var(--yellow); background: #fffbe6; }
+    ul.issue-list > li.low { border-left-color: var(--green); background: #eafaf1; }
+    
+    .code-block { background: #1e1e1e; color: #d4d4d4; padding: 1rem 1.2rem; border-radius: 6px; overflow-x: auto; font-family: 'Fira Code', 'Consolas', monospace; font-size: 0.88rem; margin: 0.8rem 0; line-height: 1.5; }
+    .code-block .comment { color: #6a9955; }
+    .code-block .tag { color: #569cd6; }
+    .code-block .attr { color: #9cdcfe; }
+    .code-block .str { color: #ce9178; }
+    
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .summary-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.2rem; text-align: center; }
+    .summary-card .number { font-size: 2rem; font-weight: 800; }
+    .summary-card .label { font-size: 0.85rem; color: #777; margin-top: 0.3rem; }
+    .summary-card.red .number { color: var(--red); }
+    .summary-card.orange .number { color: var(--orange); }
+    .summary-card.yellow .number { color: #b7950b; }
+    .summary-card.green .number { color: var(--green); }
+    
+    .progress-bar { background: #e0e0e0; border-radius: 10px; height: 10px; margin: 0.5rem 0; overflow: hidden; }
+    .progress-bar .fill { height: 100%; border-radius: 10px; transition: width 0.3s; }
+    .progress-bar .fill.red { background: var(--red); }
+    .progress-bar .fill.green { background: var(--green); }
+    
+    footer { text-align: center; padding: 2rem 0; color: #999; font-size: 0.85rem; }
+    
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist input[type="checkbox"] { margin-right: 8px; transform: scale(1.2); }
+    
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.6rem; }
+      .section { padding: 1.2rem; }
+      table { font-size: 0.82rem; }
+      th, td { padding: 5px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>📋 IPLogger.icu 项目审计报告</h1>
+    <p>代码质量 & SEO 全面审计</p>
+    <div class="date">生成时间：2026年2月22日 | 审计范围：全站代码 + SEO + 性能</div>
+  </div>
+</header>
+
+<div class="container" style="margin-top: 2rem;">
+
+  <!-- 概览 -->
+  <div class="section" id="overview">
+    <h2>📊 问题概览</h2>
+    <div class="summary-grid">
+      <div class="summary-card red">
+        <div class="number">6</div>
+        <div class="label">🔴 P0 致命问题</div>
+      </div>
+      <div class="summary-card orange">
+        <div class="number">8</div>
+        <div class="label">🟡 P1 高优先级</div>
+      </div>
+      <div class="summary-card yellow">
+        <div class="number">9</div>
+        <div class="label">🟠 P2 中优先级</div>
+      </div>
+      <div class="summary-card green">
+        <div class="number">5</div>
+        <div class="label">🟢 P3 低优先级</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 目录 -->
+  <nav class="toc" id="toc">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#part1">第一部分：代码质量问题</a></li>
+      <li><a href="#part2">第二部分：SEO 致命问题 (P0)</a></li>
+      <li><a href="#part3">第三部分：SEO 高优先级 (P1)</a></li>
+      <li><a href="#part4">第四部分：SEO 中优先级 (P2)</a></li>
+      <li><a href="#part5">第五部分：SEO 低优先级 (P3)</a></li>
+      <li><a href="#part6">第六部分：Core Web Vitals 性能</a></li>
+      <li><a href="#part7">第七部分：关键词自我竞争详情</a></li>
+      <li><a href="#part8">第八部分：子页面 SEO 逐页审查</a></li>
+      <li><a href="#part9">第九部分：修复优先级 & 行动计划</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============================== -->
+  <!-- 第一部分：代码质量 -->
+  <!-- ============================== -->
+  <div class="section" id="part1">
+    <h2>第一部分：代码质量问题</h2>
+
+    <h3><span class="badge p0">P0</span> 1. index.html 和 main.js 代码严重重复</h3>
+    <p><code>index.html</code> 底部内联 <code>&lt;script&gt;</code>（第600行起）与 <code>js/main.js</code> 包含<strong>完全相同</strong>的函数：</p>
+    <table>
+      <tr><th>重复函数</th><th>index.html</th><th>js/main.js</th><th>影响</th></tr>
+      <tr><td><code>new2025()</code></td><td>✅ 有</td><td>✅ 有</td><td>函数覆盖，行为不可预测</td></tr>
+      <tr><td><code>continuewithcode()</code></td><td>✅ 有</td><td>✅ 有</td><td>同上</td></tr>
+      <tr><td><code>continuewithcode2()</code></td><td>✅ 有</td><td>✅ 有</td><td>同上</td></tr>
+      <tr><td><code>makeCodeweb2()</code></td><td>✅ 有</td><td>✅ 有</td><td>同上</td></tr>
+      <tr><td><code>isValidURL()</code></td><td>✅ 有</td><td>✅ 有</td><td>同上</td></tr>
+      <tr><td><code>isValidIP()</code></td><td>✅ 有</td><td>✅ 有</td><td>同上</td></tr>
+      <tr><td><code>checkIP()</code> / <code>checkIpAddress()</code></td><td>✅ <code>checkIP</code></td><td>✅ <code>checkIpAddress</code></td><td>功能相同，命名不同</td></tr>
+    </table>
+    <p><strong>建议：</strong>将所有 JS 统一到 <code>main.js</code>，删除 <code>index.html</code> 内联脚本中的重复代码。</p>
+    <span class="status pending">待修复</span>
+
+    <h3><span class="badge p0">P0</span> 2. 导航栏 HTML 结构错误</h3>
+    <p><code>index.html</code> 第93-96行，Blog 和 IP Checker 链接写在<strong>同一个 <code>&lt;li&gt;</code></strong> 里：</p>
+    <div class="code-block">
+      <span class="comment">&lt;!-- ❌ 错误：两个链接在同一个 li 中 --&gt;</span><br>
+      <span class="tag">&lt;li</span> <span class="attr">class</span>=<span class="str">"nav-item"</span><span class="tag">&gt;</span><br>
+      &nbsp;&nbsp;<span class="tag">&lt;a</span> <span class="attr">class</span>=<span class="str">"nav-link"</span> <span class="attr">href</span>=<span class="str">"file/blog"</span><span class="tag">&gt;</span>Blog<span class="tag">&lt;/a&gt;</span><br>
+      &nbsp;&nbsp;<span class="tag">&lt;a</span> <span class="attr">class</span>=<span class="str">"nav-link"</span> <span class="attr">href</span>=<span class="str">"#ip-check"</span><span class="tag">&gt;</span>IP Checker<span class="tag">&lt;/a&gt;</span><br>
+      <span class="tag">&lt;/li&gt;</span>
+    </div>
+    <span class="status pending">待修复</span>
+
+    <h3><span class="badge p0">P0</span> 3. 完全依赖 grabify.icu 后端</h3>
+    <p>所有核心功能（生成追踪链接、邮件追踪像素）都调用 <code>https://grabify.icu/qrcode.php</code>。品牌是 iplogger.icu，后端是 grabify.icu —— 如果第三方 API 变动/下线，整站瘫痪。</p>
+    <span class="status pending">待评估</span>
+
+    <h3><span class="badge p1">P1</span> 4. OG 图片域名指向 grabify.icu</h3>
+    <div class="code-block">
+      <span class="comment">&lt;!-- index.html 第29行 --&gt;</span><br>
+      <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="str">"og:image"</span> <span class="attr">content</span>=<span class="str">"https://grabify.icu/ok/result.png"</span><span class="tag">/&gt;</span>
+    </div>
+    <p>分享到社交媒体时显示的是竞品的图片，品牌不一致。</p>
+    <span class="status pending">待修复</span>
+
+    <h3><span class="badge p1">P1</span> 5. jQuery 加载但未使用</h3>
+    <p><code>index.html</code> 第8行加载了 jQuery，但全站没有使用 <code>$()</code> 语法。白白增加 ~87KB 的下载量，拖慢页面。</p>
+    <span class="status pending">待修复</span>
+
+    <h3><span class="badge p1">P1</span> 6. XSS 安全风险</h3>
+    <p><code>continuewithcode()</code> 和 <code>continuewithcode2()</code> 将服务器返回数据直接用 <code>innerHTML</code> 插入 DOM，未做转义。若 grabify 返回恶意内容，可能导致跨站脚本攻击。</p>
+    <span class="status pending">待修复</span>
+
+    <h3><span class="badge p2">P2</span> 7. main.js 的 createTrackingLink() 是假 Demo</h3>
+    <p><code>js/main.js</code> 第130-150行的 <code>createTrackingLink()</code> 用 <code>setTimeout</code> 生成随机假链接 (<code>https://iplogger.org/...</code>)，连域名都指向了另一个网站 <code>iplogger.org</code>。此文件中的函数基本未被真正使用。</p>
+    <span class="status pending">待清理</span>
+
+    <h3><span class="badge p2">P2</span> 8. _redirects 文件为空</h3>
+    <p>如果部署在 Netlify，空的 <code>_redirects</code> 意味着没有 clean URL 路由。</p>
+    <span class="status pending">待修复</span>
+
+    <h3><span class="badge p2">P2</span> 9. 两套 CSS 文件</h3>
+    <p><code>styles.css</code>（根目录）和 <code>css/styles.css</code> 并存，但 <code>index.html</code> 只引用根目录的。另一个可能是遗留文件。</p>
+    <span class="status pending">待确认</span>
+
+    <h3><span class="badge p2">P2</span> 10. iplogger.html 引用不存在的图片</h3>
+    <p><code>iplogger.html</code> 第58行引用了 <code>1.png</code> 和 <code>3.png</code>，但仓库中不存在这些文件。</p>
+    <span class="status pending">待修复</span>
+
+    <h3><span class="badge p3">P3</span> 11. 多个 DOMContentLoaded 监听器</h3>
+    <p><code>index.html</code> 内联脚本和 <code>main.js</code> 各自注册多个 <code>DOMContentLoaded</code> 监听器初始化相同功能（QR 码、IP 检查按钮），造成重复初始化。</p>
+    <span class="status pending">待合并</span>
+  </div>
+
+  <!-- ============================== -->
+  <!-- 第二部分：SEO P0 致命 -->
+  <!-- ============================== -->
+  <div class="section" id="part2">
+    <h2>第二部分：SEO 致命问题 (P0)</h2>
+
+    <h3><span class="badge p0">P0</span> 1. 严重的关键词自我竞争 (Keyword Cannibalization)</h3>
+    <p><strong>这是整站最大的 SEO 问题。</strong><code>file/</code> 目录下有 70+ 篇文章，大量主题重复页面互相抢排名。Google 不知道该排哪篇，结果全都排不上去。</p>
+    <p>详细集群见 <a href="#part7">第七部分</a>。</p>
+    <span class="status pending">待修复 — 需内容合并 + 301 重定向</span>
+
+    <h3><span class="badge p0">P0</span> 2. ~77% 页面缺少 Canonical URL</h3>
+    <p><code>file/</code> 下约 88 个页面<strong>没有 <code>&lt;link rel="canonical"&gt;</code></strong>。</p>
+    <table>
+      <tr><th>SEO 元素</th><th>有的页面</th><th>缺失的页面</th><th>覆盖率</th></tr>
+      <tr><td>Canonical URL</td><td>~27</td><td><strong>~88</strong></td><td style="color:var(--red);font-weight:700;">23%</td></tr>
+      <tr><td>Hreflang 标签</td><td>6</td><td><strong>~109</strong></td><td style="color:var(--red);font-weight:700;">5%</td></tr>
+      <tr><td>JSON-LD 结构化数据</td><td>4</td><td><strong>~111</strong></td><td style="color:var(--red);font-weight:700;">3%</td></tr>
+      <tr><td>OG / Twitter 标签</td><td>~55</td><td><strong>~60</strong></td><td style="color:var(--orange);font-weight:700;">48%</td></tr>
+    </table>
+    <span class="status pending">待修复</span>
+
+    <h3><span class="badge p0">P0</span> 3. Core Web Vitals 不及格</h3>
+    <p>PageSpeed Insights 真实用户数据（移动端）：</p>
+    <table>
+      <tr><th>指标</th><th>值</th><th>阈值</th><th>状态</th></tr>
+      <tr><td>LCP (最大内容绘制)</td><td>2.5s</td><td>≤2.5s</td><td>⚠️ 勉强及格</td></tr>
+      <tr><td>INP (交互响应)</td><td><strong>333ms</strong></td><td>≤200ms</td><td style="color:var(--red);">❌ 不及格</td></tr>
+      <tr><td>CLS (布局偏移)</td><td><strong>0.11</strong></td><td>≤0.1</td><td style="color:var(--red);">❌ 不及格</td></tr>
+      <tr><td>FCP (首内容绘制)</td><td>2.3s</td><td>≤1.8s</td><td style="color:var(--orange);">⚠️ 偏慢</td></tr>
+      <tr><td>TTFB (首字节时间)</td><td>1s</td><td>≤0.8s</td><td style="color:var(--orange);">⚠️ 偏慢</td></tr>
+    </table>
+    <p><strong>整体评估：Failed</strong>。这直接影响 Google 搜索排名。</p>
+    <span class="status pending">待优化</span>
+  </div>
+
+  <!-- ============================== -->
+  <!-- 第三部分：SEO P1 高 -->
+  <!-- ============================== -->
+  <div class="section" id="part3">
+    <h2>第三部分：SEO 高优先级 (P1)</h2>
+
+    <ul class="issue-list">
+      <li class="high">
+        <strong><span class="badge p1">P1</span> 4. 97% 页面没有结构化数据 (JSON-LD)</strong><br>
+        仅 4 个页面有 Schema markup。损失：文章缺 <code>Article</code> schema（不出发布日期）、FAQ 内容缺 <code>FAQPage</code> schema（浪费富摘要机会）、指南缺 <code>HowTo</code> schema。
+        <span class="status pending">待修复</span>
+      </li>
+      <li class="high">
+        <strong><span class="badge p1">P1</span> 5. 95% 页面缺少 Hreflang 标签</strong><br>
+        网站有中英阿三语内容（如 <code>email-tracking-en/cn/ar.html</code>），但几乎没有 hreflang 标签。Google 可能给中国用户看英文版。
+        <div class="code-block">
+          <span class="comment">&lt;!-- 应该加但没加 --&gt;</span><br>
+          <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="str">"alternate"</span> <span class="attr">hreflang</span>=<span class="str">"en"</span> <span class="attr">href</span>=<span class="str">"https://iplogger.icu/file/email-tracking-en"</span> <span class="tag">/&gt;</span><br>
+          <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="str">"alternate"</span> <span class="attr">hreflang</span>=<span class="str">"zh"</span> <span class="attr">href</span>=<span class="str">"https://iplogger.icu/file/email-tracking-cn"</span> <span class="tag">/&gt;</span><br>
+          <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="str">"alternate"</span> <span class="attr">hreflang</span>=<span class="str">"ar"</span> <span class="attr">href</span>=<span class="str">"https://iplogger.icu/file/email-tracking-ar"</span> <span class="tag">/&gt;</span>
+        </div>
+        <span class="status pending">待修复</span>
+      </li>
+      <li class="high">
+        <strong><span class="badge p1">P1</span> 6. ~52% 页面缺少 OG / Twitter 标签</strong><br>
+        约 60 个页面在社交媒体分享时没有标题、图片、描述。
+        <span class="status pending">待修复</span>
+      </li>
+      <li class="high">
+        <strong><span class="badge p1">P1</span> 7. 标题层级混乱</strong><br>
+        多个页面从 H1 直接跳到 H5，跳过 H2/H3/H4。例如 <code>email-tracking-en.html</code> 所有小节标题都是 <code>&lt;h5&gt;</code>。Google 靠标题层级理解内容结构。
+        <span class="status pending">待修复</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ============================== -->
+  <!-- 第四部分：SEO P2 中 -->
+  <!-- ============================== -->
+  <div class="section" id="part4">
+    <h2>第四部分：SEO 中优先级 (P2)</h2>
+
+    <ul class="issue-list">
+      <li class="medium">
+        <strong><span class="badge p2">P2</span> 8. Sitemap 严重问题</strong><br>
+        <ul style="margin-top:0.5rem;padding-left:1.5rem;">
+          <li><code>sitemap.xml</code> 首页 lastmod 还是 <strong>2023-09-01</strong>（2.5年没更新）</li>
+          <li>收录了<strong>不存在的页面</strong>：<code>/about</code>、<code>/privacy</code>、<code>/terms</code>、<code>/contact</code>、<code>/faq</code>、<code>/blog</code>、<code>/resources</code>、<code>/api</code> → 全是 404</li>
+          <li><code>sitemap.txt</code> 只列了 15 个 URL，与 <code>sitemap.xml</code> 不同步，遗漏 50+ 页面</li>
+          <li>多个新页面没加入 sitemap</li>
+        </ul>
+        <span class="status pending">待修复</span>
+      </li>
+      <li class="medium">
+        <strong><span class="badge p2">P2</span> 9. RSS 完全过时</strong><br>
+        <code>rss.xml</code> 的 <code>lastBuildDate</code> 是 2023年9月，文章链接全指向不存在的路径（<code>/blog/enhanced-geolocation</code> 等），全是 404。
+        <span class="status pending">待修复</span>
+      </li>
+      <li class="medium">
+        <strong><span class="badge p2">P2</span> 10. 内部链接断裂</strong><br>
+        <ul style="margin-top:0.5rem;padding-left:1.5rem;">
+          <li><code>ip-logger-complete-guide.html</code> → 链接到 <code>easiest-way-to-get-ip-address-2025</code>，实际文件名是 <code>easiest-way-get-ip-2025.html</code> → <strong>死链</strong></li>
+          <li><code>email-tracking-en.html</code> → 引用 <code>../assets/images/grabify-email.png</code>，<code>assets/</code> 目录不存在 → <strong>图片全坏</strong></li>
+        </ul>
+        <span class="status pending">待修复</span>
+      </li>
+      <li class="medium">
+        <strong><span class="badge p2">P2</span> 11. file/index.html 内容枢纽页失败</strong><br>
+        <ul style="margin-top:0.5rem;padding-left:1.5rem;">
+          <li>标题 "Promotional Files - IPLogger" → 暴露内部用语，零 SEO 价值</li>
+          <li>没有 meta description</li>
+          <li>链接用原始文件名（"about.html"）→ 无描述性锚文本</li>
+          <li>缺少 40+ 新页面的链接</li>
+        </ul>
+        <span class="status pending">待重建</span>
+      </li>
+      <li class="medium">
+        <strong><span class="badge p2">P2</span> 12. 多页面无导航栏/页脚</strong><br>
+        用户到了页面后是死胡同，没有方式跳转。如 <code>how-to-find-someones-ip-address-2025.html</code>、<code>catch-cheating-partner-ip-tracking.html</code>。导航缺失也意味着<strong>内部链接权重无法传递</strong>。
+        <span class="status pending">待修复</span>
+      </li>
+      <li class="medium">
+        <strong><span class="badge p2">P2</span> 13. Bootstrap 版本混用</strong><br>
+        部分 <code>file/</code> 页面用 Bootstrap 4，首页用 Bootstrap 5。CSS 冲突可能导致布局偏移（影响 CLS 分数）。
+        <span class="status pending">待统一</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ============================== -->
+  <!-- 第五部分：SEO P3 低 -->
+  <!-- ============================== -->
+  <div class="section" id="part5">
+    <h2>第五部分：SEO 低优先级 (P3)</h2>
+
+    <ul class="issue-list">
+      <li class="low">
+        <strong><span class="badge p3">P3</span> 14. 品牌混淆</strong> — OG 图片指向 grabify.icu；多篇文章 CTA 链接到 grabify.icu；Footer 导向外站流失链接权重。
+        <span class="status pending">待修复</span>
+      </li>
+      <li class="low">
+        <strong><span class="badge p3">P3</span> 15. 版权年份过时</strong> — 全站多处写 "© 2025"，当前已是 2026。
+        <span class="status pending">待修复</span>
+      </li>
+      <li class="low">
+        <strong><span class="badge p3">P3</span> 16. meta keywords 无意义</strong> — Google 从 2009 年起完全忽略 <code>&lt;meta name="keywords"&gt;</code>。
+        <span class="status pending">可忽略</span>
+      </li>
+      <li class="low">
+        <strong><span class="badge p3">P3</span> 17. 博客文章缺 datePublished/dateModified</strong> — 大部分文章没有明确的发布/修改日期 markup。
+        <span class="status pending">待修复</span>
+      </li>
+      <li class="low">
+        <strong><span class="badge p3">P3</span> 18. CTA 按钮导向外站</strong> — <code>email-tracking-en.html</code> 的主要 CTA 按钮链接到 grabify.icu 而非 iplogger.icu。
+        <span class="status pending">待修复</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ============================== -->
+  <!-- 第六部分：性能详情 -->
+  <!-- ============================== -->
+  <div class="section" id="part6">
+    <h2>第六部分：Core Web Vitals 性能详情</h2>
+
+    <h3>移动端评估：❌ FAILED</h3>
+    <p>数据来源：PageSpeed Insights 真实用户数据（2026年2月22日）</p>
+
+    <h4>LCP — 最大内容绘制 (2.5s)</h4>
+    <div class="progress-bar"><div class="fill" style="width:62%;background:var(--orange);"></div></div>
+    <p>原因分析：加载了未使用的 jQuery (~87KB)、从 maipdf.com 加载外部 JS/CSS（增加 DNS 解析时间）、Bootstrap 完整版 CSS/JS。</p>
+
+    <h4>INP — 交互响应 (333ms) ❌</h4>
+    <div class="progress-bar"><div class="fill red" style="width:83%;"></div></div>
+    <p>原因分析：大量内联 JavaScript（<code>index.html</code> 底部约 500 行 JS）在主线程执行，阻塞交互响应。</p>
+
+    <h4>CLS — 布局偏移 (0.11) ❌</h4>
+    <div class="progress-bar"><div class="fill red" style="width:55%;"></div></div>
+    <p>原因分析：图片未设置 width/height 属性、Bootstrap 4/5 混用导致样式覆盖、onboarding tooltip 动态插入布局导致偏移。</p>
+
+    <h3>优化建议</h3>
+    <ul style="padding-left:1.5rem;margin-top:0.5rem;">
+      <li>移除未使用的 jQuery</li>
+      <li>将内联 JS 合并到 <code>main.js</code> 并加 <code>defer</code></li>
+      <li>给所有 <code>&lt;img&gt;</code> 标签添加 <code>width</code> 和 <code>height</code> 属性</li>
+      <li>使用 <code>font-display: swap</code> 预防字体加载导致的 CLS</li>
+      <li>将外部 CDN 资源替换为自托管或使用 <code>preconnect</code></li>
+    </ul>
+  </div>
+
+  <!-- ============================== -->
+  <!-- 第七部分：关键词竞争详情 -->
+  <!-- ============================== -->
+  <div class="section" id="part7">
+    <h2>第七部分：关键词自我竞争详情</h2>
+    <p>以下集群中的页面互相争夺相同搜索排名，导致所有页面都排不上去。<strong>每个集群应只保留 1 个最佳页面，其余 301 重定向。</strong></p>
+
+    <h3>集群 1: "How to Find Someone's IP" — 7 篇重复！</h3>
+    <table>
+      <tr><th>文件</th><th>标题</th><th>建议</th></tr>
+      <tr><td><code>how-to-find-ip-address.html</code></td><td>How to Find Someone's IP Address - Complete Guide</td><td>⬅️ <strong>保留为主页</strong></td></tr>
+      <tr><td><code>how-to-find-someones-ip-address-2025.html</code></td><td>How to Find Someone's IP Address in 2025</td><td>301 → 主页</td></tr>
+      <tr><td><code>how-to-find-someones-ip-address-quick-guide.html</code></td><td>How to Find Someone's IP Address - Quick Guide</td><td>301 → 主页</td></tr>
+      <tr><td><code>how-to-get-someone-ip-address-simple-methods.html</code></td><td>How to Get Someone's IP Address - Simple Methods</td><td>301 → 主页</td></tr>
+      <tr><td><code>easiest-way-get-ip-2025.html</code></td><td>Easiest Way to Get Someone's IP Address</td><td>301 → 主页</td></tr>
+      <tr><td><code>simple-ip-tracking-methods-beginners.html</code></td><td>Simple IP Tracking Methods for Beginners</td><td>301 → 主页</td></tr>
+      <tr><td><code>catching.html</code></td><td>How to Use a Link to Get Someone's IP Address</td><td>301 → 主页</td></tr>
+    </table>
+
+    <h3>集群 2: "What Is IPLogger / 介绍" — 10 篇重复！</h3>
+    <table>
+      <tr><th>文件</th><th>标题</th><th>建议</th></tr>
+      <tr><td><code>what-is-iplogger.html</code></td><td>What is IPLogger? Simple Explanation</td><td>⬅️ <strong>保留为主页</strong></td></tr>
+      <tr><td><code>iplogger.html</code></td><td>How to Use IP Logger</td><td>301 → 主页</td></tr>
+      <tr><td><code>iploggerEn.html</code></td><td>IPLogger - Track Visitor IPs Easily</td><td>301 → 主页</td></tr>
+      <tr><td><code>iploggerWHAT.html</code></td><td>What is IPLogger</td><td>301 → 主页</td></tr>
+      <tr><td><code>iplogger_intro.html</code></td><td>IPLogger.icu: A Free IP Logger</td><td>301 → 主页</td></tr>
+      <tr><td><code>ipintro.html</code></td><td>Introduction to IPLogger</td><td>301 → 主页</td></tr>
+      <tr><td><code>ipintrod.html</code></td><td>IPLogger.icu - Advanced IP Tracking</td><td>301 → 主页</td></tr>
+      <tr><td><code>iplogger-beginners-guide.html</code></td><td>IPLogger for Beginners</td><td>301 → 主页</td></tr>
+      <tr><td><code>ini.html</code></td><td>IpLogger - An IP tracker tool</td><td>301 → 主页</td></tr>
+      <tr><td><code>example.html</code></td><td>How to use IP Logger for example</td><td>301 → 主页</td></tr>
+    </table>
+
+    <h3>集群 3: "IP Tracking Tools 对比" — 6 篇</h3>
+    <table>
+      <tr><th>文件</th><th>建议</th></tr>
+      <tr><td><code>ip-tracker-tools-hub.html</code></td><td>⬅️ <strong>保留</strong></td></tr>
+      <tr><td><code>ip-tracker-tools.html</code></td><td>301 → 主页</td></tr>
+      <tr><td><code>ip-tracking-tools-comparison.html</code></td><td>301 → 主页</td></tr>
+      <tr><td><code>ip-tracking-tools-comparison-2025.html</code></td><td>301 → 主页</td></tr>
+      <tr><td><code>ip-address-lookup-tools-comparison-2025.html</code></td><td>301 → 主页</td></tr>
+      <tr><td><code>best-ip-tracking-tools-2025-review.html</code></td><td>301 → 主页</td></tr>
+    </table>
+
+    <h3>集群 4: "IP Grabber" — 4 篇</h3>
+    <table>
+      <tr><th>文件</th><th>建议</th></tr>
+      <tr><td><code>ip-grabber-link-free.html</code></td><td>⬅️ <strong>保留</strong></td></tr>
+      <tr><td><code>grabber.html</code></td><td>301 → 主页</td></tr>
+      <tr><td><code>ipgrabber.html</code></td><td>301 → 主页</td></tr>
+      <tr><td><code>ipgrabbertool.html</code></td><td>301 → 主页</td></tr>
+    </table>
+
+    <h3>集群 5: "Email Tracking" — 7 篇</h3>
+    <table>
+      <tr><th>文件</th><th>建议</th></tr>
+      <tr><td><code>email-tracking-resources.html</code></td><td>⬅️ <strong>保留</strong></td></tr>
+      <tr><td><code>email-tracking-en.html</code></td><td>301 → 主页</td></tr>
+      <tr><td><code>email-ip-tracking.html</code></td><td>301 → 主页</td></tr>
+      <tr><td><code>email-ip-tracking-complete.html</code></td><td>301 → 主页</td></tr>
+      <tr><td><code>free-email-tracker-pixel.html</code></td><td>301 → 主页</td></tr>
+      <tr><td><code>gmail-ip-tracking.html</code></td><td>可保留（关键词不同："gmail"）</td></tr>
+      <tr><td><code>how-to-track-email-location-2025.html</code></td><td>301 → 主页</td></tr>
+    </table>
+
+    <h3>集群 6: "IPLogger vs Grabify" — 3 篇</h3>
+    <table>
+      <tr><th>文件</th><th>建议</th></tr>
+      <tr><td><code>iplogger-or-grabify-which-better.html</code></td><td>⬅️ <strong>保留</strong></td></tr>
+      <tr><td><code>ip-logger-vs-grabify-comparison-2025.html</code></td><td>301 → 主页</td></tr>
+      <tr><td><code>grabify-alternative-2025-comprehensive-guide.html</code></td><td>可保留（关键词："alternative"）</td></tr>
+    </table>
+  </div>
+
+  <!-- ============================== -->
+  <!-- 第八部分：子页面逐页审查 -->
+  <!-- ============================== -->
+  <div class="section" id="part8">
+    <h2>第八部分：子页面 SEO 逐页审查 (抽样)</h2>
+
+    <h3>1. file/blog.html</h3>
+    <table>
+      <tr><th>SEO 元素</th><th>状态</th><th>说明</th></tr>
+      <tr><td>Meta Title</td><td>✅</td><td>"IPLogger Blog Library" — 有但不够关键词丰富</td></tr>
+      <tr><td>Meta Description</td><td>✅</td><td>有</td></tr>
+      <tr><td>Canonical</td><td>✅</td><td>正确</td></tr>
+      <tr><td>标题层级</td><td>⚠️</td><td>H1 → H2 → H5，跳过 H3/H4</td></tr>
+      <tr><td>结构化数据</td><td>❌</td><td>缺失，应加 CollectionPage 或 ItemList</td></tr>
+      <tr><td>Hreflang</td><td>❌</td><td>缺失</td></tr>
+      <tr><td>OG / Twitter</td><td>❌</td><td>完全缺失</td></tr>
+      <tr><td>导航</td><td>❌</td><td>无导航栏，无页脚导航</td></tr>
+    </table>
+
+    <h3>2. file/about.html</h3>
+    <table>
+      <tr><th>SEO 元素</th><th>状态</th><th>说明</th></tr>
+      <tr><td>Meta Title</td><td>✅</td><td>"About IPLogger - IP Address Tracking Service"</td></tr>
+      <tr><td>Canonical</td><td>✅</td><td>正确</td></tr>
+      <tr><td>标题层级</td><td>⚠️</td><td>H1 → H3 → H5，跳过 H2</td></tr>
+      <tr><td>结构化数据</td><td>❌</td><td>应加 Organization schema</td></tr>
+      <tr><td>OG / Twitter</td><td>✅</td><td>都有</td></tr>
+      <tr><td>图片 Alt</td><td>✅</td><td>有</td></tr>
+    </table>
+
+    <h3>3. file/how-to-find-someones-ip-address-2025.html</h3>
+    <table>
+      <tr><th>SEO 元素</th><th>状态</th><th>说明</th></tr>
+      <tr><td>Meta Title</td><td>✅</td><td>关键词丰富</td></tr>
+      <tr><td>Canonical</td><td style="color:var(--red);font-weight:700;">❌ 缺失</td><td>严重问题</td></tr>
+      <tr><td>标题层级</td><td>✅</td><td>H1 → H2 → H3 → H4 正确</td></tr>
+      <tr><td>结构化数据</td><td>❌</td><td>有 FAQ 手风琴但没有 FAQPage schema —— 巨大损失</td></tr>
+      <tr><td>OG / Twitter</td><td>✅</td><td>有</td></tr>
+      <tr><td>导航</td><td style="color:var(--red);">❌</td><td>无导航栏无页脚，用户死胡同</td></tr>
+    </table>
+
+    <h3>4. file/email-tracking-en.html</h3>
+    <table>
+      <tr><th>SEO 元素</th><th>状态</th><th>说明</th></tr>
+      <tr><td>Canonical</td><td style="color:var(--red);font-weight:700;">❌ 缺失</td><td>严重</td></tr>
+      <tr><td>标题层级</td><td style="color:var(--red);">❌</td><td>H1 → H5，全部小节用 H5</td></tr>
+      <tr><td>Hreflang</td><td style="color:var(--red);">❌</td><td>有 cn/ar 对应版本但无 hreflang</td></tr>
+      <tr><td>OG / Twitter</td><td>❌</td><td>完全缺失</td></tr>
+      <tr><td>图片</td><td style="color:var(--red);">❌</td><td>引用 ../assets/images/ 目录，不存在，<strong>图片全坏</strong></td></tr>
+      <tr><td>Bootstrap</td><td>⚠️</td><td>用 Bootstrap 4，首页用 5</td></tr>
+    </table>
+
+    <h3>5. file/ip-logger-complete-guide.html ⭐ 最佳</h3>
+    <table>
+      <tr><th>SEO 元素</th><th>状态</th><th>说明</th></tr>
+      <tr><td>Meta Title</td><td>✅</td><td>关键词丰富，优化良好</td></tr>
+      <tr><td>Canonical</td><td>✅</td><td>正确</td></tr>
+      <tr><td>结构化数据</td><td>✅</td><td>有 Guide schema</td></tr>
+      <tr><td>OG / Twitter</td><td>✅</td><td>都有</td></tr>
+      <tr><td>内部链接</td><td>✅</td><td>链接到 40+ 内部页面，有导航和页脚</td></tr>
+      <tr><td>死链</td><td style="color:var(--red);">❌</td><td>链接到 easiest-way-to-get-ip-address-2025（不存在）</td></tr>
+    </table>
+
+    <h3>6. file/catch-cheating-partner-ip-tracking.html</h3>
+    <table>
+      <tr><th>SEO 元素</th><th>状态</th><th>说明</th></tr>
+      <tr><td>Meta Title</td><td>✅</td><td>标题独特、有吸引力</td></tr>
+      <tr><td>Canonical</td><td style="color:var(--red);font-weight:700;">❌ 缺失</td><td>严重</td></tr>
+      <tr><td>结构化数据</td><td>❌</td><td>缺失</td></tr>
+      <tr><td>OG / Twitter</td><td>❌</td><td>完全缺失</td></tr>
+      <tr><td>内部链接</td><td>⚠️</td><td>仅链接到首页和 1 个页面，非常薄弱</td></tr>
+      <tr><td>导航</td><td>❌</td><td>无导航栏，极简页脚</td></tr>
+    </table>
+  </div>
+
+  <!-- ============================== -->
+  <!-- 第九部分：行动计划 -->
+  <!-- ============================== -->
+  <div class="section" id="part9">
+    <h2>第九部分：修复优先级 & 行动计划</h2>
+
+    <h3>⭐ Top 5 高 ROI 修复</h3>
+    <table>
+      <tr><th>#</th><th>修复内容</th><th>预期效果</th><th>工作量</th><th>状态</th></tr>
+      <tr>
+        <td>1</td>
+        <td><strong>合并重复内容</strong> — 每个关键词集群保留 1 篇，其余 301 重定向</td>
+        <td>排名显著提升，消除自我竞争</td>
+        <td>大</td>
+        <td><span class="status pending">待执行</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><strong>全站加 canonical URL</strong> — ~88 个页面需要添加</td>
+        <td>消除重复内容惩罚</td>
+        <td>中</td>
+        <td><span class="status pending">待执行</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><strong>修 Sitemap</strong> — 删除 404 URL、加入所有真实页面、更新 lastmod</td>
+        <td>提升索引效率</td>
+        <td>小</td>
+        <td><span class="status pending">待执行</span></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><strong>加结构化数据</strong> — Article、FAQPage、HowTo schema</td>
+        <td>搜索富摘要展示</td>
+        <td>中</td>
+        <td><span class="status pending">待执行</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><strong>优化 Core Web Vitals</strong> — 移除 jQuery、减 CLS、优化 INP</td>
+        <td>提升移动排名</td>
+        <td>中</td>
+        <td><span class="status pending">待执行</span></td>
+      </tr>
+    </table>
+
+    <h3>📋 完整修复清单</h3>
+    <ul class="checklist">
+      <li><input type="checkbox" checked disabled> <strong>[代码]</strong> <del>修复导航栏 HTML（Blog 和 IP Checker 分开到各自 &lt;li&gt;）</del> ✅ 已完成</li>
+      <li><input type="checkbox"> <strong>[代码]</strong> 统一 JS：将 index.html 内联脚本合并到 main.js，移除重复代码</li>
+      <li><input type="checkbox" checked disabled> <strong>[代码]</strong> <del>移除未使用的 jQuery 引用</del> ✅ 已完成</li>
+      <li><input type="checkbox"> <strong>[代码]</strong> 修复 innerHTML XSS 风险（改用 textContent 或转义）</li>
+      <li><input type="checkbox"> <strong>[代码]</strong> 清理 main.js 中的假 demo createTrackingLink()</li>
+      <li><input type="checkbox"> <strong>[代码]</strong> 确认并删除多余的 css/styles.css</li>
+      <li><input type="checkbox"> <strong>[代码]</strong> 修复 iplogger.html 中缺失的图片 (1.png, 3.png)</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 内容合并：每个关键词集群保留 1 篇，设置 301 重定向</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 为 ~88 个页面添加 canonical URL</li>
+      <li><input type="checkbox" checked disabled> <strong>[SEO]</strong> <del>更新 sitemap.xml：删除 404 URL、添加缺失页面、更新 lastmod</del> ✅ 已完成</li>
+      <li><input type="checkbox" checked disabled> <strong>[SEO]</strong> <del>同步 sitemap.txt 与 sitemap.xml</del> ✅ 已完成</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 更新或删除过时的 rss.xml</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 为所有多语言页面添加 hreflang 标签</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 为文章页面添加 Article 结构化数据</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 为含 FAQ 的页面添加 FAQPage 结构化数据</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 修复标题层级（H1 → H2 → H3 → H4 顺序）</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 为缺失的页面添加 OG / Twitter 标签</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 修复死链：ip-logger-complete-guide 中的错误链接</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 修复 email-tracking-en.html 中坏掉的图片引用</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 重建 file/index.html 为真正的内容枢纽页</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 为无导航的页面添加统一导航栏和页脚</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 将 CTA 链接从 grabify.icu 改为 iplogger.icu</li>
+      <li><input type="checkbox"> <strong>[SEO]</strong> 替换 OG 图片为 iplogger.icu 域名下的图片</li>
+      <li><input type="checkbox" checked disabled> <strong>[性能]</strong> <del>移除 jQuery</del> ✅ 已完成</li>
+      <li><input type="checkbox"> <strong>[性能]</strong> 给所有 img 标签添加 width/height 减少 CLS</li>
+      <li><input type="checkbox"> <strong>[性能]</strong> 统一 Bootstrap 版本为 5.x</li>
+      <li><input type="checkbox" checked disabled> <strong>[性能]</strong> <del>添加 preconnect 到外部 CDN</del> ✅ 已完成</li>
+      <li><input type="checkbox"> <strong>[其他]</strong> 更新版权年份为 2026</li>
+      <li><input type="checkbox"> <strong>[其他]</strong> 配置 _redirects 文件（如使用 Netlify）</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <p>IPLogger.icu 项目审计报告 — 生成于 2026年2月22日<br>此文件设置了 noindex，不会被搜索引擎索引。</p>
+</footer>
+
+<script>
+  // 保存 checkbox 状态到 localStorage
+  document.querySelectorAll('.checklist input[type="checkbox"]').forEach((cb, i) => {
+    const key = 'work-check-' + i;
+    cb.checked = localStorage.getItem(key) === 'true';
+    cb.addEventListener('change', () => {
+      localStorage.setItem(key, cb.checked);
+      cb.parentElement.style.opacity = cb.checked ? '0.5' : '1';
+      cb.parentElement.style.textDecoration = cb.checked ? 'line-through' : 'none';
+    });
+    if (cb.checked) {
+      cb.parentElement.style.opacity = '0.5';
+      cb.parentElement.style.textDecoration = 'line-through';
+    }
+  });
+</script>
+
+</body>
+</html>
