@@ -1,15 +1,35 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="utf-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>مبادئ وتطبيقات تقنية تتبع البريد الإلكتروني - IPLogger</title>
+  <link rel="canonical" href="https://iplogger.icu/file/email-tracking-ar">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://iplogger.icu/file/email-tracking-ar">
+  <meta property="og:title" content="مبادئ وتطبيقات تقنية تتبع البريد الإلكتروني - IPLogger">
+  <meta property="og:description" content="تعرف على كيفية عمل تتبع البريد الإلكتروني وكيفية استخدام خدمات iplogger.icu لتنفيذ تتبع البريد، وإحصاءات معدل الفتح والمزيد. يشرح هذا المقال تقنية بكسل التتبع الخفي وطريقة تنفيذها.">
+  <meta property="og:image" content="https://grabify.icu/ok/result.png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://iplogger.icu/file/email-tracking-ar">
+  <meta property="twitter:title" content="مبادئ وتطبيقات تقنية تتبع البريد الإلكتروني - IPLogger">
+  <meta property="twitter:description" content="تعرف على كيفية عمل تتبع البريد الإلكتروني وكيفية استخدام خدمات iplogger.icu لتنفيذ تتبع البريد، وإحصاءات معدل الفتح والمزيد. يشرح هذا المقال تقنية بكسل التتبع الخفي وطريقة تنفيذها.">
+  <meta property="twitter:image" content="https://grabify.icu/ok/result.png">
     <meta name="description" content="تعرف على كيفية عمل تتبع البريد الإلكتروني وكيفية استخدام خدمات iplogger.icu لتنفيذ تتبع البريد، وإحصاءات معدل الفتح والمزيد. يشرح هذا المقال تقنية بكسل التتبع الخفي وطريقة تنفيذها." />
 
     <!-- Font Awesome Icons -->
-    <link href="https://maipdf.com/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    
-    <!-- Google Fonts -->
+<!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -19,12 +39,8 @@
     <link href="https://maipdf.com/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
     
     <!-- Theme CSS -->
-    <link href="https://maipdf.com/css/creative.min.css" rel="stylesheet">
-    
-    <!-- Bootstrap RTL CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
-    
-    <!-- Custom CSS -->
+<!-- Bootstrap RTL CSS -->
+<!-- Custom CSS -->
     <style>
         body {
             font-family: 'Tajawal', 'Roboto', sans-serif;
@@ -159,16 +175,61 @@
     </style>
 </head>
 <body id="page-top">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">مبادئ وتطبيقات تقنية تتبع البريد الإلكتروني - IPLogger</li>
+      </ol>
+    </nav>
+  </div>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand js-scroll-trigger" style="color: #1a73e8; font-weight: 700;" href="https://iplogger.icu">
-            <i class="fas fa-envelope-open-text ml-2"></i>أداة تتبع البريد الإلكتروني
-        </a>
-    </div>
-</nav>
-
 <!-- Main Content Section -->
 <section class="page-section" id="contact">
     <div class="container">
@@ -178,12 +239,12 @@
                 
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h5 class="mb-4 section-title">📧 أولاً: مبادئ تتبع البريد الإلكتروني والخلفية التقنية</h5>
+                        <h2 class="mb-4 section-title">📧 أولاً: مبادئ تتبع البريد الإلكتروني والخلفية التقنية</h2>
                         <p class="text-right">
                             يتم تنفيذ تتبع البريد الإلكتروني بشكل أساسي من خلال <strong>تقنية "بكسل التتبع"</strong>. تُستخدم هذه الطريقة على نطاق واسع في رسائل البريد الإلكتروني التسويقية، ورسائل الإشعارات، وسيناريوهات أخرى للتأكد مما إذا كان المستلمون قد فتحوا البريد الإلكتروني، ومتى قاموا بفتحه، وأي جهاز استخدموه. تعود هذه التقنية إلى أواخر التسعينيات وتطورت مع انتشار رسائل البريد الإلكتروني بصيغة HTML.
                         </p>
                         
-                        <h5 class="text-right">🔍 مبادئ التنفيذ:</h5>
+                        <h2 class="text-right">🔍 مبادئ التنفيذ:</h2>
                         <ul class="text-right">
                             <li>إنشاء صورة شفافة بحجم 1×1 بكسل (عادة بصيغة .gif أو .png) لن يلاحظها المستخدمون؛</li>
                             <li>رابط URL للصورة لا يشير إلى صورة حقيقية، بل إلى عنوان نص برمجي على جانب الخادم، مثل track.php?email=user@example.com؛</li>
@@ -192,7 +253,7 @@
                             <li>لا تتطلب هذه الطريقة من المستخدمين النقر على أي روابط؛ يمكن تحقيق التتبع ببساطة عن طريق فتح البريد الإلكتروني.</li>
                         </ul>
                         
-                        <h5 class="text-right mt-4">📊 البيانات المتاحة من بكسلات التتبع:</h5>
+                        <h2 class="text-right mt-4">📊 البيانات المتاحة من بكسلات التتبع:</h2>
                         <p class="text-right">في النصوص البرمجية على جانب الخادم (مثل PHP)، يمكنك تسجيل المعلومات التالية:</p>
                         <ul class="text-right">
                             <li><strong>عنوان IP للمستخدم</strong> - يمكن استخدامه لتحديد الموقع الجغرافي</li>
@@ -204,7 +265,7 @@
                             <li><strong>عميل البريد الإلكتروني المستخدم</strong> - يتم تحديده من خلال وكيل المستخدم أو المعلمات المحددة</li>
                         </ul>
                         
-                        <h5 class="text-right mt-4">🔄 سير العمل المفصل:</h5>
+                        <h2 class="text-right mt-4">🔄 سير العمل المفصل:</h2>
                         <ol class="text-right">
                             <li>يضمن المرسل بكسل تتبع في بريد إلكتروني HTML (عادة ما يوضع في الأسفل أو في منطقة غير مرئية)</li>
                             <li>يفتح المستلم البريد الإلكتروني، ويقوم عميل البريد الإلكتروني بتحليل HTML ويطلب تلقائيًا موارد الصور</li>
@@ -219,7 +280,7 @@
                 </div>
                 
                 <div class="highlight-box text-right">
-                    <h5 class="mb-3">📄 تنفيذ نموذج التعليمات البرمجية:</h5>
+                    <h2 class="mb-3">📄 تنفيذ نموذج التعليمات البرمجية:</h2>
                     <p class="mb-3">1. أبسط نص برمجي PHP للتتبع (track.php):</p>
                     <pre><code>&lt;?php
 // تسجيل السجل
@@ -269,12 +330,12 @@ exit;</code></pre>
                 
                 <div class="card mb-5 mt-5">
                     <div class="card-body">
-                        <h5 class="mb-4 section-title">🌐 ثانياً: مقدمة حول ميزات iplogger.icu والمزايا التقنية</h5>
+                        <h2 class="mb-4 section-title">🌐 ثانياً: مقدمة حول ميزات iplogger.icu والمزايا التقنية</h2>
                         <p class="text-right">
                             iplogger.icu هي منصة احترافية لتتبع IP وتسجيل البيانات تنفذ وظائف مماثلة للمبادئ الموضحة أعلاه، مما يلغي عناء إعداد الخادم الخاص بك وكتابة تعليمات برمجية PHP. تستخدم المنصة تقنية تتبع متقدمة لضمان جمع بيانات عالية الدقة.
                         </p>
                         
-                        <h5 class="text-right">⭐ الميزات الرئيسية والخصائص التقنية:</h5>
+                        <h2 class="text-right">⭐ الميزات الرئيسية والخصائص التقنية:</h2>
                         <ul class="text-right">
                             <li><strong>طرق تتبع متعددة</strong> - إنشاء روابط تتبع، رموز صور، روابط قصيرة، أو رموز QR، مناسبة للبريد الإلكتروني، صفحات الويب، وسائل التواصل الاجتماعي، وسيناريوهات متنوعة؛</li>
                             <li><strong>مراقبة البيانات في الوقت الفعلي</strong> - تسجيل عنوان IP للزائر، البلد، المدينة، معلومات المتصفح، نوع الجهاز، وتوفير لوحة بيانات في الوقت الفعلي؛</li>
@@ -286,7 +347,7 @@ exit;</code></pre>
                             <li><strong>سياسة الاحتفاظ بالبيانات</strong> - تخزين بيانات التتبع على المدى الطويل للتحليل والمقارنة لاحقًا.</li>
                         </ul>
                         
-                        <h5 class="text-right mt-4">🔧 الهيكل التقني والمزايا:</h5>
+                        <h2 class="text-right mt-4">🔧 الهيكل التقني والمزايا:</h2>
                         <p class="text-right">تم بناء منصة iplogger.icu على بنية سحابية أصلية مع المزايا التقنية التالية:</p>
                         <ul class="text-right">
                             <li><strong>التوافر العالي</strong> - شبكة توزيع المحتوى العالمية (CDN) تضمن وصولًا واستجابة سريعة في جميع أنحاء العالم؛</li>
@@ -299,12 +360,12 @@ exit;</code></pre>
                 </div>
                 
                 <div class="container">
-                    <h5 class="mb-4 text-right">✉️ كيفية تتبع فتح البريد الإلكتروني باستخدام iplogger.icu؟</h5>
+                    <h2 class="mb-4 text-right">✉️ كيفية تتبع فتح البريد الإلكتروني باستخدام iplogger.icu؟</h2>
                     <p class="text-right mb-4">فيما يلي خطوات مفصلة وأفضل الممارسات لتتبع البريد الإلكتروني باستخدام iplogger.icu:</p>
                     
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h6 class="card-title">📋 الخطوات الأساسية</h6>
+                            <h3 class="card-title">📋 الخطوات الأساسية</h3>
                             <ol class="text-right">
                                 <li>قم بزيارة الموقع الرسمي <a href="https://iplogger.icu/" target="_blank">https://iplogger.icu/</a></li>
                                 <li>حدد "Image URL for emails" في الصفحة الرئيسية</li>
@@ -326,7 +387,7 @@ exit;</code></pre>
                     
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h6 class="card-title">🔖 تفسير بيانات التتبع</h6>
+                            <h3 class="card-title">🔖 تفسير بيانات التتبع</h3>
                             <p class="text-right">عندما يفتح المستلمون رسائل البريد الإلكتروني التي تحتوي على بكسلات تتبع، يمكنك رؤية المعلومات التفصيلية التالية على لوحة معلومات iplogger.icu:</p>
                             <ul class="text-right">
                                 <li><strong>وقت الوصول</strong> - وقت الفتح الدقيق حتى الثانية، بما في ذلك معلومات المنطقة الزمنية</li>
@@ -342,7 +403,7 @@ exit;</code></pre>
                     
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h6 class="card-title">💡 نصائح الاستخدام المتقدمة</h6>
+                            <h3 class="card-title">💡 نصائح الاستخدام المتقدمة</h3>
                             <ul class="text-right">
                                 <li><strong>التتبع الجماعي</strong> - إنشاء معرفات تتبع فريدة لمستلمين مختلفين للتمييز بين سلوكيات الفتح للمستخدمين المختلفين</li>
                                 <li><strong>اختبار A/B</strong> - استخدام معرفات تتبع مختلفة لمقارنة معدلات فتح قوالب البريد الإلكتروني المختلفة</li>
@@ -360,13 +421,13 @@ exit;</code></pre>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="img-container">
-                                <img src="../assets/images/grabify-email.png" class="img-thumbnail" alt="مثال على تتبع البريد الإلكتروني">
+                                <img src="https://grabify.icu/ok/result.png" class="img-thumbnail" alt="مثال على تتبع البريد الإلكتروني">
                                 <p class="text-center mt-2"><small>مثال على تضمين كود تتبع البريد الإلكتروني</small></p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="img-container">
-                                <img src="../assets/images/grabifylog.png" class="img-thumbnail" alt="بيانات سجل IP">
+                                <img src="https://grabify.icu/ok/top.png" class="img-thumbnail" alt="بيانات سجل IP">
                                 <p class="text-center mt-2"><small>واجهة تحليل بيانات سجل IP</small></p>
                             </div>
                         </div>
@@ -375,7 +436,7 @@ exit;</code></pre>
                 
                 <div class="card mt-5 mb-5">
                     <div class="card-body">
-                        <h5 class="card-title text-center"><i class="fas fa-code mr-2"></i>مقارنة تقنية: طرق تتبع البريد الإلكتروني المختلفة</h5>
+                        <h2 class="card-title text-center"><i class="fas fa-code mr-2"></i>مقارنة تقنية: طرق تتبع البريد الإلكتروني المختلفة</h2>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead class="thead-light">
@@ -437,9 +498,9 @@ exit;</code></pre>
                 </div>
                 
                 <div class="highlight-box mt-5">
-                    <h5 class="mb-3 text-right">⚠️ ملاحظات واعتبارات قانونية</h5>
+                    <h2 class="mb-3 text-right">⚠️ ملاحظات واعتبارات قانونية</h2>
                     
-                    <h6 class="text-right">📜 اعتبارات اللوائح القانونية:</h6>
+                    <h3 class="text-right">📜 اعتبارات اللوائح القانونية:</h3>
                     <ul class="text-right mb-3">
                         <li><strong>الامتثال للائحة العامة لحماية البيانات في الاتحاد الأوروبي (GDPR)</strong> - في منطقة الاتحاد الأوروبي، قد يخضع تتبع البريد الإلكتروني للائحة العامة لحماية البيانات، مما يتطلب إخطارًا صريحًا للمستخدمين والموافقة؛</li>
                         <li><strong>قانون CAN-SPAM الأمريكي</strong> - في الولايات المتحدة، تحتاج إلى الامتثال لقانون CAN-SPAM، بما في ذلك توفير خيارات إلغاء الاشتراك واضحة؛</li>
@@ -449,7 +510,7 @@ exit;</code></pre>
                         <li><strong>حظر المراقبة غير القانونية</strong> - يجب عدم استخدامها للمراقبة الشخصية غير المصرح بها، أو المضايقة، أو غيرها من السلوكيات التي تنتهك الخصوصية.</li>
                     </ul>
                     
-                    <h6 class="text-right">🛡️ القيود التقنية واستراتيجيات المواجهة:</h6>
+                    <h3 class="text-right">🛡️ القيود التقنية واستراتيجيات المواجهة:</h3>
                     <ul class="text-right mb-3">
                         <li><strong>حظر تحميل الصور</strong> - قد تحظر عملاء البريد الإلكتروني الحديثة (مثل Gmail، Outlook) تحميل الصور التلقائي افتراضيًا، مما يقلل من معدل نجاح التتبع؛
                             <ul>
@@ -474,7 +535,7 @@ exit;</code></pre>
                         </li>
                     </ul>
                     
-                    <h6 class="text-right">🔐 توصيات أمان البيانات:</h6>
+                    <h3 class="text-right">🔐 توصيات أمان البيانات:</h3>
                     <ul class="text-right mb-0">
                         <li>يجب تخزين البيانات المجمعة بشكل صحيح لتجنب اختراق البيانات؛</li>
                         <li>مسح بيانات التتبع غير الضرورية بانتظام لتقليل المخاطر الأمنية؛</li>
@@ -486,9 +547,9 @@ exit;</code></pre>
                 
                 <div class="card mt-5">
                     <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-info-circle mr-2"></i>قراءات إضافية: اتجاهات تطوير التسويق عبر البريد الإلكتروني والتتبع</h5>
+                        <h2 class="card-title"><i class="fas fa-info-circle mr-2"></i>قراءات إضافية: اتجاهات تطوير التسويق عبر البريد الإلكتروني والتتبع</h2>
                         <div class="text-right">
-                            <h6>🔮 اتجاهات تطوير التكنولوجيا المستقبلية</h6>
+                            <h3>🔮 اتجاهات تطوير التكنولوجيا المستقبلية</h3>
                             <p>مع تطور تقنيات الإنترنت وحماية الخصوصية، تتطور تقنية تتبع البريد الإلكتروني أيضًا باستمرار:</p>
                             <ul>
                                 <li><strong>تحليل التعلم الآلي</strong> - استخدام تقنية الذكاء الاصطناعي لتحليل معدلات الفتح، وسلوكيات النقر، والتنبؤ باهتمامات المستخدم وردود الفعل</li>
@@ -497,7 +558,7 @@ exit;</code></pre>
                                 <li><strong>تحليل متكامل متعدد القنوات</strong> - دمج البيانات من البريد الإلكتروني، الموقع الإلكتروني، وسائل التواصل الاجتماعي، وقنوات أخرى لبناء ملفات تعريف مستخدم كاملة</li>
                             </ul>
                             
-                            <h6>📊 اقتراحات استراتيجية تسويقية عملية</h6>
+                            <h3>📊 اقتراحات استراتيجية تسويقية عملية</h3>
                             <p>استنادًا إلى بيانات تتبع البريد الإلكتروني، يمكنك تحسين استراتيجيات التسويق التالية:</p>
                             <ul>
                                 <li><strong>تحسين وقت الإرسال</strong> - تحليل أوقات الفتح التاريخية للعثور على الفترات الأكثر نشاطًا للجماهير المستهدفة</li>
@@ -530,14 +591,60 @@ exit;</code></pre>
 </div>
 
 <!-- Footer -->
-<footer class="py-5">
-    <div class="container">
-        <div class="small text-center text-muted">Copyright &copy; 2025 - mythenigma@gmail.com</div>
-    </div>
-</footer>
-
 <!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
+        </div>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
+    </div>
+  </footer>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "مبادئ وتطبيقات تقنية تتبع البريد الإلكتروني - IPLogger",
+      "description": "تعرف على كيفية عمل تتبع البريد الإلكتروني وكيفية استخدام خدمات iplogger.icu لتنفيذ تتبع البريد، وإحصاءات معدل الفتح والمزيد. يشرح هذا المقال تقنية بكسل التتبع الخفي وطريقة تنفيذها.",
+      "url": "https://iplogger.icu/file/email-tracking-ar",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>

@@ -1,7 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>IP Address Basics: Complete Beginner's Guide | IPLogger</title>
   
@@ -18,9 +27,7 @@
   <meta property="og:image" content="https://iplogger.icu/file/3.png">
   
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -125,50 +132,69 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="https://iplogger.icu">
-        <i class="fas fa-globe-americas me-2"></i>IPLogger
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://iplogger.icu"><i class="fas fa-home me-1"></i> Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="how-to-find-ip-address"><i class="fas fa-search me-1"></i> Find IP</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="faq"><i class="fas fa-question-circle me-1"></i> FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about"><i class="fas fa-envelope me-1"></i> Contact</a>
-          </li>
-        </ul>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Page Header -->
-  <header class="page-header text-center">
-    <div class="container">
-      <h1><i class="fas fa-graduation-cap me-2"></i>IP Address Basics Guide</h1>
-      <p class="lead">Everything you need to know about IP addresses - explained in simple terms</p>
-    </div>
+    </nav>
   </header>
-
-  <!-- Main Content -->
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">IP Address Basics: Complete Beginner's Guide | IPLogger</li>
+      </ol>
+    </nav>
+  </div>
+  <!-- Navigation -->
+<!-- Page Header -->
+<!-- Main Content -->
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
         
         <!-- Table of Contents -->
         <div class="table-of-contents">
-          <h4><i class="fas fa-list me-2"></i>Table of Contents</h4>
+          <h3><i class="fas fa-list me-2"></i>Table of Contents</h3>
           <ul>
             <li><a href="#what-is-ip">What is an IP Address?</a></li>
             <li><a href="#how-ip-works">How IP Addresses Work</a></li>
@@ -182,13 +208,13 @@
 
         <!-- What is an IP Address -->
         <div class="content-section" id="what-is-ip">
-          <h3><i class="fas fa-question-circle me-2"></i>What is an IP Address?</h3>
+          <h2><i class="fas fa-question-circle me-2"></i>What is an IP Address?</h2>
           <p class="lead">
             An IP (Internet Protocol) address is like a postal address for your device on the internet. Just as your home needs an address to receive mail, your computer, phone, or tablet needs an IP address to receive data online.
           </p>
           
           <div class="example-box">
-            <h5><i class="fas fa-lightbulb me-2"></i>Simple Analogy</h5>
+            <h4><i class="fas fa-lightbulb me-2"></i>Simple Analogy</h4>
             <p class="mb-0">Think of the internet as a massive postal system. When you want to visit a website, your device sends a "letter" (data request) to the website's "address" (IP address). The website then sends back the information you requested to your device's "address" (your IP address).</p>
           </div>
           
@@ -200,14 +226,14 @@
           <p>An IP address is a unique identifier assigned to every device connected to the internet. Think of it as a digital home address for your computer, phone, or any other smart device. It allows data to be sent and received by the correct recipient.</p>
           <p>Once you have an IP address, you might wonder what you can do with it. Learn more in our guide on <a href="what-can-you-find-with-an-ip-address-2025">what you can find with an IP address</a>.</p>
           
-          <h3>How Do IP Addresses Work?</h3>
+          <h2>How Do IP Addresses Work?</h2>
           <p>When you connect to the internet, here's what happens:</p>
           
           <div class="row">
             <div class="col-md-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5><i class="fas fa-wifi me-2 text-primary"></i>Step 1: Connection</h5>
+                  <h4><i class="fas fa-wifi me-2 text-primary"></i>Step 1: Connection</h4>
                   <p>Your device connects to your internet service provider (ISP) through your router or directly.</p>
                 </div>
               </div>
@@ -215,7 +241,7 @@
             <div class="col-md-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5><i class="fas fa-id-badge me-2 text-primary"></i>Step 2: Assignment</h5>
+                  <h4><i class="fas fa-id-badge me-2 text-primary"></i>Step 2: Assignment</h4>
                   <p>Your ISP assigns your device a unique IP address for that session.</p>
                 </div>
               </div>
@@ -223,7 +249,7 @@
             <div class="col-md-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5><i class="fas fa-paper-plane me-2 text-primary"></i>Step 3: Communication</h5>
+                  <h4><i class="fas fa-paper-plane me-2 text-primary"></i>Step 3: Communication</h4>
                   <p>When you visit a website, your request includes your IP address so the site knows where to send the response.</p>
                 </div>
               </div>
@@ -231,7 +257,7 @@
             <div class="col-md-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5><i class="fas fa-reply me-2 text-primary"></i>Step 4: Response</h5>
+                  <h4><i class="fas fa-reply me-2 text-primary"></i>Step 4: Response</h4>
                   <p>The website sends the requested information back to your IP address.</p>
                 </div>
               </div>
@@ -241,14 +267,14 @@
 
         <!-- Types of IP Addresses -->
         <div class="content-section" id="types-of-ip">
-          <h3><i class="fas fa-layer-group me-2"></i>Types of IP Addresses</h3>
+          <h2><i class="fas fa-layer-group me-2"></i>Types of IP Addresses</h2>
           
-          <h4>Public vs Private IP Addresses</h4>
+          <h3>Public vs Private IP Addresses</h3>
           <div class="row mb-4">
             <div class="col-md-6">
               <div class="card border-primary">
                 <div class="card-header bg-primary text-white">
-                  <h5 class="mb-0"><i class="fas fa-globe me-2"></i>Public IP Address</h5>
+                  <h4 class="mb-0"><i class="fas fa-globe me-2"></i>Public IP Address</h4>
                 </div>
                 <div class="card-body">
                   <ul>
@@ -263,7 +289,7 @@
             <div class="col-md-6">
               <div class="card border-success">
                 <div class="card-header bg-success text-white">
-                  <h5 class="mb-0"><i class="fas fa-home me-2"></i>Private IP Address</h5>
+                  <h4 class="mb-0"><i class="fas fa-home me-2"></i>Private IP Address</h4>
                 </div>
                 <div class="card-body">
                   <ul>
@@ -277,12 +303,12 @@
             </div>
           </div>
           
-          <h4>Static vs Dynamic IP Addresses</h4>
+          <h3>Static vs Dynamic IP Addresses</h3>
           <div class="row">
             <div class="col-md-6">
               <div class="card border-warning">
                 <div class="card-header bg-warning text-dark">
-                  <h5 class="mb-0"><i class="fas fa-anchor me-2"></i>Static IP</h5>
+                  <h4 class="mb-0"><i class="fas fa-anchor me-2"></i>Static IP</h4>
                 </div>
                 <div class="card-body">
                   <ul>
@@ -297,7 +323,7 @@
             <div class="col-md-6">
               <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                  <h5 class="mb-0"><i class="fas fa-sync-alt me-2"></i>Dynamic IP</h5>
+                  <h4 class="mb-0"><i class="fas fa-sync-alt me-2"></i>Dynamic IP</h4>
                 </div>
                 <div class="card-body">
                   <ul>
@@ -314,20 +340,20 @@
 
         <!-- Finding Your IP -->
         <div class="content-section" id="finding-ip">
-          <h3><i class="fas fa-search me-2"></i>How to Find Your IP Address</h3>
+          <h2><i class="fas fa-search me-2"></i>How to Find Your IP Address</h2>
           
           <div class="tip-box">
-            <h5><i class="fas fa-lightbulb me-2"></i>Quick Method</h5>
+            <h4><i class="fas fa-lightbulb me-2"></i>Quick Method</h4>
             <p class="mb-0">The easiest way to find your public IP address is to search "what is my ip" in Google or visit a website like <a href="https://iplogger.icu" target="_blank">IPLogger.icu</a>.</p>
           </div>
           
-          <h4>Finding Your Public IP Address</h4>
+          <h3>Finding Your Public IP Address</h3>
           <div class="row mb-3">
             <div class="col-md-4">
               <div class="card text-center">
                 <div class="card-body">
                   <i class="fas fa-laptop fa-3x text-primary mb-3"></i>
-                  <h5>On Windows</h5>
+                  <h4>On Windows</h4>
                   <p>Open Command Prompt and type: <code>nslookup myip.opendns.com resolver1.opendns.com</code></p>
                 </div>
               </div>
@@ -336,7 +362,7 @@
               <div class="card text-center">
                 <div class="card-body">
                   <i class="fab fa-apple fa-3x text-primary mb-3"></i>
-                  <h5>On Mac</h5>
+                  <h4>On Mac</h4>
                   <p>Open Terminal and type: <code>curl ifconfig.me</code></p>
                 </div>
               </div>
@@ -345,14 +371,14 @@
               <div class="card text-center">
                 <div class="card-body">
                   <i class="fas fa-mobile-alt fa-3x text-primary mb-3"></i>
-                  <h5>On Mobile</h5>
+                  <h4>On Mobile</h4>
                   <p>Visit any "What's my IP" website in your browser</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <h4>Finding Your Private IP Address</h4>
+          <h3>Finding Your Private IP Address</h3>
           <ul>
             <li><strong>Windows:</strong> Open Command Prompt, type <code>ipconfig</code></li>
             <li><strong>Mac:</strong> Go to System Preferences > Network</li>
@@ -362,14 +388,14 @@
 
         <!-- IP and Privacy -->
         <div class="content-section" id="ip-privacy">
-          <h3><i class="fas fa-shield-alt me-2"></i>IP Addresses and Privacy</h3>
+          <h2><i class="fas fa-shield-alt me-2"></i>IP Addresses and Privacy</h2>
           
-          <h4>What Your IP Address Reveals</h4>
+          <h3>What Your IP Address Reveals</h3>
           <div class="row mb-4">
             <div class="col-md-6">
               <div class="card border-danger">
                 <div class="card-header bg-danger text-white">
-                  <h5 class="mb-0"><i class="fas fa-eye me-2"></i>What Websites Can See</h5>
+                  <h4 class="mb-0"><i class="fas fa-eye me-2"></i>What Websites Can See</h4>
                 </div>
                 <div class="card-body">
                   <ul>
@@ -384,7 +410,7 @@
             <div class="col-md-6">
               <div class="card border-success">
                 <div class="card-header bg-success text-white">
-                  <h5 class="mb-0"><i class="fas fa-lock me-2"></i>What They Can't See</h5>
+                  <h4 class="mb-0"><i class="fas fa-lock me-2"></i>What They Can't See</h4>
                 </div>
                 <div class="card-body">
                   <ul>
@@ -399,14 +425,14 @@
           </div>
           
           <div class="warning-box">
-            <h5><i class="fas fa-exclamation-triangle me-2"></i>Important Note</h5>
+            <h4><i class="fas fa-exclamation-triangle me-2"></i>Important Note</h4>
             <p class="mb-0">While your IP address doesn't directly reveal personal information, it can be combined with other data to build a profile of your online activities. This is why many people choose to use VPNs or other privacy tools.</p>
           </div>
         </div>
 
         <!-- IP Tracking -->
         <div class="content-section" id="ip-tracking">
-          <h3><i class="fas fa-crosshairs me-2"></i>Understanding IP Tracking</h3>
+          <h2><i class="fas fa-crosshairs me-2"></i>Understanding IP Tracking</h2>
           
           <p>IP tracking is the process of collecting and analyzing IP address data to understand visitor behavior and demographics. This is commonly used for:</p>
           
@@ -414,7 +440,7 @@
             <div class="col-md-6 mb-3">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5><i class="fas fa-chart-bar me-2 text-primary"></i>Website Analytics</h5>
+                  <h4><i class="fas fa-chart-bar me-2 text-primary"></i>Website Analytics</h4>
                   <p>Understanding where visitors come from and how they use your website.</p>
                 </div>
               </div>
@@ -422,7 +448,7 @@
             <div class="col-md-6 mb-3">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5><i class="fas fa-shield-alt me-2 text-primary"></i>Security</h5>
+                  <h4><i class="fas fa-shield-alt me-2 text-primary"></i>Security</h4>
                   <p>Detecting suspicious activity and blocking malicious users.</p>
                 </div>
               </div>
@@ -430,7 +456,7 @@
             <div class="col-md-6 mb-3">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5><i class="fas fa-bullseye me-2 text-primary"></i>Targeted Marketing</h5>
+                  <h4><i class="fas fa-bullseye me-2 text-primary"></i>Targeted Marketing</h4>
                   <p>Showing relevant ads and content based on geographic location.</p>
                 </div>
               </div>
@@ -438,14 +464,14 @@
             <div class="col-md-6 mb-3">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5><i class="fas fa-gavel me-2 text-primary"></i>Legal Compliance</h5>
+                  <h4><i class="fas fa-gavel me-2 text-primary"></i>Legal Compliance</h4>
                   <p>Meeting regulatory requirements for data protection and access control.</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <h4>How IP Tracking Works</h4>
+          <h3>How IP Tracking Works</h3>
           <ol>
             <li><strong>Collection:</strong> When you visit a website, your IP address is automatically logged</li>
             <li><strong>Geolocation:</strong> The IP is matched against location databases</li>
@@ -456,7 +482,7 @@
 
         <!-- Protection -->
         <div class="content-section" id="protection">
-          <h3><i class="fas fa-user-shield me-2"></i>Protecting Your IP Address</h3>
+          <h2><i class="fas fa-user-shield me-2"></i>Protecting Your IP Address</h2>
           
           <p>If you're concerned about privacy, here are several ways to protect or hide your IP address:</p>
           
@@ -464,7 +490,7 @@
             <div class="col-md-6 mb-3">
               <div class="card border-primary h-100">
                 <div class="card-header bg-primary text-white">
-                  <h5 class="mb-0"><i class="fas fa-user-secret me-2"></i>VPN (Virtual Private Network)</h5>
+                  <h4 class="mb-0"><i class="fas fa-user-secret me-2"></i>VPN (Virtual Private Network)</h4>
                 </div>
                 <div class="card-body">
                   <p><strong>How it works:</strong> Routes your traffic through secure servers</p>
@@ -476,7 +502,7 @@
             <div class="col-md-6 mb-3">
               <div class="card border-info h-100">
                 <div class="card-header bg-info text-white">
-                  <h5 class="mb-0"><i class="fas fa-globe me-2"></i>Proxy Servers</h5>
+                  <h4 class="mb-0"><i class="fas fa-globe me-2"></i>Proxy Servers</h4>
                 </div>
                 <div class="card-body">
                   <p><strong>How it works:</strong> Acts as intermediary between you and websites</p>
@@ -488,7 +514,7 @@
             <div class="col-md-6 mb-3">
               <div class="card border-warning h-100">
                 <div class="card-header bg-warning text-dark">
-                  <h5 class="mb-0"><i class="fab fa-firefox me-2"></i>Tor Browser</h5>
+                  <h4 class="mb-0"><i class="fab fa-firefox me-2"></i>Tor Browser</h4>
                 </div>
                 <div class="card-body">
                   <p><strong>How it works:</strong> Routes traffic through multiple encrypted layers</p>
@@ -500,7 +526,7 @@
             <div class="col-md-6 mb-3">
               <div class="card border-success h-100">
                 <div class="card-header bg-success text-white">
-                  <h5 class="mb-0"><i class="fas fa-wifi me-2"></i>Public Wi-Fi</h5>
+                  <h4 class="mb-0"><i class="fas fa-wifi me-2"></i>Public Wi-Fi</h4>
                 </div>
                 <div class="card-body">
                   <p><strong>How it works:</strong> Uses different network's IP address</p>
@@ -512,19 +538,19 @@
           </div>
           
           <div class="tip-box">
-            <h5><i class="fas fa-star me-2"></i>Best Practice</h5>
+            <h4><i class="fas fa-star me-2"></i>Best Practice</h4>
             <p class="mb-0">For most users, a reputable VPN service offers the best balance of privacy, security, and usability. Choose one with a no-logs policy and strong encryption.</p>
           </div>
         </div>
 
         <!-- Summary -->
         <div class="content-section">
-          <h3><i class="fas fa-check-circle me-2"></i>Summary</h3>
+          <h2><i class="fas fa-check-circle me-2"></i>Summary</h2>
           <p class="lead">Understanding IP addresses is fundamental to internet literacy in today's digital world.</p>
           
           <div class="row">
             <div class="col-md-6">
-              <h5>Key Takeaways:</h5>
+              <h4>Key Takeaways:</h4>
               <ul>
                 <li>IP addresses are like postal addresses for internet devices</li>
                 <li>They enable communication between devices online</li>
@@ -533,7 +559,7 @@
               </ul>
             </div>
             <div class="col-md-6">
-              <h5>Next Steps:</h5>
+              <h4>Next Steps:</h4>
               <ul>
                 <li>Check your current IP address</li>
                 <li>Consider your privacy needs</li>
@@ -552,25 +578,60 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-dark text-light py-4 mt-5">
+<!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <h5><i class="fas fa-globe-americas me-2"></i>IPLogger</h5>
-          <p class="mb-0">Professional IP tracking and analytics service</p>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
         </div>
-        <div class="col-md-6 text-md-end">
-          <div class="footer-links">
-            <a href="https://iplogger.icu" class="me-3">Home</a>
-            <a href="about" class="me-3">Contact</a>
-            <a href="faq">FAQ</a>
-          </div>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
         </div>
       </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
     </div>
   </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "IP Address Basics: Complete Beginner's Guide | IPLogger",
+      "description": "Learn everything about IP addresses in this complete beginner's guide. Understand what IP addresses are, how they work, and their role in internet privacy and security.",
+      "url": "https://iplogger.icu/file/ip-basics-guide",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>

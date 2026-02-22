@@ -1,7 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Mobile IP Tracking Guide - Track Mobile Device IP Addresses | IPLogger</title>
   
@@ -28,11 +37,8 @@
   <link rel="canonical" href="https://iplogger.icu/file/mobile-ip-tracking">
   
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <style>
+<!-- Font Awesome -->
+<style>
     .page-header {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -150,46 +156,62 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="https://iplogger.icu">
-        <i class="fas fa-map-marked-alt me-2"></i>IPLogger
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://iplogger.icu"><i class="fas fa-home me-1"></i> Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ip-tracker-guide"><i class="fas fa-book me-1"></i> IP Tracker Guide</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ip-tracker-tools"><i class="fas fa-tools me-1"></i> Tools Comparison</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="mobile-ip-tracking"><i class="fas fa-mobile-alt me-1"></i> Mobile Tracking</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about"><i class="fas fa-envelope me-1"></i> Contact</a>
-          </li>
-        </ul>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Page Header -->
-  <header class="page-header text-center">
-    <div class="container">
-      <h1><i class="fas fa-mobile-alt me-2"></i>Mobile IP Tracking Guide</h1>
-      <p class="lead">Master mobile device IP tracking with specialized techniques for smartphones and tablets</p>
-    </div>
+    </nav>
   </header>
-
-  <!-- Main Content -->
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Mobile IP Tracking Guide - Track Mobile Device IP Address...</li>
+      </ol>
+    </nav>
+  </div>
+  <!-- Navigation -->
+<!-- Page Header -->
+<!-- Main Content -->
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
@@ -202,7 +224,7 @@
           </p>
           
           <div class="highlight-box">
-            <h4><i class="fas fa-lightbulb me-2"></i>Key Mobile Tracking Insights</h4>
+            <h3><i class="fas fa-lightbulb me-2"></i>Key Mobile Tracking Insights</h3>
             <p class="mb-0">Mobile IP addresses are often dynamic and shared across multiple users through carrier-grade NAT (Network Address Translation), making individual tracking more complex but aggregate analysis more valuable.</p>
           </div>
         </div>
@@ -218,7 +240,7 @@
                   <div class="feature-icon mx-auto">
                     <i class="fas fa-broadcast-tower"></i>
                   </div>
-                  <h4 class="text-center">Cellular Networks</h4>
+                  <h3 class="text-center">Cellular Networks</h3>
                   <ul class="list-unstyled">
                     <li><i class="fas fa-check text-success me-2"></i>4G/5G carrier networks</li>
                     <li><i class="fas fa-check text-success me-2"></i>Dynamic IP assignment</li>
@@ -239,7 +261,7 @@
                   <div class="feature-icon mx-auto">
                     <i class="fas fa-wifi"></i>
                   </div>
-                  <h4 class="text-center">WiFi Networks</h4>
+                  <h3 class="text-center">WiFi Networks</h3>
                   <ul class="list-unstyled">
                     <li><i class="fas fa-check text-success me-2"></i>Home/office broadband</li>
                     <li><i class="fas fa-check text-success me-2"></i>Public hotspots</li>
@@ -263,11 +285,11 @@
           <div class="row g-4">
             <div class="col-md-6">
               <div class="challenge-box">
-                <h5><i class="fas fa-question-circle text-warning me-2"></i>Challenge: Dynamic IP Assignment</h5>
+                <h4><i class="fas fa-question-circle text-warning me-2"></i>Challenge: Dynamic IP Assignment</h4>
                 <p>Mobile carriers frequently rotate IP addresses among users, making long-term tracking difficult.</p>
               </div>
               <div class="solution-box">
-                <h6><i class="fas fa-lightbulb text-success me-2"></i>Solution Strategies:</h6>
+                <h5><i class="fas fa-lightbulb text-success me-2"></i>Solution Strategies:</h5>
                 <ul class="mb-0">
                   <li>Focus on session-based tracking</li>
                   <li>Use device fingerprinting as supplement</li>
@@ -279,11 +301,11 @@
             
             <div class="col-md-6">
               <div class="challenge-box">
-                <h5><i class="fas fa-question-circle text-warning me-2"></i>Challenge: Carrier-Grade NAT</h5>
+                <h4><i class="fas fa-question-circle text-warning me-2"></i>Challenge: Carrier-Grade NAT</h4>
                 <p>Multiple users share the same public IP address through carrier infrastructure.</p>
               </div>
               <div class="solution-box">
-                <h6><i class="fas fa-lightbulb text-success me-2"></i>Solution Strategies:</h6>
+                <h5><i class="fas fa-lightbulb text-success me-2"></i>Solution Strategies:</h5>
                 <ul class="mb-0">
                   <li>Combine IP with user agent data</li>
                   <li>Use timestamp correlation</li>
@@ -303,7 +325,7 @@
             <div class="col-md-4">
               <div class="step-card">
                 <div class="step-number">1</div>
-                <h5>App-Based Tracking</h5>
+                <h4>App-Based Tracking</h4>
                 <p>Track IP addresses through mobile applications with enhanced device information.</p>
                 <ul class="text-muted small">
                   <li>Native app analytics</li>
@@ -317,7 +339,7 @@
             <div class="col-md-4">
               <div class="step-card">
                 <div class="step-number">2</div>
-                <h5>Mobile Web Tracking</h5>
+                <h4>Mobile Web Tracking</h4>
                 <p>Optimize web-based tracking for mobile browsers and responsive designs.</p>
                 <ul class="text-muted small">
                   <li>Touch-optimized tracking links</li>
@@ -331,7 +353,7 @@
             <div class="col-md-4">
               <div class="step-card">
                 <div class="step-number">3</div>
-                <h5>Cross-Platform Tracking</h5>
+                <h4>Cross-Platform Tracking</h4>
                 <p>Connect mobile IP data with desktop sessions for complete user journey mapping.</p>
                 <ul class="text-muted small">
                   <li>Universal Analytics setup</li>
@@ -400,7 +422,7 @@
           
           <div class="row g-4">
             <div class="col-lg-6">
-              <h4 class="text-primary">Enhanced Privacy Concerns</h4>
+              <h3 class="text-primary">Enhanced Privacy Concerns</h3>
               <ul>
                 <li>Location-based tracking sensitivity</li>
                 <li>Always-connected nature of mobile devices</li>
@@ -411,7 +433,7 @@
             </div>
             
             <div class="col-lg-6">
-              <h4 class="text-success">Best Practices</h4>
+              <h3 class="text-success">Best Practices</h3>
               <ul>
                 <li>Transparent data collection policies</li>
                 <li>Opt-in consent for location tracking</li>
@@ -437,7 +459,7 @@
               <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                   <i class="fas fa-tachometer-alt fa-2x text-primary mb-3"></i>
-                  <h5>Performance</h5>
+                  <h4>Performance</h4>
                   <p class="text-muted small">Minimize tracking script size and load times for mobile networks</p>
                 </div>
               </div>
@@ -447,7 +469,7 @@
               <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                   <i class="fas fa-battery-half fa-2x text-primary mb-3"></i>
-                  <h5>Battery Efficiency</h5>
+                  <h4>Battery Efficiency</h4>
                   <p class="text-muted small">Reduce background tracking to preserve device battery life</p>
                 </div>
               </div>
@@ -457,7 +479,7 @@
               <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                   <i class="fas fa-database fa-2x text-primary mb-3"></i>
-                  <h5>Data Usage</h5>
+                  <h4>Data Usage</h4>
                   <p class="text-muted small">Optimize payload size for users on limited data plans</p>
                 </div>
               </div>
@@ -467,7 +489,7 @@
               <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                   <i class="fas fa-mobile-alt fa-2x text-primary mb-3"></i>
-                  <h5>Touch-Friendly</h5>
+                  <h4>Touch-Friendly</h4>
                   <p class="text-muted small">Design tracking links for touch interfaces and mobile gestures</p>
                 </div>
               </div>
@@ -477,7 +499,7 @@
               <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                   <i class="fas fa-clock fa-2x text-primary mb-3"></i>
-                  <h5>Real-Time</h5>
+                  <h4>Real-Time</h4>
                   <p class="text-muted small">Implement real-time tracking for immediate mobile analytics</p>
                 </div>
               </div>
@@ -487,7 +509,7 @@
               <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body text-center">
                   <i class="fas fa-crosshairs fa-2x text-primary mb-3"></i>
-                  <h5>Precision</h5>
+                  <h4>Precision</h4>
                   <p class="text-muted small">Combine multiple data points for accurate mobile user identification</p>
                 </div>
               </div>
@@ -500,12 +522,12 @@
           <h2><i class="fas fa-play-circle me-2"></i>Getting Started with Mobile IP Tracking</h2>
           
           <div class="highlight-box">
-            <h4><i class="fas fa-star me-2"></i>Start Mobile Tracking Today</h4>
+            <h3><i class="fas fa-star me-2"></i>Start Mobile Tracking Today</h3>
             <p>IPLogger provides mobile-optimized tracking tools that work seamlessly across all mobile devices and networks. Our tracking pixels and links are designed to handle the unique challenges of mobile IP tracking.</p>
             
             <div class="row mt-4">
               <div class="col-md-6">
-                <h6><i class="fas fa-check-circle me-2"></i>Mobile Features:</h6>
+                <h5><i class="fas fa-check-circle me-2"></i>Mobile Features:</h5>
                 <ul class="mb-0">
                   <li>Touch-optimized interface</li>
                   <li>Mobile network detection</li>
@@ -514,7 +536,7 @@
                 </ul>
               </div>
               <div class="col-md-6">
-                <h6><i class="fas fa-check-circle me-2"></i>Analytics:</h6>
+                <h5><i class="fas fa-check-circle me-2"></i>Analytics:</h5>
                 <ul class="mb-0">
                   <li>Real-time mobile tracking</li>
                   <li>Connection type analysis</li>
@@ -542,29 +564,60 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
+<!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <h5>IPLogger</h5>
-          <p>Professional IP tracking and mobile analytics for modern applications.</p>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
         </div>
-        <div class="col-md-6 text-md-end">
-          <h6>Quick Links</h6>
-          <a href="https://iplogger.icu" class="text-light me-3">Home</a>
-          <a href="ip-tracker-guide" class="text-light me-3">Guide</a>
-          <a href="ip-tracker-tools" class="text-light me-3">Tools</a>
-          <a href="mobile-ip-tracking" class="text-light">Mobile</a>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
         </div>
       </div>
-      <hr class="my-4">
-      <div class="text-center">
-        <p>&copy; 2024 IPLogger. All rights reserved.</p>
-      </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
     </div>
   </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Mobile IP Tracking Guide - Track Mobile Device IP Addresses | IPLogger",
+      "description": "Complete guide to mobile IP tracking. Learn how to track mobile device IP addresses, understand mobile network limitations, and optimize tracking for smartphones and tablets.",
+      "url": "https://iplogger.icu/file/mobile-ip-tracking",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>

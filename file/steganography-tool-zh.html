@@ -1,13 +1,34 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>隐写术工具 - 在图片中隐藏秘密信息</title>
+  <link rel="canonical" href="https://iplogger.icu/file/steganography-tool-zh">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://iplogger.icu/file/steganography-tool-zh">
+  <meta property="og:title" content="隐写术工具 - 在图片中隐藏秘密信息">
+  <meta property="og:description" content="专业的隐写术工具，在普通图片中隐藏秘密信息，肉眼无法察觉，完美保护你的隐私数据。">
+  <meta property="og:image" content="https://grabify.icu/ok/result.png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://iplogger.icu/file/steganography-tool-zh">
+  <meta property="twitter:title" content="隐写术工具 - 在图片中隐藏秘密信息">
+  <meta property="twitter:description" content="专业的隐写术工具，在普通图片中隐藏秘密信息，肉眼无法察觉，完美保护你的隐私数据。">
+  <meta property="twitter:image" content="https://grabify.icu/ok/result.png">
   <meta name="keywords" content="隐写术工具, 图片隐写, 秘密信息隐藏, LSB隐写, 数据隐蔽, 图像加密, 信息隐藏技术">
   <meta name="description" content="专业的隐写术工具，在普通图片中隐藏秘密信息，肉眼无法察觉，完美保护你的隐私数据。">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
+<style>
     body { background: #f8f9fa; }
     .container { max-width: 800px; }
     .emoji { font-size: 1.3em; margin-right: 0.3em; }
@@ -21,6 +42,59 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
 </head>
 <body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">隐写术工具 - 在图片中隐藏秘密信息</li>
+      </ol>
+    </nav>
+  </div>
   <div class="container my-5">
     <div class="card shadow-sm">
       <div class="card-header bg-info text-white">
@@ -48,25 +122,25 @@
         <div class="row">
           <div class="col-md-6">
             <div class="feature-card">
-              <h6><span class="emoji">🖼️</span>图片隐写</h6>
+              <h4><span class="emoji">🖼️</span>图片隐写</h4>
               <p>在JPG、PNG、BMP等图片中隐藏文字、文档、甚至其他图片</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="feature-card">
-              <h6><span class="emoji">👁️</span>完全隐形</h6>
+              <h4><span class="emoji">👁️</span>完全隐形</h4>
               <p>隐藏信息后图片看起来完全没有变化，肉眼无法察觉</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="feature-card">
-              <h6><span class="emoji">🔐</span>密码保护</h6>
+              <h4><span class="emoji">🔐</span>密码保护</h4>
               <p>可设置密码保护，只有知道密码的人才能提取信息</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="feature-card">
-              <h6><span class="emoji">📊</span>容量计算</h6>
+              <h4><span class="emoji">📊</span>容量计算</h4>
               <p>智能计算每张图片可隐藏的最大信息量</p>
             </div>
           </div>
@@ -75,7 +149,7 @@
         <!-- 隐写演示 -->
         <div class="section-title"><span class="emoji">🔬</span>隐写术原理演示</div>
         <div class="demo-box">
-          <h6><span class="emoji">🎯</span>LSB隐写技术原理</h6>
+          <h4><span class="emoji">🎯</span>LSB隐写技术原理</h4>
           <div style="font-family: monospace; text-align: left; max-width: 600px; margin: 0 auto;">
             <p><strong>原始像素值（红色通道）：</strong></p>
             <div style="background: #f8f9fa; padding: 10px; border-radius: 4px;">
@@ -98,27 +172,27 @@
         <div class="section-title"><span class="emoji">💡</span>隐写术的实用场景</div>
         <div class="row">
           <div class="col-md-6">
-            <h6><span class="emoji">🔒</span>私密日记</h6>
+            <h4><span class="emoji">🔒</span>私密日记</h4>
             <p>将个人日记、感想隐藏在普通照片中，即使别人看到图片也不知道里面藏着你的秘密心情。</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">💰</span>财务信息</h6>
+            <h4><span class="emoji">💰</span>财务信息</h4>
             <p>将银行密码、投资记录、重要账号信息隐藏在家庭照片中，安全备份重要数据。</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">💼</span>商业机密</h6>
+            <h4><span class="emoji">💼</span>商业机密</h4>
             <p>企业可以将客户名单、报价信息、商业计划隐藏在产品图片中，安全传递机密文件。</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">📚</span>学术研究</h6>
+            <h4><span class="emoji">📚</span>学术研究</h4>
             <p>研究人员可以将数据、公式、实验结果隐藏在论文插图中，保护知识产权。</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">💕</span>情侣密语</h6>
+            <h4><span class="emoji">💕</span>情侣密语</h4>
             <p>在分享的合影中隐藏甜蜜话语、重要纪念日，只有你们两人知道的小秘密。</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">🎮</span>游戏攻略</h6>
+            <h4><span class="emoji">🎮</span>游戏攻略</h4>
             <p>游戏玩家可以将攻略、密码、隐藏关卡信息藏在游戏截图中分享。</p>
           </div>
         </div>
@@ -146,7 +220,7 @@
         <!-- 技术优势 -->
         <div class="section-title"><span class="emoji">🔧</span>技术特性与优势</div>
         <div class="warning-box mb-3">
-          <h6><span class="emoji">🎯</span>隐写算法对比</h6>
+          <h4><span class="emoji">🎯</span>隐写算法对比</h4>
           <div class="row">
             <div class="col-md-6">
               <b>LSB隐写（推荐）：</b>
@@ -174,7 +248,7 @@
         <div class="row">
           <div class="col-md-6 text-center">
             <div class="demo-box">
-              <h6>原始图片</h6>
+              <h4>原始图片</h4>
               <div style="width: 200px; height: 150px; background: linear-gradient(45deg, #87CEEB, #98FB98); margin: 0 auto; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                 <span style="font-size: 2em;">🏞️</span>
               </div>
@@ -183,7 +257,7 @@
           </div>
           <div class="col-md-6 text-center">
             <div class="demo-box">
-              <h6>隐写后图片</h6>
+              <h4>隐写后图片</h4>
               <div style="width: 200px; height: 150px; background: linear-gradient(45deg, #87CEEB, #98FB98); margin: 0 auto; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                 <span style="font-size: 2em;">🏞️</span>
               </div>
@@ -315,7 +389,59 @@
       </div>
     </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
+        </div>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
+    </div>
+  </footer>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "隐写术工具 - 在图片中隐藏秘密信息",
+      "description": "专业的隐写术工具，在普通图片中隐藏秘密信息，肉眼无法察觉，完美保护你的隐私数据。",
+      "url": "https://iplogger.icu/file/steganography-tool-zh",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>

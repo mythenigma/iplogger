@@ -1,0 +1,145 @@
+/* ============================================
+   IPLogger Subpage Shared Styles
+   Used by all pages under /file/
+   ============================================ */
+
+:root {
+  --primary-color: #4a6ee0;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --dark-color: #212529;
+  --light-color: #f8f9fa;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* ---- Navbar ---- */
+.iplogger-nav {
+  background-color: var(--primary-color) !important;
+}
+.iplogger-nav .navbar-brand {
+  font-weight: 700;
+}
+.language-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.language-dropdown {
+  min-width: 180px;
+}
+.dropdown-item-flag {
+  width: 20px;
+  height: 14px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.dropdown-item .check-icon {
+  display: none;
+}
+.dropdown-item.active .check-icon {
+  display: inline;
+}
+
+/* ---- Breadcrumb ---- */
+.iplogger-breadcrumb {
+  background: transparent;
+  padding: 0.75rem 0;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+.iplogger-breadcrumb .breadcrumb-item a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.iplogger-breadcrumb .breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+.iplogger-breadcrumb .breadcrumb-item.active {
+  color: var(--secondary-color);
+}
+
+/* ---- Footer ---- */
+.iplogger-footer {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding: 3rem 0 1.5rem;
+  margin-top: 3rem;
+}
+.iplogger-footer h5 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.iplogger-footer a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.iplogger-footer a:hover {
+  color: rgba(255,255,255,0.85);
+}
+.iplogger-footer .footer-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+.iplogger-footer .footer-copy {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+/* ---- Common Page Elements ---- */
+.page-hero {
+  background: linear-gradient(120deg, #4a6ee0 0%, #6350b5 100%);
+  color: white;
+  padding: 3rem 0 2rem;
+  margin-bottom: 2rem;
+}
+.page-hero h1 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.page-hero p {
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.content-section {
+  padding: 1.5rem 0;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-primary:hover {
+  background-color: #3a5dbc;
+  border-color: #3a5dbc;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 1.5rem;
+  }
+  .iplogger-footer .row > div {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0;
+  }
+}

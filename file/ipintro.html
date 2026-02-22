@@ -1,9 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Introduction to IPLogger - Track IP Addresses Online</title>
+  <link rel="canonical" href="https://iplogger.icu/file/ipintro">
   
   <!-- Primary Meta Tags -->
   <meta name="description" content="Learn about IPLogger, an online tool that allows you to track IP addresses of visitors to your shared links, providing valuable insights for marketers and businesses.">
@@ -25,12 +35,8 @@
   <meta property="twitter:image" content="https://grabify.icu/ok/result.png">
   
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  
-  <!-- Google Fonts -->
+<!-- Font Awesome -->
+<!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Custom CSS -->
@@ -163,46 +169,62 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="https://iplogger.icu">
-        <i class="fas fa-globe-americas me-2"></i>IPLogger
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://iplogger.icu"><i class="fas fa-home me-1"></i> Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="ipintro"><i class="fas fa-info-circle me-1"></i> About IP Tracking</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="usecase"><i class="fas fa-lightbulb me-1"></i> Use Cases</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="procon"><i class="fas fa-balance-scale me-1"></i> Pros & Cons</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about"><i class="fas fa-envelope me-1"></i> Contact</a>
-          </li>
-        </ul>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Page Header -->
-  <header class="page-header text-center">
-    <div class="container">
-      <h1><i class="fas fa-info-circle me-2"></i>Introduction to IPLogger</h1>
-      <p class="lead">Understand what IP logging is and how it can benefit your online activities</p>
-    </div>
+    </nav>
   </header>
-
-  <!-- Main Content -->
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Introduction to IPLogger - Track IP Addresses Online</li>
+      </ol>
+    </nav>
+  </div>
+  <!-- Navigation -->
+<!-- Page Header -->
+<!-- Main Content -->
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
@@ -239,7 +261,7 @@
                       <i class="fas fa-link"></i>
                     </span>
                   </div>
-                  <h4 class="card-title text-center">Link Generation</h4>
+                  <h3 class="card-title text-center">Link Generation</h3>
                   <p class="card-text">
                     Easily generate custom tracking links that look like normal URLs but capture visitor data when accessed. These links can be shared across email, social media, or messaging platforms.
                   </p>
@@ -254,7 +276,7 @@
                       <i class="fas fa-chart-bar"></i>
                     </span>
                   </div>
-                  <h4 class="card-title text-center">Real-Time Tracking</h4>
+                  <h3 class="card-title text-center">Real-Time Tracking</h3>
                   <p class="card-text">
                     View who clicked on your link and capture their IP address in real-time. Get instant notifications and detailed analytics about each visitor's session.
                   </p>
@@ -269,7 +291,7 @@
                       <i class="fas fa-user-shield"></i>
                     </span>
                   </div>
-                  <h4 class="card-title text-center">User-Friendly Interface</h4>
+                  <h3 class="card-title text-center">User-Friendly Interface</h3>
                   <p class="card-text">
                     Simple and intuitive interface that doesn't require technical expertise to use. Create tracking links with just a few clicks and access all data from a central dashboard.
                   </p>
@@ -284,7 +306,7 @@
                       <i class="fas fa-globe"></i>
                     </span>
                   </div>
-                  <h4 class="card-title text-center">Multi-Platform Support</h4>
+                  <h3 class="card-title text-center">Multi-Platform Support</h3>
                   <p class="card-text">
                     Supports multiple protocols and platforms, making it suitable for individuals, marketers, and developers. Works across all devices and operating systems.
                   </p>
@@ -303,25 +325,25 @@
           
           <div class="process-step">
             <div class="step-number">1</div>
-            <h4>Visit the IPLogger Website</h4>
+            <h3>Visit the IPLogger Website</h3>
             <p>Go to <a href="https://iplogger.icu" target="_blank">IPLogger.icu</a> and access the link creation tool on the homepage.</p>
           </div>
           
           <div class="process-step">
             <div class="step-number">2</div>
-            <h4>Create a Tracking Link</h4>
+            <h3>Create a Tracking Link</h3>
             <p>Enter the destination URL that you want visitors to be redirected to, then generate your tracking link with a single click.</p>
           </div>
           
           <div class="process-step">
             <div class="step-number">3</div>
-            <h4>Share Your Link</h4>
+            <h3>Share Your Link</h3>
             <p>Copy the generated tracking link and share it with your audience through email, social media, messaging apps, or your website.</p>
           </div>
           
           <div class="process-step">
             <div class="step-number">4</div>
-            <h4>Monitor Visitor Data</h4>
+            <h3>Monitor Visitor Data</h3>
             <p>Use the provided tracking code or results page link to access detailed information about everyone who clicks on your link.</p>
           </div>
           
@@ -343,7 +365,7 @@
             <div class="col">
               <div class="card h-100 use-case-card">
                 <div class="card-body">
-                  <h4 class="card-title"><i class="fas fa-user-friends text-primary me-2"></i>Visitor Tracking</h4>
+                  <h3 class="card-title"><i class="fas fa-user-friends text-primary me-2"></i>Visitor Tracking</h3>
                   <p class="card-text">
                     Understand where your visitors are coming from and how they interact with your content. Gain insights into user behavior patterns.
                   </p>
@@ -353,7 +375,7 @@
             <div class="col">
               <div class="card h-100 use-case-card">
                 <div class="card-body">
-                  <h4 class="card-title"><i class="fas fa-shield-alt text-primary me-2"></i>Security</h4>
+                  <h3 class="card-title"><i class="fas fa-shield-alt text-primary me-2"></i>Security</h3>
                   <p class="card-text">
                     Detect and block suspicious activities such as fraudulent logins or unauthorized access attempts to protect your digital assets.
                   </p>
@@ -363,7 +385,7 @@
             <div class="col">
               <div class="card h-100 use-case-card">
                 <div class="card-body">
-                  <h4 class="card-title"><i class="fas fa-bullhorn text-primary me-2"></i>Marketing</h4>
+                  <h3 class="card-title"><i class="fas fa-bullhorn text-primary me-2"></i>Marketing</h3>
                   <p class="card-text">
                     Analyze how well your marketing campaigns are performing by tracking the number of clicks and their geographic origins.
                   </p>
@@ -373,7 +395,7 @@
             <div class="col">
               <div class="card h-100 use-case-card">
                 <div class="card-body">
-                  <h4 class="card-title"><i class="fas fa-map-marked-alt text-primary me-2"></i>Geolocation</h4>
+                  <h3 class="card-title"><i class="fas fa-map-marked-alt text-primary me-2"></i>Geolocation</h3>
                   <p class="card-text">
                     Get insights into the geographic distribution of your audience to tailor content or marketing strategies to specific regions.
                   </p>
@@ -383,7 +405,7 @@
             <div class="col">
               <div class="card h-100 use-case-card">
                 <div class="card-body">
-                  <h4 class="card-title"><i class="fas fa-chart-line text-primary me-2"></i>Traffic Analysis</h4>
+                  <h3 class="card-title"><i class="fas fa-chart-line text-primary me-2"></i>Traffic Analysis</h3>
                   <p class="card-text">
                     Track overall traffic patterns and identify potential issues with website performance or user engagement over time.
                   </p>
@@ -393,7 +415,7 @@
             <div class="col">
               <div class="card h-100 use-case-card">
                 <div class="card-body">
-                  <h4 class="card-title"><i class="fas fa-user-check text-primary me-2"></i>Verification</h4>
+                  <h3 class="card-title"><i class="fas fa-user-check text-primary me-2"></i>Verification</h3>
                   <p class="card-text">
                     Confirm whether specific individuals or groups have accessed your shared materials, documents, or announcements.
                   </p>
@@ -439,48 +461,62 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
+<!-- Bootstrap JS and dependencies -->
+<!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <h5><i class="fas fa-globe-americas me-2"></i>IPLogger</h5>
-          <p class="text-white-50">
-            Track IP addresses and create custom redirect links for monitoring visitor activity and collecting user information.
-          </p>
-          <p class="text-white-50">© 2025 IPLogger. All rights reserved.</p>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
         </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-md-0 footer-links">
-          <h5>Tools</h5>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="https://iplogger.icu">IP Logger</a></li>
-            <li class="mb-2"><a href="https://grabify.icu">IP Tracker</a></li>
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
             <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
           </ul>
         </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-md-0 footer-links">
-          <h5>Resources</h5>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="ipintro">IP Guide</a></li>
-            <li class="mb-2"><a href="usecase">Use Cases</a></li>
-            <li class="mb-2"><a href="procon">Pros & Cons</a></li>
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
           </ul>
         </div>
-        <div class="col-lg-4 col-md-6 footer-links">
-          <h5>Other Services</h5>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="https://maipdf.com/qr.php">QR Code Generator</a></li>
-            <li class="mb-2"><a href="https://pdfhost.online">PDF Hosting</a></li>
-            <li class="mb-2"><a href="https://maipdf.com/maipdf.php">MaiPDF Tools</a></li>
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
           </ul>
         </div>
       </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
     </div>
   </footer>
-
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Introduction to IPLogger - Track IP Addresses Online",
+      "description": "Learn about IPLogger, an online tool that allows you to track IP addresses of visitors to your shared links, providing valuable insights for marketers and businesses.",
+      "url": "https://iplogger.icu/file/ipintro",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>

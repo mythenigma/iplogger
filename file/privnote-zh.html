@@ -1,13 +1,34 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privnote.chat 零宽字符加密密语工具 - 私密聊天新体验</title>
+  <link rel="canonical" href="https://iplogger.icu/file/privnote-zh">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://iplogger.icu/file/privnote-zh">
+  <meta property="og:title" content="Privnote.chat 零宽字符加密密语工具 - 私密聊天新体验">
+  <meta property="og:description" content="Privnote.chat是一款专注于零宽字符加密的密语工具，支持发送隐形密语，保护你的聊天隐私安全。">
+  <meta property="og:image" content="https://grabify.icu/ok/result.png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://iplogger.icu/file/privnote-zh">
+  <meta property="twitter:title" content="Privnote.chat 零宽字符加密密语工具 - 私密聊天新体验">
+  <meta property="twitter:description" content="Privnote.chat是一款专注于零宽字符加密的密语工具，支持发送隐形密语，保护你的聊天隐私安全。">
+  <meta property="twitter:image" content="https://grabify.icu/ok/result.png">
   <meta name="keywords" content="Privnote.chat, 零宽字符加密, 密语加密, 私密消息, 安全聊天, 隐形字符, 在线加密工具">
   <meta name="description" content="Privnote.chat是一款专注于零宽字符加密的密语工具，支持发送隐形密语，保护你的聊天隐私安全。">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
+<style>
     body { background: #f8f9fa; }
     .container { max-width: 800px; }
     .emoji { font-size: 1.3em; margin-right: 0.3em; }
@@ -22,6 +43,59 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
 </head>
 <body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Privnote.chat 零宽字符加密密语工具 - 私密聊天新体验</li>
+      </ol>
+    </nav>
+  </div>
   <div class="container my-5">
     <div class="card shadow-sm">
       <div class="card-header bg-success text-white">
@@ -57,19 +131,19 @@
         <div class="section-title"><span class="emoji">💡</span>什么时候用Privnote.chat？</div>
         <div class="row">
           <div class="col-md-6">
-            <h6><span class="emoji">💕</span>恋爱表白</h6>
+            <h4><span class="emoji">💕</span>恋爱表白</h4>
             <p>想对暗恋的人表白，但又怕被拒绝很尴尬？用零宽字符加密，表面发个普通问候，实际藏着"我喜欢你"。如果对方用工具解密了，说明也对你有意思！</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">🎮</span>游戏暗号</h6>
+            <h4><span class="emoji">🎮</span>游戏暗号</h4>
             <p>和队友约定游戏策略、分享游戏账号、传递队伍暗号，表面聊天气，实际传递重要信息，让对手完全摸不着头脑。</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">🎁</span>惊喜策划</h6>
+            <h4><span class="emoji">🎁</span>惊喜策划</h4>
             <p>准备给朋友生日惊喜，需要和其他朋友协调，但不想让寿星发现？用加密消息，在群聊里"光明正大"地讨论惊喜计划！</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">🔐</span>隐私保护</h6>
+            <h4><span class="emoji">🔐</span>隐私保护</h4>
             <p>分享一些敏感信息，比如邀请码、密码提示、私密链接等，用加密方式发送，即使聊天记录被看到也不怕泄露。</p>
           </div>
         </div>
@@ -214,5 +288,59 @@
       </div>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
+        </div>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
+    </div>
+  </footer>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Privnote.chat 零宽字符加密密语工具 - 私密聊天新体验",
+      "description": "Privnote.chat是一款专注于零宽字符加密的密语工具，支持发送隐形密语，保护你的聊天隐私安全。",
+      "url": "https://iplogger.icu/file/privnote-zh",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>

@@ -1,7 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Social Media IP Tracking Guide - Track Clicks from Social Platforms | IPLogger</title>
   
@@ -28,12 +37,8 @@
   <link rel="canonical" href="https://iplogger.icu/file/social-media-ip-tracking">
   
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  
-  <!-- Google Fonts -->
+<!-- Font Awesome -->
+<!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Chart.js -->
@@ -265,47 +270,62 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="https://iplogger.icu">
-        <i class="fas fa-globe-americas me-2"></i>IPLogger
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://iplogger.icu"><i class="fas fa-home me-1"></i> Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ip-tracker-guide"><i class="fas fa-search-location me-1"></i> IP Guide</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="realtime-ip-tracking-dashboard"><i class="fas fa-chart-line me-1"></i> Real-time</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="email-ip-tracking-complete"><i class="fas fa-envelope me-1"></i> Email</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="social-media-ip-tracking"><i class="fab fa-twitter me-1"></i> Social Media</a>
-          </li>
-        </ul>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Page Header -->
-  <header class="page-header text-center">
-    <div class="container">
-      <h1><i class="fab fa-twitter me-3"></i>Social Media IP Tracking Guide</h1>
-      <p class="lead">Master IP tracking across all major social media platforms</p>
-      <p class="mb-0">Track clicks, analyze audience, and optimize your social media strategy</p>
-    </div>
+    </nav>
   </header>
-
-  <!-- Main Content -->
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Social Media IP Tracking Guide - Track Clicks from Social...</li>
+      </ol>
+    </nav>
+  </div>
+  <!-- Navigation -->
+<!-- Page Header -->
+<!-- Main Content -->
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
@@ -352,10 +372,10 @@
               <div class="platform-card">
                 <div class="platform-header facebook-header">
                   <i class="fab fa-facebook-f fa-3x mb-2"></i>
-                  <h4>Facebook Tracking</h4>
+                  <h3>Facebook Tracking</h3>
                 </div>
                 <div class="card-body p-4">
-                  <h5>Best Practices:</h5>
+                  <h4>Best Practices:</h4>
                   <ul class="list-unstyled">
                     <li><i class="fas fa-check text-success me-2"></i> Use branded tracking URLs</li>
                     <li><i class="fas fa-check text-success me-2"></i> Track both organic and paid posts</li>
@@ -363,7 +383,7 @@
                     <li><i class="fas fa-check text-success me-2"></i> Analyze group engagement</li>
                   </ul>
                   
-                  <h6 class="mt-3">Tracking Methods:</h6>
+                  <h5 class="mt-3">Tracking Methods:</h5>
                   <ul class="small">
                     <li>Bio link tracking</li>
                     <li>Post link shortening</li>
@@ -379,10 +399,10 @@
               <div class="platform-card">
                 <div class="platform-header twitter-header">
                   <i class="fab fa-twitter fa-3x mb-2"></i>
-                  <h4>Twitter Tracking</h4>
+                  <h3>Twitter Tracking</h3>
                 </div>
                 <div class="card-body p-4">
-                  <h5>Best Practices:</h5>
+                  <h4>Best Practices:</h4>
                   <ul class="list-unstyled">
                     <li><i class="fas fa-check text-success me-2"></i> Track tweet engagement</li>
                     <li><i class="fas fa-check text-success me-2"></i> Monitor hashtag performance</li>
@@ -390,7 +410,7 @@
                     <li><i class="fas fa-check text-success me-2"></i> Track DM link clicks</li>
                   </ul>
                   
-                  <h6 class="mt-3">Tracking Methods:</h6>
+                  <h5 class="mt-3">Tracking Methods:</h5>
                   <ul class="small">
                     <li>Shortened URL tracking</li>
                     <li>Twitter Card optimization</li>
@@ -406,10 +426,10 @@
               <div class="platform-card">
                 <div class="platform-header instagram-header">
                   <i class="fab fa-instagram fa-3x mb-2"></i>
-                  <h4>Instagram Tracking</h4>
+                  <h3>Instagram Tracking</h3>
                 </div>
                 <div class="card-body p-4">
-                  <h5>Best Practices:</h5>
+                  <h4>Best Practices:</h4>
                   <ul class="list-unstyled">
                     <li><i class="fas fa-check text-success me-2"></i> Track story swipe-ups</li>
                     <li><i class="fas fa-check text-success me-2"></i> Monitor bio link clicks</li>
@@ -417,7 +437,7 @@
                     <li><i class="fas fa-check text-success me-2"></i> Track Reels interactions</li>
                   </ul>
                   
-                  <h6 class="mt-3">Tracking Methods:</h6>
+                  <h5 class="mt-3">Tracking Methods:</h5>
                   <ul class="small">
                     <li>Linktree optimization</li>
                     <li>Story link tracking</li>
@@ -433,10 +453,10 @@
               <div class="platform-card">
                 <div class="platform-header linkedin-header">
                   <i class="fab fa-linkedin-in fa-3x mb-2"></i>
-                  <h4>LinkedIn Tracking</h4>
+                  <h3>LinkedIn Tracking</h3>
                 </div>
                 <div class="card-body p-4">
-                  <h5>Best Practices:</h5>
+                  <h4>Best Practices:</h4>
                   <ul class="list-unstyled">
                     <li><i class="fas fa-check text-success me-2"></i> Track article shares</li>
                     <li><i class="fas fa-check text-success me-2"></i> Monitor connection clicks</li>
@@ -444,7 +464,7 @@
                     <li><i class="fas fa-check text-success me-2"></i> Track company updates</li>
                   </ul>
                   
-                  <h6 class="mt-3">Tracking Methods:</h6>
+                  <h5 class="mt-3">Tracking Methods:</h5>
                   <ul class="small">
                     <li>Professional link tracking</li>
                     <li>Article CTA monitoring</li>
@@ -463,7 +483,7 @@
           
           <div class="step-card">
             <div class="step-number">1</div>
-            <h4>Create Platform-Specific Tracking Links</h4>
+            <h3>Create Platform-Specific Tracking Links</h3>
             <p class="mb-3">Generate unique tracking URLs for each social media platform to identify traffic sources accurately.</p>
             <div class="code-block">
 // Example tracking URLs for different platforms
@@ -475,7 +495,7 @@ LinkedIn: https://iplogger.icu/li-article-cta</div>
 
           <div class="step-card">
             <div class="step-number">2</div>
-            <h4>Implement UTM Parameters</h4>
+            <h3>Implement UTM Parameters</h3>
             <p class="mb-3">Add UTM parameters to track campaign performance and source attribution.</p>
             <div class="code-block">
 // UTM parameter structure
@@ -484,7 +504,7 @@ https://iplogger.icu/track123?utm_source=facebook&utm_medium=social&utm_campaign
 
           <div class="step-card">
             <div class="step-number">3</div>
-            <h4>Set Up Cross-Platform Analytics</h4>
+            <h3>Set Up Cross-Platform Analytics</h3>
             <p class="mb-3">Configure analytics to compare performance across different social media platforms.</p>
             <div class="code-block">
 // Analytics tracking code
@@ -506,7 +526,7 @@ function trackSocialClick(platform, campaign) {
 
           <div class="step-card">
             <div class="step-number">4</div>
-            <h4>Monitor and Optimize</h4>
+            <h3>Monitor and Optimize</h3>
             <p class="mb-3">Regularly analyze data to optimize your social media strategy and improve engagement.</p>
             <ul class="text-white">
               <li>Track click-through rates by platform</li>
@@ -527,7 +547,7 @@ function trackSocialClick(platform, campaign) {
                 <div class="card border-0 shadow-sm">
                   <div class="card-body">
                     <i class="fab fa-facebook text-primary fa-2x mb-2"></i>
-                    <h5 class="card-title">Facebook</h5>
+                    <h4 class="card-title">Facebook</h4>
                     <div class="h3 text-primary">1,234</div>
                     <small class="text-muted">Clicks Today</small>
                   </div>
@@ -537,7 +557,7 @@ function trackSocialClick(platform, campaign) {
                 <div class="card border-0 shadow-sm">
                   <div class="card-body">
                     <i class="fab fa-twitter text-info fa-2x mb-2"></i>
-                    <h5 class="card-title">Twitter</h5>
+                    <h4 class="card-title">Twitter</h4>
                     <div class="h3 text-info">856</div>
                     <small class="text-muted">Clicks Today</small>
                   </div>
@@ -547,7 +567,7 @@ function trackSocialClick(platform, campaign) {
                 <div class="card border-0 shadow-sm">
                   <div class="card-body">
                     <i class="fab fa-instagram text-danger fa-2x mb-2"></i>
-                    <h5 class="card-title">Instagram</h5>
+                    <h4 class="card-title">Instagram</h4>
                     <div class="h3 text-danger">692</div>
                     <small class="text-muted">Clicks Today</small>
                   </div>
@@ -557,7 +577,7 @@ function trackSocialClick(platform, campaign) {
                 <div class="card border-0 shadow-sm">
                   <div class="card-body">
                     <i class="fab fa-linkedin text-primary fa-2x mb-2"></i>
-                    <h5 class="card-title">LinkedIn</h5>
+                    <h4 class="card-title">LinkedIn</h4>
                     <div class="h3 text-primary">423</div>
                     <small class="text-muted">Clicks Today</small>
                   </div>
@@ -583,7 +603,7 @@ function trackSocialClick(platform, campaign) {
           <div class="row">
             <div class="col-md-6">
               <div class="best-practice">
-                <h5><i class="fas fa-lightbulb me-2"></i>Optimization Tips</h5>
+                <h4><i class="fas fa-lightbulb me-2"></i>Optimization Tips</h4>
                 <ul class="mb-0">
                   <li>Use platform-specific link formats</li>
                   <li>Implement consistent naming conventions</li>
@@ -595,7 +615,7 @@ function trackSocialClick(platform, campaign) {
             </div>
             <div class="col-md-6">
               <div class="warning-box">
-                <h5><i class="fas fa-exclamation-triangle me-2"></i>Important Considerations</h5>
+                <h4><i class="fas fa-exclamation-triangle me-2"></i>Important Considerations</h4>
                 <ul class="mb-0">
                   <li>Respect platform terms of service</li>
                   <li>Comply with privacy regulations</li>
@@ -616,9 +636,9 @@ function trackSocialClick(platform, campaign) {
             <div class="col-md-6">
               <div class="card border-0 shadow-sm h-100">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">
+                  <h4 class="card-title text-primary">
                     <i class="fas fa-robot me-2"></i>Automated Campaign Tracking
-                  </h5>
+                  </h4>
                   <p class="card-text">
                     Set up automated tracking for recurring social media campaigns with smart link generation and performance monitoring.
                   </p>
@@ -634,9 +654,9 @@ function trackSocialClick(platform, campaign) {
             <div class="col-md-6">
               <div class="card border-0 shadow-sm h-100">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">
+                  <h4 class="card-title text-primary">
                     <i class="fas fa-users me-2"></i>Audience Segmentation
-                  </h5>
+                  </h4>
                   <p class="card-text">
                     Segment your social media audience based on behavior, demographics, and engagement patterns for targeted campaigns.
                   </p>
@@ -652,9 +672,9 @@ function trackSocialClick(platform, campaign) {
             <div class="col-md-6">
               <div class="card border-0 shadow-sm h-100">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">
+                  <h4 class="card-title text-primary">
                     <i class="fas fa-chart-line me-2"></i>Cross-Platform Analytics
-                  </h5>
+                  </h4>
                   <p class="card-text">
                     Compare performance across all social media platforms with unified analytics and comprehensive reporting.
                   </p>
@@ -670,9 +690,9 @@ function trackSocialClick(platform, campaign) {
             <div class="col-md-6">
               <div class="card border-0 shadow-sm h-100">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">
+                  <h4 class="card-title text-primary">
                     <i class="fas fa-mobile-alt me-2"></i>Mobile-First Tracking
-                  </h5>
+                  </h4>
                   <p class="card-text">
                     Optimize tracking for mobile users with responsive design and mobile-specific analytics features.
                   </p>
@@ -695,7 +715,7 @@ function trackSocialClick(platform, campaign) {
               <div class="card border-0 shadow-sm h-100">
                 <div class="card-body text-center">
                   <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
-                  <h5><a href="realtime-ip-tracking-dashboard" class="text-decoration-none">Real-time Dashboard</a></h5>
+                  <h4><a href="realtime-ip-tracking-dashboard" class="text-decoration-none">Real-time Dashboard</a></h4>
                   <p class="text-muted">Monitor IP tracking in real-time with live analytics</p>
                 </div>
               </div>
@@ -704,7 +724,7 @@ function trackSocialClick(platform, campaign) {
               <div class="card border-0 shadow-sm h-100">
                 <div class="card-body text-center">
                   <i class="fas fa-envelope fa-3x text-success mb-3"></i>
-                  <h5><a href="email-ip-tracking-complete" class="text-decoration-none">Email IP Tracking</a></h5>
+                  <h4><a href="email-ip-tracking-complete" class="text-decoration-none">Email IP Tracking</a></h4>
                   <p class="text-muted">Complete guide to tracking email engagement</p>
                 </div>
               </div>
@@ -713,7 +733,7 @@ function trackSocialClick(platform, campaign) {
               <div class="card border-0 shadow-sm h-100">
                 <div class="card-body text-center">
                   <i class="fas fa-building fa-3x text-info mb-3"></i>
-                  <h5><a href="enterprise-ip-tracking" class="text-decoration-none">Enterprise Solutions</a></h5>
+                  <h4><a href="enterprise-ip-tracking" class="text-decoration-none">Enterprise Solutions</a></h4>
                   <p class="text-muted">Enterprise-grade IP tracking for large organizations</p>
                 </div>
               </div>
@@ -741,48 +761,8 @@ function trackSocialClick(platform, campaign) {
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <h5><i class="fas fa-globe-americas me-2"></i>IPLogger</h5>
-          <p class="text-white-50">
-            Professional IP tracking tools for social media analytics, security monitoring, and marketing insights.
-          </p>
-          <p class="text-white-50">© 2025 IPLogger. All rights reserved.</p>
-        </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-md-0 footer-links">
-          <h5>Tools</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="https://iplogger.icu">IP Logger</a></li>
-            <li class="mb-2"><a href="https://grabify.icu">IP Tracker</a></li>
-            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-md-0 footer-links">
-          <h5>Guides</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="ip-tracker-guide">IP Tracking Guide</a></li>
-            <li class="mb-2"><a href="realtime-ip-tracking-dashboard">Real-time Dashboard</a></li>
-            <li class="mb-2"><a href="email-ip-tracking-complete">Email Tracking</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4 col-md-6 footer-links">
-          <h5>Other Services</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="https://maipdf.com/qr.php">QR Code Generator</a></li>
-            <li class="mb-2"><a href="https://pdfhost.online">PDF Hosting</a></li>
-            <li class="mb-2"><a href="https://maipdf.com/maipdf.php">MaiPDF Tools</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Chart.js Implementation -->
+<!-- Bootstrap JS -->
+<!-- Chart.js Implementation -->
   <script>
     // Social Traffic Chart
     const trafficCtx = document.getElementById('socialTrafficChart').getContext('2d');
@@ -863,5 +843,59 @@ function trackSocialClick(platform, campaign) {
   
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
+        </div>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
+    </div>
+  </footer>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Social Media IP Tracking Guide - Track Clicks from Social Platforms | IPLogger",
+      "description": "Complete guide to tracking IP addresses from social media platforms. Learn how to monitor clicks from Facebook, Twitter, Instagram, LinkedIn, and other social networks.",
+      "url": "https://iplogger.icu/file/social-media-ip-tracking",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>

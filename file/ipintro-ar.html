@@ -1,9 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>مقدمة إلى IPLogger - تتبع عناوين IP عبر الإنترنت</title>
+  <link rel="canonical" href="https://iplogger.icu/file/ipintro-ar">
   
   <!-- Primary Meta Tags -->
   <meta name="description" content="تعرف على IPLogger، أداة عبر الإنترنت تتيح لك تتبع عناوين IP للزوار على الروابط التي تشاركها، مما يوفر رؤى قيمة للمسوقين والشركات.">
@@ -25,12 +35,8 @@
   <meta property="twitter:image" content="https://grabify.icu/ok/result.png">
   
   <!-- Bootstrap CSS RTL -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  
-  <!-- Google Fonts - Arabic Support -->
+<!-- Font Awesome -->
+<!-- Google Fonts - Arabic Support -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Custom CSS -->
@@ -196,47 +202,62 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="https://iplogger.icu">
-        <i class="fas fa-network-wired"></i> IPLogger
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://iplogger.icu">الرئيسية</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="ipintro-ar">مقدمة</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ipgrabber">أداة IP Grabber</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="usecase">حالات الاستخدام</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="faq">الأسئلة المتكررة</a>
-          </li>
-        </ul>
-        <a href="https://iplogger.icu" class="btn btn-light">إنشاء رابط تتبع</a>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Header Section -->
-  <header class="page-header text-center">
-    <div class="container">
-      <h1 class="display-4">ما هو IPLogger؟</h1>
-      <p class="lead">أداة بسيطة وفعالة لتتبع وتسجيل عناوين IP للزوار</p>
-    </div>
+    </nav>
   </header>
-
-  <!-- Main Content -->
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">مقدمة إلى IPLogger - تتبع عناوين IP عبر الإنترنت</li>
+      </ol>
+    </nav>
+  </div>
+  <!-- Navbar -->
+<!-- Header Section -->
+<!-- Main Content -->
   <div class="container my-5">
     <!-- Introduction Section -->
     <section class="content-section">
@@ -270,7 +291,7 @@
               <div class="feature-icon mb-3">
                 <i class="fas fa-link"></i>
               </div>
-              <h5 class="feature-title">1. إنشاء رابط</h5>
+              <h3 class="feature-title">1. إنشاء رابط</h3>
               <p class="card-text">قم بزيارة الصفحة الرئيسية لـ IPLogger، واختر نوع الرابط الذي تريده (رابط مباشر، رابط مختصر، رابط صورة، إلخ)، وأدخل عنوان URL الوجهة الخاص بك.</p>
             </div>
           </div>
@@ -282,7 +303,7 @@
               <div class="feature-icon mb-3">
                 <i class="fas fa-share-alt"></i>
               </div>
-              <h5 class="feature-title">2. مشاركة مع الآخرين</h5>
+              <h3 class="feature-title">2. مشاركة مع الآخرين</h3>
               <p class="card-text">شارك الرابط الذي تم إنشاؤه عبر وسائل التواصل الاجتماعي أو البريد الإلكتروني أو المراسلة الفورية أو أي منصة أخرى تختارها.</p>
             </div>
           </div>
@@ -294,7 +315,7 @@
               <div class="feature-icon mb-3">
                 <i class="fas fa-chart-bar"></i>
               </div>
-              <h5 class="feature-title">3. تتبع وتحليل</h5>
+              <h3 class="feature-title">3. تتبع وتحليل</h3>
               <p class="card-text">عندما ينقر شخص ما على الرابط، سيتم تسجيل معلوماتهم وإضافتها إلى لوحة تحكم IPLogger الخاصة بك، حيث يمكنك عرض وتحليل البيانات.</p>
             </div>
           </div>
@@ -313,42 +334,42 @@
       
       <div class="row mt-4">
         <div class="col-md-6 mb-4">
-          <h5><i class="fas fa-globe text-primary"></i> معلومات جغرافية دقيقة</h5>
+          <h3><i class="fas fa-globe text-primary"></i> معلومات جغرافية دقيقة</h3>
           <p>تحديد البلد، المدينة، المنطقة، وفي بعض الحالات حتى المنظمة أو مزود خدمة الإنترنت للزائر.</p>
         </div>
         
         <div class="col-md-6 mb-4">
-          <h5><i class="fas fa-clock text-primary"></i> طوابع زمنية دقيقة</h5>
+          <h3><i class="fas fa-clock text-primary"></i> طوابع زمنية دقيقة</h3>
           <p>معرفة متى بالضبط قام شخص ما بزيارة رابطك، مع التعديل حسب المنطقة الزمنية.</p>
         </div>
         
         <div class="col-md-6 mb-4">
-          <h5><i class="fas fa-desktop text-primary"></i> معلومات الجهاز والمتصفح</h5>
+          <h3><i class="fas fa-desktop text-primary"></i> معلومات الجهاز والمتصفح</h3>
           <p>تحديد نوع الجهاز، نظام التشغيل، المتصفح، ودقة الشاشة التي استخدمها الزائر.</p>
         </div>
         
         <div class="col-md-6 mb-4">
-          <h5><i class="fas fa-link text-primary"></i> أنواع روابط متعددة</h5>
+          <h3><i class="fas fa-link text-primary"></i> أنواع روابط متعددة</h3>
           <p>اختر من بين روابط مباشرة، روابط مختصرة، روابط صور، روابط مموهة، وأكثر من ذلك لتناسب احتياجاتك.</p>
         </div>
         
         <div class="col-md-6 mb-4">
-          <h5><i class="fas fa-bell text-primary"></i> إشعارات فورية</h5>
+          <h3><i class="fas fa-bell text-primary"></i> إشعارات فورية</h3>
           <p>احصل على تنبيهات في الوقت الفعلي عندما ينقر شخص ما على رابطك، مما يتيح لك الاستجابة بسرعة.</p>
         </div>
         
         <div class="col-md-6 mb-4">
-          <h5><i class="fas fa-chart-line text-primary"></i> تقارير وتحليلات شاملة</h5>
+          <h3><i class="fas fa-chart-line text-primary"></i> تقارير وتحليلات شاملة</h3>
           <p>عرض البيانات المجمعة وتحليلها، بما في ذلك الرسوم البيانية للزيارات عبر الزمن، والمواقع الأكثر شيوعًا، وأنواع الأجهزة.</p>
         </div>
         
         <div class="col-md-6 mb-4">
-          <h5><i class="fas fa-shield-alt text-primary"></i> حماية البيانات</h5>
+          <h3><i class="fas fa-shield-alt text-primary"></i> حماية البيانات</h3>
           <p>تبقى معلوماتك وبيانات الزائر خاصة ومشفرة، مع ضوابط إضافية للخصوصية والأمان.</p>
         </div>
         
         <div class="col-md-6 mb-4">
-          <h5><i class="fas fa-code text-primary"></i> واجهة برمجة التطبيقات (API)</h5>
+          <h3><i class="fas fa-code text-primary"></i> واجهة برمجة التطبيقات (API)</h3>
           <p>دمج وظائف IPLogger مع مواقع الويب والتطبيقات الخاصة بك من خلال واجهة برمجة التطبيقات الشاملة.</p>
         </div>
       </div>
@@ -363,7 +384,7 @@
         <div class="col-md-6 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-bullhorn text-primary"></i> التسويق وتحليلات الأداء</h5>
+              <h3 class="card-title"><i class="fas fa-bullhorn text-primary"></i> التسويق وتحليلات الأداء</h3>
               <p class="card-text">تتبع فعالية حملاتك التسويقية بمعرفة من ينقر على روابطك، ومتى، ومن أين. استخدم هذه البيانات لتحسين استراتيجيات التسويق وزيادة عائد الاستثمار.</p>
             </div>
           </div>
@@ -372,7 +393,7 @@
         <div class="col-md-6 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-shield-alt text-primary"></i> الأمان والرصد</h5>
+              <h3 class="card-title"><i class="fas fa-shield-alt text-primary"></i> الأمان والرصد</h3>
               <p class="card-text">تحديد من يصل إلى معلوماتك الحساسة أو المقيدة، ورصد أي محاولات وصول غير مصرح بها، والتحقق من مشاركة المعلومات والملفات بأمان.</p>
             </div>
           </div>
@@ -381,7 +402,7 @@
         <div class="col-md-6 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-users text-primary"></i> أبحاث السوق والجمهور</h5>
+              <h3 class="card-title"><i class="fas fa-users text-primary"></i> أبحاث السوق والجمهور</h3>
               <p class="card-text">فهم التركيبة السكانية الجغرافية لجمهورك، واكتشاف الأجهزة التي يستخدمونها، وقياس مشاركتهم مع المحتوى الخاص بك.</p>
             </div>
           </div>
@@ -390,7 +411,7 @@
         <div class="col-md-6 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-link text-primary"></i> تتبع الروابط المشتركة</h5>
+              <h3 class="card-title"><i class="fas fa-link text-primary"></i> تتبع الروابط المشتركة</h3>
               <p class="card-text">معرفة عدد الأشخاص الذين يفتحون رسائل البريد الإلكتروني الخاصة بك أو ينقرون على الروابط التي تشاركها عبر منصات التواصل الاجتماعي، المراسلة، أو أي منصة أخرى.</p>
             </div>
           </div>
@@ -407,22 +428,22 @@
       <h2>الأسئلة المتكررة</h2>
       
       <div class="faq-item">
-        <h5 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل استخدام IPLogger قانوني؟</h5>
+        <h3 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل استخدام IPLogger قانوني؟</h3>
         <p>نعم، استخدام IPLogger قانوني للأغراض المشروعة مثل تحليلات الويب، والتسويق، والأبحاث. ومع ذلك، يجب استخدام الأداة بشكل أخلاقي ومسؤول، مع احترام خصوصية الأفراد والامتثال للوائح حماية البيانات المحلية مثل GDPR (في الاتحاد الأوروبي) أو CCPA (في كاليفورنيا).</p>
       </div>
       
       <div class="faq-item">
-        <h5 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل IPLogger مجاني للاستخدام؟</h5>
+        <h3 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل IPLogger مجاني للاستخدام؟</h3>
         <p>يقدم IPLogger خططًا مجانية ومتميزة. يمكنك استخدام الخدمات الأساسية مجانًا، بينما توفر الخطط المتميزة ميزات إضافية مثل تتبع البيانات لفترة أطول، وإمكانات تخصيص أكثر، وعدم وجود إعلانات.</p>
       </div>
       
       <div class="faq-item">
-        <h5 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل سيعرف الزوار أنه يتم تتبعهم؟</h5>
+        <h3 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل سيعرف الزوار أنه يتم تتبعهم؟</h3>
         <p>افتراضيًا، لن يعرف الزوار أنهم يتم تتبعهم، حيث يتم إعادة توجيههم مباشرة إلى الوجهة المقصودة. ومع ذلك، لأغراض الشفافية وللامتثال لقوانين الخصوصية، يمكنك اختيار استخدام صفحة تحويل تُعلم المستخدمين بأنهم سيتم إعادة توجيههم.</p>
       </div>
       
       <div class="faq-item">
-        <h5 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل تتم مشاركة البيانات التي يجمعها IPLogger؟</h5>
+        <h3 class="faq-question"><i class="fas fa-question-circle text-primary"></i> هل تتم مشاركة البيانات التي يجمعها IPLogger؟</h3>
         <p>لا تتم مشاركة بيانات الزوار التي يجمعها IPLogger مع أطراف ثالثة. تظل المعلومات التي تجمعها خاصة بك، وتظل آمنة على خوادمنا وفقًا لسياسات خصوصية صارمة.</p>
       </div>
       
@@ -441,55 +462,60 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
+<!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <h5>عن IPLogger</h5>
-          <p>IPLogger هي أداة عبر الإنترنت توفر خدمات تتبع IP وتحليلات للمسوقين والشركات والأفراد الذين يرغبون في فهم جمهورهم بشكل أفضل.</p>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
         </div>
-        
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <h5>روابط سريعة</h5>
-          <ul class="footer-links">
-            <li><a href="https://iplogger.icu">الصفحة الرئيسية</a></li>
-            <li><a href="ipintro">مقدمة</a></li>
-            <li><a href="ipgrabber">أداة IP Grabber</a></li>
-            <li><a href="usecase">حالات الاستخدام</a></li>
-            <li><a href="faq">الأسئلة المتكررة</a></li>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
           </ul>
         </div>
-        
-        <div class="col-lg-4">
-          <h5>معلومات قانونية</h5>
-          <ul class="footer-links">
-            <li><a href="#">سياسة الخصوصية</a></li>
-            <li><a href="#">شروط الاستخدام</a></li>
-            <li><a href="#">سياسة ملفات تعريف الارتباط</a></li>
-            <li><a href="#">إخلاء المسؤولية</a></li>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
           </ul>
         </div>
       </div>
-      
-      <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
-      
-      <div class="row">
-        <div class="col-md-6 text-center text-md-end">
-          <p class="mb-0">&copy; 2025 IPLogger. جميع الحقوق محفوظة.</p>
-        </div>
-        <div class="col-md-6 text-center text-md-start">
-          <div class="social-icons">
-            <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-      </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
     </div>
   </footer>
-
-  <!-- Bootstrap JS Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "مقدمة إلى IPLogger - تتبع عناوين IP عبر الإنترنت",
+      "description": "تعرف على IPLogger، أداة عبر الإنترنت تتيح لك تتبع عناوين IP للزوار على الروابط التي تشاركها، مما يوفر رؤى قيمة للمسوقين والشركات.",
+      "url": "https://iplogger.icu/file/ipintro-ar",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>

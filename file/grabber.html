@@ -1,7 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn how to use an IP grabber tool to track and collect IP addresses effectively. Understand the power of IP tracking and its applications in cybersecurity and digital marketing.">
     <meta name="keywords" content="IP grabber, IP tracking tool, track IP address, how to grab an IP, online activity monitoring, cybersecurity, IP logger">
@@ -11,9 +20,9 @@
     <meta property="og:image" content="https://grabify.icu/ok/instruct.png"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
 
     <title>IP Grabber Tool - Track IP Addresses Effectively</title>
+  <link rel="canonical" href="https://iplogger.icu/file/grabber">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+<style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
@@ -58,6 +67,59 @@
     </style>
 </head>
 <body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">IP Grabber Tool - Track IP Addresses Effectively</li>
+      </ol>
+    </nav>
+  </div>
 
     <div class="container">
         <div class="header">
@@ -90,7 +152,7 @@
                         <div class="step-card">
                             <div class="step-number">1</div>
                             <div class="step-content">
-                                <h4>Create a Trackable Link</h4>
+                                <h3>Create a Trackable Link</h3>
                                 <p>Sign up for a service that offers an IP grabber tool. Enter the URL or link you want to track and generate a trackable link.</p>
                                 <div class="text-center mt-3">
                                     <img src="https://via.placeholder.com/250x150?text=Create+Link" alt="Create trackable link" class="img-fluid rounded">
@@ -103,7 +165,7 @@
                         <div class="step-card">
                             <div class="step-number">2</div>
                             <div class="step-content">
-                                <h4>Share the Link</h4>
+                                <h3>Share the Link</h3>
                                 <p>Distribute the link through emails, websites, social media, or anywhere else you want to track the user interactions.</p>
                                 <div class="text-center mt-3">
                                     <img src="https://via.placeholder.com/250x150?text=Share+Link" alt="Share your link" class="img-fluid rounded">
@@ -116,7 +178,7 @@
                         <div class="step-card">
                             <div class="step-number">3</div>
                             <div class="step-content">
-                                <h4>Collect Data</h4>
+                                <h3>Collect Data</h3>
                                 <p>Once someone clicks on the link, their IP address and other information such as device type and location are recorded.</p>
                                 <div class="text-center mt-3">
                                     <img src="https://via.placeholder.com/250x150?text=Collect+Data" alt="Collect visitor data" class="img-fluid rounded">
@@ -129,7 +191,7 @@
                         <div class="step-card">
                             <div class="step-number">4</div>
                             <div class="step-content">
-                                <h4>Access the Data</h4>
+                                <h3>Access the Data</h3>
                                 <p>Log in to the dashboard provided by the tool to view the collected data and analyze it.</p>
                                 <div class="text-center mt-3">
                                     <img src="https://via.placeholder.com/250x150?text=View+Dashboard" alt="Access dashboard" class="img-fluid rounded">
@@ -149,7 +211,7 @@
                             <div class="benefit-icon">
                                 <i class="fas fa-bolt"></i>
                             </div>
-                            <h4>Convenience</h4>
+                            <h3>Convenience</h3>
                             <p>It's a quick and easy way to collect IP addresses and monitor online interactions without complex setups.</p>
                         </div>
                     </div>
@@ -159,7 +221,7 @@
                             <div class="benefit-icon">
                                 <i class="fas fa-clock"></i>
                             </div>
-                            <h4>Real-Time Data</h4>
+                            <h3>Real-Time Data</h3>
                             <p>Track who is visiting your content in real-time, giving you immediate insights into user behavior.</p>
                         </div>
                     </div>
@@ -169,7 +231,7 @@
                             <div class="benefit-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <h4>Security</h4>
+                            <h3>Security</h3>
                             <p>Protect your digital assets by identifying potential threats or malicious actors trying to exploit vulnerabilities.</p>
                         </div>
                     </div>
@@ -179,7 +241,7 @@
                             <div class="benefit-icon">
                                 <i class="fas fa-chart-line"></i>
                             </div>
-                            <h4>Enhanced Marketing</h4>
+                            <h3>Enhanced Marketing</h3>
                             <p>Understand which demographics and devices are engaging with your content and optimize your campaigns accordingly.</p>
                         </div>
                     </div>
@@ -201,60 +263,18 @@
                     <div class="testimonial-author">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John D." class="author-image">
                         <div class="author-info">
-                            <h5>John Davis</h5>
+                            <h4>John Davis</h4>
                             <p>Marketing Director</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-4 mb-md-0">
-                        <h4>About IPLogger</h4>
-                        <p>We provide simple, effective tools for tracking IP addresses and monitoring online activities to help businesses optimize their digital strategies.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4 mb-md-0">
-                        <h4>Quick Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="#">Blog</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h4>Contact Us</h4>
-                        <ul class="contact-info">
-                            <li><i class="fas fa-envelope"></i> <a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a></li>
-                            <li><i class="fas fa-globe"></i> <a href="https://iplogger.icu">iplogger.icu</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2025 IPLogger. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
-    </div>
+</div>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-    <style>
+<!-- Bootstrap JS and dependencies -->
+<style>
         /* Step Cards */
         .step-card {
             background-color: white;
@@ -528,5 +548,59 @@
             border-top: 1px solid rgba(255,255,255,0.1);
         }
     </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
+        </div>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
+    </div>
+  </footer>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "IP Grabber Tool - Track IP Addresses Effectively",
+      "description": "Learn how to use an IP grabber tool to track and collect IP addresses effectively. Understand the power of IP tracking and its applications in cybersecurity and digital marketing.",
+      "url": "https://iplogger.icu/file/grabber",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>

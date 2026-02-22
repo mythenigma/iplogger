@@ -1,14 +1,34 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IPLogger.icu 极简IP追踪神器 - 3秒生成隐形追踪链接</title>
+  <link rel="canonical" href="https://iplogger.icu/file/ip-tracker-zh">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://iplogger.icu/file/ip-tracker-zh">
+  <meta property="og:title" content="IPLogger.icu 极简IP追踪神器 - 3秒生成隐形追踪链接">
+  <meta property="og:description" content="IPLogger.icu是最简单好用的IP追踪神器，一键生成隐形追踪链接，实时监控访客IP地址、地理位置、设备信息。无需注册，完全免费使用！">
+  <meta property="og:image" content="https://grabify.icu/ok/result.png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://iplogger.icu/file/ip-tracker-zh">
+  <meta property="twitter:title" content="IPLogger.icu 极简IP追踪神器 - 3秒生成隐形追踪链接">
+  <meta property="twitter:description" content="IPLogger.icu是最简单好用的IP追踪神器，一键生成隐形追踪链接，实时监控访客IP地址、地理位置、设备信息。无需注册，完全免费使用！">
+  <meta property="twitter:image" content="https://grabify.icu/ok/result.png">
   <meta name="keywords" content="IP追踪器, IP地址追踪, 访客追踪, 位置追踪, 隐形链接, IP logger, 地理位置追踪, 设备信息追踪">
   <meta name="description" content="IPLogger.icu是最简单好用的IP追踪神器，一键生成隐形追踪链接，实时监控访客IP地址、地理位置、设备信息。无需注册，完全免费使用！">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <style>
+<style>
     body { background: #f8f9fa; }
     .container { max-width: 800px; }
     .emoji { font-size: 1.3em; margin-right: 0.3em; }
@@ -23,6 +43,59 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
 </head>
 <body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">IPLogger.icu 极简IP追踪神器 - 3秒生成隐形追踪链接</li>
+      </ol>
+    </nav>
+  </div>
   <div class="container my-5">
     <div class="card shadow-sm">
       <div class="card-header bg-primary text-white">
@@ -59,37 +132,37 @@
         <div class="row">
           <div class="col-md-6">
             <div class="feature-card">
-              <h5><span class="emoji">🎯</span>一键生成追踪链接</h5>
+              <h4><span class="emoji">🎯</span>一键生成追踪链接</h4>
               <p>粘贴任何网址，3秒生成专属追踪链接，比QQ短链接还简单！</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="feature-card">
-              <h5><span class="emoji">👻</span>完全隐形追踪</h5>
+              <h4><span class="emoji">👻</span>完全隐形追踪</h4>
               <p>生成1x1像素的隐形图片，可以嵌入邮件、论坛、任何地方！</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="feature-card">
-              <h5><span class="emoji">🌍</span>精准地理定位</h5>
+              <h4><span class="emoji">🌍</span>精准地理定位</h4>
               <p>精确到城市级别，告诉你访客来自北京朝阳还是海淀！</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="feature-card">
-              <h5><span class="emoji">📱</span>设备信息全知道</h5>
+              <h4><span class="emoji">📱</span>设备信息全知道</h4>
               <p>iPhone 15？华为Mate？Windows电脑？浏览器版本？全部一清二楚！</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="feature-card">
-              <h5><span class="emoji">⏰</span>实时监控面板</h5>
+              <h4><span class="emoji">⏰</span>实时监控面板</h4>
               <p>访客一点击，你立刻知道！实时更新，比直播还刺激！</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="feature-card">
-              <h5><span class="emoji">🔒</span>隐私安全保护</h5>
+              <h4><span class="emoji">🔒</span>隐私安全保护</h4>
               <p>只有你能看到追踪数据，一键清除记录，数据安全有保障！</p>
             </div>
           </div>
@@ -100,27 +173,27 @@
         
         <div class="row">
           <div class="col-md-6">
-            <h6><span class="emoji">💼</span>商务人士</h6>
+            <h5><span class="emoji">💼</span>商务人士</h5>
             <p><b>场景：</b>发送商业计划书给潜在客户，想知道对方是否真的看了？用IPLogger追踪链接，对方一打开文件你就知道，还能看到他们花了多长时间浏览。谈判时心里有底！</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">🎨</span>内容创作者</h6>
+            <h5><span class="emoji">🎨</span>内容创作者</h5>
             <p><b>场景：</b>发布新作品链接，想知道粉丝分布？用IPLogger分析访客地区，发现原来东北粉丝特别多，下次可以加点东北元素！</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">🛍️</span>电商卖家</h6>
+            <h5><span class="emoji">🛍️</span>电商卖家</h5>
             <p><b>场景：</b>给买家发商品链接，追踪访问情况。发现对方看了很多次但没下单？主动联系解答疑虑，成交率大幅提升！</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">💕</span>情侣夫妻</h6>
+            <h5><span class="emoji">💕</span>情侣夫妻</h5>
             <p><b>场景：</b>给对象发个浪漫视频链接，想知道TA什么时候看的？看了几遍？用IPLogger默默关注，增进感情小秘密！</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">🎓</span>老师学生</h6>
+            <h5><span class="emoji">🎓</span>老师学生</h5>
             <p><b>场景：</b>老师发布课件链接，追踪学生访问情况。哪些同学认真学习？哪些还没看资料？一目了然！</p>
           </div>
           <div class="col-md-6">
-            <h6><span class="emoji">🔍</span>安全防护</h6>
+            <h5><span class="emoji">🔍</span>安全防护</h5>
             <p><b>场景：</b>怀疑有人盗用你的链接？用IPLogger监控，发现异常IP立刻报警，保护数字资产安全！</p>
           </div>
         </div>
@@ -129,19 +202,19 @@
         <div class="section-title"><span class="emoji">📖</span>3步上手，比点外卖还简单</div>
         
         <div class="demo-box">
-          <h6><span class="step-number">1</span><b>粘贴链接</b></h6>
+          <h5><span class="step-number">1</span><b>粘贴链接</b></h5>
           <p>打开 <a href="https://iplogger.icu" target="_blank" class="text-primary"><b>iplogger.icu</b></a>，把你想追踪的网址粘贴进去</p>
           <small class="text-muted">💡 可以是任何链接：百度网盘、个人网站、视频链接、图片链接...</small>
         </div>
 
         <div class="demo-box">
-          <h6><span class="step-number">2</span><b>一键生成</b></h6>
+          <h5><span class="step-number">2</span><b>一键生成</b></h5>
           <p>点击"生成追踪链接"按钮，瞬间得到专属追踪网址</p>
           <small class="text-muted">💡 系统还会给你一个管理链接，用来查看追踪数据</small>
         </div>
 
         <div class="demo-box">
-          <h6><span class="step-number">3</span><b>分享&监控</b></h6>
+          <h5><span class="step-number">3</span><b>分享&监控</b></h5>
           <p>把追踪链接发给任何人，实时查看访客信息！</p>
           <small class="text-muted">💡 支持微信、QQ、邮件、朋友圈、微博等任何平台</small>
         </div>
@@ -280,17 +353,17 @@
         <div class="section-title"><span class="emoji">🎯</span>高级玩法，让你成为追踪大师</div>
         
         <div class="warning-box">
-          <h6><span class="emoji">📧</span><b>邮件追踪像素</b></h6>
+          <h5><span class="emoji">📧</span><b>邮件追踪像素</b></h5>
           <p>在重要邮件中嵌入1x1像素的追踪图片，对方一打开邮件你就知道！适用于商务邮件、求职邮件、情书等场景。</p>
         </div>
 
         <div class="warning-box">
-          <h6><span class="emoji">🔗</span><b>QR码追踪</b></h6>
+          <h5><span class="emoji">🔗</span><b>QR码追踪</b></h5>
           <p>生成追踪二维码，线下活动必备！扫码的人来自哪里、用什么设备，全部追踪到。</p>
         </div>
 
         <div class="warning-box">
-          <h6><span class="emoji">📊</span><b>批量数据导出</b></h6>
+          <h5><span class="emoji">📊</span><b>批量数据导出</b></h5>
           <p>支持将追踪数据导出为Excel文件，方便做深度分析和汇报。</p>
         </div>
 
@@ -326,7 +399,59 @@
       </div>
     </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
+        </div>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
+    </div>
+  </footer>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "IPLogger.icu 极简IP追踪神器 - 3秒生成隐形追踪链接",
+      "description": "IPLogger.icu是最简单好用的IP追踪神器，一键生成隐形追踪链接，实时监控访客IP地址、地理位置、设备信息。无需注册，完全免费使用！",
+      "url": "https://iplogger.icu/file/ip-tracker-zh",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>

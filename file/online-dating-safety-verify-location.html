@@ -1,9 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Online Dating Safety: How to Verify Someone's Real Location Before Meeting</title>
+  <link rel="canonical" href="https://iplogger.icu/file/online-dating-safety-verify-location">
   
   <!-- Primary Meta Tags -->
   <meta name="description" content="Stay safe while online dating. Learn how to verify someone's real location and identity before meeting them in person. Essential safety tips for dating apps.">
@@ -18,9 +28,7 @@
   <meta property="og:image" content="https://iplogger.icu/file/3.png">
   
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -139,29 +147,61 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="https://iplogger.icu">
-        <i class="fas fa-heart me-2"></i>Dating Safety
-      </a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://iplogger.icu">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="track-location-by-ip-simple-guide">Track Location</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about">Contact</a>
-          </li>
-        </ul>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
+    </nav>
+  </header>
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Online Dating Safety: How to Verify Someone's Real Locati...</li>
+      </ol>
+    </nav>
+  </div>
+  <!-- Navigation -->
+<!-- Hero Section -->
   <section class="hero-section text-center">
     <div class="container">
       <h1 class="display-4 fw-bold mb-3">Online Dating Safety Guide</h1>
@@ -182,7 +222,7 @@
         <div class="col-md-4">
           <div class="text-center mb-4">
             <i class="fas fa-user-secret fa-3x text-danger mb-3"></i>
-            <h5>Catfish Protection</h5>
+            <h4>Catfish Protection</h4>
             <p>Make sure they're really who they say they are and where they claim to be located.</p>
           </div>
         </div>
@@ -190,7 +230,7 @@
         <div class="col-md-4">
           <div class="text-center mb-4">
             <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
-            <h5>Scammer Detection</h5>
+            <h4>Scammer Detection</h4>
             <p>Avoid romance scammers who pretend to be local but are actually overseas.</p>
           </div>
         </div>
@@ -198,7 +238,7 @@
         <div class="col-md-4">
           <div class="text-center mb-4">
             <i class="fas fa-map-marker-alt fa-3x text-success mb-3"></i>
-            <h5>Distance Verification</h5>
+            <h4>Distance Verification</h4>
             <p>Confirm they're actually within dating distance and not lying about proximity.</p>
           </div>
         </div>
@@ -214,7 +254,7 @@
           <div class="red-flag-item">
             <i class="fas fa-camera"></i>
             <div>
-              <h6>Won't Video Chat</h6>
+              <h5>Won't Video Chat</h5>
               <p class="mb-0">Always has excuses for not doing video calls</p>
             </div>
           </div>
@@ -222,7 +262,7 @@
           <div class="red-flag-item">
             <i class="fas fa-phone-slash"></i>
             <div>
-              <h6>Won't Talk on Phone</h6>
+              <h5>Won't Talk on Phone</h5>
               <p class="mb-0">Only wants to text, never calls or voice messages</p>
             </div>
           </div>
@@ -230,7 +270,7 @@
           <div class="red-flag-item">
             <i class="fas fa-calendar-times"></i>
             <div>
-              <h6>Avoids Meeting</h6>
+              <h5>Avoids Meeting</h5>
               <p class="mb-0">Always has last-minute cancellations or excuses</p>
             </div>
           </div>
@@ -240,7 +280,7 @@
           <div class="red-flag-item">
             <i class="fas fa-dollar-sign"></i>
             <div>
-              <h6>Asks for Money</h6>
+              <h5>Asks for Money</h5>
               <p class="mb-0">Emergency situations, travel money, or "loans"</p>
             </div>
           </div>
@@ -248,7 +288,7 @@
           <div class="red-flag-item">
             <i class="fas fa-map-marker-times"></i>
             <div>
-              <h6>Vague About Location</h6>
+              <h5>Vague About Location</h5>
               <p class="mb-0">Can't give specific details about local places</p>
             </div>
           </div>
@@ -256,7 +296,7 @@
           <div class="red-flag-item">
             <i class="fas fa-images"></i>
             <div>
-              <h6>Limited Photos</h6>
+              <h5>Limited Photos</h5>
               <p class="mb-0">Very few photos or refuses to send new ones</p>
             </div>
           </div>
@@ -270,7 +310,7 @@
       
       <div class="safety-tip">
         <div class="step-number">1</div>
-        <h4>The Casual Link Method</h4>
+        <h3>The Casual Link Method</h3>
         <p>This is the easiest and most natural way to verify someone's location:</p>
         <ul>
           <li>Go to <strong>iplogger.icu</strong> and create a tracking link</li>
@@ -280,14 +320,14 @@
         </ul>
         
         <div class="success-box">
-          <h6><i class="fas fa-lightbulb me-2"></i>Pro Tip:</h6>
+          <h5><i class="fas fa-lightbulb me-2"></i>Pro Tip:</h5>
           <p class="mb-0">Send content that matches their interests. If they love cats, send a cat video. If they're into sports, send a sports article.</p>
         </div>
       </div>
       
       <div class="safety-tip">
         <div class="step-number">2</div>
-        <h4>The Local Knowledge Test</h4>
+        <h3>The Local Knowledge Test</h3>
         <p>Ask specific questions about their claimed location:</p>
         <ul>
           <li>"What's your favorite restaurant near [specific landmark]?"</li>
@@ -303,7 +343,7 @@
       
       <div class="safety-tip">
         <div class="step-number">3</div>
-        <h4>Request Location-Specific Photos</h4>
+        <h3>Request Location-Specific Photos</h3>
         <p>Ask for photos that prove they're in the claimed location:</p>
         <ul>
           <li>"Can you send a selfie in front of [local landmark]?"</li>
@@ -315,7 +355,7 @@
       
       <div class="safety-tip">
         <div class="step-number">4</div>
-        <h4>Check Social Media Consistency</h4>
+        <h3>Check Social Media Consistency</h3>
         <p>Look for clues on their social media profiles:</p>
         <ul>
           <li>Check-ins and tagged locations</li>
@@ -334,7 +374,7 @@
         <div class="col-md-4">
           <div class="dating-app-card">
             <i class="fab fa-tinder fa-3x text-danger mb-3"></i>
-            <h5>Tinder</h5>
+            <h4>Tinder</h4>
             <ul class="text-start">
               <li>Check distance shown vs. claimed location</li>
               <li>Look for verified blue checkmarks</li>
@@ -347,7 +387,7 @@
         <div class="col-md-4">
           <div class="dating-app-card">
             <i class="fas fa-heart fa-3x text-primary mb-3"></i>
-            <h5>Bumble/Hinge</h5>
+            <h4>Bumble/Hinge</h4>
             <ul class="text-start">
               <li>Check work/education locations</li>
               <li>Look for photo locations</li>
@@ -360,7 +400,7 @@
         <div class="col-md-4">
           <div class="dating-app-card">
             <i class="fab fa-facebook fa-3x text-info mb-3"></i>
-            <h5>Facebook Dating</h5>
+            <h4>Facebook Dating</h4>
             <ul class="text-start">
               <li>Check their main Facebook profile</li>
               <li>Look at friend locations</li>
@@ -380,7 +420,7 @@
         <div class="col-md-6">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="text-success"><i class="fas fa-check-circle me-2"></i>Emma's Success</h5>
+              <h4 class="text-success"><i class="fas fa-check-circle me-2"></i>Emma's Success</h4>
               <p>"I was talking to this guy on Bumble who said he lived 20 minutes away. Something felt off, so I sent him a funny TikTok link. Turns out he was actually 3 states away! Saved me from wasting weeks of my time."</p>
               <div class="alert alert-success">
                 <small><strong>Result:</strong> Avoided long-distance catfish situation</small>
@@ -392,7 +432,7 @@
         <div class="col-md-6">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="text-warning"><i class="fas fa-exclamation-triangle me-2"></i>Mike's Close Call</h5>
+              <h4 class="text-warning"><i class="fas fa-exclamation-triangle me-2"></i>Mike's Close Call</h4>
               <p>"This girl claimed to be local but kept avoiding meeting up. I sent her a link to a local news story and found out she was in Nigeria! Classic romance scammer. Thank god I didn't send any money."</p>
               <div class="alert alert-warning">
                 <small><strong>Result:</strong> Avoided romance scam</small>
@@ -404,7 +444,7 @@
         <div class="col-md-6">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="text-info"><i class="fas fa-heart me-2"></i>Lisa's Verification</h5>
+              <h4 class="text-info"><i class="fas fa-heart me-2"></i>Lisa's Verification</h4>
               <p>"I was nervous about meeting someone from Tinder, so I verified his location first. Everything checked out perfectly - he was exactly where he said he was. We've been dating for 8 months now!"</p>
               <div class="alert alert-info">
                 <small><strong>Result:</strong> Confirmed legitimate match, successful relationship</small>
@@ -416,7 +456,7 @@
         <div class="col-md-6">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="text-danger"><i class="fas fa-user-secret me-2"></i>Tom's Discovery</h5>
+              <h4 class="text-danger"><i class="fas fa-user-secret me-2"></i>Tom's Discovery</h4>
               <p>"Matched with someone who had photos from around my city. When I tracked her location, she was actually using a VPN but the real IP showed she was in another country. Definitely a catfish!"</p>
               <div class="alert alert-danger">
                 <small><strong>Result:</strong> Detected sophisticated catfish operation</small>
@@ -433,7 +473,7 @@
       
       <div class="row">
         <div class="col-md-6">
-          <h4>Before Meeting in Person:</h4>
+          <h3>Before Meeting in Person:</h3>
           <ul>
             <li><i class="fas fa-video text-primary me-2"></i>Always do a video call first</li>
             <li><i class="fas fa-phone text-success me-2"></i>Have multiple phone conversations</li>
@@ -444,7 +484,7 @@
         </div>
         
         <div class="col-md-6">
-          <h4>During First Meetings:</h4>
+          <h3>During First Meetings:</h3>
           <ul>
             <li><i class="fas fa-coffee text-primary me-2"></i>Meet in public places only</li>
             <li><i class="fas fa-car text-success me-2"></i>Drive yourself or use rideshare</li>
@@ -463,7 +503,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="alert alert-primary">
-            <h5><i class="fas fa-map-marker-alt me-2"></i>Location Data</h5>
+            <h4><i class="fas fa-map-marker-alt me-2"></i>Location Data</h4>
             <ul class="mb-0">
               <li>City and country</li>
               <li>Approximate neighborhood</li>
@@ -475,7 +515,7 @@
         
         <div class="col-md-6">
           <div class="alert alert-info">
-            <h5><i class="fas fa-mobile-alt me-2"></i>Device Information</h5>
+            <h4><i class="fas fa-mobile-alt me-2"></i>Device Information</h4>
             <ul class="mb-0">
               <li>Phone vs. computer usage</li>
               <li>Operating system</li>
@@ -492,7 +532,7 @@
       <h2><i class="fas fa-walking me-2"></i>When to Walk Away</h2>
       
       <div class="danger-box">
-        <h4><i class="fas fa-stop me-2"></i>Immediate Red Flags - End Communication</h4>
+        <h3><i class="fas fa-stop me-2"></i>Immediate Red Flags - End Communication</h3>
         <div class="row">
           <div class="col-md-6">
             <ul>
@@ -579,7 +619,7 @@
       <p class="lead">Verify your potential dates before meeting - your safety is worth it!</p>
       
       <div class="alert alert-primary">
-        <h5><i class="fas fa-shield-alt me-2"></i>Free & Anonymous</h5>
+        <h4><i class="fas fa-shield-alt me-2"></i>Free & Anonymous</h4>
         <p class="mb-0">Protect yourself without them knowing. Quick, easy, and completely private.</p>
       </div>
       
@@ -596,25 +636,59 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-dark text-light py-4">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <h5><i class="fas fa-heart me-2"></i>Dating Safety</h5>
-          <p>Helping people stay safe while finding love online.</p>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
         </div>
-        <div class="col-md-6 text-md-end">
-          <p>&copy; 2025 IPLogger. All rights reserved.</p>
-          <div>
-            <a href="about" class="text-light me-3">Contact</a>
-            <a href="faq" class="text-light me-3">FAQ</a>
-            <a href="#" class="text-light">Privacy</a>
-          </div>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
+          </ul>
         </div>
       </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Online Dating Safety: How to Verify Someone's Real Location Before Meeting",
+      "description": "Stay safe while online dating. Learn how to verify someone's real location and identity before meeting them in person. Essential safety tips for dating apps.",
+      "url": "https://iplogger.icu/file/online-dating-safety-verify-location",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>

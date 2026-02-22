@@ -1,1 +1,84 @@
+# ============================================
+# IPLogger.icu — 301 Redirect Rules (Netlify)
+# Generated: 2026-02-22
+# Purpose: Eliminate keyword cannibalization
+# ============================================
+
+# --------------------------------------------------
+# Cluster 1: "How to Find Someone's IP Address"
+# Canonical: /file/how-to-find-ip-address
+# --------------------------------------------------
+/file/how-to-find-someones-ip-address-2025        /file/how-to-find-ip-address  301
+/file/how-to-find-someones-ip-address-quick-guide  /file/how-to-find-ip-address  301
+/file/how-to-get-someone-ip-address-simple-methods /file/how-to-find-ip-address  301
+/file/easiest-way-get-ip-2025                      /file/how-to-find-ip-address  301
+/file/simple-ip-tracking-methods-beginners         /file/how-to-find-ip-address  301
+/file/catching                                     /file/how-to-find-ip-address  301
+
+# --------------------------------------------------
+# Cluster 2: "What Is IPLogger / Introduction"
+# Canonical: /file/what-is-iplogger
+# --------------------------------------------------
+/file/iploggerEn          /file/what-is-iplogger  301
+/file/iploggerWHAT        /file/what-is-iplogger  301
+/file/iplogger_intro      /file/what-is-iplogger  301
+/file/ipintro             /file/what-is-iplogger  301
+/file/ipintrod            /file/what-is-iplogger  301
+/file/iplogger-beginners-guide  /file/what-is-iplogger  301
+/file/ini                 /file/what-is-iplogger  301
+/file/example             /file/what-is-iplogger  301
+/file/iplogger            /file/what-is-iplogger  301
+
+# --------------------------------------------------
+# Cluster 3: "IP Tracking Tools Comparison"
+# Canonical: /file/ip-tracker-tools-hub
+# --------------------------------------------------
+/file/ip-tracker-tools                        /file/ip-tracker-tools-hub  301
+/file/ip-tracking-tools-comparison            /file/ip-tracker-tools-hub  301
+/file/ip-tracking-tools-comparison-2025       /file/ip-tracker-tools-hub  301
+/file/ip-address-lookup-tools-comparison-2025 /file/ip-tracker-tools-hub  301
+/file/best-ip-tracking-tools-2025-review      /file/ip-tracker-tools-hub  301
+
+# --------------------------------------------------
+# Cluster 4: "IP Grabber"
+# Canonical: /file/ip-grabber-link-free
+# --------------------------------------------------
+/file/grabber             /file/ip-grabber-link-free  301
+/file/ipgrabber           /file/ip-grabber-link-free  301
+/file/ipgrabbertool       /file/ip-grabber-link-free  301
+
+# --------------------------------------------------
+# Cluster 5: "Email IP Tracking"
+# Canonical: /file/email-tracking-resources
+# --------------------------------------------------
+/file/email-tracking-en                /file/email-tracking-resources  301
+/file/email-ip-tracking                /file/email-tracking-resources  301
+/file/email-ip-tracking-complete       /file/email-tracking-resources  301
+/file/free-email-tracker-pixel         /file/email-tracking-resources  301
+/file/how-to-track-email-location-2025 /file/email-tracking-resources  301
+
+# --------------------------------------------------
+# Cluster 6: "IPLogger vs Grabify"
+# Canonical: /file/iplogger-or-grabify-which-better
+# --------------------------------------------------
+/file/ip-logger-vs-grabify-comparison-2025  /file/iplogger-or-grabify-which-better  301
+
+# --------------------------------------------------
+# Cluster 7: Duplicate troubleshooting/VPN/mobile
+# --------------------------------------------------
+/file/ip-tracking-troubleshooting-guide-2025  /file/ip-tracking-troubleshooting  301
+/file/vpn-detection-guide-2025               /file/vpn-detection-tracking       301
+/file/mobile-ip-tracking-guide-2025          /file/mobile-ip-tracking           301
+
+# --------------------------------------------------
+# Fix: Old 404 URLs that may have been indexed
+# --------------------------------------------------
+/about      /file/about     301
+/privacy    /file/about     301
+/terms      /file/about     301
+/contact    /file/about     301
+/faq        /file/faq       301
+/blog       /file/blog      301
+/resources  /file/ip-logger-complete-guide  301
+/api        /                              301
 

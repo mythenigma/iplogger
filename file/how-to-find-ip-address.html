@@ -1,7 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Bootstrap 5.2.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared Subpage CSS -->
+  <link rel="stylesheet" href="/css/subpage.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>How to Find Someone's IP Address - Complete Guide | IPLogger</title>
   
@@ -28,12 +37,8 @@
   <link rel="canonical" href="https://iplogger.icu/file/how-to-find-ip-address">
   
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  
-  <!-- Google Fonts -->
+<!-- Font Awesome -->
+<!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Custom CSS -->
@@ -164,53 +169,69 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="https://iplogger.icu">
-        <i class="fas fa-globe-americas me-2"></i>IPLogger
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://iplogger.icu"><i class="fas fa-home me-1"></i> Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ipintro"><i class="fas fa-info-circle me-1"></i> About IP Tracking</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="usecase"><i class="fas fa-lightbulb me-1"></i> Use Cases</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="how-to-find-ip-address"><i class="fas fa-search me-1"></i> Find IP Address</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about"><i class="fas fa-envelope me-1"></i> Contact</a>
-          </li>
-        </ul>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark iplogger-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">IPLogger</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/file/blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ip-check">IP Checker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="language-badge" id="current-lang">EN</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="EN" class="dropdown-item-flag"> English <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES" class="dropdown-item-flag"> Español <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="dropdown-item-flag"> Français <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="dropdown-item-flag"> Deutsch <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="ZH" class="dropdown-item-flag"> 中文 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja"><img src="https://flagcdn.com/w20/jp.png" alt="JA" class="dropdown-item-flag"> 日本語 <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="AR" class="dropdown-item-flag"> العربية <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="dropdown-item-flag"> Русский <i class="fas fa-check check-icon ms-2"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt"><img src="https://flagcdn.com/w20/pt.png" alt="PT" class="dropdown-item-flag"> Português <i class="fas fa-check check-icon ms-2"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Page Header -->
-  <header class="page-header text-center">
-    <div class="container">
-      <h1><i class="fas fa-search me-2"></i>How to Find Someone's IP Address</h1>
-      <p class="lead">Learn legitimate methods to discover IP addresses for security and networking purposes</p>
-    </div>
+    </nav>
   </header>
-
-  <!-- Main Content -->
+  <div class="container">
+    <nav aria-label="breadcrumb" class="iplogger-breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">How to Find Someone's IP Address - Complete Guide | IPLogger</li>
+      </ol>
+    </nav>
+  </div>
+  <!-- Navigation -->
+<!-- Page Header -->
+<!-- Main Content -->
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
         
         <!-- Legal Disclaimer -->
         <div class="legal-note">
-          <h4><i class="fas fa-exclamation-triangle text-warning me-2"></i>Important Legal Notice</h4>
+          <h3><i class="fas fa-exclamation-triangle text-warning me-2"></i>Important Legal Notice</h3>
           <p class="mb-0">
             This guide is for educational and legitimate purposes only. Always respect privacy laws and obtain proper consent before attempting to gather someone's IP address. Use these methods responsibly and ethically.
           </p>
@@ -225,14 +246,14 @@
           
           <div class="row mt-4">
             <div class="col-md-6">
-              <h4>IPv4 Address Example</h4>
+              <h3>IPv4 Address Example</h3>
               <div class="code-block">
                 192.168.1.100
               </div>
               <p class="text-muted mt-2">Four groups of numbers separated by dots</p>
             </div>
             <div class="col-md-6">
-              <h4>IPv6 Address Example</h4>
+              <h3>IPv6 Address Example</h3>
               <div class="code-block">
                 2001:0db8:85a3:0000:0000:8a2e:0370:7334
               </div>
@@ -240,7 +261,7 @@
             </div>
           </div>
           
-          <h4 class="mt-4">Why Find Someone's IP Address?</h4>
+          <h3 class="mt-4">Why Find Someone's IP Address?</h3>
           <ul>
             <li><strong>Network Troubleshooting:</strong> Diagnose connectivity issues</li>
             <li><strong>Security Analysis:</strong> Investigate suspicious activities</li>
@@ -258,9 +279,9 @@
             <div class="col-md-6">
               <div class="card method-card">
                 <div class="card-body">
-                  <h4 class="card-title text-primary">
+                  <h3 class="card-title text-primary">
                     <i class="fas fa-link me-2"></i>URL Tracking
-                  </h4>
+                  </h3>
                   <p class="card-text">
                     Create tracking links that capture IP addresses when clicked. Most common and effective method.
                   </p>
@@ -275,9 +296,9 @@
             <div class="col-md-6">
               <div class="card method-card">
                 <div class="card-body">
-                  <h4 class="card-title text-primary">
+                  <h3 class="card-title text-primary">
                     <i class="fas fa-envelope me-2"></i>Email Tracking
-                  </h4>
+                  </h3>
                   <p class="card-text">
                     Use tracking pixels in emails to capture IP addresses when emails are opened.
                   </p>
@@ -292,9 +313,9 @@
             <div class="col-md-6">
               <div class="card method-card">
                 <div class="card-body">
-                  <h4 class="card-title text-primary">
+                  <h3 class="card-title text-primary">
                     <i class="fas fa-comments me-2"></i>Social Engineering
-                  </h4>
+                  </h3>
                   <p class="card-text">
                     Use chat platforms and direct communication to gather IP information through legitimate interaction.
                   </p>
@@ -309,9 +330,9 @@
             <div class="col-md-6">
               <div class="card method-card">
                 <div class="card-body">
-                  <h4 class="card-title text-primary">
+                  <h3 class="card-title text-primary">
                     <i class="fas fa-server me-2"></i>Server Logs
-                  </h4>
+                  </h3>
                   <p class="card-text">
                     Analyze web server access logs to find IP addresses of website visitors.
                   </p>
@@ -334,7 +355,7 @@
             <div class="d-flex align-items-center mb-3">
               <div class="step-number">1</div>
               <div>
-                <h4 class="mb-1">Choose an IP Tracking Service</h4>
+                <h3 class="mb-1">Choose an IP Tracking Service</h3>
                 <p class="mb-0 text-muted">Select a reliable IP logger tool</p>
               </div>
             </div>
@@ -345,7 +366,7 @@
             <div class="d-flex align-items-center mb-3">
               <div class="step-number">2</div>
               <div>
-                <h4 class="mb-1">Create Your Tracking Link</h4>
+                <h3 class="mb-1">Create Your Tracking Link</h3>
                 <p class="mb-0 text-muted">Generate a unique tracking URL</p>
               </div>
             </div>
@@ -361,7 +382,7 @@
             <div class="d-flex align-items-center mb-3">
               <div class="step-number">3</div>
               <div>
-                <h4 class="mb-1">Share the Tracking Link</h4>
+                <h3 class="mb-1">Share the Tracking Link</h3>
                 <p class="mb-0 text-muted">Send the link to your target</p>
               </div>
             </div>
@@ -378,7 +399,7 @@
             <div class="d-flex align-items-center mb-3">
               <div class="step-number">4</div>
               <div>
-                <h4 class="mb-1">Monitor Results</h4>
+                <h3 class="mb-1">Monitor Results</h3>
                 <p class="mb-0 text-muted">Check the tracking dashboard</p>
               </div>
             </div>
@@ -397,12 +418,12 @@
           <h2><i class="fas fa-envelope me-2"></i>Method 2: Email Tracking</h2>
           <p class="lead">Use tracking pixels to capture IP addresses when emails are opened.</p>
           
-          <h4>How Email Tracking Works</h4>
+          <h3>How Email Tracking Works</h3>
           <p>Email tracking involves embedding invisible images (tracking pixels) in emails. When the recipient opens the email, their email client loads the image from a tracking server, revealing their IP address.</p>
           
           <div class="row mt-4">
             <div class="col-md-6">
-              <h5>Steps to Implement</h5>
+              <h4>Steps to Implement</h4>
               <ol>
                 <li>Create a tracking pixel using an IP logger service</li>
                 <li>Embed the pixel in your email HTML</li>
@@ -411,7 +432,7 @@
               </ol>
             </div>
             <div class="col-md-6">
-              <h5>Example Tracking Pixel</h5>
+              <h4>Example Tracking Pixel</h4>
               <div class="code-block">
 &lt;img src="https://iplogger.icu/pixel.png" 
      width="1" height="1" 
@@ -421,7 +442,7 @@
           </div>
           
           <div class="warning-box">
-            <h5><i class="fas fa-exclamation-triangle text-warning me-2"></i>Limitations</h5>
+            <h4><i class="fas fa-exclamation-triangle text-warning me-2"></i>Limitations</h4>
             <ul class="mb-0">
               <li>Many email clients block external images by default</li>
               <li>Users may have privacy settings that prevent tracking</li>
@@ -435,11 +456,11 @@
           <h2><i class="fas fa-terminal me-2"></i>Method 3: Command Line Tools</h2>
           <p class="lead">Use network utilities to gather IP information from direct communication.</p>
           
-          <h4>Common Network Commands</h4>
+          <h3>Common Network Commands</h3>
           
           <div class="row">
             <div class="col-md-6">
-              <h5>Windows Commands</h5>
+              <h4>Windows Commands</h4>
               <div class="code-block mb-3">
 # View active connections
 netstat -an
@@ -455,7 +476,7 @@ ipconfig /all
               </div>
             </div>
             <div class="col-md-6">
-              <h5>Linux/Mac Commands</h5>
+              <h4>Linux/Mac Commands</h4>
               <div class="code-block mb-3">
 # View active connections
 ss -tuln
@@ -473,7 +494,7 @@ ifconfig
           </div>
           
           <div class="warning-box">
-            <h5><i class="fas fa-info-circle text-info me-2"></i>Note</h5>
+            <h4><i class="fas fa-info-circle text-info me-2"></i>Note</h4>
             <p class="mb-0">These commands work best when you have direct network communication with the target, such as during gaming, video calls, or file sharing.</p>
           </div>
         </div>
@@ -487,9 +508,9 @@ ifconfig
             <div class="col-md-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">
+                  <h4 class="card-title text-primary">
                     <i class="fab fa-discord me-2"></i>Discord/Gaming
-                  </h5>
+                  </h4>
                   <p class="card-text">Voice calls and gaming sessions can reveal IP addresses through direct peer-to-peer connections.</p>
                 </div>
               </div>
@@ -498,9 +519,9 @@ ifconfig
             <div class="col-md-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">
+                  <h4 class="card-title text-primary">
                     <i class="fas fa-video me-2"></i>Video Calls
-                  </h5>
+                  </h4>
                   <p class="card-text">Skype, Zoom, and other video calling platforms may expose IP addresses during direct connections.</p>
                 </div>
               </div>
@@ -509,9 +530,9 @@ ifconfig
             <div class="col-md-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">
+                  <h4 class="card-title text-primary">
                     <i class="fas fa-file-download me-2"></i>File Sharing
-                  </h5>
+                  </h4>
                   <p class="card-text">P2P file sharing and direct file transfer services can reveal participant IP addresses.</p>
                 </div>
               </div>
@@ -525,7 +546,7 @@ ifconfig
           
           <div class="row">
             <div class="col-md-6">
-              <h4 class="text-success">Legal Uses</h4>
+              <h3 class="text-success">Legal Uses</h3>
               <ul class="list-unstyled">
                 <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Network administration and troubleshooting</li>
                 <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Security monitoring and incident response</li>
@@ -535,7 +556,7 @@ ifconfig
               </ul>
             </div>
             <div class="col-md-6">
-              <h4 class="text-danger">Prohibited Uses</h4>
+              <h3 class="text-danger">Prohibited Uses</h3>
               <ul class="list-unstyled">
                 <li class="mb-2"><i class="fas fa-times text-danger me-2"></i> Harassment or stalking individuals</li>
                 <li class="mb-2"><i class="fas fa-times text-danger me-2"></i> Unauthorized access attempts</li>
@@ -547,7 +568,7 @@ ifconfig
           </div>
           
           <div class="legal-note mt-4">
-            <h5><i class="fas fa-gavel me-2"></i>Legal Compliance</h5>
+            <h4><i class="fas fa-gavel me-2"></i>Legal Compliance</h4>
             <p>Always ensure your IP tracking activities comply with:</p>
             <ul class="mb-0">
               <li><strong>GDPR</strong> (General Data Protection Regulation) in Europe</li>
@@ -566,9 +587,9 @@ ifconfig
             <div class="col-md-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">
+                  <h4 class="card-title text-primary">
                     <i class="fas fa-user-secret me-2"></i>Use VPN Services
-                  </h5>
+                  </h4>
                   <p class="card-text">Virtual Private Networks mask your real IP address by routing traffic through secure servers.</p>
                 </div>
               </div>
@@ -577,9 +598,9 @@ ifconfig
             <div class="col-md-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">
+                  <h4 class="card-title text-primary">
                     <i class="fas fa-globe me-2"></i>Proxy Servers
-                  </h5>
+                  </h4>
                   <p class="card-text">Route your internet traffic through proxy servers to hide your actual IP address from tracking.</p>
                 </div>
               </div>
@@ -588,9 +609,9 @@ ifconfig
             <div class="col-md-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">
+                  <h4 class="card-title text-primary">
                     <i class="fab fa-firefox me-2"></i>Tor Browser
-                  </h5>
+                  </h4>
                   <p class="card-text">Use the Tor network for maximum anonymity and protection against IP tracking.</p>
                 </div>
               </div>
@@ -599,9 +620,9 @@ ifconfig
             <div class="col-md-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title text-primary">
+                  <h4 class="card-title text-primary">
                     <i class="fas fa-cog me-2"></i>Browser Settings
-                  </h5>
+                  </h4>
                   <p class="card-text">Configure browser privacy settings, disable JavaScript, and block external images in emails.</p>
                 </div>
               </div>
@@ -629,48 +650,62 @@ ifconfig
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
+<!-- Bootstrap JS and dependencies -->
+<!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <footer class="iplogger-footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <h5><i class="fas fa-globe-americas me-2"></i>IPLogger</h5>
-          <p class="text-white-50">
-            Professional IP tracking tools for legitimate security, analytics, and networking purposes.
-          </p>
-          <p class="text-white-50">© 2025 IPLogger. All rights reserved.</p>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="footer-brand mb-2">IPLogger</div>
+          <p class="mb-0" style="color:rgba(255,255,255,0.5)">Free IP tracking and link analytics tool for monitoring visitor activity and collecting user information.</p>
         </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-md-0 footer-links">
-          <h5>Tools</h5>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="text-white">Features</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="https://iplogger.icu">IP Logger</a></li>
-            <li class="mb-2"><a href="https://grabify.icu">IP Tracker</a></li>
+            <li class="mb-2"><a href="/#create-link">Create Link</a></li>
+            <li class="mb-2"><a href="/#ip-check">IP Checker</a></li>
+            <li class="mb-2"><a href="/#how-it-works">How It Works</a></li>
             <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
           </ul>
         </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-md-0 footer-links">
-          <h5>Resources</h5>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="text-white">Resources</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="ipintro">IP Guide</a></li>
-            <li class="mb-2"><a href="usecase">Use Cases</a></li>
-            <li class="mb-2"><a href="procon">Pros & Cons</a></li>
+            <li class="mb-2"><a href="/file/ip-logger-complete-guide"><i class="fas fa-book me-1"></i>Complete Guide</a></li>
+            <li class="mb-2"><a href="/file/ip-tracker-tools-hub"><i class="fas fa-tools me-1"></i>Tools Comparison</a></li>
+            <li class="mb-2"><a href="/file/email-tracking-resources"><i class="fas fa-envelope me-1"></i>Email Tracking</a></li>
+            <li class="mb-2"><a href="/file/blog"><i class="fas fa-blog me-1"></i>Blog</a></li>
+            <li class="mb-2"><a href="/file/about"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
           </ul>
         </div>
-        <div class="col-lg-4 col-md-6 footer-links">
-          <h5>Other Services</h5>
+        <div class="col-md-3">
+          <h5 class="text-white">Related Tools</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="https://maipdf.com/qr.php">QR Code Generator</a></li>
-            <li class="mb-2"><a href="https://pdfhost.online">PDF Hosting</a></li>
-            <li class="mb-2"><a href="https://maipdf.com/maipdf.php">MaiPDF Tools</a></li>
+            <li class="mb-2"><a href="https://grabify.icu/">Grabify</a></li>
+            <li class="mb-2"><a href="https://whatstheirip.tech/">WhatsTheirIP</a></li>
+            <li class="mb-2"><a href="https://maipdf.com/pdf/maipdf.php">MaiPDF</a></li>
+            <li class="mb-2"><a href="https://privnote.chat">Privnote</a></li>
           </ul>
         </div>
       </div>
+      <div class="footer-copy text-center">&copy; 2026 IPLogger. All rights reserved.</div>
     </div>
   </footer>
-
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "How to Find Someone's IP Address - Complete Guide | IPLogger",
+      "description": "Learn legitimate methods to find someone's IP address for security, networking, and troubleshooting purposes. Complete guide with step-by-step instructions and legal considerations.",
+      "url": "https://iplogger.icu/file/how-to-find-ip-address",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IPLogger",
+        "url": "https://iplogger.icu"
+      }
+    }
+  </script>
 </body>
 </html>
