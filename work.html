@@ -145,6 +145,7 @@
       <li><a href="#part7">第七部分：关键词自我竞争详情</a></li>
       <li><a href="#part8">第八部分：子页面 SEO 逐页审查</a></li>
       <li><a href="#part9">第九部分：修复优先级 & 行动计划</a></li>
+      <li><a href="#part10">第十部分：Google 索引恢复计划</a></li>
     </ol>
   </nav>
 
@@ -649,7 +650,122 @@
       <li><input type="checkbox" checked disabled> <strong>[性能]</strong> <del>创建共享 CSS (css/subpage.css)</del> ✅ 已完成（116/117 页面引用）</li>
       <li><input type="checkbox" checked disabled> <strong>[其他]</strong> <del>更新版权年份为 © 2026</del> ✅ 已完成（116/117 页面）</li>
       <li><input type="checkbox" checked disabled> <strong>[其他]</strong> <del>配置 _redirects 文件（如使用 Netlify）</del> ✅ 已完成</li>
+      <li><input type="checkbox" checked disabled> <strong>[索引]</strong> <del>添加 www → non-www 301 强制重定向（消除重复内容）</del> ✅ 已完成</li>
+      <li><input type="checkbox" checked disabled> <strong>[索引]</strong> <del>清理 sitemap.xml — 移除 19 个 301 重定向 URL</del> ✅ 已完成</li>
+      <li><input type="checkbox" checked disabled> <strong>[索引]</strong> <del>同步 sitemap.txt — 移除重定向 URL</del> ✅ 已完成</li>
+      <li><input type="checkbox" checked disabled> <strong>[索引]</strong> <del>重写 rss.xml — 用真实博客文章替换 404 链接</del> ✅ 已完成</li>
+      <li><input type="checkbox" checked disabled> <strong>[索引]</strong> <del>清理 robots.txt — 移除 rss.xml Sitemap 声明和 Crawl-delay</del> ✅ 已完成</li>
+      <li><input type="checkbox" checked disabled> <strong>[索引]</strong> <del>添加 Google Search Console 验证 meta 标签（占位符）</del> ✅ 已完成</li>
+      <li><input type="checkbox"> <strong>[索引]</strong> 在 GSC 中注册 iplogger.icu 并获取真实验证码替换 YOUR_CODE</li>
+      <li><input type="checkbox"> <strong>[索引]</strong> 在 GSC 中提交 sitemap.xml</li>
+      <li><input type="checkbox"> <strong>[索引]</strong> 使用 URL 检查工具请求索引首页和前 10 个重要页面</li>
+      <li><input type="checkbox"> <strong>[索引]</strong> 检查 GSC 中的手动操作（Manual Actions）</li>
     </ul>
+  </div>
+
+  <!-- ============================== -->
+  <!-- 第十部分：Google 索引恢复计划 -->
+  <!-- ============================== -->
+  <div class="section" id="part10">
+    <h2>第十部分：Google 索引恢复计划 🔍</h2>
+    <p>网站在 Google 搜索中完全不出现，但 Bing/Yahoo 已索引约 20-28 页。以下是诊断结果和修复计划。</p>
+
+    <h3>🔎 诊断结果</h3>
+    <table>
+      <tr><th>问题</th><th>严重程度</th><th>详情</th><th>状态</th></tr>
+      <tr>
+        <td>❌ 无 Google Search Console 验证</td>
+        <td><span class="badge p0">P0</span></td>
+        <td>没有 google*.html 验证文件，也没有 meta 验证标签。无法提交 sitemap、请求索引或查看手动惩罚</td>
+        <td><span class="status done">✅ 已添加占位符</span></td>
+      </tr>
+      <tr>
+        <td>❌ www 与 non-www 重复内容</td>
+        <td><span class="badge p0">P0</span></td>
+        <td>https://www.iplogger.icu 和 https://iplogger.icu 都提供相同内容，没有重定向。Bing 已索引两个版本，分散了权重</td>
+        <td><span class="status done">✅ 已添加 301 重定向</span></td>
+      </tr>
+      <tr>
+        <td>❌ sitemap.xml 含 18 个 301 重定向 URL</td>
+        <td><span class="badge p1">P1</span></td>
+        <td>Sitemap 应只包含最终规范 URL，重定向 URL 浪费抓取预算并混淆 Googlebot</td>
+        <td><span class="status done">✅ 已清理</span></td>
+      </tr>
+      <tr>
+        <td>❌ rss.xml 全部链接 404</td>
+        <td><span class="badge p1">P1</span></td>
+        <td>lastBuildDate: 2023年，4 篇文章链接指向 /blog/slug 路径（全部 404）。在 robots.txt 中声明为 Sitemap</td>
+        <td><span class="status done">✅ 已重写</span></td>
+      </tr>
+      <tr>
+        <td>⚠️ robots.txt 声明了损坏的 rss.xml 为 Sitemap</td>
+        <td><span class="badge p1">P1</span></td>
+        <td>Crawl-delay: 5 对 Google 无效但拖慢其他爬虫。rss.xml Sitemap 声明应移除</td>
+        <td><span class="status done">✅ 已清理</span></td>
+      </tr>
+      <tr>
+        <td>⚠️ .icu TLD 垃圾邮件声誉</td>
+        <td><span class="badge p2">P2</span></td>
+        <td>.icu 是被滥用最多的 TLD 之一，Google 可能需要更多时间信任该域名</td>
+        <td><span class="status pending">无法更改</span></td>
+      </tr>
+    </table>
+
+    <h3>📋 修复步骤（代码层面 — 已完成）</h3>
+    <ul class="issue-list">
+      <li class="critical">
+        <span class="badge p0">P0</span> <strong>www → non-www 301 强制重定向</strong><br>
+        在 <code>_redirects</code> 文件顶部添加：<code>https://www.iplogger.icu/* https://iplogger.icu/:splat 301!</code><br>
+        <span class="status done">✅ 已完成</span>
+      </li>
+      <li class="critical">
+        <span class="badge p0">P0</span> <strong>Google Search Console 验证 meta 标签</strong><br>
+        在 <code>index.html</code> &lt;head&gt; 中添加 <code>&lt;meta name="google-site-verification" content="YOUR_CODE"&gt;</code><br>
+        <span class="status done">✅ 占位符已添加</span> — 需要你在 <a href="https://search.google.com/search-console" target="_blank">GSC</a> 注册后替换 YOUR_CODE
+      </li>
+      <li class="high">
+        <span class="badge p1">P1</span> <strong>清理 sitemap.xml</strong><br>
+        移除 19 个 301 重定向源 URL（18 个 /file/ 页面 + 1 个根 /iplogger），只保留最终规范 URL<br>
+        <span class="status done">✅ 已完成</span>
+      </li>
+      <li class="high">
+        <span class="badge p1">P1</span> <strong>同步 sitemap.txt</strong><br>
+        移除对应重定向 URL<br>
+        <span class="status done">✅ 已完成</span>
+      </li>
+      <li class="high">
+        <span class="badge p1">P1</span> <strong>重写 rss.xml</strong><br>
+        用真实博客文章 URL（/file/blog-*-en）替换 404 链接，更新日期为 2026<br>
+        <span class="status done">✅ 已完成</span>
+      </li>
+      <li class="high">
+        <span class="badge p1">P1</span> <strong>清理 robots.txt</strong><br>
+        移除 <code>Sitemap: .../rss.xml</code> 声明和 <code>Crawl-delay: 5</code><br>
+        <span class="status done">✅ 已完成</span>
+      </li>
+    </ul>
+
+    <h3>📋 手动步骤（需要你操作）</h3>
+    <ol>
+      <li>前往 <a href="https://search.google.com/search-console" target="_blank">Google Search Console</a>，添加属性 <code>iplogger.icu</code>（选择 "URL 前缀" 方式）</li>
+      <li>选择 "HTML 标记" 验证方式，复制 <code>content</code> 值</li>
+      <li>替换 <code>index.html</code> 中的 <code>YOUR_CODE</code> 为真实验证码，然后部署</li>
+      <li>验证成功后，进入 GSC → <strong>站点地图</strong>，提交 <code>https://iplogger.icu/sitemap.xml</code></li>
+      <li>使用 <strong>URL 检查工具</strong> 请求索引首页和前 10 个重要页面</li>
+      <li>检查 GSC → <strong>安全性和手动操作</strong> → <strong>手动操作</strong>，确认没有惩罚</li>
+      <li>等待 1-4 周，Google 应开始索引页面</li>
+    </ol>
+
+    <h3>⏱️ 预期时间线</h3>
+    <table>
+      <tr><th>里程碑</th><th>预计时间</th></tr>
+      <tr><td>GSC 验证通过</td><td>部署后 1-2 天</td></tr>
+      <tr><td>Sitemap 被 Google 处理</td><td>提交后 3-7 天</td></tr>
+      <tr><td>首页出现在 Google 搜索</td><td>1-2 周</td></tr>
+      <tr><td>主要页面被索引</td><td>2-4 周</td></tr>
+      <tr><td>全站大部分页面被索引</td><td>1-3 个月</td></tr>
+    </table>
+    <p><strong>注意：</strong>.icu TLD 由于高垃圾邮件声誉，Google 可能需要更长时间来建立信任。持续产出高质量内容和获取自然外链是加速索引的关键。</p>
   </div>
 
 </div>

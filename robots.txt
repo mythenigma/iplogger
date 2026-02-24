@@ -31,10 +31,6 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Crawl delay to prevent server overload
-Crawl-delay: 5
-
 # Sitemaps
 Sitemap: https://iplogger.icu/sitemap.xml
 Sitemap: https://iplogger.icu/sitemap.txt
-Sitemap: https://iplogger.icu/rss.xml

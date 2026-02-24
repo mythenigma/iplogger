@@ -5,6 +5,12 @@
 # ============================================
 
 # --------------------------------------------------
+# CRITICAL: Force www → non-www (canonical domain)
+# Must be FIRST rule to consolidate crawl authority
+# --------------------------------------------------
+https://www.iplogger.icu/* https://iplogger.icu/:splat 301!
+
+# --------------------------------------------------
 # Cluster 1: "How to Find Someone's IP Address"
 # Canonical: /file/how-to-find-ip-address
 # --------------------------------------------------
