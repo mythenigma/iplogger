@@ -386,13 +386,16 @@
           <h4>Create Your Tracking Link</h4>
           <p>Follow these steps on the IPLogger website:</p>
           <ol>
-            <li>Paste your target URL in the main input field</li>
-            <li>Choose a short link domain (optional customization)</li>
-            <li>Add any additional tracking parameters</li>
-            <li>Click "Generate" or "Create Logger"</li>
+            <li>Paste the destination URL in the main input field</li>
+            <li>Add any campaign parameters to that destination URL before pasting it</li>
+            <li>Click "Generate"</li>
+            <li>Copy <em>both</em> URLs you get back before leaving the page</li>
           </ol>
           <div class="alert alert-success">
-            <strong>Result:</strong> You'll receive a shortened URL like <code>iplogger.icu/abc123</code> that redirects to your original content while tracking visitor data.
+            <strong>Result:</strong> you get a short tracking link such as <code>https://grabb.site/AbC123</code> that
+            forwards visitors to your destination, and a separate results page such as
+            <code>https://grabify.icu/XyZ789</code> where the log appears. Share the first, keep the second &mdash;
+            there is no account to log back into if you lose it.
           </div>
         </div>
       </div>
@@ -513,26 +516,20 @@
           </h2>
           <div id="technique2" class="accordion-collapse collapse" data-parent="#advancedAccordion">
             <div class="accordion-body">
-              <p>Implement custom tracking using JavaScript for websites:</p>
+              <p>If you control the page, you do not need JavaScript at all. Generate a link, take the tracking pixel
+              URL from the result screen, and drop it into the page as a plain image:</p>
               <div class="bg-dark text-light p-3 rounded">
                 <code>
-// Example tracking script<br>
-fetch('https://iplogger.icu/api/track', {<br>
-&nbsp;&nbsp;method: 'POST',<br>
-&nbsp;&nbsp;headers: {'Content-Type': 'application/json'},<br>
-&nbsp;&nbsp;body: JSON.stringify({<br>
-&nbsp;&nbsp;&nbsp;&nbsp;page: window.location.href,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;referrer: document.referrer,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;timestamp: Date.now()<br>
-&nbsp;&nbsp;})<br>
-});
+&lt;img src="https://grabb.site/wx/AbC123.png"<br>
+&nbsp;&nbsp;&nbsp;&nbsp; width="1" height="1" alt="" style="display:none"&gt;
                 </code>
               </div>
               <ul class="mt-3">
-                <li>Provides detailed browser information</li>
-                <li>Can track user interactions</li>
-                <li>Works with single-page applications</li>
-                <li>Requires coding knowledge</li>
+                <li>Records the visit on the same results page as your tracking link</li>
+                <li>No script tag, so it still works if JavaScript is blocked</li>
+                <li>Will not fire for visitors who block remote images</li>
+                <li>Note there is no public REST API to POST custom events to &mdash; for anything beyond a page view,
+                use a full analytics package</li>
               </ul>
             </div>
           </div>

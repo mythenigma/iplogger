@@ -318,9 +318,12 @@
                 <p>Use the API to get geolocation data:</p>
                 <div class="map-container">
                     <strong>Example API Call:</strong><br>
-                    <code>GET https://api.iplogger.icu/geolocation/192.168.1.1</code><br>
-                    <small>Returns: Country, city, coordinates, ISP, and more</small>
+                    <code>GET https://ipapi.co/8.8.8.8/json/</code><br>
+                    <small>Returns: country, region, city, approximate coordinates, ISP and ASN</small>
                 </div>
+                <p class="mt-3 mb-0"><small><strong>Note:</strong> use a public address in your tests. Private ranges
+                such as <code>192.168.x.x</code> or <code>10.x.x.x</code> only exist inside local networks, so no
+                geolocation service can resolve them to a place.</small></p>
             </div>
 
             <div class="step-guide">

@@ -314,14 +314,15 @@
               <div class="card method-card">
                 <div class="card-body">
                   <h3 class="card-title text-primary">
-                    <i class="fas fa-comments me-2"></i>Social Engineering
+                    <i class="fas fa-comments me-2"></i>Chat &amp; Gaming Platforms
                   </h3>
                   <p class="card-text">
-                    Use chat platforms and direct communication to gather IP information through legitimate interaction.
+                    Widely written about, but no longer works on Discord, Zoom or Skype &mdash; they all relay traffic
+                    through their own servers now.
                   </p>
                   <div class="mt-3">
-                    <span class="badge bg-danger">Advanced</span>
-                    <span class="badge bg-warning">Risky</span>
+                    <span class="badge bg-secondary">Mostly a myth</span>
+                    <span class="badge bg-danger">Outdated advice</span>
                   </div>
                 </div>
               </div>
@@ -370,12 +371,19 @@
                 <p class="mb-0 text-muted">Generate a unique tracking URL</p>
               </div>
             </div>
-            <p>Enter a destination URL (where you want to redirect the user) and generate a tracking link. The service will provide you with a unique URL that logs IP addresses.</p>
+            <p>Enter a destination URL (the page you want the person to land on) and generate the link. You get back
+            two different URLs, and it matters which one you use: a short <strong>tracking link</strong> to share, and a
+            separate <strong>results page</strong> that only you open to read the log.</p>
             <div class="code-block mt-3">
-              # Example tracking link creation
-              Original URL: https://example.com
-              Generated: https://iplogger.icu/tracker123
+              # What the generator gives you
+              Destination URL: https://example.com
+
+              Tracking link:   https://grabb.site/AbC123      (share this one)
+              Tracking code:   XyZ789
+              Results page:    https://grabify.icu/XyZ789     (keep this one to yourself)
             </div>
+            <p class="mt-3 mb-0"><strong>Save the results page URL.</strong> There is no account and no login, so if you
+            lose that URL you lose access to the data the link collects.</p>
           </div>
 
           <div class="mb-4">
@@ -403,7 +411,8 @@
                 <p class="mb-0 text-muted">Check the tracking dashboard</p>
               </div>
             </div>
-            <p>When someone clicks your link, their IP address and related information will be logged. Access your tracking dashboard to view:</p>
+            <p>When someone opens your link they are forwarded to the destination you chose, and the visit is written to
+            the log. Open the <code>grabify.icu</code> results page you saved in step 2 to see:</p>
             <ul>
               <li>IP address and geolocation</li>
               <li>Device and browser information</li>
@@ -425,19 +434,22 @@
             <div class="col-md-6">
               <h4>Steps to Implement</h4>
               <ol>
-                <li>Create a tracking pixel using an IP logger service</li>
-                <li>Embed the pixel in your email HTML</li>
-                <li>Send the email to your target</li>
-                <li>Monitor when the email is opened</li>
+                <li>Generate a link as in Method 1 &mdash; the same result screen also gives you an
+                    <strong>Email Tracker</strong> image URL</li>
+                <li>Paste that image into your email HTML as an <code>&lt;img&gt;</code> tag</li>
+                <li>Send the email</li>
+                <li>Check the same <code>grabify.icu</code> results page to see when it was opened</li>
               </ol>
             </div>
             <div class="col-md-6">
               <h4>Example Tracking Pixel</h4>
               <div class="code-block">
-&lt;img src="https://iplogger.icu/pixel.png" 
-     width="1" height="1" 
+&lt;img src="https://grabb.site/wx/AbC123.png"
+     width="1" height="1"
      style="display:none;"&gt;
               </div>
+              <p class="small text-muted mt-2 mb-0">Replace <code>AbC123</code> with the code from your own link.
+              Reads land on the same results page as link clicks.</p>
             </div>
           </div>
           
@@ -453,10 +465,28 @@
 
         <!-- Method 3: Command Line Tools -->
         <div class="content-section">
-          <h2><i class="fas fa-terminal me-2"></i>Method 3: Command Line Tools</h2>
-          <p class="lead">Use network utilities to gather IP information from direct communication.</p>
-          
-          <h3>Common Network Commands</h3>
+          <h2><i class="fas fa-terminal me-2"></i>Method 3: Network Commands &mdash; What They Can and Can't Do</h2>
+          <p class="lead">These are the commands people are usually told to use. It is worth being clear about what
+          they actually return, because most of that advice is wrong.</p>
+
+          <div class="warning-box">
+            <h4><i class="fas fa-times-circle text-danger me-2"></i>These commands will not give you a specific person's IP</h4>
+            <p>You will find guides claiming that <code>ping</code> or <code>tracert</code> can reveal someone's address.
+            They cannot:</p>
+            <ul class="mb-0">
+              <li><strong><code>ping</code> and <code>tracert</code>/<code>traceroute</code></strong> take a hostname you
+              <em>already know</em> and resolve it through public DNS. They tell you the address of a server, not of a
+              person. You have to know the target before you start, so they cannot be a way of finding it.</li>
+              <li><strong><code>netstat</code> and <code>ss</code></strong> list connections on <em>your own</em>
+              machine. They will show a game or chat server you are connected to &mdash; not the other people using it.</li>
+              <li><strong><code>ipconfig</code> and <code>ifconfig</code></strong> show your own network configuration
+              and nothing about anyone else.</li>
+            </ul>
+          </div>
+
+          <h3>What they are genuinely useful for</h3>
+          <p>All four are diagnostic tools. They are worth knowing if you are checking whether a host is reachable,
+          where along the route a connection is failing, or which local port a service is bound to.</p>
           
           <div class="row">
             <div class="col-md-6">
@@ -494,49 +524,66 @@ ifconfig
           </div>
           
           <div class="warning-box">
-            <h4><i class="fas fa-info-circle text-info me-2"></i>Note</h4>
-            <p class="mb-0">These commands work best when you have direct network communication with the target, such as during gaming, video calls, or file sharing.</p>
+            <h4><i class="fas fa-info-circle text-info me-2"></i>The takeaway</h4>
+            <p class="mb-0">If your goal is to see who opened something you sent, a tracking link (Method 1) is the only
+            approach on this page that actually does that. The command line is for diagnosing your own connection.</p>
           </div>
         </div>
 
         <!-- Method 4: Social Media and Platforms -->
         <div class="content-section">
-          <h2><i class="fas fa-share-alt me-2"></i>Method 4: Social Media and Online Platforms</h2>
-          <p class="lead">Leverage social platforms and online services to gather IP information.</p>
-          
+          <h2><i class="fas fa-share-alt me-2"></i>Method 4: Chat and Gaming Platforms</h2>
+          <p class="lead">This is the area with the most outdated advice online. Most of what used to work stopped
+          working years ago.</p>
+
           <div class="row g-4">
             <div class="col-md-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h4 class="card-title text-primary">
-                    <i class="fab fa-discord me-2"></i>Discord/Gaming
+                  <h4 class="card-title text-danger">
+                    <i class="fab fa-discord me-2"></i>Discord &mdash; no
                   </h4>
-                  <p class="card-text">Voice calls and gaming sessions can reveal IP addresses through direct peer-to-peer connections.</p>
+                  <p class="card-text">Discord voice has run through its own relay servers for years, in DMs and in
+                  servers alike. The other party sees a Discord IP, not yours. Any "Discord IP resolver" being sold or
+                  advertised is either scraping something else or is simply a scam.</p>
                 </div>
               </div>
             </div>
-            
+
             <div class="col-md-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h4 class="card-title text-primary">
-                    <i class="fas fa-video me-2"></i>Video Calls
+                  <h4 class="card-title text-danger">
+                    <i class="fas fa-video me-2"></i>Video Calls &mdash; almost never
                   </h4>
-                  <p class="card-text">Skype, Zoom, and other video calling platforms may expose IP addresses during direct connections.</p>
+                  <p class="card-text">Zoom, Teams and similar platforms route calls through their own infrastructure by
+                  default. The old Skype resolvers everyone remembers stopped working when Microsoft moved Skype to
+                  cloud relays, and consumer Skype was retired entirely in 2025.</p>
                 </div>
               </div>
             </div>
-            
+
             <div class="col-md-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h4 class="card-title text-primary">
-                    <i class="fas fa-file-download me-2"></i>File Sharing
+                  <h4 class="card-title text-warning">
+                    <i class="fas fa-file-download me-2"></i>BitTorrent &mdash; yes, but
                   </h4>
-                  <p class="card-text">P2P file sharing and direct file transfer services can reveal participant IP addresses.</p>
+                  <p class="card-text">This one is real: in a BitTorrent swarm every peer connects directly, so peer
+                  addresses are visible to everyone in the swarm. It is not targeted, though &mdash; you see whoever
+                  happens to be sharing that file, and you cannot use it to look up a particular person.</p>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div class="warning-box mt-4">
+            <h4><i class="fas fa-lightbulb text-warning me-2"></i>Why this changed</h4>
+            <p class="mb-0">Direct peer-to-peer connections used to be normal because they were cheaper and lower
+            latency. Platforms moved to relaying traffic through their own servers partly for reliability behind NAT and
+            firewalls, and partly because exposing user addresses to each other turned into a harassment and DDoS
+            problem. Guides that still describe the old behaviour were usually written before that shift and never
+            updated.</p>
           </div>
         </div>
 

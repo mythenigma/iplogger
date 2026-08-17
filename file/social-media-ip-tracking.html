@@ -484,22 +484,30 @@
           <div class="step-card">
             <div class="step-number">1</div>
             <h3>Create Platform-Specific Tracking Links</h3>
-            <p class="mb-3">Generate unique tracking URLs for each social media platform to identify traffic sources accurately.</p>
+            <p class="mb-3">Generate a separate tracking link for each platform so you can tell the traffic sources
+            apart. Run the generator once per platform &mdash; each run returns its own random code, so keep a note of
+            which code you posted where.</p>
             <div class="code-block">
-// Example tracking URLs for different platforms
-Facebook: https://iplogger.icu/fb-campaign-2025
-Twitter: https://iplogger.icu/tw-promo-jan
-Instagram: https://iplogger.icu/ig-story-link
-LinkedIn: https://iplogger.icu/li-article-cta</div>
+// One link per platform, each with its own results page
+Facebook:  https://grabb.site/k7Qm2a   -&gt; results at https://grabify.icu/9dTx1
+Twitter/X: https://grabb.site/p3Rw8c   -&gt; results at https://grabify.icu/4bNz6
+Instagram: https://grabb.site/z9Lk4v   -&gt; results at https://grabify.icu/7hQs3
+LinkedIn:  https://grabb.site/m5Yt7b   -&gt; results at https://grabify.icu/2wFj8</div>
           </div>
 
           <div class="step-card">
             <div class="step-number">2</div>
             <h3>Implement UTM Parameters</h3>
-            <p class="mb-3">Add UTM parameters to track campaign performance and source attribution.</p>
+            <p class="mb-3">Put the UTM parameters on the <strong>destination URL</strong>, not on the tracking link.
+            The tracking link is a short redirect with a random code and no room for parameters &mdash; but whatever you
+            set as the destination is what the visitor's browser ends up on, so that is where your analytics will read
+            the campaign data from.</p>
             <div class="code-block">
-// UTM parameter structure
-https://iplogger.icu/track123?utm_source=facebook&utm_medium=social&utm_campaign=winter2025&utm_content=video_post</div>
+// Destination URL you paste into the generator
+https://yoursite.com/landing?utm_source=facebook&amp;utm_medium=social&amp;utm_campaign=winter&amp;utm_content=video_post
+
+// Tracking link you actually post
+https://grabb.site/k7Qm2a</div>
           </div>
 
           <div class="step-card">
