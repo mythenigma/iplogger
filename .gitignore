@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Everything in this repo is deployed as-is (no build step),
+# so keep scratch files out of it entirely.
+*.log
+tmp/

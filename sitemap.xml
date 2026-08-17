@@ -6,15 +6,7 @@
     <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  
-  <url>
-    <loc>https://iplogger.icu/iplogger</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
-  
-  <!-- Pages in the file directory -->
   <url>
     <loc>https://iplogger.icu/file/about</loc>
     <lastmod>2025-05-04</lastmod>
@@ -69,7 +61,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- New Hub Pages - High Priority -->
   <url>
     <loc>https://iplogger.icu/file/ip-logger-complete-guide</loc>
     <lastmod>2025-01-15</lastmod>
@@ -88,7 +79,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
-  <!-- Simple Landing Pages for Long-tail Keywords -->
   <url>
     <loc>https://iplogger.icu/file/free-ip-tracker-no-sign-up</loc>
     <lastmod>2025-01-15</lastmod>
@@ -113,7 +103,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- Chinese Simple Landing Pages -->
   <url>
     <loc>https://iplogger.icu/file/mianfei-ip-zhuizong-gongju</loc>
     <lastmod>2025-01-15</lastmod>
@@ -138,7 +127,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- Practical User-Focused Pages -->
   <url>
     <loc>https://iplogger.icu/file/ip-tracking-tips-tricks</loc>
     <lastmod>2025-01-15</lastmod>
@@ -175,7 +163,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  <!-- IPLogger Specific Articles -->
   <url>
     <loc>https://iplogger.icu/file/what-is-iplogger</loc>
     <lastmod>2025-01-15</lastmod>
@@ -218,7 +205,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
-  <!-- Blog & Content Pages -->
   <url>
     <loc>https://iplogger.icu/file/blog</loc>
     <lastmod>2026-02-22</lastmod>
@@ -231,7 +217,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Missing pages now added -->
   <url>
     <loc>https://iplogger.icu/file/how-to-find-ip-address</loc>
     <lastmod>2026-02-22</lastmod>
@@ -341,13 +326,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iplogger.icu/file/ip-tracking-digital-marketing-strategy-2025</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <!-- Blog articles (EN/CN pairs) -->
-  <url>
     <loc>https://iplogger.icu/file/blog-what-is-ip-address-en</loc>
     <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -431,13 +409,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
-  <!-- Chinese pages -->
-  <url>
-    <loc>https://iplogger.icu/file/iploggerintrocn</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
   <url>
     <loc>https://iplogger.icu/file/ip-tracker-zh</loc>
     <lastmod>2026-02-22</lastmod>
@@ -456,14 +427,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
-  <!-- Arabic -->
   <url>
     <loc>https://iplogger.icu/file/ipintro-ar</loc>
     <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Privnote pages -->
   <url>
     <loc>https://iplogger.icu/file/privnote-en</loc>
     <lastmod>2026-02-22</lastmod>

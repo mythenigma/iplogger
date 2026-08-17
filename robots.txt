@@ -18,6 +18,9 @@ Disallow: /*.php$
 Disallow: /*.ini$
 Disallow: /*.config$
 
+# Internal project docs — deployed because there is no build step
+Disallow: /*.md$
+
 # Allow major search engine bots
 User-agent: Googlebot
 Allow: /

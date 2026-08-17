@@ -1,12 +1,17 @@
 # ============================================
-# IPLogger.icu — 301 Redirect Rules (Netlify)
-# Generated: 2026-02-22
+# IPLogger.icu — 301 Redirect Rules
 # Purpose: Eliminate keyword cannibalization
 # ============================================
 
 # --------------------------------------------------
-# CRITICAL: Force www → non-www (canonical domain)
-# Must be FIRST rule to consolidate crawl authority
+# www → non-www (canonical domain)
+#
+# WARNING: this rule does NOT work on Cloudflare Pages.
+# Cloudflare does not support domain-level redirects in _redirects
+# (source must be a path; hostnames are never matched), and the `!`
+# force flag is Netlify-only syntax. If the site is on Cloudflare
+# Pages, configure this as a Bulk Redirect / Redirect Rule in the
+# dashboard instead — otherwise www and non-www stay duplicated.
 # --------------------------------------------------
 https://www.iplogger.icu/* https://iplogger.icu/:splat 301!
 
@@ -87,4 +92,18 @@ https://www.iplogger.icu/* https://iplogger.icu/:splat 301!
 /blog       /file/blog      301
 /resources  /file/ip-logger-complete-guide  301
 /api        /                              301
+
+# --------------------------------------------------
+# Removed pages (test files, duplicate homepages, empty stubs)
+# Kept as 301s because these URLs were in sitemap.xml or may be
+# indexed by Bing; the underlying files no longer exist.
+# --------------------------------------------------
+/iplogger                                       /file/what-is-iplogger        301
+/file/ip-tracking-digital-marketing-strategy-2025  /file/ip-tracking-best-practices  301
+/initial                                        /                             301
+/test2-may-for-whatst                           /                             301
+/file                                           /                             301
+/file/privnote-en-v2                            /file/privnote-en             301
+/file/privnote-de-v2                            /file/privnote-de             301
+/file/privnote-ja-v2                            /file/privnote-ja             301
 
